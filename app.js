@@ -62,7 +62,7 @@ const els = {
   sectionsTitle: $("#sectionsTitle"), streakTitle: $("#streakTitle"), streakDays: $("#streakDays"), streakNote: $("#streakNote"), searchInput: $("#searchInput"),
   subCategoryFilter: $("#subCategoryFilter"), levelFilter: $("#levelFilter"), sortFilter: $("#sortFilter"), categoryMenu: $("#categoryMenu"),
   pageTitle: $("#pageTitle"), pageCounter: $("#pageCounter"), cardsGrid: $("#cardsGrid"), detailPane: $("#detailPane"), emptyState: $("#emptyState"),
-  langButtons: $$("[data-ui-lang]"), sidebarToggle: $("#sidebarToggle"), sidebarBackdrop: $("#sidebarBackdrop"), themeToggle: $("#themeToggle"),
+  langButtons: $$(".lang-btn"), sidebarToggle: $("#sidebarToggle"), sidebarBackdrop: $("#sidebarBackdrop"), themeToggle: $("#themeToggle"),
   playVisibleBtn: $("#playVisibleBtn"), resetFiltersBtn: $("#resetFiltersBtn"), reviewGrid: $("#reviewGrid"), reviewEmpty: $("#reviewEmpty"),
   reviewTitle: $("#reviewTitle"), reviewSubtitle: $("#reviewSubtitle"), quizTitle: $("#quizTitle"), quizSubtitle: $("#quizSubtitle"), quizBox: $("#quizBox"),
   nextQuizBtn: $("#nextQuizBtn"), speakQuizBtn: $("#speakQuizBtn"), quizStatsTitle: $("#quizStatsTitle"), quizCorrect: $("#quizCorrect"), quizWrong: $("#quizWrong"), quizTotal: $("#quizTotal"),
