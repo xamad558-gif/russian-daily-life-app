@@ -6,8 +6,8 @@
 - [x] Register service worker.
 - [x] Add data validation script.
 - [x] Decide audio policy — keep speechSynthesis fallback for now; real audio recording is deferred to a later phase (see `docs/WORD_SCHEMA.md` Audio policy).
-- [ ] Save dark mode preference.
-- [ ] Document known issues.
+- [x] Save dark mode preference.
+- [x] Document known issues (see `docs/KNOWN_ISSUES.md`).
 
 ## v8.4-modularization
 

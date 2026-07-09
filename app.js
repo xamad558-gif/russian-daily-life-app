@@ -50,7 +50,8 @@ const state = {
   currentQuiz: null,
   quizAnswered: false,
   uiLang: localStorage.getItem("uiLang") || "ar",
-  density: localStorage.getItem("density") || "grid"
+  density: localStorage.getItem("density") || "grid",
+  theme: localStorage.getItem("theme") || "light"
 };
 
 const $ = (s) => document.querySelector(s);
@@ -79,6 +80,7 @@ async function init(){
   state.selectedWordId = state.words[0]?.id || null;
   bindEvents();
   populateSubcategories();
+  applyTheme(state.theme);
   applyUiLanguage(state.uiLang);
   switchView(state.activeView);
   applyFilters();
@@ -94,7 +96,7 @@ function bindEvents(){
   $$("[data-density]").forEach(btn => btn.addEventListener("click", () => setDensity(btn.dataset.density)));
   els.sidebarToggle.addEventListener("click", () => document.body.classList.toggle("sidebar-open"));
   els.sidebarBackdrop.addEventListener("click", () => document.body.classList.remove("sidebar-open"));
-  els.themeToggle.addEventListener("click", () => document.body.classList.toggle("dark"));
+  els.themeToggle.addEventListener("click", () => applyTheme(state.theme === "dark" ? "light" : "dark"));
   els.playVisibleBtn.addEventListener("click", playVisibleWords);
   els.resetFiltersBtn.addEventListener("click", resetFilters);
   els.nextQuizBtn.addEventListener("click", renderQuiz);
@@ -184,6 +186,11 @@ function applyFilters(){
   renderCards();
   renderDetail();
   updateMetrics();
+}
+function applyTheme(theme){
+  state.theme = theme; localStorage.setItem("theme", theme);
+  document.body.classList.toggle("dark", theme === "dark");
+  els.themeToggle.textContent = theme === "dark" ? "☀" : "☾";
 }
 function setDensity(density){
   state.density = density; localStorage.setItem("density", density);
