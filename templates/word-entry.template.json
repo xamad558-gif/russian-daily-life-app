@@ -1,0 +1,74 @@
+{
+  "id": "unit_001",
+  "category": "unit",
+  "categoryAr": "اسم الوحدة بالعربية",
+  "subCategory": "subcategory",
+  "russian": "русское слово",
+  "transliteration": "transliteration",
+  "arabic": "المعنى بالعربية",
+  "english": "English meaning",
+  "level": "A1",
+  "frequency": 5,
+  "type": "noun",
+  "exampleRu": "Короткий русский пример.",
+  "exampleAr": "مثال عربي قصير.",
+  "exampleEn": "Short English example.",
+  "related": [],
+  "imagePath": "assets/images/unit/word.jpg",
+  "audioWordAr": "",
+  "audioWordRu": "",
+  "audioWordEn": "",
+  "audioSentenceAr": "",
+  "audioSentenceRu": "",
+  "audioSentenceEn": "",
+  "addedAt": "YYYY-MM-DD",
+  "masteryDefault": 0,
+  "detailKind": "noun",
+  "grammar": {
+    "ru": {
+      "word": "русское слово",
+      "type": "существительное",
+      "singular": "форма единственного числа",
+      "plural": "форма множественного числа",
+      "gender": "masculine|feminine|neuter|plural-only"
+    },
+    "ar": {
+      "word": "الكلمة",
+      "type": "اسم",
+      "singular": "المفرد",
+      "plural": "الجمع",
+      "gender": "مذكر|مؤنث|غير منطبق"
+    },
+    "en": {
+      "word": "word",
+      "type": "noun",
+      "singular": "singular",
+      "plural": "plural",
+      "gender": "no grammatical gender"
+    }
+  },
+  "detailExamples": [
+    {
+      "ru": "Пример 1.",
+      "ar": "مثال 1.",
+      "en": "Example 1."
+    },
+    {
+      "ru": "Пример 2.",
+      "ar": "مثال 2.",
+      "en": "Example 2."
+    },
+    {
+      "ru": "Пример 3.",
+      "ar": "مثال 3.",
+      "en": "Example 3."
+    }
+  ],
+  "phrases": [
+    {
+      "ru": "Полезная фраза.",
+      "ar": "عبارة مفيدة.",
+      "en": "Useful phrase."
+    }
+  ]
+}

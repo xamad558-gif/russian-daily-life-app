@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Russian Daily Life — v8.2</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-ui-lang="ar" data-view="vocabulary">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-logo">🪆</div>
+        <div>
+          <h1 class="brand-title">Russian Daily Life</h1>
+          <p class="brand-subtitle" id="brandSubtitle">تعلم الروسية بسهولة</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view-btn="vocabulary" type="button">
+          <span class="nav-left"><span>🏠</span><span id="vocabNavLabel">الكلمات</span></span>
+          <span class="mini-count" id="vocabCount">0</span>
+        </button>
+        <button class="nav-item" data-view-btn="review" type="button">
+          <span class="nav-left"><span>⭐</span><span id="reviewNavLabel">المراجعة</span></span>
+          <span class="mini-count" id="reviewCount">0</span>
+        </button>
+        <button class="nav-item" data-view-btn="quiz" type="button">
+          <span class="nav-left"><span>📝</span><span id="quizNavLabel">الاختبار</span></span>
+          <span class="new-badge" id="quizBadge">جديد</span>
+        </button>
+        <button class="nav-item" data-view-btn="progress" type="button">
+          <span class="nav-left"><span>📊</span><span id="progressNavLabel">التقدم</span></span>
+        </button>
+      </nav>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section-title" id="sectionsTitle">الأقسام</p>
+        <div id="categoryMenu" class="category-menu"></div>
+      </div>
+
+      <div class="sidebar-section learn-box">
+        <div class="learn-box-header">
+          <span>🔥</span>
+          <strong id="streakTitle">سلسلة التعلم</strong>
+        </div>
+        <p class="learn-days" id="streakDays">7 أيام</p>
+        <p class="learn-note" id="streakNote">حافظ على الاستمرارية!</p>
+        <div class="progress-track">
+          <div class="progress-fill" id="overallProgressFill"></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="icon-btn mobile-only" id="sidebarToggle" type="button" aria-label="Open menu">☰</button>
+
+        <div class="search-wrap">
+          <span class="search-icon">🔎</span>
+          <input id="searchInput" type="search" placeholder="ابحث عن كلمة..." autocomplete="off" />
+        </div>
+
+        <div class="topbar-actions">
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-ui-lang="ar" type="button">🇸🇦 العربية</button>
+            <button class="lang-btn" data-ui-lang="en" type="button">🇺🇸 English</button>
+            <button class="lang-btn" data-ui-lang="ru" type="button">🇷🇺 Русский</button>
+          </div>
+          <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">☾</button>
+        </div>
+      </header>
+
+      <section class="page-head">
+        <div class="page-title-row">
+          <div class="page-title-badge" id="pageIcon">🏠</div>
+          <div>
+            <h2 id="pageTitle">البيت</h2>
+            <p id="pageCounter" class="page-counter">0 كلمة</p>
+          </div>
+        </div>
+        <div class="head-actions">
+          <button class="secondary-btn" id="playVisibleBtn" type="button">🔊 تشغيل الكلمات الظاهرة</button>
+          <button class="secondary-btn" id="resetFiltersBtn" type="button">إعادة ضبط</button>
+        </div>
+      </section>
+
+      <section class="filters-bar" id="filtersBar">
+        <select id="subCategoryFilter">
+          <option value="all">جميع الأقسام الفرعية</option>
+        </select>
+        <select id="levelFilter">
+          <option value="all">جميع المستويات</option>
+          <option value="A1">A1</option>
+          <option value="A2">A2</option>
+          <option value="B1">B1</option>
+        </select>
+        <select id="sortFilter">
+          <option value="default">الأكثر شيوعًا</option>
+          <option value="az">أبجديًا A-Z</option>
+          <option value="za">أبجديًا Z-A</option>
+          <option value="mastery">الأقل إتقانًا</option>
+        </select>
+        <div class="view-toggle">
+          <button class="view-btn active" data-density="grid" type="button">▦</button>
+          <button class="view-btn" data-density="compact" type="button">☰</button>
+        </div>
+      </section>
+
+      <section class="view-section" id="vocabularyView">
+        <div class="content-grid">
+          <div class="cards-panel">
+            <div id="cardsGrid" class="cards-grid"></div>
+            <p id="emptyState" class="empty-state hidden">لا توجد نتائج مطابقة.</p>
+          </div>
+
+          <aside class="detail-panel">
+            <div id="detailPane"></div>
+          </aside>
+        </div>
+      </section>
+
+
+      <section class="view-section hidden" id="wordDetailView">
+        <div class="word-detail-page">
+          <div class="word-detail-topbar">
+            <button class="secondary-btn" id="backToWordsBtn" type="button">← Back</button>
+            <div class="word-detail-actions">
+              <button class="secondary-btn" id="detailSpeakRuBtn" type="button">🇷🇺 🔊</button>
+              <button class="secondary-btn" id="detailMarkReviewBtn" type="button">☆ Review</button>
+              <button class="primary-btn" id="detailKnownBtn" type="button">✓ I know it</button>
+            </div>
+          </div>
+          <div id="fullWordDetail"></div>
+        </div>
+      </section>
+
+      <section class="view-section hidden" id="reviewView">
+        <div class="section-card">
+          <div class="section-card-head">
+            <h2 id="reviewTitle">كلمات المراجعة</h2>
+            <p id="reviewSubtitle">الكلمات التي حفظتها للمراجعة تظهر هنا.</p>
+          </div>
+          <div id="reviewGrid" class="cards-grid review-grid"></div>
+          <p id="reviewEmpty" class="empty-state">لا توجد كلمات محفوظة بعد.</p>
+        </div>
+      </section>
+
+      <section class="view-section hidden" id="quizView">
+        <div class="quiz-layout">
+          <div class="section-card quiz-card">
+            <div class="section-card-head">
+              <h2 id="quizTitle">اختبار سريع</h2>
+              <p id="quizSubtitle">اختر الترجمة الصحيحة للكلمة الروسية.</p>
+            </div>
+            <div id="quizBox"></div>
+            <div class="quiz-actions">
+              <button class="primary-btn" id="nextQuizBtn" type="button">سؤال جديد</button>
+              <button class="secondary-btn" id="speakQuizBtn" type="button">🔊 اسمع الكلمة</button>
+            </div>
+          </div>
+          <div class="section-card">
+            <h3 id="quizStatsTitle">نتيجة الاختبار</h3>
+            <div class="score-grid">
+              <div><strong id="quizCorrect">0</strong><span id="correctLabel">صحيح</span></div>
+              <div><strong id="quizWrong">0</strong><span id="wrongLabel">خطأ</span></div>
+              <div><strong id="quizTotal">0</strong><span id="totalLabel">الإجمالي</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view-section hidden" id="progressView">
+        <div class="section-card">
+          <div class="section-card-head">
+            <h2 id="progressTitle">التقدم</h2>
+            <p id="progressSubtitle">ملخص سريع لما حفظته وما تحتاج مراجعته.</p>
+          </div>
+          <div class="progress-dashboard">
+            <div class="progress-card"><strong id="totalWordsMetric">0</strong><span id="totalWordsMetricLabel">إجمالي الكلمات</span></div>
+            <div class="progress-card"><strong id="savedWordsMetric">0</strong><span id="savedWordsMetricLabel">محفوظة</span></div>
+            <div class="progress-card"><strong id="masteredWordsMetric">0</strong><span id="masteredWordsMetricLabel">متقنة</span></div>
+            <div class="progress-card"><strong id="avgMasteryMetric">0%</strong><span id="avgMasteryMetricLabel">متوسط الإتقان</span></div>
+          </div>
+          <div class="mastery-list" id="masteryList"></div>
+        </div>
+      </section>
+
+      <div class="daily-tip">
+        <span>🧠</span>
+        <p id="dailyTipText">حاول استخدام الكلمات الجديدة في جمل يومية. الممارسة هي مفتاح النجاح.</p>
+      </div>
+    </main>
+  </div>
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <script src="app.js" defer></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js").catch(err => console.error("SW registration failed:", err));
+      });
+    }
+  </script>
+</body>
+</html>

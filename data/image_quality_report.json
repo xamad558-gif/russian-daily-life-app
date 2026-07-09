@@ -1,0 +1,89 @@
+{
+  "version": "v8-home-75",
+  "totalWords": 75,
+  "replacedImages": 10,
+  "notes": [
+    "Replaced weak/ambiguous small-object images with clearer dedicated images.",
+    "Some dedicated images are digitally composed on photo backgrounds to make the concept obvious.",
+    "Next phase can replace these with full photorealistic generations one by one if needed."
+  ],
+  "items": [
+    {
+      "id": "home50_028",
+      "russian": "вилка",
+      "oldImage": "assets/images/home50/fork.jpg",
+      "newImage": "assets/images/home50_quality/fork_dedicated.jpg",
+      "status": "replaced"
+    },
+    {
+      "id": "home50_029",
+      "russian": "нож",
+      "oldImage": "assets/images/home50/knife.jpg",
+      "newImage": "assets/images/home50_quality/knife_dedicated.jpg",
+      "status": "replaced"
+    },
+    {
+      "id": "home50_031",
+      "russian": "раковина",
+      "oldImage": "assets/images/home50/sink.jpg",
+      "newImage": "assets/images/home50_quality/sink_quality.jpg",
+      "status": "replaced"
+    },
+    {
+      "id": "home50_032",
+      "russian": "кран",
+      "oldImage": "assets/images/home50/tap.jpg",
+      "newImage": "assets/images/home50_quality/tap_quality.jpg",
+      "status": "replaced"
+    },
+    {
+      "id": "home50_038",
+      "russian": "полотенце",
+      "oldImage": "assets/images/home50/towel.jpg",
+      "newImage": "assets/images/home50_quality/towel_quality.jpg",
+      "status": "replaced"
+    },
+    {
+      "id": "home50_039",
+      "russian": "мыло",
+      "oldImage": "assets/images/home50/soap.jpg",
+      "newImage": "assets/images/home50_quality/soap_dedicated.jpg",
+      "status": "replaced"
+    },
+    {
+      "id": "home50_040",
+      "russian": "зубная щётка",
+      "oldImage": "assets/images/home50/toothbrush.jpg",
+      "newImage": "assets/images/home50_quality/toothbrush_dedicated.jpg",
+      "status": "replaced"
+    },
+    {
+      "id": "home50_041",
+      "russian": "зубная паста",
+      "oldImage": "assets/images/home50/toothpaste.jpg",
+      "newImage": "assets/images/home50_quality/toothpaste_dedicated.jpg",
+      "status": "replaced"
+    },
+    {
+      "id": "home50_045",
+      "russian": "ключ",
+      "oldImage": "assets/images/home50/key.jpg",
+      "newImage": "assets/images/home50_quality/key_dedicated.jpg",
+      "status": "replaced"
+    },
+    {
+      "id": "home50_046",
+      "russian": "замок",
+      "oldImage": "assets/images/home50/lock.jpg",
+      "newImage": "assets/images/home50_quality/lock_dedicated.jpg",
+      "status": "replaced"
+    }
+  ],
+  "newWordsAdded": 25,
+  "newImagesAdded": 25,
+  "expansionNotes": [
+    "Expanded Home Unit from 50 to 75 words.",
+    "Added 25 new images.",
+    "Kept the same template."
+  ]
+}

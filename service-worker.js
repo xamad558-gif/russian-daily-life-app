@@ -1,0 +1,102 @@
+const CACHE_NAME = "russian-daily-life-v8-2-full-detail-expansion";
+const APP_SHELL = [
+  "./",
+  "./index.html",
+  "./styles.css",
+  "./app.js",
+  "./data/words.json",
+  "./data/image_quality_report.json",
+  "./manifest.webmanifest",
+  "./assets/icons/icon.svg",
+  "./assets/images/home50/apartment.jpg",
+  "./assets/images/home50/armchair.jpg",
+  "./assets/images/home50/balcony.jpg",
+  "./assets/images/home50/bathroom.jpg",
+  "./assets/images/home50/bathtub.jpg",
+  "./assets/images/home50/bed.jpg",
+  "./assets/images/home50/bedroom.jpg",
+  "./assets/images/home50/bedside_table.jpg",
+  "./assets/images/home50/blanket.jpg",
+  "./assets/images/home50/ceiling.jpg",
+  "./assets/images/home50/chair.jpg",
+  "./assets/images/home50/cup.jpg",
+  "./assets/images/home50/curtain.jpg",
+  "./assets/images/home50/door.jpg",
+  "./assets/images/home50/floor.jpg",
+  "./assets/images/home50/fridge.jpg",
+  "./assets/images/home50/glass.jpg",
+  "./assets/images/home50/house.jpg",
+  "./assets/images/home50/kitchen.jpg",
+  "./assets/images/home50/lamp.jpg",
+  "./assets/images/home50/living_room.jpg",
+  "./assets/images/home50/mirror.jpg",
+  "./assets/images/home50/picture.jpg",
+  "./assets/images/home50/pillow.jpg",
+  "./assets/images/home50/plant.jpg",
+  "./assets/images/home50/plate.jpg",
+  "./assets/images/home50/pot.jpg",
+  "./assets/images/home50/room.jpg",
+  "./assets/images/home50/rug.jpg",
+  "./assets/images/home50/shelf.jpg",
+  "./assets/images/home50/shower.jpg",
+  "./assets/images/home50/sofa.jpg",
+  "./assets/images/home50/spoon.jpg",
+  "./assets/images/home50/stove.jpg",
+  "./assets/images/home50/table.jpg",
+  "./assets/images/home50/television.jpg",
+  "./assets/images/home50/toilet.jpg",
+  "./assets/images/home50/wall.jpg",
+  "./assets/images/home50/wardrobe.jpg",
+  "./assets/images/home50/window.jpg",
+  "./assets/images/home50_quality/fork_dedicated.jpg",
+  "./assets/images/home50_quality/key_dedicated.jpg",
+  "./assets/images/home50_quality/knife_dedicated.jpg",
+  "./assets/images/home50_quality/lock_dedicated.jpg",
+  "./assets/images/home50_quality/sink_quality.jpg",
+  "./assets/images/home50_quality/soap_dedicated.jpg",
+  "./assets/images/home50_quality/tap_quality.jpg",
+  "./assets/images/home50_quality/toothbrush_dedicated.jpg",
+  "./assets/images/home50_quality/toothpaste_dedicated.jpg",
+  "./assets/images/home50_quality/towel_quality.jpg",
+  "./assets/images/home75/air_conditioner.jpg",
+  "./assets/images/home75/bag.jpg",
+  "./assets/images/home75/book.jpg",
+  "./assets/images/home75/box.jpg",
+  "./assets/images/home75/broom.jpg",
+  "./assets/images/home75/charger.jpg",
+  "./assets/images/home75/clock.jpg",
+  "./assets/images/home75/clothes.jpg",
+  "./assets/images/home75/desk.jpg",
+  "./assets/images/home75/drawer.jpg",
+  "./assets/images/home75/hanger.jpg",
+  "./assets/images/home75/heater.jpg",
+  "./assets/images/home75/iron.jpg",
+  "./assets/images/home75/kettle.jpg",
+  "./assets/images/home75/mattress.jpg",
+  "./assets/images/home75/microwave.jpg",
+  "./assets/images/home75/oven.jpg",
+  "./assets/images/home75/phone.jpg",
+  "./assets/images/home75/remote.jpg",
+  "./assets/images/home75/sheet.jpg",
+  "./assets/images/home75/socket.jpg",
+  "./assets/images/home75/switch.jpg",
+  "./assets/images/home75/trash.jpg",
+  "./assets/images/home75/vacuum.jpg",
+  "./assets/images/home75/washing_machine.jpg",
+];
+self.addEventListener("install", event => { self.skipWaiting(); event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL))); });
+self.addEventListener("activate", event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
+self.addEventListener("fetch", event => {
+  if (event.request.method !== "GET") return;
+  const url = new URL(event.request.url);
+  const isFreshCritical = url.pathname.endsWith("/data/words.json") || url.pathname.endsWith("/app.js") || url.pathname.endsWith("/index.html");
+  if (isFreshCritical) {
+    event.respondWith(fetch(event.request, { cache: "no-store" }).then(response => {
+      const copy = response.clone(); caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy)); return response;
+    }).catch(() => caches.match(event.request).then(cached => cached || caches.match("./index.html"))));
+    return;
+  }
+  event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request).then(response => {
+    const copy = response.clone(); caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy)); return response;
+  }).catch(() => caches.match("./index.html"))));
+});

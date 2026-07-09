@@ -1,0 +1,128 @@
+#!/usr/bin/env node
+import fs from 'node:fs';
+import path from 'node:path';
+
+const root = process.cwd();
+const args = new Map(process.argv.slice(2).map(arg => {
+  const [k, v = true] = arg.replace(/^--/, '').split('=');
+  return [k, v];
+}));
+
+const audioMode = args.get('audio') || 'warn'; // warn | strict | ignore
+const dataPath = path.join(root, 'data', 'words.json');
+const allowedLevels = new Set(['A1', 'A2', 'B1', 'B2', 'C1', 'C2']);
+const allowedAudioModes = new Set(['warn', 'strict', 'ignore']);
+
+if (!allowedAudioModes.has(audioMode)) {
+  console.error(`Invalid --audio mode: ${audioMode}. Use warn, strict, or ignore.`);
+  process.exit(2);
+}
+
+const required = [
+  'id', 'category', 'subCategory', 'russian', 'transliteration',
+  'arabic', 'english', 'level', 'frequency', 'type',
+  'exampleRu', 'exampleAr', 'exampleEn', 'imagePath', 'grammar'
+];
+
+const audioFields = [
+  'audioWordAr', 'audioWordRu', 'audioWordEn',
+  'audioSentenceAr', 'audioSentenceRu', 'audioSentenceEn'
+];
+
+function existsRel(rel) {
+  if (!rel || typeof rel !== 'string') return false;
+  return fs.existsSync(path.join(root, rel));
+}
+
+function isEmpty(value) {
+  return value === undefined || value === null || value === '' ||
+    (Array.isArray(value) && value.length === 0);
+}
+
+let words;
+try {
+  words = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+} catch (err) {
+  console.error(`FAIL: Cannot read or parse ${dataPath}`);
+  console.error(err.message);
+  process.exit(1);
+}
+
+if (!Array.isArray(words)) {
+  console.error('FAIL: data/words.json must be a JSON array.');
+  process.exit(1);
+}
+
+const errors = [];
+const warnings = [];
+const ids = new Map();
+
+for (const [index, word] of words.entries()) {
+  const label = word?.id || `index:${index}`;
+
+  if (!word || typeof word !== 'object' || Array.isArray(word)) {
+    errors.push(`${label}: item must be an object.`);
+    continue;
+  }
+
+  for (const field of required) {
+    if (isEmpty(word[field])) errors.push(`${label}: missing required field "${field}".`);
+  }
+
+  if (word.id) {
+    if (ids.has(word.id)) errors.push(`${label}: duplicate id also used at index ${ids.get(word.id)}.`);
+    else ids.set(word.id, index);
+  }
+
+  if (word.level && !allowedLevels.has(word.level)) {
+    warnings.push(`${label}: unusual level "${word.level}".`);
+  }
+
+  if (typeof word.frequency !== 'number') {
+    warnings.push(`${label}: frequency should be a number.`);
+  }
+
+  if (word.imagePath && !existsRel(word.imagePath)) {
+    errors.push(`${label}: missing image file "${word.imagePath}".`);
+  }
+
+  if (word.grammar && typeof word.grammar === 'object') {
+    for (const lang of ['ru', 'ar', 'en']) {
+      if (!word.grammar[lang]) warnings.push(`${label}: missing grammar.${lang} block.`);
+    }
+
+    if (word.type === 'noun' && word.grammar.ru) {
+      const ru = word.grammar.ru;
+      if (isEmpty(ru.gender)) warnings.push(`${label}: Russian noun missing grammar.ru.gender.`);
+      if (isEmpty(ru.singular)) warnings.push(`${label}: Russian noun missing grammar.ru.singular.`);
+      if (isEmpty(ru.plural)) warnings.push(`${label}: Russian noun missing grammar.ru.plural.`);
+    }
+  }
+
+  if (audioMode !== 'ignore') {
+    for (const field of audioFields) {
+      const rel = word[field];
+      if (!rel) continue;
+      if (!existsRel(rel)) {
+        const message = `${label}: missing audio file in ${field}: "${rel}".`;
+        if (audioMode === 'strict') errors.push(message);
+        else warnings.push(message);
+      }
+    }
+  }
+}
+
+const report = {
+  status: errors.length ? 'FAIL' : warnings.length ? 'WARNING' : 'PASS',
+  wordsChecked: words.length,
+  uniqueIds: ids.size,
+  audioMode,
+  errorCount: errors.length,
+  warningCount: warnings.length,
+  errors,
+  warnings
+};
+
+console.log(JSON.stringify(report, null, 2));
+
+if (errors.length) process.exit(1);

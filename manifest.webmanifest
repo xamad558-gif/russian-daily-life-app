@@ -1,0 +1,25 @@
+{
+  "name": "Russian Daily Life",
+  "short_name": "Russian Life",
+  "description": "Trilingual Russian learning web app with vocabulary, audio, review, quiz, and progress tracking.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f6fb",
+  "theme_color": "#ffffff",
+  "dir": "auto",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "./assets/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
