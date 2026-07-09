@@ -2,12 +2,12 @@
 
 ## v8.3-cleanup
 
-- Fix stale HTML title.
-- Register service worker.
-- Add data validation script.
-- Decide audio policy.
-- Save dark mode preference.
-- Document known issues.
+- [x] Fix stale HTML title.
+- [x] Register service worker.
+- [x] Add data validation script.
+- [x] Decide audio policy — keep speechSynthesis fallback for now; real audio recording is deferred to a later phase (see `docs/WORD_SCHEMA.md` Audio policy).
+- [ ] Save dark mode preference.
+- [ ] Document known issues.
 
 ## v8.4-modularization
 

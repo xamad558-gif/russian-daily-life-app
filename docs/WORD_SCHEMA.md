@@ -58,3 +58,5 @@ This project uses `data/words.json` as the core content database.
 ## Audio policy
 
 Audio fields are optional unless real files exist. Missing audio should not crash the app. Browser TTS fallback is acceptable, but the UI should not pretend real MP3 files exist.
+
+**Status (decided 2026-07-09):** Keep the existing `audioWord*` / `audioSentence*` paths in `data/words.json` as-is for now — do not delete them and do not fabricate new ones. The app already falls back to `speechSynthesis` silently when a file is missing (see `playAudio()` / `playExampleAudio()` in `app.js`), so this is not blocking a release. Real audio recording/generation is planned for a later phase once content is stable; at that point the existing paths should be filled in rather than restructured. Run `node scripts/validate-data.mjs --audio=warn` to see the current gap (currently 450 warnings, 0 errors) — do not switch to `--audio=strict` until real files start landing.
