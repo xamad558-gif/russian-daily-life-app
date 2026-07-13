@@ -17,7 +17,7 @@
     "related": [
       "дом"
     ],
-    "imagePath": "assets/images/home50/house.jpg",
+    "imagePath": "assets/images/words/house.jpg",
     "audioWordAr": "assets/audio/ar/dom.mp3",
     "audioWordRu": "assets/audio/ru/dom.mp3",
     "audioWordEn": "assets/audio/en/dom.mp3",
@@ -126,7 +126,7 @@
     "related": [
       "квартира"
     ],
-    "imagePath": "assets/images/home50/apartment.jpg",
+    "imagePath": "assets/images/words/apartment.jpg",
     "audioWordAr": "assets/audio/ar/kvartira.mp3",
     "audioWordRu": "assets/audio/ru/kvartira.mp3",
     "audioWordEn": "assets/audio/en/kvartira.mp3",
@@ -235,7 +235,7 @@
     "related": [
       "комната"
     ],
-    "imagePath": "assets/images/home50/room.jpg",
+    "imagePath": "assets/images/words/room.jpg",
     "audioWordAr": "assets/audio/ar/komnata.mp3",
     "audioWordRu": "assets/audio/ru/komnata.mp3",
     "audioWordEn": "assets/audio/en/komnata.mp3",
@@ -344,7 +344,7 @@
     "related": [
       "гостиная"
     ],
-    "imagePath": "assets/images/home50/living_room.jpg",
+    "imagePath": "assets/images/words/living_room.jpg",
     "audioWordAr": "assets/audio/ar/gostinaya.mp3",
     "audioWordRu": "assets/audio/ru/gostinaya.mp3",
     "audioWordEn": "assets/audio/en/gostinaya.mp3",
@@ -453,7 +453,7 @@
     "related": [
       "диван"
     ],
-    "imagePath": "assets/images/home50/sofa.jpg",
+    "imagePath": "assets/images/words/sofa.jpg",
     "audioWordAr": "assets/audio/ar/divan.mp3",
     "audioWordRu": "assets/audio/ru/divan.mp3",
     "audioWordEn": "assets/audio/en/divan.mp3",
@@ -562,7 +562,7 @@
     "related": [
       "кресло"
     ],
-    "imagePath": "assets/images/home50/armchair.jpg",
+    "imagePath": "assets/images/words/armchair.jpg",
     "audioWordAr": "assets/audio/ar/kreslo.mp3",
     "audioWordRu": "assets/audio/ru/kreslo.mp3",
     "audioWordEn": "assets/audio/en/kreslo.mp3",
@@ -671,7 +671,7 @@
     "related": [
       "телевизор"
     ],
-    "imagePath": "assets/images/home50/television.jpg",
+    "imagePath": "assets/images/words/television.jpg",
     "audioWordAr": "assets/audio/ar/televizor.mp3",
     "audioWordRu": "assets/audio/ru/televizor.mp3",
     "audioWordEn": "assets/audio/en/televizor.mp3",
@@ -780,7 +780,7 @@
     "related": [
       "лампа"
     ],
-    "imagePath": "assets/images/home50/lamp.jpg",
+    "imagePath": "assets/images/words/lamp.jpg",
     "audioWordAr": "assets/audio/ar/lampa.mp3",
     "audioWordRu": "assets/audio/ru/lampa.mp3",
     "audioWordEn": "assets/audio/en/lampa.mp3",
@@ -889,7 +889,7 @@
     "related": [
       "ковёр"
     ],
-    "imagePath": "assets/images/home50/rug.jpg",
+    "imagePath": "assets/images/words/rug.jpg",
     "audioWordAr": "assets/audio/ar/kovyor.mp3",
     "audioWordRu": "assets/audio/ru/kovyor.mp3",
     "audioWordEn": "assets/audio/en/kovyor.mp3",
@@ -998,7 +998,7 @@
     "related": [
       "полка"
     ],
-    "imagePath": "assets/images/home50/shelf.jpg",
+    "imagePath": "assets/images/words/shelf.jpg",
     "audioWordAr": "assets/audio/ar/polka.mp3",
     "audioWordRu": "assets/audio/ru/polka.mp3",
     "audioWordEn": "assets/audio/en/polka.mp3",
@@ -1107,7 +1107,7 @@
     "related": [
       "картина"
     ],
-    "imagePath": "assets/images/home50/picture.jpg",
+    "imagePath": "assets/images/words/picture.jpg",
     "audioWordAr": "assets/audio/ar/kartina.mp3",
     "audioWordRu": "assets/audio/ru/kartina.mp3",
     "audioWordEn": "assets/audio/en/kartina.mp3",
@@ -1216,7 +1216,7 @@
     "related": [
       "растение"
     ],
-    "imagePath": "assets/images/home50/plant.jpg",
+    "imagePath": "assets/images/words/plant.jpg",
     "audioWordAr": "assets/audio/ar/rastenie.mp3",
     "audioWordRu": "assets/audio/ru/rastenie.mp3",
     "audioWordEn": "assets/audio/en/rastenie.mp3",
@@ -1325,7 +1325,7 @@
     "related": [
       "спальня"
     ],
-    "imagePath": "assets/images/home50/bedroom.jpg",
+    "imagePath": "assets/images/words/bedroom.jpg",
     "audioWordAr": "assets/audio/ar/spalnya.mp3",
     "audioWordRu": "assets/audio/ru/spalnya.mp3",
     "audioWordEn": "assets/audio/en/spalnya.mp3",
@@ -1434,7 +1434,7 @@
     "related": [
       "кровать"
     ],
-    "imagePath": "assets/images/home50/bed.jpg",
+    "imagePath": "assets/images/words/bed.jpg",
     "audioWordAr": "assets/audio/ar/krovat.mp3",
     "audioWordRu": "assets/audio/ru/krovat.mp3",
     "audioWordEn": "assets/audio/en/krovat.mp3",
@@ -1543,7 +1543,7 @@
     "related": [
       "подушка"
     ],
-    "imagePath": "assets/images/home50/pillow.jpg",
+    "imagePath": "assets/images/words/pillow.jpg",
     "audioWordAr": "assets/audio/ar/podushka.mp3",
     "audioWordRu": "assets/audio/ru/podushka.mp3",
     "audioWordEn": "assets/audio/en/podushka.mp3",
@@ -1652,7 +1652,7 @@
     "related": [
       "шкаф"
     ],
-    "imagePath": "assets/images/home50/wardrobe.jpg",
+    "imagePath": "assets/images/words/wardrobe.jpg",
     "audioWordAr": "assets/audio/ar/shkaf.mp3",
     "audioWordRu": "assets/audio/ru/shkaf.mp3",
     "audioWordEn": "assets/audio/en/shkaf.mp3",
@@ -1761,7 +1761,7 @@
     "related": [
       "одеяло"
     ],
-    "imagePath": "assets/images/home50/blanket.jpg",
+    "imagePath": "assets/images/words/blanket.jpg",
     "audioWordAr": "assets/audio/ar/odeyalo.mp3",
     "audioWordRu": "assets/audio/ru/odeyalo.mp3",
     "audioWordEn": "assets/audio/en/odeyalo.mp3",
@@ -1870,7 +1870,7 @@
     "related": [
       "тумбочка"
     ],
-    "imagePath": "assets/images/home50/bedside_table.jpg",
+    "imagePath": "assets/images/words/bedside_table.jpg",
     "audioWordAr": "assets/audio/ar/tumbochka.mp3",
     "audioWordRu": "assets/audio/ru/tumbochka.mp3",
     "audioWordEn": "assets/audio/en/tumbochka.mp3",
@@ -1979,7 +1979,7 @@
     "related": [
       "занавеска"
     ],
-    "imagePath": "assets/images/home50/curtain.jpg",
+    "imagePath": "assets/images/words/curtain.jpg",
     "audioWordAr": "assets/audio/ar/zanaveska.mp3",
     "audioWordRu": "assets/audio/ru/zanaveska.mp3",
     "audioWordEn": "assets/audio/en/zanaveska.mp3",
@@ -2088,7 +2088,7 @@
     "related": [
       "кухня"
     ],
-    "imagePath": "assets/images/home50/kitchen.jpg",
+    "imagePath": "assets/images/words/kitchen.jpg",
     "audioWordAr": "assets/audio/ar/kukhnya.mp3",
     "audioWordRu": "assets/audio/ru/kukhnya.mp3",
     "audioWordEn": "assets/audio/en/kukhnya.mp3",
@@ -2197,7 +2197,7 @@
     "related": [
       "стол"
     ],
-    "imagePath": "assets/images/home50/table.jpg",
+    "imagePath": "assets/images/words/table.jpg",
     "audioWordAr": "assets/audio/ar/stol.mp3",
     "audioWordRu": "assets/audio/ru/stol.mp3",
     "audioWordEn": "assets/audio/en/stol.mp3",
@@ -2306,7 +2306,7 @@
     "related": [
       "стул"
     ],
-    "imagePath": "assets/images/home50/chair.jpg",
+    "imagePath": "assets/images/words/chair.jpg",
     "audioWordAr": "assets/audio/ar/stul.mp3",
     "audioWordRu": "assets/audio/ru/stul.mp3",
     "audioWordEn": "assets/audio/en/stul.mp3",
@@ -2415,7 +2415,7 @@
     "related": [
       "холодильник"
     ],
-    "imagePath": "assets/images/home50/fridge.jpg",
+    "imagePath": "assets/images/words/fridge.jpg",
     "audioWordAr": "assets/audio/ar/kholodilnik.mp3",
     "audioWordRu": "assets/audio/ru/kholodilnik.mp3",
     "audioWordEn": "assets/audio/en/kholodilnik.mp3",
@@ -2524,7 +2524,7 @@
     "related": [
       "плита"
     ],
-    "imagePath": "assets/images/home50/stove.jpg",
+    "imagePath": "assets/images/words/stove.jpg",
     "audioWordAr": "assets/audio/ar/plita.mp3",
     "audioWordRu": "assets/audio/ru/plita.mp3",
     "audioWordEn": "assets/audio/en/plita.mp3",
@@ -2633,7 +2633,7 @@
     "related": [
       "чашка"
     ],
-    "imagePath": "assets/images/home50/cup.jpg",
+    "imagePath": "assets/images/words/cup.jpg",
     "audioWordAr": "assets/audio/ar/chashka.mp3",
     "audioWordRu": "assets/audio/ru/chashka.mp3",
     "audioWordEn": "assets/audio/en/chashka.mp3",
@@ -2742,7 +2742,7 @@
     "related": [
       "стакан"
     ],
-    "imagePath": "assets/images/home50/glass.jpg",
+    "imagePath": "assets/images/words/glass.jpg",
     "audioWordAr": "assets/audio/ar/stakan.mp3",
     "audioWordRu": "assets/audio/ru/stakan.mp3",
     "audioWordEn": "assets/audio/en/stakan.mp3",
@@ -2851,7 +2851,7 @@
     "related": [
       "ложка"
     ],
-    "imagePath": "assets/images/home50/spoon.jpg",
+    "imagePath": "assets/images/words/spoon.jpg",
     "audioWordAr": "assets/audio/ar/lozhka.mp3",
     "audioWordRu": "assets/audio/ru/lozhka.mp3",
     "audioWordEn": "assets/audio/en/lozhka.mp3",
@@ -2960,7 +2960,7 @@
     "related": [
       "вилка"
     ],
-    "imagePath": "assets/images/home50_quality/fork_dedicated.jpg",
+    "imagePath": "assets/images/words/fork_real.jpg",
     "audioWordAr": "assets/audio/ar/vilka.mp3",
     "audioWordRu": "assets/audio/ru/vilka.mp3",
     "audioWordEn": "assets/audio/en/vilka.mp3",
@@ -3069,7 +3069,7 @@
     "related": [
       "нож"
     ],
-    "imagePath": "assets/images/home50_quality/knife_dedicated.jpg",
+    "imagePath": "assets/images/words/knife_real.jpg",
     "audioWordAr": "assets/audio/ar/nozh.mp3",
     "audioWordRu": "assets/audio/ru/nozh.mp3",
     "audioWordEn": "assets/audio/en/nozh.mp3",
@@ -3178,7 +3178,7 @@
     "related": [
       "тарелка"
     ],
-    "imagePath": "assets/images/home50/plate.jpg",
+    "imagePath": "assets/images/words/plate.jpg",
     "audioWordAr": "assets/audio/ar/tarelka.mp3",
     "audioWordRu": "assets/audio/ru/tarelka.mp3",
     "audioWordEn": "assets/audio/en/tarelka.mp3",
@@ -3287,7 +3287,7 @@
     "related": [
       "раковина"
     ],
-    "imagePath": "assets/images/home50_quality/sink_quality.jpg",
+    "imagePath": "assets/images/words/sink_quality.jpg",
     "audioWordAr": "assets/audio/ar/rakovina.mp3",
     "audioWordRu": "assets/audio/ru/rakovina.mp3",
     "audioWordEn": "assets/audio/en/rakovina.mp3",
@@ -3396,7 +3396,7 @@
     "related": [
       "кран"
     ],
-    "imagePath": "assets/images/home50_quality/tap_quality.jpg",
+    "imagePath": "assets/images/words/tap_quality.jpg",
     "audioWordAr": "assets/audio/ar/kran.mp3",
     "audioWordRu": "assets/audio/ru/kran.mp3",
     "audioWordEn": "assets/audio/en/kran.mp3",
@@ -3505,7 +3505,7 @@
     "related": [
       "кастрюля"
     ],
-    "imagePath": "assets/images/home50/pot.jpg",
+    "imagePath": "assets/images/words/pot.jpg",
     "audioWordAr": "assets/audio/ar/kastryulya.mp3",
     "audioWordRu": "assets/audio/ru/kastryulya.mp3",
     "audioWordEn": "assets/audio/en/kastryulya.mp3",
@@ -3614,7 +3614,7 @@
     "related": [
       "ванная комната"
     ],
-    "imagePath": "assets/images/home50/bathroom.jpg",
+    "imagePath": "assets/images/words/bathroom.jpg",
     "audioWordAr": "assets/audio/ar/vannaya-komnata.mp3",
     "audioWordRu": "assets/audio/ru/vannaya-komnata.mp3",
     "audioWordEn": "assets/audio/en/vannaya-komnata.mp3",
@@ -3723,7 +3723,7 @@
     "related": [
       "ванна"
     ],
-    "imagePath": "assets/images/home50/bathtub.jpg",
+    "imagePath": "assets/images/words/bathtub.jpg",
     "audioWordAr": "assets/audio/ar/vanna.mp3",
     "audioWordRu": "assets/audio/ru/vanna.mp3",
     "audioWordEn": "assets/audio/en/vanna.mp3",
@@ -3832,7 +3832,7 @@
     "related": [
       "душ"
     ],
-    "imagePath": "assets/images/home50/shower.jpg",
+    "imagePath": "assets/images/words/shower.jpg",
     "audioWordAr": "assets/audio/ar/dush.mp3",
     "audioWordRu": "assets/audio/ru/dush.mp3",
     "audioWordEn": "assets/audio/en/dush.mp3",
@@ -3941,7 +3941,7 @@
     "related": [
       "зеркало"
     ],
-    "imagePath": "assets/images/home50/mirror.jpg",
+    "imagePath": "assets/images/words/mirror.jpg",
     "audioWordAr": "assets/audio/ar/zerkalo.mp3",
     "audioWordRu": "assets/audio/ru/zerkalo.mp3",
     "audioWordEn": "assets/audio/en/zerkalo.mp3",
@@ -4050,7 +4050,7 @@
     "related": [
       "полотенце"
     ],
-    "imagePath": "assets/images/home50_quality/towel_quality.jpg",
+    "imagePath": "assets/images/words/towel_quality.jpg",
     "audioWordAr": "assets/audio/ar/polotentse.mp3",
     "audioWordRu": "assets/audio/ru/polotentse.mp3",
     "audioWordEn": "assets/audio/en/polotentse.mp3",
@@ -4159,7 +4159,7 @@
     "related": [
       "мыло"
     ],
-    "imagePath": "assets/images/home50_quality/soap_dedicated.jpg",
+    "imagePath": "assets/images/words/soap_real2.jpg",
     "audioWordAr": "assets/audio/ar/mylo.mp3",
     "audioWordRu": "assets/audio/ru/mylo.mp3",
     "audioWordEn": "assets/audio/en/mylo.mp3",
@@ -4268,7 +4268,7 @@
     "related": [
       "зубная щётка"
     ],
-    "imagePath": "assets/images/home50_quality/toothbrush_dedicated.jpg",
+    "imagePath": "assets/images/words/toothbrush_real.jpg",
     "audioWordAr": "assets/audio/ar/zubnaya-shchyotka.mp3",
     "audioWordRu": "assets/audio/ru/zubnaya-shchyotka.mp3",
     "audioWordEn": "assets/audio/en/zubnaya-shchyotka.mp3",
@@ -4377,7 +4377,7 @@
     "related": [
       "зубная паста"
     ],
-    "imagePath": "assets/images/home50_quality/toothpaste_dedicated.jpg",
+    "imagePath": "assets/images/words/toothpaste_real.jpg",
     "audioWordAr": "assets/audio/ar/zubnaya-pasta.mp3",
     "audioWordRu": "assets/audio/ru/zubnaya-pasta.mp3",
     "audioWordEn": "assets/audio/en/zubnaya-pasta.mp3",
@@ -4486,7 +4486,7 @@
     "related": [
       "туалет"
     ],
-    "imagePath": "assets/images/home50/toilet.jpg",
+    "imagePath": "assets/images/words/toilet.jpg",
     "audioWordAr": "assets/audio/ar/tualet.mp3",
     "audioWordRu": "assets/audio/ru/tualet.mp3",
     "audioWordEn": "assets/audio/en/tualet.mp3",
@@ -4595,7 +4595,7 @@
     "related": [
       "дверь"
     ],
-    "imagePath": "assets/images/home50/door.jpg",
+    "imagePath": "assets/images/words/door.jpg",
     "audioWordAr": "assets/audio/ar/dver.mp3",
     "audioWordRu": "assets/audio/ru/dver.mp3",
     "audioWordEn": "assets/audio/en/dver.mp3",
@@ -4704,7 +4704,7 @@
     "related": [
       "окно"
     ],
-    "imagePath": "assets/images/home50/window.jpg",
+    "imagePath": "assets/images/words/window.jpg",
     "audioWordAr": "assets/audio/ar/okno.mp3",
     "audioWordRu": "assets/audio/ru/okno.mp3",
     "audioWordEn": "assets/audio/en/okno.mp3",
@@ -4813,7 +4813,7 @@
     "related": [
       "ключ"
     ],
-    "imagePath": "assets/images/home50_quality/key_dedicated.jpg",
+    "imagePath": "assets/images/words/key_real.jpg",
     "audioWordAr": "assets/audio/ar/klyuch.mp3",
     "audioWordRu": "assets/audio/ru/klyuch.mp3",
     "audioWordEn": "assets/audio/en/klyuch.mp3",
@@ -4922,7 +4922,7 @@
     "related": [
       "замок"
     ],
-    "imagePath": "assets/images/home50_quality/lock_dedicated.jpg",
+    "imagePath": "assets/images/words/lock_real.jpg",
     "audioWordAr": "assets/audio/ar/zamok.mp3",
     "audioWordRu": "assets/audio/ru/zamok.mp3",
     "audioWordEn": "assets/audio/en/zamok.mp3",
@@ -5031,7 +5031,7 @@
     "related": [
       "стена"
     ],
-    "imagePath": "assets/images/home50/wall.jpg",
+    "imagePath": "assets/images/words/wall.jpg",
     "audioWordAr": "assets/audio/ar/stena.mp3",
     "audioWordRu": "assets/audio/ru/stena.mp3",
     "audioWordEn": "assets/audio/en/stena.mp3",
@@ -5140,7 +5140,7 @@
     "related": [
       "пол"
     ],
-    "imagePath": "assets/images/home50/floor.jpg",
+    "imagePath": "assets/images/words/floor.jpg",
     "audioWordAr": "assets/audio/ar/pol.mp3",
     "audioWordRu": "assets/audio/ru/pol.mp3",
     "audioWordEn": "assets/audio/en/pol.mp3",
@@ -5249,7 +5249,7 @@
     "related": [
       "потолок"
     ],
-    "imagePath": "assets/images/home50/ceiling.jpg",
+    "imagePath": "assets/images/words/ceiling.jpg",
     "audioWordAr": "assets/audio/ar/potolok.mp3",
     "audioWordRu": "assets/audio/ru/potolok.mp3",
     "audioWordEn": "assets/audio/en/potolok.mp3",
@@ -5358,7 +5358,7 @@
     "related": [
       "балкон"
     ],
-    "imagePath": "assets/images/home50/balcony.jpg",
+    "imagePath": "assets/images/words/balcony.jpg",
     "audioWordAr": "assets/audio/ar/balkon.mp3",
     "audioWordRu": "assets/audio/ru/balkon.mp3",
     "audioWordEn": "assets/audio/en/balkon.mp3",
@@ -5467,7 +5467,7 @@
     "related": [
       "пульт"
     ],
-    "imagePath": "assets/images/home75/remote.jpg",
+    "imagePath": "assets/images/words/remote_web.jpg",
     "audioWordAr": "assets/audio/ar/pult.mp3",
     "audioWordRu": "assets/audio/ru/pult.mp3",
     "audioWordEn": "assets/audio/en/pult.mp3",
@@ -5576,7 +5576,7 @@
     "related": [
       "часы"
     ],
-    "imagePath": "assets/images/home75/clock.jpg",
+    "imagePath": "assets/images/words/clock_web.jpg",
     "audioWordAr": "assets/audio/ar/chasy.mp3",
     "audioWordRu": "assets/audio/ru/chasy.mp3",
     "audioWordEn": "assets/audio/en/chasy.mp3",
@@ -5685,7 +5685,7 @@
     "related": [
       "книга"
     ],
-    "imagePath": "assets/images/home75/book.jpg",
+    "imagePath": "assets/images/words/book_web.jpg",
     "audioWordAr": "assets/audio/ar/kniga.mp3",
     "audioWordRu": "assets/audio/ru/kniga.mp3",
     "audioWordEn": "assets/audio/en/kniga.mp3",
@@ -5794,7 +5794,7 @@
     "related": [
       "телефон"
     ],
-    "imagePath": "assets/images/home75/phone.jpg",
+    "imagePath": "assets/images/words/phone_web.jpg",
     "audioWordAr": "assets/audio/ar/telefon.mp3",
     "audioWordRu": "assets/audio/ru/telefon.mp3",
     "audioWordEn": "assets/audio/en/telefon.mp3",
@@ -5903,7 +5903,7 @@
     "related": [
       "зарядка"
     ],
-    "imagePath": "assets/images/home75/charger.jpg",
+    "imagePath": "assets/images/words/charger_web.jpg",
     "audioWordAr": "assets/audio/ar/zaryadka.mp3",
     "audioWordRu": "assets/audio/ru/zaryadka.mp3",
     "audioWordEn": "assets/audio/en/zaryadka.mp3",
@@ -6012,7 +6012,7 @@
     "related": [
       "розетка"
     ],
-    "imagePath": "assets/images/home75/socket.jpg",
+    "imagePath": "assets/images/words/socket_web.jpg",
     "audioWordAr": "assets/audio/ar/rozetka.mp3",
     "audioWordRu": "assets/audio/ru/rozetka.mp3",
     "audioWordEn": "assets/audio/en/rozetka.mp3",
@@ -6121,7 +6121,7 @@
     "related": [
       "выключатель"
     ],
-    "imagePath": "assets/images/home75/switch.jpg",
+    "imagePath": "assets/images/words/switch_web.jpg",
     "audioWordAr": "assets/audio/ar/vyklyuchatel.mp3",
     "audioWordRu": "assets/audio/ru/vyklyuchatel.mp3",
     "audioWordEn": "assets/audio/en/vyklyuchatel.mp3",
@@ -6230,7 +6230,7 @@
     "related": [
       "вешалка"
     ],
-    "imagePath": "assets/images/home75/hanger.jpg",
+    "imagePath": "assets/images/words/hanger_web.jpg",
     "audioWordAr": "assets/audio/ar/veshalka.mp3",
     "audioWordRu": "assets/audio/ru/veshalka.mp3",
     "audioWordEn": "assets/audio/en/veshalka.mp3",
@@ -6339,7 +6339,7 @@
     "related": [
       "матрас"
     ],
-    "imagePath": "assets/images/home75/mattress.jpg",
+    "imagePath": "assets/images/words/mattress.jpg",
     "audioWordAr": "assets/audio/ar/matras.mp3",
     "audioWordRu": "assets/audio/ru/matras.mp3",
     "audioWordEn": "assets/audio/en/matras.mp3",
@@ -6448,7 +6448,7 @@
     "related": [
       "простыня"
     ],
-    "imagePath": "assets/images/home75/sheet.jpg",
+    "imagePath": "assets/images/words/sheet.jpg",
     "audioWordAr": "assets/audio/ar/prostynya.mp3",
     "audioWordRu": "assets/audio/ru/prostynya.mp3",
     "audioWordEn": "assets/audio/en/prostynya.mp3",
@@ -6557,7 +6557,7 @@
     "related": [
       "одежда"
     ],
-    "imagePath": "assets/images/home75/clothes.jpg",
+    "imagePath": "assets/images/words/clothes.jpg",
     "audioWordAr": "assets/audio/ar/odezhda.mp3",
     "audioWordRu": "assets/audio/ru/odezhda.mp3",
     "audioWordEn": "assets/audio/en/odezhda.mp3",
@@ -6666,7 +6666,7 @@
     "related": [
       "сумка"
     ],
-    "imagePath": "assets/images/home75/bag.jpg",
+    "imagePath": "assets/images/words/bag_web.jpg",
     "audioWordAr": "assets/audio/ar/sumka.mp3",
     "audioWordRu": "assets/audio/ru/sumka.mp3",
     "audioWordEn": "assets/audio/en/sumka.mp3",
@@ -6775,7 +6775,7 @@
     "related": [
       "коробка"
     ],
-    "imagePath": "assets/images/home75/box.jpg",
+    "imagePath": "assets/images/words/box_web.jpg",
     "audioWordAr": "assets/audio/ar/korobka.mp3",
     "audioWordRu": "assets/audio/ru/korobka.mp3",
     "audioWordEn": "assets/audio/en/korobka.mp3",
@@ -6884,7 +6884,7 @@
     "related": [
       "микроволновка"
     ],
-    "imagePath": "assets/images/home75/microwave.jpg",
+    "imagePath": "assets/images/words/microwave.jpg",
     "audioWordAr": "assets/audio/ar/mikrovolnovka.mp3",
     "audioWordRu": "assets/audio/ru/mikrovolnovka.mp3",
     "audioWordEn": "assets/audio/en/mikrovolnovka.mp3",
@@ -6993,7 +6993,7 @@
     "related": [
       "духовка"
     ],
-    "imagePath": "assets/images/home75/oven.jpg",
+    "imagePath": "assets/images/words/oven.jpg",
     "audioWordAr": "assets/audio/ar/dukhovka.mp3",
     "audioWordRu": "assets/audio/ru/dukhovka.mp3",
     "audioWordEn": "assets/audio/en/dukhovka.mp3",
@@ -7102,7 +7102,7 @@
     "related": [
       "чайник"
     ],
-    "imagePath": "assets/images/home75/kettle.jpg",
+    "imagePath": "assets/images/words/kettle.jpg",
     "audioWordAr": "assets/audio/ar/chaynik.mp3",
     "audioWordRu": "assets/audio/ru/chaynik.mp3",
     "audioWordEn": "assets/audio/en/chaynik.mp3",
@@ -7211,7 +7211,7 @@
     "related": [
       "мусор"
     ],
-    "imagePath": "assets/images/home75/trash.jpg",
+    "imagePath": "assets/images/words/trash_web.jpg",
     "audioWordAr": "assets/audio/ar/musor.mp3",
     "audioWordRu": "assets/audio/ru/musor.mp3",
     "audioWordEn": "assets/audio/en/musor.mp3",
@@ -7320,7 +7320,7 @@
     "related": [
       "стиральная машина"
     ],
-    "imagePath": "assets/images/home75/washing_machine.jpg",
+    "imagePath": "assets/images/words/washing_machine_real.jpg",
     "audioWordAr": "assets/audio/ar/stiralnaya-mashina.mp3",
     "audioWordRu": "assets/audio/ru/stiralnaya-mashina.mp3",
     "audioWordEn": "assets/audio/en/stiralnaya-mashina.mp3",
@@ -7429,7 +7429,7 @@
     "related": [
       "пылесос"
     ],
-    "imagePath": "assets/images/home75/vacuum.jpg",
+    "imagePath": "assets/images/words/vacuum_real.jpg",
     "audioWordAr": "assets/audio/ar/pylesos.mp3",
     "audioWordRu": "assets/audio/ru/pylesos.mp3",
     "audioWordEn": "assets/audio/en/pylesos.mp3",
@@ -7538,7 +7538,7 @@
     "related": [
       "утюг"
     ],
-    "imagePath": "assets/images/home75/iron.jpg",
+    "imagePath": "assets/images/words/iron_web.jpg",
     "audioWordAr": "assets/audio/ar/utyug.mp3",
     "audioWordRu": "assets/audio/ru/utyug.mp3",
     "audioWordEn": "assets/audio/en/utyug.mp3",
@@ -7647,7 +7647,7 @@
     "related": [
       "кондиционер"
     ],
-    "imagePath": "assets/images/home75/air_conditioner.jpg",
+    "imagePath": "assets/images/words/air_conditioner_web.jpg",
     "audioWordAr": "assets/audio/ar/konditsioner.mp3",
     "audioWordRu": "assets/audio/ru/konditsioner.mp3",
     "audioWordEn": "assets/audio/en/konditsioner.mp3",
@@ -7756,7 +7756,7 @@
     "related": [
       "обогреватель"
     ],
-    "imagePath": "assets/images/home75/heater.jpg",
+    "imagePath": "assets/images/words/heater_web.jpg",
     "audioWordAr": "assets/audio/ar/obogrevatel.mp3",
     "audioWordRu": "assets/audio/ru/obogrevatel.mp3",
     "audioWordEn": "assets/audio/en/obogrevatel.mp3",
@@ -7865,7 +7865,7 @@
     "related": [
       "метла"
     ],
-    "imagePath": "assets/images/home75/broom.jpg",
+    "imagePath": "assets/images/words/broom_real.jpg",
     "audioWordAr": "assets/audio/ar/metla.mp3",
     "audioWordRu": "assets/audio/ru/metla.mp3",
     "audioWordEn": "assets/audio/en/metla.mp3",
@@ -7974,7 +7974,7 @@
     "related": [
       "письменный стол"
     ],
-    "imagePath": "assets/images/home75/desk.jpg",
+    "imagePath": "assets/images/words/desk.jpg",
     "audioWordAr": "assets/audio/ar/pismennyy-stol.mp3",
     "audioWordRu": "assets/audio/ru/pismennyy-stol.mp3",
     "audioWordEn": "assets/audio/en/pismennyy-stol.mp3",
@@ -8083,7 +8083,7 @@
     "related": [
       "комод"
     ],
-    "imagePath": "assets/images/home75/drawer.jpg",
+    "imagePath": "assets/images/words/drawer.jpg",
     "audioWordAr": "assets/audio/ar/komod.mp3",
     "audioWordRu": "assets/audio/ru/komod.mp3",
     "audioWordEn": "assets/audio/en/komod.mp3",

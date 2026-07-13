@@ -12,14 +12,14 @@
       "id": "home50_028",
       "russian": "вилка",
       "oldImage": "assets/images/home50/fork.jpg",
-      "newImage": "assets/images/home50_quality/fork_dedicated.jpg",
+      "newImage": "assets/images/home50_quality/fork_real.jpg",
       "status": "replaced"
     },
     {
       "id": "home50_029",
       "russian": "нож",
       "oldImage": "assets/images/home50/knife.jpg",
-      "newImage": "assets/images/home50_quality/knife_dedicated.jpg",
+      "newImage": "assets/images/home50_quality/knife_real.jpg",
       "status": "replaced"
     },
     {
@@ -47,35 +47,35 @@
       "id": "home50_039",
       "russian": "мыло",
       "oldImage": "assets/images/home50/soap.jpg",
-      "newImage": "assets/images/home50_quality/soap_dedicated.jpg",
+      "newImage": "assets/images/home50_quality/soap_real2.jpg",
       "status": "replaced"
     },
     {
       "id": "home50_040",
       "russian": "зубная щётка",
       "oldImage": "assets/images/home50/toothbrush.jpg",
-      "newImage": "assets/images/home50_quality/toothbrush_dedicated.jpg",
+      "newImage": "assets/images/home50_quality/toothbrush_real.jpg",
       "status": "replaced"
     },
     {
       "id": "home50_041",
       "russian": "зубная паста",
       "oldImage": "assets/images/home50/toothpaste.jpg",
-      "newImage": "assets/images/home50_quality/toothpaste_dedicated.jpg",
+      "newImage": "assets/images/home50_quality/toothpaste_real.jpg",
       "status": "replaced"
     },
     {
       "id": "home50_045",
       "russian": "ключ",
       "oldImage": "assets/images/home50/key.jpg",
-      "newImage": "assets/images/home50_quality/key_dedicated.jpg",
+      "newImage": "assets/images/home50_quality/key_real.jpg",
       "status": "replaced"
     },
     {
       "id": "home50_046",
       "russian": "замок",
       "oldImage": "assets/images/home50/lock.jpg",
-      "newImage": "assets/images/home50_quality/lock_dedicated.jpg",
+      "newImage": "assets/images/home50_quality/lock_real.jpg",
       "status": "replaced"
     }
   ],

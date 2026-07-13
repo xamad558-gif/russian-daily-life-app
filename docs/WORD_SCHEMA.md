@@ -20,12 +20,14 @@ This project uses `data/words.json` as the core content database.
   "exampleRu": "Это наш дом.",
   "exampleAr": "هذا بيتنا.",
   "exampleEn": "This is our house.",
-  "imagePath": "assets/images/home50/house.jpg",
+  "imagePath": "assets/images/words/house.jpg",
   "grammar": {}
 }
 ```
 
-## Recommended grammar block
+## Image path convention
+
+**Status (decided 2026-07-13):** All word images live flat in `assets/images/words/`, one file per word, referenced by `imagePath`. Earlier revisions scattered images across `home50/`, `home75/`, `home50_quality/`, `real/`, `scenes/`, and root-level SVGs — those were consolidated and unused/superseded duplicates were deleted (see `docs/KNOWN_ISSUES.md` history / commit log for the cleanup). When adding new words, drop the image straight into `assets/images/words/` and reference it as `assets/images/words/<name>.jpg` — do not recreate per-batch subfolders.
 
 ```json
 {
