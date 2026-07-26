@@ -4,8 +4,8 @@
   "description": "Trilingual Russian learning web app with vocabulary, audio, review, quiz, and progress tracking.",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#f4f6fb",
-  "theme_color": "#ffffff",
+  "background_color": "#edf1ed",
+  "theme_color": "#1f637c",
   "dir": "auto",
   "lang": "en",
   "icons": [

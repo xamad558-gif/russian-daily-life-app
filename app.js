@@ -4,11 +4,12 @@ const I18N = {
     sectionsTitle:"الأقسام", streakTitle:"سلسلة التعلم", streakDays:"7 أيام", streakNote:"استمر في وحدة المنزل!", searchPlaceholder:"ابحث عن كلمة...",
     pageTitle:"البيت", pageCounterWord:"كلمة", emptyState:"لا توجد نتائج مطابقة.", allSubCategories:"جميع الأقسام الفرعية", allLevels:"جميع المستويات",
     sortPopular:"الأكثر شيوعًا", sortAZ:"أبجديًا A-Z", sortZA:"أبجديًا Z-A", sortMastery:"الأقل إتقانًا",
-    playVisible:"🔊 تشغيل الكلمات الظاهرة", resetFilters:"إعادة ضبط", reviewTitle:"كلمات المراجعة", reviewSubtitle:"تظهر هنا كلمات وحدة المنزل التي حفظتها للمراجعة.", reviewEmpty:"لا توجد كلمات محفوظة بعد.",
-    quizTitle:"اختبار سريع", quizSubtitle:"اختر الترجمة الصحيحة للكلمة الروسية.", nextQuiz:"سؤال جديد", speakQuiz:"🔊 اسمع الكلمة", quizStatsTitle:"نتيجة الاختبار", correct:"صحيح", wrong:"خطأ", total:"الإجمالي",
+    playVisible:"🔊 تشغيل الكلمات الظاهرة", resetFilters:"إعادة ضبط", reviewTitle:"كلمات المراجعة", reviewSubtitle:"تظهر هنا كلمات وحدة المنزل التي حفظتها للمراجعة.", reviewEmpty:"لا توجد كلمات محفوظة بعد.", homeHeroKicker:"وحدة البيت · تعلّم بصري", homeHeroTitle:"تعلّم الروسية من الأشياء حولك", homeHeroSubtitle:"اختر الغرفة التي تريدها، ثم اربط الكلمة بالصورة والصوت والجملة.", homeHeroCta:"ابدأ مراجعة اليوم", homeProgressLabel:"تقدم الوحدة", roomStripEyebrow:"استكشف حسب المكان", roomStripTitle:"غرفتك التالية", roomStripHint:"اختر صورة للبدء", roomWords:"كلمة", roomOpen:"افتح قسم",
+    quizTitle:"اختبار سريع", quizSubtitle:"اختر الترجمة الصحيحة للكلمة الروسية.", nextQuiz:"سؤال جديد", speakQuiz:"🔊 اسمع الكلمة", quizStatsTitle:"نتيجة الاختبار", correct:"صحيح", wrong:"خطأ", total:"الإجمالي", quizFeedbackCorrect:"✅ إجابة صحيحة.", quizFeedbackWrong:"❌ إجابة غير صحيحة. تم تمييز الإجابة الصحيحة.", quizNeedWords:"تحتاج إلى أربع كلمات على الأقل لبدء الاختبار.",
     progressTitle:"التقدم", progressSubtitle:"ملخص سريع لما حفظته وما تحتاج مراجعته.", totalWords:"إجمالي الكلمات", savedWords:"محفوظة", masteredWords:"متقنة", avgMastery:"متوسط الإتقان",
     dailyTip:"حاول استخدام الكلمات الجديدة في جمل يومية. الممارسة هي مفتاح النجاح.",
     labels:{example:"مثال", info:"معلومات", level:"المستوى", frequency:"الشيوع", category:"الفئة", updated:"آخر تحديث", known:"أعرفها", review:"أراجعها", mastery:"الإتقان"},
+    a11y:{openMenu:"فتح القائمة",closeMenu:"إغلاق القائمة",toggleTheme:"تبديل المظهر",openWord:"فتح تفاصيل الكلمة",saveReview:"حفظ للمراجعة",removeReview:"إزالة من المراجعة",playArabic:"تشغيل النطق بالعربية",playRussian:"تشغيل النطق بالروسية",playEnglish:"تشغيل النطق بالإنجليزية",playWord:"تشغيل نطق الكلمة الروسية",gridView:"عرض شبكي",compactView:"عرض مختصر",back:"رجوع"},
     categories:{home:"الأساسيات","living-room":"غرفة المعيشة",bedroom:"غرفة النوم",kitchen:"المطبخ",bathroom:"الحمام","door-window":"الأبواب والنوافذ"},
     categoryIcons:{home:"🏠","living-room":"🛋️",bedroom:"🛏️",kitchen:"🍽️",bathroom:"🛁","door-window":"🚪"}
   },
@@ -17,11 +18,12 @@ const I18N = {
     sectionsTitle:"Sections", streakTitle:"Learning streak", streakDays:"7 days", streakNote:"Keep going with Home Unit!", searchPlaceholder:"Search for a word...",
     pageTitle:"Home", pageCounterWord:"words", emptyState:"No matching results.", allSubCategories:"All subcategories", allLevels:"All levels",
     sortPopular:"Most common", sortAZ:"Alphabetical A-Z", sortZA:"Alphabetical Z-A", sortMastery:"Lowest mastery",
-    playVisible:"🔊 Play visible words", resetFilters:"Reset", reviewTitle:"Review words", reviewSubtitle:"Core Home words you saved appear here for review.", reviewEmpty:"No saved words yet.",
-    quizTitle:"Quick quiz", quizSubtitle:"Choose the correct translation of the Russian word.", nextQuiz:"New question", speakQuiz:"🔊 Hear the word", quizStatsTitle:"Quiz score", correct:"Correct", wrong:"Wrong", total:"Total",
+    playVisible:"🔊 Play visible words", resetFilters:"Reset", reviewTitle:"Review words", reviewSubtitle:"Core Home words you saved appear here for review.", reviewEmpty:"No saved words yet.", homeHeroKicker:"Home unit · visual learning", homeHeroTitle:"Learn Russian from the things around you", homeHeroSubtitle:"Choose a room, then connect each word to its image, sound, and sentence.", homeHeroCta:"Start today’s review", homeProgressLabel:"Unit progress", roomStripEyebrow:"Explore by place", roomStripTitle:"Choose your next room", roomStripHint:"Select an image to begin", roomWords:"words", roomOpen:"Open section",
+    quizTitle:"Quick quiz", quizSubtitle:"Choose the correct translation of the Russian word.", nextQuiz:"New question", speakQuiz:"🔊 Hear the word", quizStatsTitle:"Quiz score", correct:"Correct", wrong:"Wrong", total:"Total", quizFeedbackCorrect:"✅ Correct.", quizFeedbackWrong:"❌ Not quite. The correct answer is highlighted.", quizNeedWords:"You need at least four words to start the quiz.",
     progressTitle:"Progress", progressSubtitle:"A quick summary of what you saved and what needs review.", totalWords:"Total words", savedWords:"Saved", masteredWords:"Mastered", avgMastery:"Average mastery",
     dailyTip:"Try using new words in daily sentences. Practice is the key.",
     labels:{example:"Example", info:"Information", level:"Level", frequency:"Frequency", category:"Category", updated:"Updated", known:"I know it", review:"Review it", mastery:"Mastery"},
+    a11y:{openMenu:"Open menu",closeMenu:"Close menu",toggleTheme:"Toggle theme",openWord:"Open word details",saveReview:"Save for review",removeReview:"Remove from review",playArabic:"Play Arabic pronunciation",playRussian:"Play Russian pronunciation",playEnglish:"Play English pronunciation",playWord:"Play Russian word pronunciation",gridView:"Grid view",compactView:"Compact view",back:"Back"},
     categories:{home:"Basics","living-room":"Living room",bedroom:"Bedroom",kitchen:"Kitchen",bathroom:"Bathroom","door-window":"Doors & windows"},
     categoryIcons:{home:"🏠","living-room":"🛋️",bedroom:"🛏️",kitchen:"🍽️",bathroom:"🛁","door-window":"🚪"}
   },
@@ -30,17 +32,27 @@ const I18N = {
     sectionsTitle:"Разделы", streakTitle:"Серия обучения", streakDays:"7 дней", streakNote:"Продолжайте блок Дом!", searchPlaceholder:"Найдите слово...",
     pageTitle:"Дом", pageCounterWord:"слов", emptyState:"Нет подходящих результатов.", allSubCategories:"Все подразделы", allLevels:"Все уровни",
     sortPopular:"Наиболее частые", sortAZ:"По алфавиту A-Z", sortZA:"По алфавиту Z-A", sortMastery:"Слабое усвоение",
-    playVisible:"🔊 Произнести слова", resetFilters:"Сбросить", reviewTitle:"Слова для повторения", reviewSubtitle:"Здесь появляются сохранённые слова из блока Дом.", reviewEmpty:"Сохранённых слов пока нет.",
-    quizTitle:"Быстрый тест", quizSubtitle:"Выберите правильный перевод русского слова.", nextQuiz:"Новый вопрос", speakQuiz:"🔊 Слушать слово", quizStatsTitle:"Результат теста", correct:"Верно", wrong:"Ошибка", total:"Всего",
+    playVisible:"🔊 Произнести слова", resetFilters:"Сбросить", reviewTitle:"Слова для повторения", reviewSubtitle:"Здесь появляются сохранённые слова из блока Дом.", reviewEmpty:"Сохранённых слов пока нет.", homeHeroKicker:"Блок «Дом» · визуальное обучение", homeHeroTitle:"Учите русский по предметам вокруг вас", homeHeroSubtitle:"Выберите комнату и свяжите слово с изображением, звуком и примером.", homeHeroCta:"Начать повторение", homeProgressLabel:"Прогресс блока", roomStripEyebrow:"По месту в доме", roomStripTitle:"Выберите следующую комнату", roomStripHint:"Нажмите на изображение", roomWords:"слов", roomOpen:"Открыть раздел",
+    quizTitle:"Быстрый тест", quizSubtitle:"Выберите правильный перевод русского слова.", nextQuiz:"Новый вопрос", speakQuiz:"🔊 Слушать слово", quizStatsTitle:"Результат теста", correct:"Верно", wrong:"Ошибка", total:"Всего", quizFeedbackCorrect:"✅ Верно.", quizFeedbackWrong:"❌ Неверно. Правильный ответ выделен.", quizNeedWords:"Для теста нужно не меньше четырёх слов.",
     progressTitle:"Прогресс", progressSubtitle:"Краткая сводка сохранённых и изученных слов.", totalWords:"Всего слов", savedWords:"Сохранено", masteredWords:"Выучено", avgMastery:"Среднее усвоение",
     dailyTip:"Пробуйте использовать новые слова в ежедневных фразах. Практика — ключ.",
     labels:{example:"Пример", info:"Информация", level:"Уровень", frequency:"Частотность", category:"Категория", updated:"Обновлено", known:"Знаю", review:"Повторить", mastery:"Усвоение"},
+    a11y:{openMenu:"Открыть меню",closeMenu:"Закрыть меню",toggleTheme:"Сменить тему",openWord:"Открыть страницу слова",saveReview:"Сохранить для повторения",removeReview:"Убрать из повторения",playArabic:"Слушать арабское произношение",playRussian:"Слушать русское произношение",playEnglish:"Слушать английское произношение",playWord:"Слушать русское слово",gridView:"Сетка",compactView:"Компактный вид",back:"Назад"},
     categories:{home:"База","living-room":"Гостиная",bedroom:"Спальня",kitchen:"Кухня",bathroom:"Ванная","door-window":"Двери и окна"},
     categoryIcons:{home:"🏠","living-room":"🛋️",bedroom:"🛏️",kitchen:"🍽️",bathroom:"🛁","door-window":"🚪"}
   }
 };
 
-const DATA_VERSION = "v8.2-full-detail-expansion";
+const DATA_VERSION = "v8.3-visual-guide";
+
+const ROOM_FEATURES = [
+  { id:"home", image:"assets/images/words/house.jpg", icon:"🏠" },
+  { id:"living-room", image:"assets/images/words/living_room.jpg", icon:"🛋️" },
+  { id:"bedroom", image:"assets/images/words/bedroom.jpg", icon:"🛏️" },
+  { id:"kitchen", image:"assets/images/words/kitchen.jpg", icon:"🍽️" },
+  { id:"bathroom", image:"assets/images/words/bathroom.jpg", icon:"🛁" },
+  { id:"door-window", image:"assets/images/words/door.jpg", icon:"🚪" }
+];
 
 const state = {
   words: [], filtered: [], selectedWordId: null, activeView:"vocabulary",
@@ -60,9 +72,10 @@ const $$ = (s) => [...document.querySelectorAll(s)];
 const els = {
   brandSubtitle: $("#brandSubtitle"), vocabNavLabel: $("#vocabNavLabel"), reviewNavLabel: $("#reviewNavLabel"), quizNavLabel: $("#quizNavLabel"), progressNavLabel: $("#progressNavLabel"), quizBadge: $("#quizBadge"),
   sectionsTitle: $("#sectionsTitle"), streakTitle: $("#streakTitle"), streakDays: $("#streakDays"), streakNote: $("#streakNote"), searchInput: $("#searchInput"),
+  heroKicker: $("#heroKicker"), heroTitle: $("#heroTitle"), heroSubtitle: $("#heroSubtitle"), heroReviewBtn: $("#heroReviewBtn"), heroProgressLabel: $("#heroProgressLabel"), heroProgressValue: $("#heroProgressValue"), heroProgressFill: $("#heroProgressFill"), heroPhotoLabel: $("#heroPhotoLabel"), heroWordMeaning: $("#heroWordMeaning"), roomStripEyebrow: $("#roomStripEyebrow"), roomStripTitle: $("#roomStripTitle"), roomStripHint: $("#roomStripHint"), roomStrip: $("#roomStrip"), filtersBar: $("#filtersBar"),
   subCategoryFilter: $("#subCategoryFilter"), levelFilter: $("#levelFilter"), sortFilter: $("#sortFilter"), categoryMenu: $("#categoryMenu"),
   pageTitle: $("#pageTitle"), pageCounter: $("#pageCounter"), cardsGrid: $("#cardsGrid"), detailPane: $("#detailPane"), emptyState: $("#emptyState"),
-  langButtons: $$(".lang-btn"), sidebarToggle: $("#sidebarToggle"), sidebarBackdrop: $("#sidebarBackdrop"), themeToggle: $("#themeToggle"),
+  langButtons: $$(".lang-btn"), viewButtons: $$("[data-density]"), sidebarToggle: $("#sidebarToggle"), sidebarBackdrop: $("#sidebarBackdrop"), themeToggle: $("#themeToggle"),
   playVisibleBtn: $("#playVisibleBtn"), resetFiltersBtn: $("#resetFiltersBtn"), reviewGrid: $("#reviewGrid"), reviewEmpty: $("#reviewEmpty"),
   reviewTitle: $("#reviewTitle"), reviewSubtitle: $("#reviewSubtitle"), quizTitle: $("#quizTitle"), quizSubtitle: $("#quizSubtitle"), quizBox: $("#quizBox"),
   nextQuizBtn: $("#nextQuizBtn"), speakQuizBtn: $("#speakQuizBtn"), quizStatsTitle: $("#quizStatsTitle"), quizCorrect: $("#quizCorrect"), quizWrong: $("#quizWrong"), quizTotal: $("#quizTotal"),
@@ -94,14 +107,15 @@ function bindEvents(){
   els.langButtons.forEach(btn => btn.addEventListener("click", () => applyUiLanguage(btn.dataset.uiLang)));
   $$("[data-view-btn]").forEach(btn => btn.addEventListener("click", () => switchView(btn.dataset.viewBtn)));
   $$("[data-density]").forEach(btn => btn.addEventListener("click", () => setDensity(btn.dataset.density)));
-  els.sidebarToggle.addEventListener("click", () => document.body.classList.toggle("sidebar-open"));
-  els.sidebarBackdrop.addEventListener("click", () => document.body.classList.remove("sidebar-open"));
+  els.sidebarToggle.addEventListener("click", () => setSidebarOpen(!document.body.classList.contains("sidebar-open")));
+  els.sidebarBackdrop.addEventListener("click", () => setSidebarOpen(false));
   els.themeToggle.addEventListener("click", () => applyTheme(state.theme === "dark" ? "light" : "dark"));
   els.playVisibleBtn.addEventListener("click", playVisibleWords);
   els.resetFiltersBtn.addEventListener("click", resetFilters);
   els.nextQuizBtn.addEventListener("click", renderQuiz);
   els.speakQuizBtn.addEventListener("click", () => state.currentQuiz && playAudio(state.currentQuiz.id, "word", "ru"));
   if (els.backToWordsBtn) els.backToWordsBtn.addEventListener("click", () => switchView("vocabulary"));
+  if (els.heroReviewBtn) els.heroReviewBtn.addEventListener("click", () => switchView("review"));
   if (els.detailSpeakRuBtn) els.detailSpeakRuBtn.addEventListener("click", () => state.selectedWordId && playAudio(state.selectedWordId, "word", "ru"));
   if (els.detailMarkReviewBtn) els.detailMarkReviewBtn.addEventListener("click", () => state.selectedWordId && toggleFavorite(state.selectedWordId, true));
   if (els.detailKnownBtn) els.detailKnownBtn.addEventListener("click", () => state.selectedWordId && changeMastery(state.selectedWordId, +25));
@@ -121,12 +135,20 @@ function applyUiLanguage(lang){
   document.body.dataset.uiLang = lang;
   document.documentElement.lang = lang;
   document.documentElement.dir = t.dir;
+  els.sidebarToggle.setAttribute("aria-label", document.body.classList.contains("sidebar-open") ? t.a11y.closeMenu : t.a11y.openMenu);
+  els.sidebarToggle.setAttribute("aria-expanded", String(document.body.classList.contains("sidebar-open")));
+  els.sidebarToggle.setAttribute("aria-controls", "sidebar");
+  els.themeToggle.setAttribute("aria-label", t.a11y.toggleTheme);
+  els.backToWordsBtn.textContent = detailText("back");
+  els.backToWordsBtn.setAttribute("aria-label", t.a11y.back);
+  els.detailSpeakRuBtn.setAttribute("aria-label", t.a11y.playRussian);
+  els.viewButtons.forEach(button => button.setAttribute("aria-label", button.dataset.density === "grid" ? t.a11y.gridView : t.a11y.compactView));
   Object.entries({
     brandSubtitle:"brandSubtitle", vocabNavLabel:"vocabNavLabel", reviewNavLabel:"reviewNavLabel", quizNavLabel:"quizNavLabel", progressNavLabel:"progressNavLabel", quizBadge:"quizBadge",
     sectionsTitle:"sectionsTitle", streakTitle:"streakTitle", streakDays:"streakDays", streakNote:"streakNote", pageTitle:"pageTitle", playVisibleBtn:"playVisible", resetFiltersBtn:"resetFilters",
     reviewTitle:"reviewTitle", reviewSubtitle:"reviewSubtitle", reviewEmpty:"reviewEmpty", quizTitle:"quizTitle", quizSubtitle:"quizSubtitle", nextQuizBtn:"nextQuiz", speakQuizBtn:"speakQuiz",
     quizStatsTitle:"quizStatsTitle", correctLabel:"correct", wrongLabel:"wrong", totalLabel:"total", progressTitle:"progressTitle", progressSubtitle:"progressSubtitle",
-    totalWordsMetricLabel:"totalWords", savedWordsMetricLabel:"savedWords", masteredWordsMetricLabel:"masteredWords", avgMasteryMetricLabel:"avgMastery", dailyTipText:"dailyTip", emptyState:"emptyState"
+     totalWordsMetricLabel:"totalWords", savedWordsMetricLabel:"savedWords", masteredWordsMetricLabel:"masteredWords", avgMasteryMetricLabel:"avgMastery", dailyTipText:"dailyTip", emptyState:"emptyState", heroKicker:"homeHeroKicker", heroTitle:"homeHeroTitle", heroSubtitle:"homeHeroSubtitle", heroReviewBtn:"homeHeroCta", heroProgressLabel:"homeProgressLabel", roomStripEyebrow:"roomStripEyebrow", roomStripTitle:"roomStripTitle", roomStripHint:"roomStripHint"
   }).forEach(([elKey, tKey]) => { if (els[elKey]) els[elKey].textContent = t[tKey]; });
   els.searchInput.placeholder = t.searchPlaceholder;
   els.subCategoryFilter.options[0].text = t.allSubCategories;
@@ -137,7 +159,7 @@ function applyUiLanguage(lang){
   els.sortFilter.options[2].text = t.sortZA;
   els.sortFilter.options[3].text = t.sortMastery;
   els.langButtons.forEach(btn => btn.classList.toggle("active", btn.dataset.uiLang === lang));
-  renderCategoryMenu(); applyFilters(); renderQuiz(); updateMetrics();
+  renderCategoryMenu(); renderRoomStrip(); applyFilters(); renderQuiz(); updateMetrics();
 }
 function renderCategoryMenu(){
   const t = I18N[state.uiLang];
@@ -148,12 +170,27 @@ function renderCategoryMenu(){
       <span class="category-item-left"><span>${t.categoryIcons[sub] || "📘"}</span><span>${escapeHTML(t.categories[sub] || sub)}</span></span>
       <span class="category-count">${counts[sub]}</span>
     </button>`).join("");
-  els.categoryMenu.querySelectorAll("[data-submenu]").forEach(btn => btn.addEventListener("click", () => {
-    els.subCategoryFilter.value = btn.dataset.submenu;
-    els.categoryMenu.querySelectorAll(".category-item").forEach(x => x.classList.remove("active"));
-    btn.classList.add("active");
-    switchView("vocabulary"); applyFilters(); document.body.classList.remove("sidebar-open");
-  }));
+  els.categoryMenu.querySelectorAll("[data-submenu]").forEach(btn => btn.addEventListener("click", () => selectRoom(btn.dataset.submenu)));
+}
+function renderRoomStrip(){
+  if (!els.roomStrip) return;
+  const t = I18N[state.uiLang];
+  els.roomStrip.innerHTML = ROOM_FEATURES.map(room => {
+    const count = state.words.filter(word => word.subCategory === room.id).length;
+    return `<button class="room-card" type="button" data-room="${room.id}" aria-label="${escapeHTML(`${t.roomOpen}: ${t.categories[room.id] || room.id}`)}">
+      <span class="room-card-image"><img src="${room.image}" alt="" loading="lazy" /><span class="room-card-icon" aria-hidden="true">${room.icon}</span></span>
+      <span class="room-card-copy"><strong>${escapeHTML(t.categories[room.id] || room.id)}</strong><small>${count} ${escapeHTML(t.roomWords)}</small></span>
+      <span class="room-card-arrow" aria-hidden="true">↗</span>
+    </button>`;
+  }).join("");
+  els.roomStrip.querySelectorAll("[data-room]").forEach(btn => btn.addEventListener("click", () => selectRoom(btn.dataset.room)));
+}
+function selectRoom(room){
+  els.subCategoryFilter.value = room;
+  els.categoryMenu.querySelectorAll(".category-item").forEach(item => item.classList.toggle("active", item.dataset.submenu === room));
+  switchView("vocabulary");
+  applyFilters();
+  els.filtersBar?.scrollIntoView({ behavior:"smooth", block:"start" });
 }
 function switchView(view){
   state.activeView = view;
@@ -163,7 +200,7 @@ function switchView(view){
     const panel = $(`#${v}View`);
     if (panel) panel.classList.toggle("hidden", v !== view);
   });
-  document.body.classList.remove("sidebar-open");
+  setSidebarOpen(false);
   if (view === "review") renderReview();
   if (view === "quiz") renderQuiz();
   if (view === "progress") renderProgress();
@@ -191,6 +228,13 @@ function applyTheme(theme){
   state.theme = theme; localStorage.setItem("theme", theme);
   document.body.classList.toggle("dark", theme === "dark");
   els.themeToggle.textContent = theme === "dark" ? "☀" : "☾";
+  els.themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+}
+function setSidebarOpen(open){
+  document.body.classList.toggle("sidebar-open", open);
+  const t = I18N[state.uiLang];
+  els.sidebarToggle.setAttribute("aria-expanded", String(open));
+  els.sidebarToggle.setAttribute("aria-label", open ? t.a11y.closeMenu : t.a11y.openMenu);
 }
 function setDensity(density){
   state.density = density; localStorage.setItem("density", density);
@@ -200,19 +244,16 @@ function setDensity(density){
 function renderCards(){
   els.cardsGrid.classList.toggle("compact", state.density === "compact");
   els.cardsGrid.innerHTML = state.filtered.map(cardTemplate).join("");
-  els.cardsGrid.querySelectorAll("[data-card]").forEach(card => card.addEventListener("click", e => {
-    if (e.target.closest("[data-fav]") || e.target.closest("[data-audio]")) return;
-    state.selectedWordId = card.dataset.card; renderCards(); renderDetail();
-  }));
+  bindCardInteractions(els.cardsGrid, id => { state.selectedWordId = id; renderCards(); renderDetail(); });
   bindCardButtons(els.cardsGrid);
 }
 function cardTemplate(w){
-  const saved = state.saved.has(w.id), mastery = state.mastery[w.id] || 0;
+  const t = I18N[state.uiLang], saved = state.saved.has(w.id), mastery = state.mastery[w.id] || 0;
   return `
-    <article class="word-card ${state.selectedWordId === w.id ? "active":""}" data-card="${w.id}">
+    <article class="word-card ${state.selectedWordId === w.id ? "active":""}" data-card="${w.id}" role="button" tabindex="0" aria-label="${escapeHTML(`${t.a11y.openWord}: ${w.russian}`)}">
       <div class="card-image-wrap">
-        <img src="${escapeHTML(w.imagePath)}" alt="${escapeHTML(w.english)}" loading="lazy"/>
-        <button class="favorite-btn ${saved ? "saved":""}" data-fav="${w.id}" type="button">${saved ? "★":"☆"}</button>
+        <img src="${escapeHTML(w.imagePath)}" alt="${escapeHTML(`${w.russian} — ${w.arabic}`)}" loading="lazy"/>
+        <button class="favorite-btn ${saved ? "saved":""}" data-fav="${w.id}" type="button" aria-label="${escapeHTML(saved ? t.a11y.removeReview : t.a11y.saveReview)}" aria-pressed="${saved}">${saved ? "★":"☆"}</button>
         <span class="mastery-chip">${mastery}%</span>
       </div>
       <div class="card-body">
@@ -221,12 +262,26 @@ function cardTemplate(w){
         <p class="card-meaning">${escapeHTML(w.arabic)}</p>
         <p class="card-meaning en">${escapeHTML(w.english)}</p>
         <div class="audio-row">
-          <button class="audio-btn ar" data-audio="word" data-lang="ar" data-id="${w.id}" type="button">🇸🇦 🔊</button>
-          <button class="audio-btn ru" data-audio="word" data-lang="ru" data-id="${w.id}" type="button">🇷🇺 🔊</button>
-          <button class="audio-btn en" data-audio="word" data-lang="en" data-id="${w.id}" type="button">🇺🇸 🔊</button>
+          <button class="audio-btn ar" data-audio="word" data-lang="ar" data-id="${w.id}" type="button" aria-label="${escapeHTML(t.a11y.playArabic)}">🇸🇦 🔊</button>
+          <button class="audio-btn ru" data-audio="word" data-lang="ru" data-id="${w.id}" type="button" aria-label="${escapeHTML(t.a11y.playRussian)}">🇷🇺 🔊</button>
+          <button class="audio-btn en" data-audio="word" data-lang="en" data-id="${w.id}" type="button" aria-label="${escapeHTML(t.a11y.playEnglish)}">🇺🇸 🔊</button>
         </div>
       </div>
     </article>`;
+}
+function bindCardInteractions(root, onOpen){
+  root.querySelectorAll("[data-card]").forEach(card => {
+    const open = () => onOpen(card.dataset.card);
+    card.addEventListener("click", event => {
+      if (event.target.closest("[data-fav]") || event.target.closest("[data-audio]")) return;
+      open();
+    });
+    card.addEventListener("keydown", event => {
+      if (event.target.closest("button") || !["Enter", " "].includes(event.key)) return;
+      event.preventDefault();
+      open();
+    });
+  });
 }
 function bindCardButtons(root){
   root.querySelectorAll("[data-fav]").forEach(btn => btn.addEventListener("click", e => { e.stopPropagation(); toggleFavorite(btn.dataset.fav); }));
@@ -237,7 +292,7 @@ function renderDetail(){
   if (!w) { els.detailPane.innerHTML = ""; return; }
   const t = I18N[state.uiLang], stars = "⭐".repeat(Number(w.frequency || 1)), mastery = state.mastery[w.id] || 0;
   els.detailPane.innerHTML = `
-    <div class="detail-image"><img src="${escapeHTML(w.imagePath)}" alt="${escapeHTML(w.english)}"/></div>
+    <div class="detail-image"><img src="${escapeHTML(w.imagePath)}" alt="${escapeHTML(`${w.russian} — ${w.arabic}`)}"/></div>
     <h2 class="detail-word">${escapeHTML(w.russian)}</h2>
     <p class="detail-translit">[${escapeHTML(w.transliteration || "")}]</p>
     <div class="detail-audio-row">
@@ -274,15 +329,19 @@ function renderDetail(){
 }
 function exampleLine(text, lang, id){
   const dir = lang === "ru" || lang === "en" ? ' dir="ltr"' : "";
-  return `<div class="detail-example-line"><p${dir}>${escapeHTML(text)}</p><button class="small-icon-btn" data-audio="sentence" data-lang="${lang}" data-id="${id}" type="button">🔊</button></div>`;
+  return `<div class="detail-example-line"><p${dir}>${escapeHTML(text)}</p><button class="small-icon-btn" data-audio="sentence" data-lang="${lang}" data-id="${id}" type="button" aria-label="${escapeHTML(audioLabel(lang))}">🔊</button></div>`;
+}
+function audioLabel(lang){
+  const t = I18N[state.uiLang];
+  return {ar:t.a11y.playArabic,ru:t.a11y.playRussian,en:t.a11y.playEnglish}[lang] || t.a11y.playWord;
 }
 
 
 function detailText(key){
   const dict = {
-    ar:{fullPage:"📖 صفحة الكلمة",back:"← رجوع",review:"☆ مراجعة",known:"✓ أعرفها",grammar:"جدول المقارنة",examples:"أمثلة",phrases:"عبارات مهمة",note:"ملاحظة قصيرة",info:"البيان",word:"الكلمة",type:"نوع الكلمة",singular:"المفرد",plural:"الجمع",gender:"الجنس / النوع",example:"مثال"},
-    en:{fullPage:"📖 Full word page",back:"← Back",review:"☆ Review",known:"✓ I know it",grammar:"Grammar comparison",examples:"Examples",phrases:"Useful phrases",note:"Short note",info:"Info",word:"Word",type:"Type",singular:"Singular",plural:"Plural",gender:"Gender",example:"Example"},
-    ru:{fullPage:"📖 Страница слова",back:"← Назад",review:"☆ Повторение",known:"✓ Знаю",grammar:"Сравнение",examples:"Примеры",phrases:"Полезные фразы",note:"Краткая заметка",info:"Инфо",word:"Слово",type:"Часть речи",singular:"Ед. число",plural:"Мн. число",gender:"Род",example:"Пример"}
+    ar:{fullPage:"📖 صفحة الكلمة",back:"→ رجوع",review:"☆ مراجعة",known:"✓ أعرفها",grammar:"جدول المقارنة",examples:"أمثلة",phrases:"عبارات مهمة",info:"البيان",word:"الكلمة",type:"نوع الكلمة",singular:"المفرد",plural:"الجمع",gender:"الجنس / النوع",example:"مثال"},
+    en:{fullPage:"📖 Full word page",back:"← Back",review:"☆ Review",known:"✓ I know it",grammar:"Grammar comparison",examples:"Examples",phrases:"Useful phrases",info:"Info",word:"Word",type:"Type",singular:"Singular",plural:"Plural",gender:"Gender",example:"Example"},
+    ru:{fullPage:"📖 Страница слова",back:"← Назад",review:"☆ Повторение",known:"✓ Знаю",grammar:"Сравнение",examples:"Примеры",phrases:"Полезные фразы",info:"Инфо",word:"Слово",type:"Часть речи",singular:"Ед. число",plural:"Мн. число",gender:"Род",example:"Пример"}
   };
   return (dict[state.uiLang] && dict[state.uiLang][key]) || dict.en[key] || key;
 }
@@ -302,11 +361,10 @@ function renderFullWordDetail(){
   const grammar = w.grammar || {};
   const examples = w.examples || [];
   const phrases = w.phrases || [];
-  const note = w.note || {};
 
   els.fullWordDetail.innerHTML = `
     <section class="full-detail-hero">
-      <div class="full-detail-image"><img src="${escapeHTML(w.imagePath)}" alt="${escapeHTML(w.english)}"/></div>
+      <div class="full-detail-image"><img src="${escapeHTML(w.imagePath)}" alt="${escapeHTML(`${w.russian} — ${w.arabic}`)}"/></div>
       <div class="full-detail-head">
         <h1 class="full-detail-word">${escapeHTML(w.russian)}</h1>
         <p class="full-detail-translit">[${escapeHTML(w.transliteration || "")}]</p>
@@ -331,8 +389,8 @@ function renderFullWordDetail(){
     ${phrases.length ? `<section class="detail-section-card"><h3>${detailText("phrases")}</h3><div class="phrase-grid">${phrases.slice(0,6).map(renderPhraseCard).join("")}</div></section>` : ""}
 
     <section class="detail-section-card">
-      <h3>${detailText("note")}</h3>
-      <div class="note-box">${escapeHTML(note[state.uiLang] || note.en || note.ar || note.ru || "")}</div>
+      <h3>${genderText("title")}</h3>
+      ${renderGenderComparison(grammar)}
     </section>
   `;
 
@@ -359,11 +417,64 @@ function renderGrammarTable(grammar){
   return `<div class="tri-table-wrap"><table class="tri-table"><thead><tr><th>${detailText("info")}</th><th>🇷🇺 Russian</th><th>🇸🇦 Arabic</th><th>🇺🇸 English</th></tr></thead><tbody>${rows.map(row => `<tr><td>${escapeHTML(row[0])}</td><td dir="ltr">${escapeHTML(row[1] || "—")}</td><td>${escapeHTML(row[2] || "—")}</td><td dir="ltr">${escapeHTML(row[3] || "—")}</td></tr>`).join("")}</tbody></table></div>`;
 }
 
+const GENDER_META = {
+  masculine: { emoji: "👦", ar: "مذكر", en: "Masculine", ru: "мужской" },
+  feminine: { emoji: "👧", ar: "مؤنث", en: "Feminine", ru: "женский" },
+  neuter: { emoji: "⚪", ar: "محايد روسي", en: "Neuter", ru: "средний" },
+  "plural-only": { emoji: "👥", ar: "جمع فقط", en: "Plural-only", ru: "только множественное число" },
+  unknown: { emoji: "❔", ar: "غير محدد", en: "Not specified", ru: "не указан" }
+};
+
+function normalizeGender(value, lang){
+  const text = String(value || "").toLowerCase();
+  if (lang === "ru") {
+    if (text.includes("masculine")) return "masculine";
+    if (text.includes("feminine")) return "feminine";
+    if (text.includes("neuter")) return "neuter";
+    if (text.includes("plural-only")) return "plural-only";
+  }
+  if (lang === "ar") {
+    if (text.includes("مذكر")) return "masculine";
+    if (text.includes("مؤنث")) return "feminine";
+  }
+  return "unknown";
+}
+
+function genderText(key){
+  const dict = {
+    ar: { title: "مقارنة الجنس", same: "الجنس متشابه في الروسية والعربية", different: "تنبيه: الجنس مختلف بين الروسية والعربية", russian: "الروسية", arabic: "العربية" },
+    en: { title: "Gender comparison", same: "The gender matches in Russian and Arabic", different: "Notice: the gender differs between Russian and Arabic", russian: "Russian", arabic: "Arabic" },
+    ru: { title: "Сравнение рода", same: "Род совпадает в русском и арабском языках", different: "Внимание: род различается в русском и арабском языках", russian: "Русский", arabic: "Арабский" }
+  };
+  return (dict[state.uiLang] && dict[state.uiLang][key]) || dict.en[key] || key;
+}
+
+function renderGenderComparison(grammar){
+  const ruValue = grammar.ru?.gender || "";
+  const arValue = grammar.ar?.gender || "";
+  const ruKey = normalizeGender(ruValue, "ru");
+  const arKey = normalizeGender(arValue, "ar");
+  const matches = ruKey !== "unknown" && arKey !== "unknown" && ruKey === arKey;
+  const ruMeta = GENDER_META[ruKey] || GENDER_META.unknown;
+  const arMeta = GENDER_META[arKey] || GENDER_META.unknown;
+  const statusClass = matches ? "is-matching" : "is-different";
+  const statusIcon = matches ? "✅" : "⚠️";
+  const statusText = genderText(matches ? "same" : "different");
+
+  return `<div class="gender-comparison ${statusClass}" role="status">
+    <div class="gender-status"><span class="gender-status-icon" aria-hidden="true">${statusIcon}</span><strong>${escapeHTML(statusText)}</strong></div>
+    <div class="gender-values">
+      <div class="gender-value"><span class="gender-language">🇷🇺 ${escapeHTML(genderText("russian"))}</span><span class="gender-symbol" aria-hidden="true">${ruMeta.emoji}</span><bdi class="gender-label" dir="auto">${escapeHTML(ruMeta[state.uiLang] || ruMeta.en)}</bdi></div>
+      <div class="gender-value"><span class="gender-language">🇸🇦 ${escapeHTML(genderText("arabic"))}</span><span class="gender-symbol" aria-hidden="true">${arMeta.emoji}</span><bdi class="gender-label" dir="auto">${escapeHTML(arMeta[state.uiLang] || arMeta.ar)}</bdi></div>
+    </div>
+  </div>`;
+}
+
 function renderExampleCard(ex, index){
   return `<article class="example-card"><div class="example-card-head"><span>${detailText("example")} ${index + 1}</span></div><div class="example-lines">
-    <div class="example-line"><span class="flag">🇷🇺 RU</span><span dir="ltr">${escapeHTML(ex.ru || "")}</span><button class="small-icon-btn" data-example-audio="1" data-example-index="${index}" data-lang="ru" type="button">🔊</button></div>
-    <div class="example-line"><span class="flag">🇸🇦 AR</span><span>${escapeHTML(ex.ar || "")}</span><button class="small-icon-btn" data-example-audio="1" data-example-index="${index}" data-lang="ar" type="button">🔊</button></div>
-    <div class="example-line"><span class="flag">🇺🇸 EN</span><span dir="ltr">${escapeHTML(ex.en || "")}</span><button class="small-icon-btn" data-example-audio="1" data-example-index="${index}" data-lang="en" type="button">🔊</button></div>
+    <div class="example-line"><span class="flag">🇷🇺 RU</span><span dir="ltr">${escapeHTML(ex.ru || "")}</span><button class="small-icon-btn" data-example-audio="1" data-example-index="${index}" data-lang="ru" type="button" aria-label="${escapeHTML(audioLabel("ru"))}">🔊</button></div>
+    <div class="example-line"><span class="flag">🇸🇦 AR</span><span>${escapeHTML(ex.ar || "")}</span><button class="small-icon-btn" data-example-audio="1" data-example-index="${index}" data-lang="ar" type="button" aria-label="${escapeHTML(audioLabel("ar"))}">🔊</button></div>
+    <div class="example-line"><span class="flag">🇺🇸 EN</span><span dir="ltr">${escapeHTML(ex.en || "")}</span><button class="small-icon-btn" data-example-audio="1" data-example-index="${index}" data-lang="en" type="button" aria-label="${escapeHTML(audioLabel("en"))}">🔊</button></div>
   </div></article>`;
 }
 
@@ -415,35 +526,41 @@ function renderReview(){
   els.reviewGrid.innerHTML = savedWords.map(cardTemplate).join("");
   els.reviewEmpty.classList.toggle("hidden", savedWords.length > 0);
   bindCardButtons(els.reviewGrid);
-  els.reviewGrid.querySelectorAll("[data-card]").forEach(card => card.addEventListener("click", e => {
-    if (e.target.closest("[data-fav]") || e.target.closest("[data-audio]")) return;
-    state.selectedWordId = card.dataset.card; switchView("vocabulary"); renderCards(); renderDetail();
-  }));
+  bindCardInteractions(els.reviewGrid, id => { state.selectedWordId = id; switchView("vocabulary"); renderCards(); renderDetail(); });
 }
 function renderQuiz(){
   const pool = state.filtered.length >= 4 ? state.filtered : state.words;
+  const t = I18N[state.uiLang];
   state.quizAnswered = false;
   if (pool.length < 4) {
-    els.quizBox.innerHTML = `<p class="empty-state">Need at least 4 words to start quiz.</p>`;
+    els.quizBox.innerHTML = `<p class="empty-state">${escapeHTML(t.quizNeedWords)}</p>`;
     return;
   }
   const correct = pool[Math.floor(Math.random()*pool.length)];
   state.currentQuiz = correct;
   const options = shuffle([correct, ...shuffle(state.words.filter(w => w.id !== correct.id)).slice(0,3)]);
   els.quizBox.innerHTML = `
-    <div class="quiz-word" role="button" tabindex="0">${escapeHTML(correct.russian)}</div>
+    <div class="quiz-word" role="button" tabindex="0" aria-label="${escapeHTML(`${t.a11y.playWord}: ${correct.russian}`)}">${escapeHTML(correct.russian)}</div>
     <p class="quiz-translit">[${escapeHTML(correct.transliteration || "")}]</p>
     <div class="quiz-options">
       ${options.map(w => `<button class="quiz-option" data-answer="${w.id}" type="button">${quizOptionText(w)}</button>`).join("")}
     </div>
     <div id="quizFeedback" class="quiz-feedback hidden"></div>`;
-  els.quizBox.querySelector(".quiz-word").addEventListener("click", () => playAudio(correct.id, "word", "ru"));
+  const quizWord = els.quizBox.querySelector(".quiz-word");
+  quizWord.addEventListener("click", () => playAudio(correct.id, "word", "ru"));
+  quizWord.addEventListener("keydown", event => {
+    if (!["Enter", " "].includes(event.key)) return;
+    event.preventDefault();
+    playAudio(correct.id, "word", "ru");
+  });
   els.quizBox.querySelectorAll("[data-answer]").forEach(btn => btn.addEventListener("click", () => checkQuiz(btn)));
   updateQuizStats();
 }
 function quizOptionText(w){
-  if (state.uiLang === "en") return `${escapeHTML(w.english)} — ${escapeHTML(w.arabic)}`;
-  return `${escapeHTML(w.arabic)} — ${escapeHTML(w.english)}`;
+  const english = `<bdi dir="ltr">${escapeHTML(w.english)}</bdi>`;
+  const arabic = `<bdi dir="rtl">${escapeHTML(w.arabic)}</bdi>`;
+  if (state.uiLang === "en") return `${english} — ${arabic}`;
+  return `${arabic} — ${english}`;
 }
 function checkQuiz(btn){
   if (state.quizAnswered || !state.currentQuiz) return;
@@ -475,7 +592,8 @@ function checkQuiz(btn){
   if (feedback) {
     feedback.classList.remove("hidden", "good", "bad");
     feedback.classList.add(ok ? "good" : "bad");
-    feedback.textContent = ok ? "✅ Correct" : "❌ Wrong — the correct answer is highlighted.";
+    const t = I18N[state.uiLang];
+    feedback.textContent = ok ? t.quizFeedbackCorrect : t.quizFeedbackWrong;
   }
 
   renderCards();
@@ -506,6 +624,16 @@ function updateMetrics(){
   els.masteredWordsMetric.textContent = mastered;
   els.avgMasteryMetric.textContent = `${avg}%`;
   els.overallProgressFill.style.width = `${avg}%`;
+  renderHomeHero(avg);
+}
+function renderHomeHero(avg){
+  if (!els.heroProgressValue) return;
+  const t = I18N[state.uiLang];
+  const homeWord = state.words.find(word => word.id === "home50_001");
+  els.heroProgressValue.textContent = `${avg}%`;
+  els.heroProgressFill.style.width = `${avg}%`;
+  els.heroPhotoLabel.textContent = t.categories.home;
+  els.heroWordMeaning.textContent = homeWord ? ({ ar:homeWord.arabic, en:homeWord.english, ru:homeWord.russian }[state.uiLang] || homeWord.arabic) : "";
 }
 async function playVisibleWords(){
   for (const w of state.filtered.slice(0, 8)) {
@@ -541,7 +669,8 @@ function playAudio(id, mode, lang){
 function speak(text, lang){
   if (!("speechSynthesis" in window)) return;
   window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
+  const speechText = String(text || "").replace(/\s*\/\s*/g, lang.startsWith("en") ? ", " : " ").replace(/\s+/g, " ").trim();
+  const u = new SpeechSynthesisUtterance(speechText);
   u.lang = lang; u.rate = 0.88; window.speechSynthesis.speak(u);
 }
 function wait(ms){ return new Promise(r => setTimeout(r, ms)); }

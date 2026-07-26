@@ -14,9 +14,6 @@
     "exampleRu": "Это наш дом.",
     "exampleAr": "هذا بيتنا.",
     "exampleEn": "This is our house.",
-    "related": [
-      "дом"
-    ],
     "imagePath": "assets/images/words/house.jpg",
     "audioWordAr": "assets/audio/ar/dom.mp3",
     "audioWordRu": "assets/audio/ru/dom.mp3",
@@ -65,7 +62,7 @@
       },
       {
         "ru": "Где дом?",
-        "ar": "أين بيت؟",
+        "ar": "أين البيت؟",
         "en": "Where is the house?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-dom?.mp3",
@@ -97,15 +94,10 @@
       },
       {
         "ru": "где дом?",
-        "ar": "أين بيت؟",
+        "ar": "أين البيت؟",
         "en": "where is the house?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: дом في الروسية: masculine، بينما بيت في العربية: مذكر.",
-      "en": "Gender can differ by language: дом is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -123,9 +115,6 @@
     "exampleRu": "Я живу в квартире.",
     "exampleAr": "أنا أعيش في شقة.",
     "exampleEn": "I live in an apartment.",
-    "related": [
-      "квартира"
-    ],
     "imagePath": "assets/images/words/apartment.jpg",
     "audioWordAr": "assets/audio/ar/kvartira.mp3",
     "audioWordRu": "assets/audio/ru/kvartira.mp3",
@@ -174,7 +163,7 @@
       },
       {
         "ru": "Где квартира?",
-        "ar": "أين شقة؟",
+        "ar": "أين الشقة؟",
         "en": "Where is the apartment?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-kvartira?.mp3",
@@ -206,15 +195,10 @@
       },
       {
         "ru": "где квартира?",
-        "ar": "أين شقة؟",
+        "ar": "أين الشقة؟",
         "en": "where is the apartment?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: квартира في الروسية: feminine، بينما شقة في العربية: مؤنث.",
-      "en": "Gender can differ by language: квартира is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -232,9 +216,6 @@
     "exampleRu": "Это моя комната.",
     "exampleAr": "هذه غرفتي.",
     "exampleEn": "This is my room.",
-    "related": [
-      "комната"
-    ],
     "imagePath": "assets/images/words/room.jpg",
     "audioWordAr": "assets/audio/ar/komnata.mp3",
     "audioWordRu": "assets/audio/ru/komnata.mp3",
@@ -283,7 +264,7 @@
       },
       {
         "ru": "Где комната?",
-        "ar": "أين غرفة؟",
+        "ar": "أين الغرفة؟",
         "en": "Where is the room?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-komnata?.mp3",
@@ -315,15 +296,10 @@
       },
       {
         "ru": "где комната?",
-        "ar": "أين غرفة؟",
+        "ar": "أين الغرفة؟",
         "en": "where is the room?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: комната في الروسية: feminine، بينما غرفة في العربية: مؤنث.",
-      "en": "Gender can differ by language: комната is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -341,9 +317,6 @@
     "exampleRu": "Мы сидим в гостиной.",
     "exampleAr": "نحن نجلس في غرفة المعيشة.",
     "exampleEn": "We are sitting in the living room.",
-    "related": [
-      "гостиная"
-    ],
     "imagePath": "assets/images/words/living_room.jpg",
     "audioWordAr": "assets/audio/ar/gostinaya.mp3",
     "audioWordRu": "assets/audio/ru/gostinaya.mp3",
@@ -428,11 +401,6 @@
         "en": "where is the living room?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: гостиная في الروسية: feminine، بينما غرفة المعيشة في العربية: مؤنث.",
-      "en": "Gender can differ by language: гостиная is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -450,9 +418,6 @@
     "exampleRu": "Я сижу на диване.",
     "exampleAr": "أنا أجلس على الكنبة.",
     "exampleEn": "I am sitting on the sofa.",
-    "related": [
-      "диван"
-    ],
     "imagePath": "assets/images/words/sofa.jpg",
     "audioWordAr": "assets/audio/ar/divan.mp3",
     "audioWordRu": "assets/audio/ru/divan.mp3",
@@ -501,7 +466,7 @@
       },
       {
         "ru": "Где диван?",
-        "ar": "أين كنبة؟",
+        "ar": "أين الكنبة؟",
         "en": "Where is the sofa?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-divan?.mp3",
@@ -533,15 +498,10 @@
       },
       {
         "ru": "где диван?",
-        "ar": "أين كنبة؟",
+        "ar": "أين الكنبة؟",
         "en": "where is the sofa?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: диван في الروسية: masculine، بينما كنبة في العربية: مؤنث غالبًا.",
-      "en": "Gender can differ by language: диван is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -559,9 +519,6 @@
     "exampleRu": "Это удобное кресло.",
     "exampleAr": "هذا كرسي مريح.",
     "exampleEn": "This is a comfortable armchair.",
-    "related": [
-      "кресло"
-    ],
     "imagePath": "assets/images/words/armchair.jpg",
     "audioWordAr": "assets/audio/ar/kreslo.mp3",
     "audioWordRu": "assets/audio/ru/kreslo.mp3",
@@ -610,7 +567,7 @@
       },
       {
         "ru": "Где кресло?",
-        "ar": "أين كرسي مريح؟",
+        "ar": "أين الكرسي المريح؟",
         "en": "Where is the armchair?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-kreslo?.mp3",
@@ -642,15 +599,10 @@
       },
       {
         "ru": "где кресло?",
-        "ar": "أين كرسي مريح؟",
+        "ar": "أين الكرسي المريح؟",
         "en": "where is the armchair?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: кресло في الروسية: neuter، بينما كرسي مريح في العربية: مذكر.",
-      "en": "Gender can differ by language: кресло is neuter in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: neuter. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -668,9 +620,6 @@
     "exampleRu": "Я смотрю телевизор.",
     "exampleAr": "أنا أشاهد التلفزيون.",
     "exampleEn": "I am watching TV.",
-    "related": [
-      "телевизор"
-    ],
     "imagePath": "assets/images/words/television.jpg",
     "audioWordAr": "assets/audio/ar/televizor.mp3",
     "audioWordRu": "assets/audio/ru/televizor.mp3",
@@ -719,7 +668,7 @@
       },
       {
         "ru": "Где телевизор?",
-        "ar": "أين تلفزيون؟",
+        "ar": "أين التلفزيون؟",
         "en": "Where is the television?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-televizor?.mp3",
@@ -751,15 +700,10 @@
       },
       {
         "ru": "где телевизор?",
-        "ar": "أين تلفزيون؟",
+        "ar": "أين التلفزيون؟",
         "en": "where is the television?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: телевизор في الروسية: masculine، بينما تلفزيون في العربية: مذكر.",
-      "en": "Gender can differ by language: телевизор is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -777,9 +721,6 @@
     "exampleRu": "Включи лампу.",
     "exampleAr": "شغّل المصباح.",
     "exampleEn": "Turn on the lamp.",
-    "related": [
-      "лампа"
-    ],
     "imagePath": "assets/images/words/lamp.jpg",
     "audioWordAr": "assets/audio/ar/lampa.mp3",
     "audioWordRu": "assets/audio/ru/lampa.mp3",
@@ -828,7 +769,7 @@
       },
       {
         "ru": "Где лампа?",
-        "ar": "أين مصباح؟",
+        "ar": "أين المصباح؟",
         "en": "Where is the lamp?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-lampa?.mp3",
@@ -860,15 +801,10 @@
       },
       {
         "ru": "где лампа?",
-        "ar": "أين مصباح؟",
+        "ar": "أين المصباح؟",
         "en": "where is the lamp?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: лампа في الروسية: feminine، بينما مصباح في العربية: مذكر.",
-      "en": "Gender can differ by language: лампа is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -886,9 +822,6 @@
     "exampleRu": "Ковёр на полу.",
     "exampleAr": "السجادة على الأرض.",
     "exampleEn": "The rug is on the floor.",
-    "related": [
-      "ковёр"
-    ],
     "imagePath": "assets/images/words/rug.jpg",
     "audioWordAr": "assets/audio/ar/kovyor.mp3",
     "audioWordRu": "assets/audio/ru/kovyor.mp3",
@@ -937,7 +870,7 @@
       },
       {
         "ru": "Где ковёр?",
-        "ar": "أين سجادة؟",
+        "ar": "أين السجادة؟",
         "en": "Where is the rug?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-kovyor?.mp3",
@@ -969,15 +902,10 @@
       },
       {
         "ru": "где ковёр?",
-        "ar": "أين سجادة؟",
+        "ar": "أين السجادة؟",
         "en": "where is the rug?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: ковёр في الروسية: masculine، بينما سجادة في العربية: مؤنث.",
-      "en": "Gender can differ by language: ковёр is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -995,9 +923,6 @@
     "exampleRu": "Книга на полке.",
     "exampleAr": "الكتاب على الرف.",
     "exampleEn": "The book is on the shelf.",
-    "related": [
-      "полка"
-    ],
     "imagePath": "assets/images/words/shelf.jpg",
     "audioWordAr": "assets/audio/ar/polka.mp3",
     "audioWordRu": "assets/audio/ru/polka.mp3",
@@ -1046,7 +971,7 @@
       },
       {
         "ru": "Где полка?",
-        "ar": "أين رف؟",
+        "ar": "أين الرف؟",
         "en": "Where is the shelf?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-polka?.mp3",
@@ -1078,15 +1003,10 @@
       },
       {
         "ru": "где полка?",
-        "ar": "أين رف؟",
+        "ar": "أين الرف؟",
         "en": "where is the shelf?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: полка في الروسية: feminine، بينما رف في العربية: مذكر.",
-      "en": "Gender can differ by language: полка is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -1104,9 +1024,6 @@
     "exampleRu": "Картина на стене.",
     "exampleAr": "اللوحة على الحائط.",
     "exampleEn": "The picture is on the wall.",
-    "related": [
-      "картина"
-    ],
     "imagePath": "assets/images/words/picture.jpg",
     "audioWordAr": "assets/audio/ar/kartina.mp3",
     "audioWordRu": "assets/audio/ru/kartina.mp3",
@@ -1155,7 +1072,7 @@
       },
       {
         "ru": "Где картина?",
-        "ar": "أين لوحة؟",
+        "ar": "أين اللوحة؟",
         "en": "Where is the picture?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-kartina?.mp3",
@@ -1187,15 +1104,10 @@
       },
       {
         "ru": "где картина?",
-        "ar": "أين لوحة؟",
+        "ar": "أين اللوحة؟",
         "en": "where is the picture?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: картина في الروسية: feminine، بينما لوحة في العربية: مؤنث.",
-      "en": "Gender can differ by language: картина is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -1213,9 +1125,6 @@
     "exampleRu": "Растение у окна.",
     "exampleAr": "النبات بجانب النافذة.",
     "exampleEn": "The plant is by the window.",
-    "related": [
-      "растение"
-    ],
     "imagePath": "assets/images/words/plant.jpg",
     "audioWordAr": "assets/audio/ar/rastenie.mp3",
     "audioWordRu": "assets/audio/ru/rastenie.mp3",
@@ -1264,7 +1173,7 @@
       },
       {
         "ru": "Где растение?",
-        "ar": "أين نبات؟",
+        "ar": "أين النبتة؟",
         "en": "Where is the plant?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-rastenie?.mp3",
@@ -1296,15 +1205,10 @@
       },
       {
         "ru": "где растение?",
-        "ar": "أين نبات؟",
+        "ar": "أين النبتة؟",
         "en": "where is the plant?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: растение في الروسية: neuter، بينما نبات في العربية: مذكر.",
-      "en": "Gender can differ by language: растение is neuter in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: neuter. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -1322,9 +1226,6 @@
     "exampleRu": "Я иду в спальню.",
     "exampleAr": "أنا ذاهب إلى غرفة النوم.",
     "exampleEn": "I am going to the bedroom.",
-    "related": [
-      "спальня"
-    ],
     "imagePath": "assets/images/words/bedroom.jpg",
     "audioWordAr": "assets/audio/ar/spalnya.mp3",
     "audioWordRu": "assets/audio/ru/spalnya.mp3",
@@ -1409,11 +1310,6 @@
         "en": "where is the bedroom?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: спальня في الروسية: feminine، بينما غرفة النوم في العربية: مؤنث.",
-      "en": "Gender can differ by language: спальня is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -1431,9 +1327,6 @@
     "exampleRu": "Я лежу на кровати.",
     "exampleAr": "أنا مستلقٍ على السرير.",
     "exampleEn": "I am lying on the bed.",
-    "related": [
-      "кровать"
-    ],
     "imagePath": "assets/images/words/bed.jpg",
     "audioWordAr": "assets/audio/ar/krovat.mp3",
     "audioWordRu": "assets/audio/ru/krovat.mp3",
@@ -1482,7 +1375,7 @@
       },
       {
         "ru": "Где кровать?",
-        "ar": "أين سرير؟",
+        "ar": "أين السرير؟",
         "en": "Where is the bed?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-krovat?.mp3",
@@ -1514,15 +1407,10 @@
       },
       {
         "ru": "где кровать?",
-        "ar": "أين سرير؟",
+        "ar": "أين السرير؟",
         "en": "where is the bed?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: кровать في الروسية: feminine، بينما سرير في العربية: مذكر.",
-      "en": "Gender can differ by language: кровать is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -1540,9 +1428,6 @@
     "exampleRu": "Подушка мягкая.",
     "exampleAr": "الوسادة ناعمة.",
     "exampleEn": "The pillow is soft.",
-    "related": [
-      "подушка"
-    ],
     "imagePath": "assets/images/words/pillow.jpg",
     "audioWordAr": "assets/audio/ar/podushka.mp3",
     "audioWordRu": "assets/audio/ru/podushka.mp3",
@@ -1591,7 +1476,7 @@
       },
       {
         "ru": "Где подушка?",
-        "ar": "أين وسادة؟",
+        "ar": "أين الوسادة؟",
         "en": "Where is the pillow?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-podushka?.mp3",
@@ -1623,15 +1508,10 @@
       },
       {
         "ru": "где подушка?",
-        "ar": "أين وسادة؟",
+        "ar": "أين الوسادة؟",
         "en": "where is the pillow?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: подушка في الروسية: feminine، بينما وسادة في العربية: مؤنث.",
-      "en": "Gender can differ by language: подушка is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -1649,9 +1529,6 @@
     "exampleRu": "Одежда в шкафу.",
     "exampleAr": "الملابس في الدولاب.",
     "exampleEn": "The clothes are in the wardrobe.",
-    "related": [
-      "шкаф"
-    ],
     "imagePath": "assets/images/words/wardrobe.jpg",
     "audioWordAr": "assets/audio/ar/shkaf.mp3",
     "audioWordRu": "assets/audio/ru/shkaf.mp3",
@@ -1700,7 +1577,7 @@
       },
       {
         "ru": "Где шкаф?",
-        "ar": "أين دولاب؟",
+        "ar": "أين الدولاب؟",
         "en": "Where is the wardrobe?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-shkaf?.mp3",
@@ -1732,15 +1609,10 @@
       },
       {
         "ru": "где шкаф?",
-        "ar": "أين دولاب؟",
+        "ar": "أين الدولاب؟",
         "en": "where is the wardrobe?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: шкаф في الروسية: masculine، بينما دولاب في العربية: مذكر.",
-      "en": "Gender can differ by language: шкаф is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -1758,9 +1630,6 @@
     "exampleRu": "Возьми одеяло.",
     "exampleAr": "خذ البطانية.",
     "exampleEn": "Take the blanket.",
-    "related": [
-      "одеяло"
-    ],
     "imagePath": "assets/images/words/blanket.jpg",
     "audioWordAr": "assets/audio/ar/odeyalo.mp3",
     "audioWordRu": "assets/audio/ru/odeyalo.mp3",
@@ -1809,7 +1678,7 @@
       },
       {
         "ru": "Где одеяло?",
-        "ar": "أين بطانية؟",
+        "ar": "أين البطانية؟",
         "en": "Where is the blanket?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-odeyalo?.mp3",
@@ -1841,15 +1710,10 @@
       },
       {
         "ru": "где одеяло?",
-        "ar": "أين بطانية؟",
+        "ar": "أين البطانية؟",
         "en": "where is the blanket?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: одеяло في الروسية: neuter، بينما بطانية في العربية: مؤنث غالبًا.",
-      "en": "Gender can differ by language: одеяло is neuter in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: neuter. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -1867,9 +1731,6 @@
     "exampleRu": "Телефон на тумбочке.",
     "exampleAr": "الهاتف على الكومودينو.",
     "exampleEn": "The phone is on the bedside table.",
-    "related": [
-      "тумбочка"
-    ],
     "imagePath": "assets/images/words/bedside_table.jpg",
     "audioWordAr": "assets/audio/ar/tumbochka.mp3",
     "audioWordRu": "assets/audio/ru/tumbochka.mp3",
@@ -1918,7 +1779,7 @@
       },
       {
         "ru": "Где тумбочка?",
-        "ar": "أين كومودينو؟",
+        "ar": "أين الكومودينو؟",
         "en": "Where is the bedside table?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-tumbochka?.mp3",
@@ -1950,15 +1811,10 @@
       },
       {
         "ru": "где тумбочка?",
-        "ar": "أين كومودينو؟",
+        "ar": "أين الكومودينو؟",
         "en": "where is the bedside table?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: тумбочка في الروسية: feminine، بينما كومودينو في العربية: مذكر في الاستعمال.",
-      "en": "Gender can differ by language: тумбочка is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -1976,9 +1832,6 @@
     "exampleRu": "Открой занавеску.",
     "exampleAr": "افتح الستارة.",
     "exampleEn": "Open the curtain.",
-    "related": [
-      "занавеска"
-    ],
     "imagePath": "assets/images/words/curtain.jpg",
     "audioWordAr": "assets/audio/ar/zanaveska.mp3",
     "audioWordRu": "assets/audio/ru/zanaveska.mp3",
@@ -2027,7 +1880,7 @@
       },
       {
         "ru": "Где занавеска?",
-        "ar": "أين ستارة؟",
+        "ar": "أين الستارة؟",
         "en": "Where is the curtain?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-zanaveska?.mp3",
@@ -2059,15 +1912,10 @@
       },
       {
         "ru": "где занавеска?",
-        "ar": "أين ستارة؟",
+        "ar": "أين الستارة؟",
         "en": "where is the curtain?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: занавеска في الروسية: feminine، بينما ستارة في العربية: مؤنث.",
-      "en": "Gender can differ by language: занавеска is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -2085,9 +1933,6 @@
     "exampleRu": "Я на кухне.",
     "exampleAr": "أنا في المطبخ.",
     "exampleEn": "I am in the kitchen.",
-    "related": [
-      "кухня"
-    ],
     "imagePath": "assets/images/words/kitchen.jpg",
     "audioWordAr": "assets/audio/ar/kukhnya.mp3",
     "audioWordRu": "assets/audio/ru/kukhnya.mp3",
@@ -2113,7 +1958,7 @@
         "type": "اسم",
         "singular": "مطبخ",
         "plural": "مطابخ",
-        "gender": "مؤنث"
+        "gender": "مذكر"
       },
       "en": {
         "word": "kitchen",
@@ -2136,7 +1981,7 @@
       },
       {
         "ru": "Где кухня?",
-        "ar": "أين مطبخ؟",
+        "ar": "أين المطبخ؟",
         "en": "Where is the kitchen?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-kukhnya?.mp3",
@@ -2146,7 +1991,7 @@
       },
       {
         "ru": "Кухня новая.",
-        "ar": "هذه مطبخ جديدة.",
+        "ar": "المطبخ جديد.",
         "en": "This kitchen is new.",
         "audio": {
           "ru": "assets/audio/ru/examples/kukhnya-novaya.mp3",
@@ -2158,25 +2003,20 @@
     "phrases": [
       {
         "ru": "эта кухня",
-        "ar": "هذه مطبخ",
+        "ar": "هذا المطبخ",
         "en": "this kitchen"
       },
       {
         "ru": "новая кухня",
-        "ar": "مطبخ جديدة",
+        "ar": "مطبخ جديد",
         "en": "new kitchen"
       },
       {
         "ru": "где кухня?",
-        "ar": "أين مطبخ؟",
+        "ar": "أين المطبخ؟",
         "en": "where is the kitchen?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: кухня في الروسية: feminine، بينما مطبخ في العربية: مؤنث.",
-      "en": "Gender can differ by language: кухня is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -2194,9 +2034,6 @@
     "exampleRu": "Я сижу за столом.",
     "exampleAr": "أنا أجلس إلى الطاولة.",
     "exampleEn": "I am sitting at the table.",
-    "related": [
-      "стол"
-    ],
     "imagePath": "assets/images/words/table.jpg",
     "audioWordAr": "assets/audio/ar/stol.mp3",
     "audioWordRu": "assets/audio/ru/stol.mp3",
@@ -2245,7 +2082,7 @@
       },
       {
         "ru": "Где стол?",
-        "ar": "أين طاولة؟",
+        "ar": "أين الطاولة؟",
         "en": "Where is the table?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-stol?.mp3",
@@ -2277,15 +2114,10 @@
       },
       {
         "ru": "где стол?",
-        "ar": "أين طاولة؟",
+        "ar": "أين الطاولة؟",
         "en": "where is the table?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: стол في الروسية: masculine، بينما طاولة في العربية: مؤنث.",
-      "en": "Gender can differ by language: стол is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -2303,9 +2135,6 @@
     "exampleRu": "Сядь на стул.",
     "exampleAr": "اجلس على الكرسي.",
     "exampleEn": "Sit on the chair.",
-    "related": [
-      "стул"
-    ],
     "imagePath": "assets/images/words/chair.jpg",
     "audioWordAr": "assets/audio/ar/stul.mp3",
     "audioWordRu": "assets/audio/ru/stul.mp3",
@@ -2354,7 +2183,7 @@
       },
       {
         "ru": "Где стул?",
-        "ar": "أين كرسي؟",
+        "ar": "أين الكرسي؟",
         "en": "Where is the chair?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-stul?.mp3",
@@ -2386,15 +2215,10 @@
       },
       {
         "ru": "где стул?",
-        "ar": "أين كرسي؟",
+        "ar": "أين الكرسي؟",
         "en": "where is the chair?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: стул في الروسية: masculine، بينما كرسي في العربية: مذكر.",
-      "en": "Gender can differ by language: стул is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -2412,9 +2236,6 @@
     "exampleRu": "Молоко в холодильнике.",
     "exampleAr": "الحليب في الثلاجة.",
     "exampleEn": "The milk is in the refrigerator.",
-    "related": [
-      "холодильник"
-    ],
     "imagePath": "assets/images/words/fridge.jpg",
     "audioWordAr": "assets/audio/ar/kholodilnik.mp3",
     "audioWordRu": "assets/audio/ru/kholodilnik.mp3",
@@ -2463,7 +2284,7 @@
       },
       {
         "ru": "Где холодильник?",
-        "ar": "أين ثلاجة؟",
+        "ar": "أين الثلاجة؟",
         "en": "Where is the refrigerator?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-kholodilnik?.mp3",
@@ -2495,15 +2316,10 @@
       },
       {
         "ru": "где холодильник?",
-        "ar": "أين ثلاجة؟",
+        "ar": "أين الثلاجة؟",
         "en": "where is the refrigerator?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: холодильник في الروسية: masculine، بينما ثلاجة في العربية: مذكر.",
-      "en": "Gender can differ by language: холодильник is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -2521,9 +2337,6 @@
     "exampleRu": "Плита включена.",
     "exampleAr": "الموقد يعمل.",
     "exampleEn": "The stove is on.",
-    "related": [
-      "плита"
-    ],
     "imagePath": "assets/images/words/stove.jpg",
     "audioWordAr": "assets/audio/ar/plita.mp3",
     "audioWordRu": "assets/audio/ru/plita.mp3",
@@ -2572,7 +2385,7 @@
       },
       {
         "ru": "Где плита?",
-        "ar": "أين موقد؟",
+        "ar": "أين الموقد؟",
         "en": "Where is the stove?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-plita?.mp3",
@@ -2604,15 +2417,10 @@
       },
       {
         "ru": "где плита?",
-        "ar": "أين موقد؟",
+        "ar": "أين الموقد؟",
         "en": "where is the stove?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: плита في الروسية: feminine، بينما موقد في العربية: مذكر.",
-      "en": "Gender can differ by language: плита is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -2630,9 +2438,6 @@
     "exampleRu": "Это моя чашка.",
     "exampleAr": "هذا كوبي.",
     "exampleEn": "This is my cup.",
-    "related": [
-      "чашка"
-    ],
     "imagePath": "assets/images/words/cup.jpg",
     "audioWordAr": "assets/audio/ar/chashka.mp3",
     "audioWordRu": "assets/audio/ru/chashka.mp3",
@@ -2681,7 +2486,7 @@
       },
       {
         "ru": "Где чашка?",
-        "ar": "أين كوب؟",
+        "ar": "أين الكوب؟",
         "en": "Where is the cup?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-chashka?.mp3",
@@ -2713,15 +2518,10 @@
       },
       {
         "ru": "где чашка?",
-        "ar": "أين كوب؟",
+        "ar": "أين الكوب؟",
         "en": "where is the cup?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: чашка في الروسية: feminine، بينما كوب في العربية: مذكر.",
-      "en": "Gender can differ by language: чашка is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -2739,9 +2539,6 @@
     "exampleRu": "Вода в стакане.",
     "exampleAr": "الماء في الكوب الزجاجي.",
     "exampleEn": "The water is in the glass.",
-    "related": [
-      "стакан"
-    ],
     "imagePath": "assets/images/words/glass.jpg",
     "audioWordAr": "assets/audio/ar/stakan.mp3",
     "audioWordRu": "assets/audio/ru/stakan.mp3",
@@ -2790,7 +2587,7 @@
       },
       {
         "ru": "Где стакан?",
-        "ar": "أين كوب زجاج؟",
+        "ar": "أين الكوب الزجاجي؟",
         "en": "Where is the glass?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-stakan?.mp3",
@@ -2822,15 +2619,10 @@
       },
       {
         "ru": "где стакан?",
-        "ar": "أين كوب زجاج؟",
+        "ar": "أين الكوب الزجاجي؟",
         "en": "where is the glass?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: стакан في الروسية: masculine، بينما كوب زجاج في العربية: مذكر.",
-      "en": "Gender can differ by language: стакан is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -2848,9 +2640,6 @@
     "exampleRu": "Дай мне ложку.",
     "exampleAr": "أعطني ملعقة.",
     "exampleEn": "Give me a spoon.",
-    "related": [
-      "ложка"
-    ],
     "imagePath": "assets/images/words/spoon.jpg",
     "audioWordAr": "assets/audio/ar/lozhka.mp3",
     "audioWordRu": "assets/audio/ru/lozhka.mp3",
@@ -2899,7 +2688,7 @@
       },
       {
         "ru": "Где ложка?",
-        "ar": "أين ملعقة؟",
+        "ar": "أين الملعقة؟",
         "en": "Where is the spoon?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-lozhka?.mp3",
@@ -2931,15 +2720,10 @@
       },
       {
         "ru": "где ложка?",
-        "ar": "أين ملعقة؟",
+        "ar": "أين الملعقة؟",
         "en": "where is the spoon?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: ложка في الروسية: feminine، بينما ملعقة في العربية: مؤنث.",
-      "en": "Gender can differ by language: ложка is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -2957,9 +2741,6 @@
     "exampleRu": "Мне нужна вилка.",
     "exampleAr": "أحتاج شوكة.",
     "exampleEn": "I need a fork.",
-    "related": [
-      "вилка"
-    ],
     "imagePath": "assets/images/words/fork_real.jpg",
     "audioWordAr": "assets/audio/ar/vilka.mp3",
     "audioWordRu": "assets/audio/ru/vilka.mp3",
@@ -3008,7 +2789,7 @@
       },
       {
         "ru": "Где вилка?",
-        "ar": "أين شوكة؟",
+        "ar": "أين الشوكة؟",
         "en": "Where is the fork?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-vilka?.mp3",
@@ -3040,15 +2821,10 @@
       },
       {
         "ru": "где вилка?",
-        "ar": "أين شوكة؟",
+        "ar": "أين الشوكة؟",
         "en": "where is the fork?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: вилка في الروسية: feminine، بينما شوكة في العربية: مؤنث.",
-      "en": "Gender can differ by language: вилка is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -3066,9 +2842,6 @@
     "exampleRu": "Нож на столе.",
     "exampleAr": "السكين على الطاولة.",
     "exampleEn": "The knife is on the table.",
-    "related": [
-      "нож"
-    ],
     "imagePath": "assets/images/words/knife_real.jpg",
     "audioWordAr": "assets/audio/ar/nozh.mp3",
     "audioWordRu": "assets/audio/ru/nozh.mp3",
@@ -3117,7 +2890,7 @@
       },
       {
         "ru": "Где нож?",
-        "ar": "أين سكين؟",
+        "ar": "أين السكين؟",
         "en": "Where is the knife?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-nozh?.mp3",
@@ -3149,15 +2922,10 @@
       },
       {
         "ru": "где нож?",
-        "ar": "أين سكين؟",
+        "ar": "أين السكين؟",
         "en": "where is the knife?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: нож في الروسية: masculine، بينما سكين في العربية: مذكر.",
-      "en": "Gender can differ by language: нож is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -3175,9 +2943,6 @@
     "exampleRu": "Поставь тарелку на стол.",
     "exampleAr": "ضع الطبق على الطاولة.",
     "exampleEn": "Put the plate on the table.",
-    "related": [
-      "тарелка"
-    ],
     "imagePath": "assets/images/words/plate.jpg",
     "audioWordAr": "assets/audio/ar/tarelka.mp3",
     "audioWordRu": "assets/audio/ru/tarelka.mp3",
@@ -3226,7 +2991,7 @@
       },
       {
         "ru": "Где тарелка?",
-        "ar": "أين طبق؟",
+        "ar": "أين الطبق؟",
         "en": "Where is the plate?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-tarelka?.mp3",
@@ -3258,15 +3023,10 @@
       },
       {
         "ru": "где тарелка?",
-        "ar": "أين طبق؟",
+        "ar": "أين الطبق؟",
         "en": "where is the plate?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: тарелка في الروسية: feminine، بينما طبق في العربية: مذكر.",
-      "en": "Gender can differ by language: тарелка is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -3284,9 +3044,6 @@
     "exampleRu": "Посуда в раковине.",
     "exampleAr": "الأطباق في الحوض.",
     "exampleEn": "The dishes are in the sink.",
-    "related": [
-      "раковина"
-    ],
     "imagePath": "assets/images/words/sink_quality.jpg",
     "audioWordAr": "assets/audio/ar/rakovina.mp3",
     "audioWordRu": "assets/audio/ru/rakovina.mp3",
@@ -3335,7 +3092,7 @@
       },
       {
         "ru": "Где раковина?",
-        "ar": "أين حوض؟",
+        "ar": "أين الحوض؟",
         "en": "Where is the sink?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-rakovina?.mp3",
@@ -3367,15 +3124,10 @@
       },
       {
         "ru": "где раковина?",
-        "ar": "أين حوض؟",
+        "ar": "أين الحوض؟",
         "en": "where is the sink?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: раковина في الروسية: feminine، بينما حوض في العربية: مذكر.",
-      "en": "Gender can differ by language: раковина is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -3393,9 +3145,6 @@
     "exampleRu": "Открой кран.",
     "exampleAr": "افتح الصنبور.",
     "exampleEn": "Turn on the tap.",
-    "related": [
-      "кран"
-    ],
     "imagePath": "assets/images/words/tap_quality.jpg",
     "audioWordAr": "assets/audio/ar/kran.mp3",
     "audioWordRu": "assets/audio/ru/kran.mp3",
@@ -3444,7 +3193,7 @@
       },
       {
         "ru": "Где кран?",
-        "ar": "أين صنبور؟",
+        "ar": "أين الصنبور؟",
         "en": "Where is the tap?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-kran?.mp3",
@@ -3476,15 +3225,10 @@
       },
       {
         "ru": "где кран?",
-        "ar": "أين صنبور؟",
+        "ar": "أين الصنبور؟",
         "en": "where is the tap?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: кран في الروسية: masculine، بينما صنبور في العربية: مذكر.",
-      "en": "Gender can differ by language: кран is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -3502,9 +3246,6 @@
     "exampleRu": "Кастрюля на плите.",
     "exampleAr": "الحلة على الموقد.",
     "exampleEn": "The pot is on the stove.",
-    "related": [
-      "кастрюля"
-    ],
     "imagePath": "assets/images/words/pot.jpg",
     "audioWordAr": "assets/audio/ar/kastryulya.mp3",
     "audioWordRu": "assets/audio/ru/kastryulya.mp3",
@@ -3553,7 +3294,7 @@
       },
       {
         "ru": "Где кастрюля?",
-        "ar": "أين حلة؟",
+        "ar": "أين الحلة؟",
         "en": "Where is the pot?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-kastryulya?.mp3",
@@ -3585,15 +3326,10 @@
       },
       {
         "ru": "где кастрюля?",
-        "ar": "أين حلة؟",
+        "ar": "أين الحلة؟",
         "en": "where is the pot?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: кастрюля في الروسية: feminine، بينما حلة في العربية: مؤنث.",
-      "en": "Gender can differ by language: кастрюля is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -3611,9 +3347,6 @@
     "exampleRu": "Ванная комната справа.",
     "exampleAr": "الحمام على اليمين.",
     "exampleEn": "The bathroom is on the right.",
-    "related": [
-      "ванная комната"
-    ],
     "imagePath": "assets/images/words/bathroom.jpg",
     "audioWordAr": "assets/audio/ar/vannaya-komnata.mp3",
     "audioWordRu": "assets/audio/ru/vannaya-komnata.mp3",
@@ -3662,7 +3395,7 @@
       },
       {
         "ru": "Где ванная комната?",
-        "ar": "أين حمام؟",
+        "ar": "أين الحمام؟",
         "en": "Where is the bathroom?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-vannaya-komnata?.mp3",
@@ -3694,15 +3427,10 @@
       },
       {
         "ru": "где ванная комната?",
-        "ar": "أين حمام؟",
+        "ar": "أين الحمام؟",
         "en": "where is the bathroom?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: ванная комната في الروسية: feminine، بينما حمام في العربية: مذكر في الاستعمال.",
-      "en": "Gender can differ by language: ванная комната is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -3720,9 +3448,6 @@
     "exampleRu": "Я принимаю ванну.",
     "exampleAr": "أنا آخذ حمامًا في البانيو.",
     "exampleEn": "I am taking a bath.",
-    "related": [
-      "ванна"
-    ],
     "imagePath": "assets/images/words/bathtub.jpg",
     "audioWordAr": "assets/audio/ar/vanna.mp3",
     "audioWordRu": "assets/audio/ru/vanna.mp3",
@@ -3771,7 +3496,7 @@
       },
       {
         "ru": "Где ванна?",
-        "ar": "أين بانيو؟",
+        "ar": "أين البانيو؟",
         "en": "Where is the bathtub?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-vanna?.mp3",
@@ -3803,15 +3528,10 @@
       },
       {
         "ru": "где ванна?",
-        "ar": "أين بانيو؟",
+        "ar": "أين البانيو؟",
         "en": "where is the bathtub?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: ванна في الروسية: feminine، بينما بانيو في العربية: مذكر في الاستعمال.",
-      "en": "Gender can differ by language: ванна is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -3829,9 +3549,6 @@
     "exampleRu": "Я принимаю душ.",
     "exampleAr": "أنا آخذ دشًا.",
     "exampleEn": "I am taking a shower.",
-    "related": [
-      "душ"
-    ],
     "imagePath": "assets/images/words/shower.jpg",
     "audioWordAr": "assets/audio/ar/dush.mp3",
     "audioWordRu": "assets/audio/ru/dush.mp3",
@@ -3880,7 +3597,7 @@
       },
       {
         "ru": "Где душ?",
-        "ar": "أين دُش؟",
+        "ar": "أين الدش؟",
         "en": "Where is the shower?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-dush?.mp3",
@@ -3912,15 +3629,10 @@
       },
       {
         "ru": "где душ?",
-        "ar": "أين دُش؟",
+        "ar": "أين الدش؟",
         "en": "where is the shower?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: душ في الروسية: masculine، بينما دُش في العربية: مذكر.",
-      "en": "Gender can differ by language: душ is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -3938,9 +3650,6 @@
     "exampleRu": "Я смотрю в зеркало.",
     "exampleAr": "أنا أنظر في المرآة.",
     "exampleEn": "I am looking in the mirror.",
-    "related": [
-      "зеркало"
-    ],
     "imagePath": "assets/images/words/mirror.jpg",
     "audioWordAr": "assets/audio/ar/zerkalo.mp3",
     "audioWordRu": "assets/audio/ru/zerkalo.mp3",
@@ -3989,7 +3698,7 @@
       },
       {
         "ru": "Где зеркало?",
-        "ar": "أين مرآة؟",
+        "ar": "أين المرآة؟",
         "en": "Where is the mirror?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-zerkalo?.mp3",
@@ -4021,15 +3730,10 @@
       },
       {
         "ru": "где зеркало?",
-        "ar": "أين مرآة؟",
+        "ar": "أين المرآة؟",
         "en": "where is the mirror?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: зеркало في الروسية: neuter، بينما مرآة في العربية: مؤنث.",
-      "en": "Gender can differ by language: зеркало is neuter in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: neuter. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -4047,9 +3751,6 @@
     "exampleRu": "Дай мне полотенце.",
     "exampleAr": "أعطني منشفة.",
     "exampleEn": "Give me a towel.",
-    "related": [
-      "полотенце"
-    ],
     "imagePath": "assets/images/words/towel_quality.jpg",
     "audioWordAr": "assets/audio/ar/polotentse.mp3",
     "audioWordRu": "assets/audio/ru/polotentse.mp3",
@@ -4098,7 +3799,7 @@
       },
       {
         "ru": "Где полотенце?",
-        "ar": "أين منشفة؟",
+        "ar": "أين المنشفة؟",
         "en": "Where is the towel?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-polotentse?.mp3",
@@ -4130,15 +3831,10 @@
       },
       {
         "ru": "где полотенце?",
-        "ar": "أين منشفة؟",
+        "ar": "أين المنشفة؟",
         "en": "where is the towel?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: полотенце في الروسية: neuter، بينما منشفة في العربية: مؤنث.",
-      "en": "Gender can differ by language: полотенце is neuter in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: neuter. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -4156,9 +3852,6 @@
     "exampleRu": "Где мыло?",
     "exampleAr": "أين الصابون؟",
     "exampleEn": "Where is the soap.",
-    "related": [
-      "мыло"
-    ],
     "imagePath": "assets/images/words/soap_real2.jpg",
     "audioWordAr": "assets/audio/ar/mylo.mp3",
     "audioWordRu": "assets/audio/ru/mylo.mp3",
@@ -4198,7 +3891,7 @@
       {
         "ru": "Где мыло?",
         "ar": "أين الصابون؟",
-        "en": "Where is the soap.",
+        "en": "Where is the soap?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-mylo?.mp3",
           "ar": "assets/audio/ar/examples/gde-mylo?.mp3",
@@ -4206,14 +3899,9 @@
         }
       },
       {
-        "ru": "Где мыло?",
-        "ar": "أين صابون؟",
-        "en": "Where is the soap?",
-        "audio": {
-          "ru": "assets/audio/ru/examples/gde-mylo?.mp3",
-          "ar": "assets/audio/ar/examples/gde-mylo?.mp3",
-          "en": "assets/audio/en/examples/gde-mylo?.mp3"
-        }
+        "ru": "Мыло лежит у раковины.",
+        "ar": "الصابون بجانب الحوض.",
+        "en": "The soap is by the sink."
       },
       {
         "ru": "Мыло новое.",
@@ -4239,15 +3927,10 @@
       },
       {
         "ru": "где мыло?",
-        "ar": "أين صابون؟",
+        "ar": "أين الصابون؟",
         "en": "where is the soap?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: мыло في الروسية: neuter، بينما صابون في العربية: مذكر.",
-      "en": "Gender can differ by language: мыло is neuter in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: neuter. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -4265,9 +3948,6 @@
     "exampleRu": "Это моя зубная щётка.",
     "exampleAr": "هذه فرشاة أسناني.",
     "exampleEn": "This is my toothbrush.",
-    "related": [
-      "зубная щётка"
-    ],
     "imagePath": "assets/images/words/toothbrush_real.jpg",
     "audioWordAr": "assets/audio/ar/zubnaya-shchyotka.mp3",
     "audioWordRu": "assets/audio/ru/zubnaya-shchyotka.mp3",
@@ -4316,7 +3996,7 @@
       },
       {
         "ru": "Где зубная щётка?",
-        "ar": "أين فرشاة أسنان؟",
+        "ar": "أين فرشاة الأسنان؟",
         "en": "Where is the toothbrush?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-zubnaya-shchyotka?.mp3",
@@ -4348,15 +4028,10 @@
       },
       {
         "ru": "где зубная щётка?",
-        "ar": "أين فرشاة أسنان؟",
+        "ar": "أين فرشاة الأسنان؟",
         "en": "where is the toothbrush?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: зубная щётка في الروسية: feminine، بينما فرشاة أسنان في العربية: مؤنث.",
-      "en": "Gender can differ by language: зубная щётка is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -4374,9 +4049,6 @@
     "exampleRu": "Мне нужна зубная паста.",
     "exampleAr": "أحتاج معجون أسنان.",
     "exampleEn": "I need toothpaste.",
-    "related": [
-      "зубная паста"
-    ],
     "imagePath": "assets/images/words/toothpaste_real.jpg",
     "audioWordAr": "assets/audio/ar/zubnaya-pasta.mp3",
     "audioWordRu": "assets/audio/ru/zubnaya-pasta.mp3",
@@ -4425,7 +4097,7 @@
       },
       {
         "ru": "Где зубная паста?",
-        "ar": "أين معجون أسنان؟",
+        "ar": "أين معجون الأسنان؟",
         "en": "Where is the toothpaste?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-zubnaya-pasta?.mp3",
@@ -4457,15 +4129,10 @@
       },
       {
         "ru": "где зубная паста?",
-        "ar": "أين معجون أسنان؟",
+        "ar": "أين معجون الأسنان؟",
         "en": "where is the toothpaste?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: зубная паста في الروسية: feminine، بينما معجون أسنان في العربية: مذكر غالبًا.",
-      "en": "Gender can differ by language: зубная паста is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -4483,9 +4150,6 @@
     "exampleRu": "Туалет занят.",
     "exampleAr": "الحمام مشغول.",
     "exampleEn": "The toilet is occupied.",
-    "related": [
-      "туалет"
-    ],
     "imagePath": "assets/images/words/toilet.jpg",
     "audioWordAr": "assets/audio/ar/tualet.mp3",
     "audioWordRu": "assets/audio/ru/tualet.mp3",
@@ -4534,7 +4198,7 @@
       },
       {
         "ru": "Где туалет?",
-        "ar": "أين مرحاض؟",
+        "ar": "أين المرحاض؟",
         "en": "Where is the toilet?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-tualet?.mp3",
@@ -4566,15 +4230,10 @@
       },
       {
         "ru": "где туалет?",
-        "ar": "أين مرحاض؟",
+        "ar": "أين المرحاض؟",
         "en": "where is the toilet?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: туалет في الروسية: masculine، بينما مرحاض في العربية: مذكر.",
-      "en": "Gender can differ by language: туалет is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -4592,9 +4251,6 @@
     "exampleRu": "Открой дверь.",
     "exampleAr": "افتح الباب.",
     "exampleEn": "Open the door.",
-    "related": [
-      "дверь"
-    ],
     "imagePath": "assets/images/words/door.jpg",
     "audioWordAr": "assets/audio/ar/dver.mp3",
     "audioWordRu": "assets/audio/ru/dver.mp3",
@@ -4643,7 +4299,7 @@
       },
       {
         "ru": "Где дверь?",
-        "ar": "أين باب؟",
+        "ar": "أين الباب؟",
         "en": "Where is the door?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-dver?.mp3",
@@ -4675,15 +4331,10 @@
       },
       {
         "ru": "где дверь?",
-        "ar": "أين باب؟",
+        "ar": "أين الباب؟",
         "en": "where is the door?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: дверь في الروسية: feminine، بينما باب في العربية: مذكر.",
-      "en": "Gender can differ by language: дверь is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -4701,9 +4352,6 @@
     "exampleRu": "Закрой окно.",
     "exampleAr": "أغلق الشباك.",
     "exampleEn": "Close the window.",
-    "related": [
-      "окно"
-    ],
     "imagePath": "assets/images/words/window.jpg",
     "audioWordAr": "assets/audio/ar/okno.mp3",
     "audioWordRu": "assets/audio/ru/okno.mp3",
@@ -4752,7 +4400,7 @@
       },
       {
         "ru": "Где окно?",
-        "ar": "أين نافذة؟",
+        "ar": "أين النافذة؟",
         "en": "Where is the window?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-okno?.mp3",
@@ -4784,15 +4432,10 @@
       },
       {
         "ru": "где окно?",
-        "ar": "أين نافذة؟",
+        "ar": "أين النافذة؟",
         "en": "where is the window?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: окно في الروسية: neuter، بينما نافذة في العربية: مؤنث غالبًا.",
-      "en": "Gender can differ by language: окно is neuter in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: neuter. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -4810,9 +4453,6 @@
     "exampleRu": "Где мой ключ?",
     "exampleAr": "أين مفتاحي؟",
     "exampleEn": "Where is my key.",
-    "related": [
-      "ключ"
-    ],
     "imagePath": "assets/images/words/key_real.jpg",
     "audioWordAr": "assets/audio/ar/klyuch.mp3",
     "audioWordRu": "assets/audio/ru/klyuch.mp3",
@@ -4861,7 +4501,7 @@
       },
       {
         "ru": "Где ключ?",
-        "ar": "أين مفتاح؟",
+        "ar": "أين المفتاح؟",
         "en": "Where is the key?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-klyuch?.mp3",
@@ -4893,15 +4533,10 @@
       },
       {
         "ru": "где ключ?",
-        "ar": "أين مفتاح؟",
+        "ar": "أين المفتاح؟",
         "en": "where is the key?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: ключ في الروسية: masculine، بينما مفتاح في العربية: مذكر.",
-      "en": "Gender can differ by language: ключ is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -4919,9 +4554,6 @@
     "exampleRu": "Замок на двери.",
     "exampleAr": "القفل على الباب.",
     "exampleEn": "The lock is on the door.",
-    "related": [
-      "замок"
-    ],
     "imagePath": "assets/images/words/lock_real.jpg",
     "audioWordAr": "assets/audio/ar/zamok.mp3",
     "audioWordRu": "assets/audio/ru/zamok.mp3",
@@ -4970,7 +4602,7 @@
       },
       {
         "ru": "Где замок?",
-        "ar": "أين قفل؟",
+        "ar": "أين القفل؟",
         "en": "Where is the lock?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-zamok?.mp3",
@@ -5002,15 +4634,10 @@
       },
       {
         "ru": "где замок?",
-        "ar": "أين قفل؟",
+        "ar": "أين القفل؟",
         "en": "where is the lock?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: замок في الروسية: masculine، بينما قفل في العربية: مذكر.",
-      "en": "Gender can differ by language: замок is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -5028,9 +4655,6 @@
     "exampleRu": "На стене картина.",
     "exampleAr": "على الحائط لوحة.",
     "exampleEn": "There is a picture on the wall.",
-    "related": [
-      "стена"
-    ],
     "imagePath": "assets/images/words/wall.jpg",
     "audioWordAr": "assets/audio/ar/stena.mp3",
     "audioWordRu": "assets/audio/ru/stena.mp3",
@@ -5079,7 +4703,7 @@
       },
       {
         "ru": "Где стена?",
-        "ar": "أين حائط؟",
+        "ar": "أين الحائط؟",
         "en": "Where is the wall?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-stena?.mp3",
@@ -5111,15 +4735,10 @@
       },
       {
         "ru": "где стена?",
-        "ar": "أين حائط؟",
+        "ar": "أين الحائط؟",
         "en": "where is the wall?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: стена في الروسية: feminine، بينما حائط في العربية: مذكر.",
-      "en": "Gender can differ by language: стена is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -5137,9 +4756,6 @@
     "exampleRu": "Сумка на полу.",
     "exampleAr": "الحقيبة على الأرض.",
     "exampleEn": "The bag is on the floor.",
-    "related": [
-      "пол"
-    ],
     "imagePath": "assets/images/words/floor.jpg",
     "audioWordAr": "assets/audio/ar/pol.mp3",
     "audioWordRu": "assets/audio/ru/pol.mp3",
@@ -5188,7 +4804,7 @@
       },
       {
         "ru": "Где пол?",
-        "ar": "أين أرضية؟",
+        "ar": "أين الأرضية؟",
         "en": "Where is the floor?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-pol?.mp3",
@@ -5220,15 +4836,10 @@
       },
       {
         "ru": "где пол?",
-        "ar": "أين أرضية؟",
+        "ar": "أين الأرضية؟",
         "en": "where is the floor?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: пол في الروسية: masculine، بينما أرضية في العربية: مؤنث غالبًا.",
-      "en": "Gender can differ by language: пол is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -5246,9 +4857,6 @@
     "exampleRu": "Потолок белый.",
     "exampleAr": "السقف أبيض.",
     "exampleEn": "The ceiling is white.",
-    "related": [
-      "потолок"
-    ],
     "imagePath": "assets/images/words/ceiling.jpg",
     "audioWordAr": "assets/audio/ar/potolok.mp3",
     "audioWordRu": "assets/audio/ru/potolok.mp3",
@@ -5297,7 +4905,7 @@
       },
       {
         "ru": "Где потолок?",
-        "ar": "أين سقف؟",
+        "ar": "أين السقف؟",
         "en": "Where is the ceiling?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-potolok?.mp3",
@@ -5329,15 +4937,10 @@
       },
       {
         "ru": "где потолок?",
-        "ar": "أين سقف؟",
+        "ar": "أين السقف؟",
         "en": "where is the ceiling?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: потолок في الروسية: masculine، بينما سقف في العربية: مذكر.",
-      "en": "Gender can differ by language: потолок is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -5355,9 +4958,6 @@
     "exampleRu": "Я стою на балконе.",
     "exampleAr": "أنا أقف في البلكونة.",
     "exampleEn": "I am standing on the balcony.",
-    "related": [
-      "балкон"
-    ],
     "imagePath": "assets/images/words/balcony.jpg",
     "audioWordAr": "assets/audio/ar/balkon.mp3",
     "audioWordRu": "assets/audio/ru/balkon.mp3",
@@ -5406,7 +5006,7 @@
       },
       {
         "ru": "Где балкон?",
-        "ar": "أين بلكونة؟",
+        "ar": "أين البلكونة؟",
         "en": "Where is the balcony?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-balkon?.mp3",
@@ -5438,15 +5038,10 @@
       },
       {
         "ru": "где балкон?",
-        "ar": "أين بلكونة؟",
+        "ar": "أين البلكونة؟",
         "en": "where is the balcony?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: балкон في الروسية: masculine، بينما بلكونة في العربية: مؤنث غالبًا.",
-      "en": "Gender can differ by language: балкон is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -5464,9 +5059,6 @@
     "exampleRu": "Где пульт?",
     "exampleAr": "أين الريموت؟",
     "exampleEn": "Where is the remote control?",
-    "related": [
-      "пульт"
-    ],
     "imagePath": "assets/images/words/remote_web.jpg",
     "audioWordAr": "assets/audio/ar/pult.mp3",
     "audioWordRu": "assets/audio/ru/pult.mp3",
@@ -5514,14 +5106,9 @@
         }
       },
       {
-        "ru": "Где пульт?",
-        "ar": "أين ريموت؟",
-        "en": "Where is the remote control?",
-        "audio": {
-          "ru": "assets/audio/ru/examples/gde-pult?.mp3",
-          "ar": "assets/audio/ar/examples/gde-pult?.mp3",
-          "en": "assets/audio/en/examples/gde-pult?.mp3"
-        }
+        "ru": "Пульт лежит рядом с телевизором.",
+        "ar": "الريموت بجانب التلفزيون.",
+        "en": "The remote control is next to the television."
       },
       {
         "ru": "Пульт новый.",
@@ -5547,15 +5134,10 @@
       },
       {
         "ru": "где пульт?",
-        "ar": "أين ريموت؟",
+        "ar": "أين الريموت؟",
         "en": "where is the remote control?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: пульт في الروسية: masculine، بينما ريموت في العربية: مذكر.",
-      "en": "Gender can differ by language: пульт is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -5573,9 +5155,6 @@
     "exampleRu": "Часы на стене.",
     "exampleAr": "الساعة على الحائط.",
     "exampleEn": "The clock is on the wall.",
-    "related": [
-      "часы"
-    ],
     "imagePath": "assets/images/words/clock_web.jpg",
     "audioWordAr": "assets/audio/ar/chasy.mp3",
     "audioWordRu": "assets/audio/ru/chasy.mp3",
@@ -5624,7 +5203,7 @@
       },
       {
         "ru": "Где часы?",
-        "ar": "أين ساعة؟",
+        "ar": "أين الساعة؟",
         "en": "Where is the clock?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-chasy?.mp3",
@@ -5656,15 +5235,10 @@
       },
       {
         "ru": "где часы?",
-        "ar": "أين ساعة؟",
+        "ar": "أين الساعة؟",
         "en": "where is the clock?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: часы في الروسية: plural-only، بينما ساعة في العربية: مؤنث غالبًا.",
-      "en": "Gender can differ by language: часы is plural-only in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: plural-only. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -5682,9 +5256,6 @@
     "exampleRu": "Книга на столе.",
     "exampleAr": "الكتاب على الطاولة.",
     "exampleEn": "The book is on the table.",
-    "related": [
-      "книга"
-    ],
     "imagePath": "assets/images/words/book_web.jpg",
     "audioWordAr": "assets/audio/ar/kniga.mp3",
     "audioWordRu": "assets/audio/ru/kniga.mp3",
@@ -5733,7 +5304,7 @@
       },
       {
         "ru": "Где книга?",
-        "ar": "أين كتاب؟",
+        "ar": "أين الكتاب؟",
         "en": "Where is the book?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-kniga?.mp3",
@@ -5765,15 +5336,10 @@
       },
       {
         "ru": "где книга?",
-        "ar": "أين كتاب؟",
+        "ar": "أين الكتاب؟",
         "en": "where is the book?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: книга في الروسية: feminine، بينما كتاب في العربية: مذكر.",
-      "en": "Gender can differ by language: книга is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -5791,9 +5357,6 @@
     "exampleRu": "Телефон на столе.",
     "exampleAr": "الهاتف على الطاولة.",
     "exampleEn": "The phone is on the table.",
-    "related": [
-      "телефон"
-    ],
     "imagePath": "assets/images/words/phone_web.jpg",
     "audioWordAr": "assets/audio/ar/telefon.mp3",
     "audioWordRu": "assets/audio/ru/telefon.mp3",
@@ -5842,7 +5405,7 @@
       },
       {
         "ru": "Где телефон?",
-        "ar": "أين هاتف؟",
+        "ar": "أين الهاتف؟",
         "en": "Where is the phone?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-telefon?.mp3",
@@ -5874,15 +5437,10 @@
       },
       {
         "ru": "где телефон?",
-        "ar": "أين هاتف؟",
+        "ar": "أين الهاتف؟",
         "en": "where is the phone?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: телефон في الروسية: masculine، بينما هاتف في العربية: مذكر.",
-      "en": "Gender can differ by language: телефон is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -5900,9 +5458,6 @@
     "exampleRu": "Где зарядка?",
     "exampleAr": "أين الشاحن؟",
     "exampleEn": "Where is the charger?",
-    "related": [
-      "зарядка"
-    ],
     "imagePath": "assets/images/words/charger_web.jpg",
     "audioWordAr": "assets/audio/ar/zaryadka.mp3",
     "audioWordRu": "assets/audio/ru/zaryadka.mp3",
@@ -5950,14 +5505,9 @@
         }
       },
       {
-        "ru": "Где зарядка?",
-        "ar": "أين شاحن؟",
-        "en": "Where is the charger?",
-        "audio": {
-          "ru": "assets/audio/ru/examples/gde-zaryadka?.mp3",
-          "ar": "assets/audio/ar/examples/gde-zaryadka?.mp3",
-          "en": "assets/audio/en/examples/gde-zaryadka?.mp3"
-        }
+        "ru": "Зарядка лежит на столе.",
+        "ar": "الشاحن على الطاولة.",
+        "en": "The charger is on the table."
       },
       {
         "ru": "Зарядка новая.",
@@ -5983,15 +5533,10 @@
       },
       {
         "ru": "где зарядка?",
-        "ar": "أين شاحن؟",
+        "ar": "أين الشاحن؟",
         "en": "where is the charger?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: зарядка في الروسية: feminine، بينما شاحن في العربية: مذكر غالبًا.",
-      "en": "Gender can differ by language: зарядка is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -6009,9 +5554,6 @@
     "exampleRu": "Розетка рядом с кроватью.",
     "exampleAr": "المقبس بجانب السرير.",
     "exampleEn": "The outlet is next to the bed.",
-    "related": [
-      "розетка"
-    ],
     "imagePath": "assets/images/words/socket_web.jpg",
     "audioWordAr": "assets/audio/ar/rozetka.mp3",
     "audioWordRu": "assets/audio/ru/rozetka.mp3",
@@ -6060,7 +5602,7 @@
       },
       {
         "ru": "Где розетка?",
-        "ar": "أين مقبس كهرباء؟",
+        "ar": "أين مقبس الكهرباء؟",
         "en": "Where is the socket?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-rozetka?.mp3",
@@ -6092,15 +5634,10 @@
       },
       {
         "ru": "где розетка?",
-        "ar": "أين مقبس كهرباء؟",
+        "ar": "أين مقبس الكهرباء؟",
         "en": "where is the socket?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: розетка في الروسية: feminine، بينما مقبس كهرباء في العربية: مذكر.",
-      "en": "Gender can differ by language: розетка is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -6118,9 +5655,6 @@
     "exampleRu": "Нажми на выключатель.",
     "exampleAr": "اضغط على مفتاح النور.",
     "exampleEn": "Press the light switch.",
-    "related": [
-      "выключатель"
-    ],
     "imagePath": "assets/images/words/switch_web.jpg",
     "audioWordAr": "assets/audio/ar/vyklyuchatel.mp3",
     "audioWordRu": "assets/audio/ru/vyklyuchatel.mp3",
@@ -6169,7 +5703,7 @@
       },
       {
         "ru": "Где выключатель?",
-        "ar": "أين مفتاح نور؟",
+        "ar": "أين مفتاح النور؟",
         "en": "Where is the light switch?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-vyklyuchatel?.mp3",
@@ -6201,15 +5735,10 @@
       },
       {
         "ru": "где выключатель?",
-        "ar": "أين مفتاح نور؟",
+        "ar": "أين مفتاح النور؟",
         "en": "where is the light switch?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: выключатель في الروسية: masculine، بينما مفتاح نور في العربية: مذكر.",
-      "en": "Gender can differ by language: выключатель is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -6227,9 +5756,6 @@
     "exampleRu": "Куртка на вешалке.",
     "exampleAr": "الجاكيت على الشماعة.",
     "exampleEn": "The jacket is on the hanger.",
-    "related": [
-      "вешалка"
-    ],
     "imagePath": "assets/images/words/hanger_web.jpg",
     "audioWordAr": "assets/audio/ar/veshalka.mp3",
     "audioWordRu": "assets/audio/ru/veshalka.mp3",
@@ -6278,7 +5804,7 @@
       },
       {
         "ru": "Где вешалка?",
-        "ar": "أين شماعة؟",
+        "ar": "أين الشماعة؟",
         "en": "Where is the hanger?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-veshalka?.mp3",
@@ -6310,15 +5836,10 @@
       },
       {
         "ru": "где вешалка?",
-        "ar": "أين شماعة؟",
+        "ar": "أين الشماعة؟",
         "en": "where is the hanger?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: вешалка في الروسية: feminine، بينما شماعة في العربية: مؤنث.",
-      "en": "Gender can differ by language: вешалка is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -6336,9 +5857,6 @@
     "exampleRu": "Матрас новый.",
     "exampleAr": "المرتبة جديدة.",
     "exampleEn": "The mattress is new.",
-    "related": [
-      "матрас"
-    ],
     "imagePath": "assets/images/words/mattress.jpg",
     "audioWordAr": "assets/audio/ar/matras.mp3",
     "audioWordRu": "assets/audio/ru/matras.mp3",
@@ -6387,23 +5905,13 @@
       },
       {
         "ru": "Где матрас?",
-        "ar": "أين مرتبة؟",
-        "en": "Where is the mattress?",
-        "audio": {
-          "ru": "assets/audio/ru/examples/gde-matras?.mp3",
-          "ar": "assets/audio/ar/examples/gde-matras?.mp3",
-          "en": "assets/audio/en/examples/gde-matras?.mp3"
-        }
+        "ar": "أين المرتبة؟",
+        "en": "Where is the mattress?"
       },
       {
-        "ru": "Матрас новый.",
-        "ar": "هذه مرتبة جديدة.",
-        "en": "This mattress is new.",
-        "audio": {
-          "ru": "assets/audio/ru/examples/matras-novyy.mp3",
-          "ar": "assets/audio/ar/examples/matras-novyy.mp3",
-          "en": "assets/audio/en/examples/matras-novyy.mp3"
-        }
+        "ru": "Матрас лежит на кровати.",
+        "ar": "المرتبة على السرير.",
+        "en": "The mattress is on the bed."
       }
     ],
     "phrases": [
@@ -6419,15 +5927,10 @@
       },
       {
         "ru": "где матрас?",
-        "ar": "أين مرتبة؟",
+        "ar": "أين المرتبة؟",
         "en": "where is the mattress?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: матрас في الروسية: masculine، بينما مرتبة في العربية: مؤنث.",
-      "en": "Gender can differ by language: матрас is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -6445,9 +5948,6 @@
     "exampleRu": "Простыня чистая.",
     "exampleAr": "الملاءة نظيفة.",
     "exampleEn": "The sheet is clean.",
-    "related": [
-      "простыня"
-    ],
     "imagePath": "assets/images/words/sheet.jpg",
     "audioWordAr": "assets/audio/ar/prostynya.mp3",
     "audioWordRu": "assets/audio/ru/prostynya.mp3",
@@ -6496,7 +5996,7 @@
       },
       {
         "ru": "Где простыня?",
-        "ar": "أين ملاءة؟",
+        "ar": "أين الملاءة؟",
         "en": "Where is the sheet?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-prostynya?.mp3",
@@ -6528,15 +6028,10 @@
       },
       {
         "ru": "где простыня?",
-        "ar": "أين ملاءة؟",
+        "ar": "أين الملاءة؟",
         "en": "where is the sheet?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: простыня في الروسية: feminine، بينما ملاءة في العربية: مؤنث.",
-      "en": "Gender can differ by language: простыня is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -6554,9 +6049,6 @@
     "exampleRu": "Одежда в шкафу.",
     "exampleAr": "الملابس في الدولاب.",
     "exampleEn": "The clothes are in the wardrobe.",
-    "related": [
-      "одежда"
-    ],
     "imagePath": "assets/images/words/clothes.jpg",
     "audioWordAr": "assets/audio/ar/odezhda.mp3",
     "audioWordRu": "assets/audio/ru/odezhda.mp3",
@@ -6605,7 +6097,7 @@
       },
       {
         "ru": "Где одежда?",
-        "ar": "أين ملابس؟",
+        "ar": "أين الملابس؟",
         "en": "Where is the clothes?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-odezhda?.mp3",
@@ -6637,15 +6129,10 @@
       },
       {
         "ru": "где одежда?",
-        "ar": "أين ملابس؟",
+        "ar": "أين الملابس؟",
         "en": "where is the clothes?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: одежда في الروسية: feminine، بينما ملابس في العربية: مؤنث جمعي غالبًا.",
-      "en": "Gender can differ by language: одежда is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -6663,9 +6150,6 @@
     "exampleRu": "Сумка на полу.",
     "exampleAr": "الحقيبة على الأرض.",
     "exampleEn": "The bag is on the floor.",
-    "related": [
-      "сумка"
-    ],
     "imagePath": "assets/images/words/bag_web.jpg",
     "audioWordAr": "assets/audio/ar/sumka.mp3",
     "audioWordRu": "assets/audio/ru/sumka.mp3",
@@ -6714,7 +6198,7 @@
       },
       {
         "ru": "Где сумка?",
-        "ar": "أين حقيبة؟",
+        "ar": "أين الحقيبة؟",
         "en": "Where is the bag?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-sumka?.mp3",
@@ -6746,15 +6230,10 @@
       },
       {
         "ru": "где сумка?",
-        "ar": "أين حقيبة؟",
+        "ar": "أين الحقيبة؟",
         "en": "where is the bag?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: сумка في الروسية: feminine، بينما حقيبة في العربية: مؤنث.",
-      "en": "Gender can differ by language: сумка is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -6772,9 +6251,6 @@
     "exampleRu": "Коробка под столом.",
     "exampleAr": "الصندوق تحت الطاولة.",
     "exampleEn": "The box is under the table.",
-    "related": [
-      "коробка"
-    ],
     "imagePath": "assets/images/words/box_web.jpg",
     "audioWordAr": "assets/audio/ar/korobka.mp3",
     "audioWordRu": "assets/audio/ru/korobka.mp3",
@@ -6823,7 +6299,7 @@
       },
       {
         "ru": "Где коробка?",
-        "ar": "أين صندوق؟",
+        "ar": "أين الصندوق؟",
         "en": "Where is the box?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-korobka?.mp3",
@@ -6855,15 +6331,10 @@
       },
       {
         "ru": "где коробка?",
-        "ar": "أين صندوق؟",
+        "ar": "أين الصندوق؟",
         "en": "where is the box?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: коробка في الروسية: feminine، بينما صندوق في العربية: مذكر.",
-      "en": "Gender can differ by language: коробка is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -6881,9 +6352,6 @@
     "exampleRu": "Разогрей еду в микроволновке.",
     "exampleAr": "سخّن الأكل في الميكروويف.",
     "exampleEn": "Heat the food in the microwave.",
-    "related": [
-      "микроволновка"
-    ],
     "imagePath": "assets/images/words/microwave.jpg",
     "audioWordAr": "assets/audio/ar/mikrovolnovka.mp3",
     "audioWordRu": "assets/audio/ru/mikrovolnovka.mp3",
@@ -6932,7 +6400,7 @@
       },
       {
         "ru": "Где микроволновка?",
-        "ar": "أين ميكروويف؟",
+        "ar": "أين الميكروويف؟",
         "en": "Where is the microwave?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-mikrovolnovka?.mp3",
@@ -6964,15 +6432,10 @@
       },
       {
         "ru": "где микроволновка?",
-        "ar": "أين ميكروويف؟",
+        "ar": "أين الميكروويف؟",
         "en": "where is the microwave?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: микроволновка في الروسية: feminine، بينما ميكروويف في العربية: مذكر.",
-      "en": "Gender can differ by language: микроволновка is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -6990,9 +6453,6 @@
     "exampleRu": "Пирог в духовке.",
     "exampleAr": "الفطيرة في الفرن.",
     "exampleEn": "The pie is in the oven.",
-    "related": [
-      "духовка"
-    ],
     "imagePath": "assets/images/words/oven.jpg",
     "audioWordAr": "assets/audio/ar/dukhovka.mp3",
     "audioWordRu": "assets/audio/ru/dukhovka.mp3",
@@ -7041,7 +6501,7 @@
       },
       {
         "ru": "Где духовка?",
-        "ar": "أين فرن؟",
+        "ar": "أين الفرن؟",
         "en": "Where is the oven?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-dukhovka?.mp3",
@@ -7073,15 +6533,10 @@
       },
       {
         "ru": "где духовка?",
-        "ar": "أين فرن؟",
+        "ar": "أين الفرن؟",
         "en": "where is the oven?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: духовка في الروسية: feminine، بينما فرن في العربية: مذكر.",
-      "en": "Gender can differ by language: духовка is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -7099,9 +6554,6 @@
     "exampleRu": "Чайник на кухне.",
     "exampleAr": "الغلاية في المطبخ.",
     "exampleEn": "The kettle is in the kitchen.",
-    "related": [
-      "чайник"
-    ],
     "imagePath": "assets/images/words/kettle.jpg",
     "audioWordAr": "assets/audio/ar/chaynik.mp3",
     "audioWordRu": "assets/audio/ru/chaynik.mp3",
@@ -7150,7 +6602,7 @@
       },
       {
         "ru": "Где чайник?",
-        "ar": "أين غلاية؟",
+        "ar": "أين الغلاية؟",
         "en": "Where is the kettle?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-chaynik?.mp3",
@@ -7182,15 +6634,10 @@
       },
       {
         "ru": "где чайник?",
-        "ar": "أين غلاية؟",
+        "ar": "أين الغلاية؟",
         "en": "where is the kettle?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: чайник في الروسية: masculine، بينما غلاية في العربية: مؤنث غالبًا.",
-      "en": "Gender can differ by language: чайник is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -7208,9 +6655,6 @@
     "exampleRu": "Выброси мусор.",
     "exampleAr": "ارمِ القمامة.",
     "exampleEn": "Throw away the trash.",
-    "related": [
-      "мусор"
-    ],
     "imagePath": "assets/images/words/trash_web.jpg",
     "audioWordAr": "assets/audio/ar/musor.mp3",
     "audioWordRu": "assets/audio/ru/musor.mp3",
@@ -7259,7 +6703,7 @@
       },
       {
         "ru": "Где мусор?",
-        "ar": "أين قمامة؟",
+        "ar": "أين القمامة؟",
         "en": "Where is the trash?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-musor?.mp3",
@@ -7291,15 +6735,10 @@
       },
       {
         "ru": "где мусор?",
-        "ar": "أين قمامة؟",
+        "ar": "أين القمامة؟",
         "en": "where is the trash?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: мусор في الروسية: masculine، بينما قمامة في العربية: مؤنث في الاستعمال.",
-      "en": "Gender can differ by language: мусор is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -7317,9 +6756,6 @@
     "exampleRu": "Стиральная машина работает.",
     "exampleAr": "الغسالة تعمل.",
     "exampleEn": "The washing machine is working.",
-    "related": [
-      "стиральная машина"
-    ],
     "imagePath": "assets/images/words/washing_machine_real.jpg",
     "audioWordAr": "assets/audio/ar/stiralnaya-mashina.mp3",
     "audioWordRu": "assets/audio/ru/stiralnaya-mashina.mp3",
@@ -7368,7 +6804,7 @@
       },
       {
         "ru": "Где стиральная машина?",
-        "ar": "أين غسالة ملابس؟",
+        "ar": "أين الغسالة؟",
         "en": "Where is the washing machine?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-stiralnaya-mashina?.mp3",
@@ -7400,15 +6836,10 @@
       },
       {
         "ru": "где стиральная машина?",
-        "ar": "أين غسالة ملابس؟",
+        "ar": "أين الغسالة؟",
         "en": "where is the washing machine?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: стиральная машина في الروسية: feminine، بينما غسالة ملابس في العربية: مؤنث.",
-      "en": "Gender can differ by language: стиральная машина is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -7426,9 +6857,6 @@
     "exampleRu": "Пылесос в комнате.",
     "exampleAr": "المكنسة الكهربائية في الغرفة.",
     "exampleEn": "The vacuum cleaner is in the room.",
-    "related": [
-      "пылесос"
-    ],
     "imagePath": "assets/images/words/vacuum_real.jpg",
     "audioWordAr": "assets/audio/ar/pylesos.mp3",
     "audioWordRu": "assets/audio/ru/pylesos.mp3",
@@ -7477,7 +6905,7 @@
       },
       {
         "ru": "Где пылесос?",
-        "ar": "أين مكنسة كهربائية؟",
+        "ar": "أين المكنسة الكهربائية؟",
         "en": "Where is the vacuum cleaner?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-pylesos?.mp3",
@@ -7509,15 +6937,10 @@
       },
       {
         "ru": "где пылесос?",
-        "ar": "أين مكنسة كهربائية؟",
+        "ar": "أين المكنسة الكهربائية؟",
         "en": "where is the vacuum cleaner?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: пылесос في الروسية: masculine، بينما مكنسة كهربائية في العربية: مؤنث غالبًا.",
-      "en": "Gender can differ by language: пылесос is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -7535,9 +6958,6 @@
     "exampleRu": "Утюг горячий.",
     "exampleAr": "المكواة ساخنة.",
     "exampleEn": "The iron is hot.",
-    "related": [
-      "утюг"
-    ],
     "imagePath": "assets/images/words/iron_web.jpg",
     "audioWordAr": "assets/audio/ar/utyug.mp3",
     "audioWordRu": "assets/audio/ru/utyug.mp3",
@@ -7586,7 +7006,7 @@
       },
       {
         "ru": "Где утюг?",
-        "ar": "أين مكواة؟",
+        "ar": "أين المكواة؟",
         "en": "Where is the iron?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-utyug?.mp3",
@@ -7618,15 +7038,10 @@
       },
       {
         "ru": "где утюг?",
-        "ar": "أين مكواة؟",
+        "ar": "أين المكواة؟",
         "en": "where is the iron?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: утюг في الروسية: masculine، بينما مكواة في العربية: مؤنث.",
-      "en": "Gender can differ by language: утюг is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -7644,9 +7059,6 @@
     "exampleRu": "Включи кондиционер.",
     "exampleAr": "شغّل المكيّف.",
     "exampleEn": "Turn on the air conditioner.",
-    "related": [
-      "кондиционер"
-    ],
     "imagePath": "assets/images/words/air_conditioner_web.jpg",
     "audioWordAr": "assets/audio/ar/konditsioner.mp3",
     "audioWordRu": "assets/audio/ru/konditsioner.mp3",
@@ -7695,7 +7107,7 @@
       },
       {
         "ru": "Где кондиционер?",
-        "ar": "أين مكيّف؟",
+        "ar": "أين المكيّف؟",
         "en": "Where is the air conditioner?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-konditsioner?.mp3",
@@ -7727,15 +7139,10 @@
       },
       {
         "ru": "где кондиционер?",
-        "ar": "أين مكيّف؟",
+        "ar": "أين المكيّف؟",
         "en": "where is the air conditioner?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: кондиционер في الروسية: masculine، بينما مكيّف في العربية: مذكر.",
-      "en": "Gender can differ by language: кондиционер is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -7753,9 +7160,6 @@
     "exampleRu": "Обогреватель работает.",
     "exampleAr": "الدفاية تعمل.",
     "exampleEn": "The heater is working.",
-    "related": [
-      "обогреватель"
-    ],
     "imagePath": "assets/images/words/heater_web.jpg",
     "audioWordAr": "assets/audio/ar/obogrevatel.mp3",
     "audioWordRu": "assets/audio/ru/obogrevatel.mp3",
@@ -7804,7 +7208,7 @@
       },
       {
         "ru": "Где обогреватель?",
-        "ar": "أين دفاية؟",
+        "ar": "أين الدفاية؟",
         "en": "Where is the heater?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-obogrevatel?.mp3",
@@ -7836,15 +7240,10 @@
       },
       {
         "ru": "где обогреватель?",
-        "ar": "أين دفاية؟",
+        "ar": "أين الدفاية؟",
         "en": "where is the heater?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: обогреватель في الروسية: masculine، بينما دفاية في العربية: مؤنث غالبًا.",
-      "en": "Gender can differ by language: обогреватель is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -7862,9 +7261,6 @@
     "exampleRu": "Метла у стены.",
     "exampleAr": "المقشة بجانب الحائط.",
     "exampleEn": "The broom is by the wall.",
-    "related": [
-      "метла"
-    ],
     "imagePath": "assets/images/words/broom_real.jpg",
     "audioWordAr": "assets/audio/ar/metla.mp3",
     "audioWordRu": "assets/audio/ru/metla.mp3",
@@ -7913,7 +7309,7 @@
       },
       {
         "ru": "Где метла?",
-        "ar": "أين مقشة؟",
+        "ar": "أين المقشة؟",
         "en": "Where is the broom?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-metla?.mp3",
@@ -7945,15 +7341,10 @@
       },
       {
         "ru": "где метла?",
-        "ar": "أين مقشة؟",
+        "ar": "أين المقشة؟",
         "en": "where is the broom?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: метла في الروسية: feminine، بينما مقشة في العربية: مؤنث.",
-      "en": "Gender can differ by language: метла is feminine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: feminine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -7971,9 +7362,6 @@
     "exampleRu": "Я работаю за письменным столом.",
     "exampleAr": "أنا أعمل على المكتب.",
     "exampleEn": "I work at the desk.",
-    "related": [
-      "письменный стол"
-    ],
     "imagePath": "assets/images/words/desk.jpg",
     "audioWordAr": "assets/audio/ar/pismennyy-stol.mp3",
     "audioWordRu": "assets/audio/ru/pismennyy-stol.mp3",
@@ -8022,7 +7410,7 @@
       },
       {
         "ru": "Где письменный стол?",
-        "ar": "أين مكتب؟",
+        "ar": "أين المكتب؟",
         "en": "Where is the desk?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-pismennyy-stol?.mp3",
@@ -8054,15 +7442,10 @@
       },
       {
         "ru": "где письменный стол?",
-        "ar": "أين مكتب؟",
+        "ar": "أين المكتب؟",
         "en": "where is the desk?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: письменный стол في الروسية: masculine، بينما مكتب في العربية: مذكر.",
-      "en": "Gender can differ by language: письменный стол is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   },
   {
@@ -8080,9 +7463,6 @@
     "exampleRu": "Комод в спальне.",
     "exampleAr": "خزانة الأدراج في غرفة النوم.",
     "exampleEn": "The chest of drawers is in the bedroom.",
-    "related": [
-      "комод"
-    ],
     "imagePath": "assets/images/words/drawer.jpg",
     "audioWordAr": "assets/audio/ar/komod.mp3",
     "audioWordRu": "assets/audio/ru/komod.mp3",
@@ -8131,7 +7511,7 @@
       },
       {
         "ru": "Где комод?",
-        "ar": "أين خزانة أدراج؟",
+        "ar": "أين خزانة الأدراج؟",
         "en": "Where is the chest of drawers?",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-komod?.mp3",
@@ -8163,15 +7543,10 @@
       },
       {
         "ru": "где комод?",
-        "ar": "أين خزانة أدراج؟",
+        "ar": "أين خزانة الأدراج؟",
         "en": "where is the chest of drawers?"
       }
     ],
-    "note": {
-      "ar": "لاحظ أن الجنس قد يختلف بين اللغات: комод في الروسية: masculine، بينما خزانة أدراج في العربية: مؤنث غالبًا.",
-      "en": "Gender can differ by language: комод is masculine in Russian, while English has no grammatical gender here.",
-      "ru": "Род слова: masculine. В английском языке грамматического рода здесь нет."
-    },
     "detailQuality": "full-v8.2"
   }
 ]

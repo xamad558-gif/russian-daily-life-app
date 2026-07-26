@@ -34,6 +34,9 @@ if (index) {
   if (index.includes('Russian Daily Life — v5')) {
     warnings.push('index.html title still says v5. Update the release title.');
   }
+  if (!index.includes('apple-touch-icon')) {
+    warnings.push('index.html has no apple-touch-icon link for iOS home-screen installation.');
+  }
 }
 
 if (manifestText) {
@@ -57,6 +60,15 @@ if (manifestText) {
 if (sw) {
   if (!sw.includes('caches.open')) warnings.push('service-worker.js does not appear to open a cache.');
   if (!sw.includes('fetch')) warnings.push('service-worker.js does not appear to handle fetch events.');
+  const appShellMatch = sw.match(/const APP_SHELL = \[(.*?)\];/s);
+  if (appShellMatch) {
+    const appShellPaths = [...appShellMatch[1].matchAll(/["']([^"']+)["']/g)].map(match => match[1]);
+    for (const appShellPath of appShellPaths) {
+      if (!exists(appShellPath)) errors.push(`Service worker app-shell path missing: ${appShellPath}`);
+    }
+  } else {
+    warnings.push('service-worker.js APP_SHELL list could not be inspected.');
+  }
 }
 
 const report = {

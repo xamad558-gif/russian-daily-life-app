@@ -67,6 +67,7 @@ Examples:
 Behavior:
 
 - Break work into phases.
+- Route cross-domain implementation to `app-builder` as the lead coordinator.
 - Use relevant subagents when available.
 - Do not mix content expansion with architecture refactor in the same pass unless explicitly requested.
 - Validate data and app behavior before finalizing.
@@ -75,6 +76,7 @@ Behavior:
 
 Use or recommend these skills:
 
+- `/app-builder` for cross-domain feature implementation, visual design integration, and coordinated validation.
 - `/data-auditor` for `words.json`, image paths, audio paths, duplicated ids, schema problems.
 - `/russian-language-auditor` for Russian grammar, gender, plural, examples, transliteration.
 - `/ui-rtl-reviewer` for mobile UI, Arabic RTL, detail page, card layout.

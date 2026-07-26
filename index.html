@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#ffffff" />
-  <title>Russian Daily Life — v8.2</title>
+  <meta name="theme-color" content="#1f637c" />
+  <title>Russian Daily Life — v8.3 Visual Guide</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -57,7 +57,7 @@
 
     <main class="main-content">
       <header class="topbar">
-        <button class="icon-btn mobile-only" id="sidebarToggle" type="button" aria-label="Open menu">☰</button>
+        <button class="icon-btn mobile-only" id="sidebarToggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="sidebar">☰</button>
 
         <div class="search-wrap">
           <span class="search-icon">🔎</span>
@@ -70,47 +70,78 @@
             <button class="lang-btn" data-ui-lang="en" type="button">🇺🇸 English</button>
             <button class="lang-btn" data-ui-lang="ru" type="button">🇷🇺 Русский</button>
           </div>
-          <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">☾</button>
+          <button class="icon-btn" id="themeToggle" type="button" aria-label="تبديل المظهر" aria-pressed="false">☾</button>
         </div>
       </header>
 
-      <section class="page-head">
-        <div class="page-title-row">
-          <div class="page-title-badge" id="pageIcon">🏠</div>
-          <div>
-            <h2 id="pageTitle">البيت</h2>
-            <p id="pageCounter" class="page-counter">0 كلمة</p>
-          </div>
-        </div>
-        <div class="head-actions">
-          <button class="secondary-btn" id="playVisibleBtn" type="button">🔊 تشغيل الكلمات الظاهرة</button>
-          <button class="secondary-btn" id="resetFiltersBtn" type="button">إعادة ضبط</button>
-        </div>
-      </section>
-
-      <section class="filters-bar" id="filtersBar">
-        <select id="subCategoryFilter">
-          <option value="all">جميع الأقسام الفرعية</option>
-        </select>
-        <select id="levelFilter">
-          <option value="all">جميع المستويات</option>
-          <option value="A1">A1</option>
-          <option value="A2">A2</option>
-          <option value="B1">B1</option>
-        </select>
-        <select id="sortFilter">
-          <option value="default">الأكثر شيوعًا</option>
-          <option value="az">أبجديًا A-Z</option>
-          <option value="za">أبجديًا Z-A</option>
-          <option value="mastery">الأقل إتقانًا</option>
-        </select>
-        <div class="view-toggle">
-          <button class="view-btn active" data-density="grid" type="button">▦</button>
-          <button class="view-btn" data-density="compact" type="button">☰</button>
-        </div>
-      </section>
-
       <section class="view-section" id="vocabularyView">
+        <section class="home-hero" id="homeHero" aria-labelledby="heroTitle">
+          <div class="hero-copy">
+            <span class="hero-kicker" id="heroKicker">وحدة البيت · تعلم بصري</span>
+            <h2 id="heroTitle">تعلّم الروسية من الأشياء حولك</h2>
+            <p id="heroSubtitle">اختر الغرفة التي تريدها، ثم اربط الكلمة بالصورة والصوت والجملة.</p>
+            <div class="hero-footer">
+              <button class="primary-btn hero-cta" id="heroReviewBtn" type="button">ابدأ مراجعة اليوم</button>
+              <div class="hero-progress-card">
+                <div class="hero-progress-head"><span id="heroProgressLabel">تقدم الوحدة</span><strong id="heroProgressValue">0%</strong></div>
+                <div class="hero-progress-track"><div id="heroProgressFill"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-photo-frame">
+              <img src="assets/images/words/house.jpg" alt="" />
+              <span class="hero-photo-label" id="heroPhotoLabel">البيت</span>
+            </div>
+            <div class="hero-word-tag"><strong>дом</strong><span id="heroWordMeaning">بيت / منزل</span></div>
+            <span class="hero-sticker">🪆</span>
+          </div>
+        </section>
+
+        <section class="room-strip" aria-labelledby="roomStripTitle">
+          <div class="room-strip-head">
+            <div><span class="section-eyebrow" id="roomStripEyebrow">استكشف حسب المكان</span><h3 id="roomStripTitle">غرفتك التالية</h3></div>
+            <span class="room-strip-hint" id="roomStripHint">اختر صورة للبدء</span>
+          </div>
+          <div id="roomStrip" class="room-strip-grid"></div>
+        </section>
+
+        <section class="page-head">
+          <div class="page-title-row">
+            <div class="page-title-badge" id="pageIcon">🏠</div>
+            <div>
+              <h2 id="pageTitle">البيت</h2>
+              <p id="pageCounter" class="page-counter">0 كلمة</p>
+            </div>
+          </div>
+          <div class="head-actions">
+            <button class="secondary-btn" id="playVisibleBtn" type="button">🔊 تشغيل الكلمات الظاهرة</button>
+            <button class="secondary-btn" id="resetFiltersBtn" type="button">إعادة ضبط</button>
+          </div>
+        </section>
+
+        <section class="filters-bar" id="filtersBar">
+          <select id="subCategoryFilter">
+            <option value="all">جميع الأقسام الفرعية</option>
+          </select>
+          <select id="levelFilter">
+            <option value="all">جميع المستويات</option>
+            <option value="A1">A1</option>
+            <option value="A2">A2</option>
+            <option value="B1">B1</option>
+          </select>
+          <select id="sortFilter">
+            <option value="default">الأكثر شيوعًا</option>
+            <option value="az">أبجديًا A-Z</option>
+            <option value="za">أبجديًا Z-A</option>
+            <option value="mastery">الأقل إتقانًا</option>
+          </select>
+          <div class="view-toggle">
+            <button class="view-btn active" data-density="grid" type="button" aria-label="عرض شبكي">▦</button>
+            <button class="view-btn" data-density="compact" type="button" aria-label="عرض مختصر">☰</button>
+          </div>
+        </section>
+
         <div class="content-grid">
           <div class="cards-panel">
             <div id="cardsGrid" class="cards-grid"></div>
@@ -127,7 +158,7 @@
       <section class="view-section hidden" id="wordDetailView">
         <div class="word-detail-page">
           <div class="word-detail-topbar">
-            <button class="secondary-btn" id="backToWordsBtn" type="button">← Back</button>
+            <button class="secondary-btn" id="backToWordsBtn" type="button" aria-label="رجوع">→ رجوع</button>
             <div class="word-detail-actions">
               <button class="secondary-btn" id="detailSpeakRuBtn" type="button">🇷🇺 🔊</button>
               <button class="secondary-btn" id="detailMarkReviewBtn" type="button">☆ Review</button>

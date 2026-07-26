@@ -1,6 +1,6 @@
 # Known Issues
 
-Tracked as of v8.3-cleanup (2026-07-09). Update this list whenever a release checklist run finds something new, and remove entries once fixed.
+Tracked as of v8.3-visual-guide (2026-07-23). Update this list whenever a release checklist run finds something new, and remove entries once fixed.
 
 ## Accepted / by design (not blockers)
 
@@ -15,6 +15,8 @@ Tracked as of v8.3-cleanup (2026-07-09). Update this list whenever a release che
 - **Two overlapping i18n mechanisms.** The `I18N` object (top-level UI strings) and the `detailText()` dictionary (word-detail-page strings) duplicate the same kind of lookup logic and should eventually merge into one i18n layer.
 - **Mastery tracking is not a real spaced-repetition system.** It's a flat point nudge (+15/-5 on quiz, +25/-10 on manual review), not interval-based scheduling. Acceptable for now; flagged for v8.5-learning-engine.
 - **Search has no fuzzy/typo tolerance.** `normalize()` only does lowercasing, trimming, and a few Cyrillic/Arabic letter-variant substitutions — no Levenshtein or similar matching.
+- **Example variety remains limited.** The high-confidence translation and duplicate-example fixes are complete, but many entries still need a human-authored sentence variation pass before a content-quality release.
+- **iOS install icon is incomplete.** The manifest still uses the SVG icon only; add verified PNG icons and an `apple-touch-icon` before promoting mobile installation.
 
 ## Verified working (do not re-flag without checking)
 
