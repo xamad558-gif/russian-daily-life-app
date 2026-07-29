@@ -98,7 +98,8 @@
         "en": "where is the house?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "dom"
   },
   {
     "id": "home50_002",
@@ -199,7 +200,8 @@
         "en": "where is the apartment?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "kvartíra"
   },
   {
     "id": "home50_003",
@@ -300,7 +302,8 @@
         "en": "where is the room?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "kómnata"
   },
   {
     "id": "home50_004",
@@ -401,7 +404,8 @@
         "en": "where is the living room?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "gostínaya"
   },
   {
     "id": "home50_005",
@@ -502,7 +506,8 @@
         "en": "where is the sofa?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "diván"
   },
   {
     "id": "home50_006",
@@ -603,7 +608,8 @@
         "en": "where is the armchair?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "kréslo"
   },
   {
     "id": "home50_007",
@@ -704,7 +710,8 @@
         "en": "where is the television?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "televízor"
   },
   {
     "id": "home50_008",
@@ -805,7 +812,8 @@
         "en": "where is the lamp?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "lámpa"
   },
   {
     "id": "home50_009",
@@ -906,7 +914,8 @@
         "en": "where is the rug?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "kovyor"
   },
   {
     "id": "home50_010",
@@ -1007,7 +1016,8 @@
         "en": "where is the shelf?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "pólka"
   },
   {
     "id": "home50_011",
@@ -1108,7 +1118,8 @@
         "en": "where is the picture?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "kartína"
   },
   {
     "id": "home50_012",
@@ -1209,7 +1220,8 @@
         "en": "where is the plant?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "rasténiye"
   },
   {
     "id": "home50_013",
@@ -1310,7 +1322,8 @@
         "en": "where is the bedroom?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "spál'nya"
   },
   {
     "id": "home50_014",
@@ -1411,7 +1424,8 @@
         "en": "where is the bed?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "krovát'"
   },
   {
     "id": "home50_015",
@@ -1512,7 +1526,8 @@
         "en": "where is the pillow?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "podúshka"
   },
   {
     "id": "home50_016",
@@ -1613,7 +1628,8 @@
         "en": "where is the wardrobe?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "shkaf"
   },
   {
     "id": "home50_017",
@@ -1714,7 +1730,8 @@
         "en": "where is the blanket?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "odeyálo"
   },
   {
     "id": "home50_018",
@@ -1815,7 +1832,8 @@
         "en": "where is the bedside table?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "túmbochka"
   },
   {
     "id": "home50_019",
@@ -1916,7 +1934,8 @@
         "en": "where is the curtain?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "zanavéska"
   },
   {
     "id": "home50_020",
@@ -2017,7 +2036,8 @@
         "en": "where is the kitchen?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "kúkhnya"
   },
   {
     "id": "home50_021",
@@ -2118,7 +2138,8 @@
         "en": "where is the table?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "stol"
   },
   {
     "id": "home50_022",
@@ -2219,7 +2240,8 @@
         "en": "where is the chair?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "stul"
   },
   {
     "id": "home50_023",
@@ -2320,7 +2342,8 @@
         "en": "where is the refrigerator?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "kholodíl'nik"
   },
   {
     "id": "home50_024",
@@ -2421,7 +2444,8 @@
         "en": "where is the stove?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "plitá"
   },
   {
     "id": "home50_025",
@@ -2522,7 +2546,8 @@
         "en": "where is the cup?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "cháshka"
   },
   {
     "id": "home50_026",
@@ -2623,7 +2648,8 @@
         "en": "where is the glass?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "stakán"
   },
   {
     "id": "home50_027",
@@ -2724,7 +2750,8 @@
         "en": "where is the spoon?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "lózhka"
   },
   {
     "id": "home50_028",
@@ -2825,7 +2852,8 @@
         "en": "where is the fork?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "vílka"
   },
   {
     "id": "home50_029",
@@ -2926,7 +2954,8 @@
         "en": "where is the knife?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "nozh"
   },
   {
     "id": "home50_030",
@@ -3027,7 +3056,8 @@
         "en": "where is the plate?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "tarélka"
   },
   {
     "id": "home50_031",
@@ -3128,7 +3158,8 @@
         "en": "where is the sink?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "rákovina"
   },
   {
     "id": "home50_032",
@@ -3229,7 +3260,8 @@
         "en": "where is the tap?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "kran"
   },
   {
     "id": "home50_033",
@@ -3330,7 +3362,8 @@
         "en": "where is the pot?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "kastryúlya"
   },
   {
     "id": "home50_034",
@@ -3431,7 +3464,8 @@
         "en": "where is the bathroom?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "vánnaya kómnata"
   },
   {
     "id": "home50_035",
@@ -3532,7 +3566,8 @@
         "en": "where is the bathtub?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "vánna"
   },
   {
     "id": "home50_036",
@@ -3633,7 +3668,8 @@
         "en": "where is the shower?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "dush"
   },
   {
     "id": "home50_037",
@@ -3734,7 +3770,8 @@
         "en": "where is the mirror?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "zérkalo"
   },
   {
     "id": "home50_038",
@@ -3835,7 +3872,8 @@
         "en": "where is the towel?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "poloténtse"
   },
   {
     "id": "home50_039",
@@ -3931,7 +3969,8 @@
         "en": "where is the soap?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "mýlo"
   },
   {
     "id": "home50_040",
@@ -4032,7 +4071,8 @@
         "en": "where is the toothbrush?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "zubnáya shchyotka"
   },
   {
     "id": "home50_041",
@@ -4133,7 +4173,8 @@
         "en": "where is the toothpaste?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "zubnáya pásta"
   },
   {
     "id": "home50_042",
@@ -4234,7 +4275,8 @@
         "en": "where is the toilet?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "tualét"
   },
   {
     "id": "home50_043",
@@ -4335,7 +4377,8 @@
         "en": "where is the door?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "dver'"
   },
   {
     "id": "home50_044",
@@ -4436,7 +4479,8 @@
         "en": "where is the window?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "oknó"
   },
   {
     "id": "home50_045",
@@ -4537,7 +4581,8 @@
         "en": "where is the key?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "klyuch"
   },
   {
     "id": "home50_046",
@@ -4638,7 +4683,8 @@
         "en": "where is the lock?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "zamók"
   },
   {
     "id": "home50_047",
@@ -4739,7 +4785,8 @@
         "en": "where is the wall?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "stená"
   },
   {
     "id": "home50_048",
@@ -4840,7 +4887,8 @@
         "en": "where is the floor?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "pol"
   },
   {
     "id": "home50_049",
@@ -4941,7 +4989,8 @@
         "en": "where is the ceiling?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "potolók"
   },
   {
     "id": "home50_050",
@@ -5042,7 +5091,8 @@
         "en": "where is the balcony?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "balkón"
   },
   {
     "id": "home75_051",
@@ -5138,7 +5188,8 @@
         "en": "where is the remote control?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "pul't"
   },
   {
     "id": "home75_052",
@@ -5239,7 +5290,8 @@
         "en": "where is the clock?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "chasý"
   },
   {
     "id": "home75_053",
@@ -5340,7 +5392,8 @@
         "en": "where is the book?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "kníga"
   },
   {
     "id": "home75_054",
@@ -5441,7 +5494,8 @@
         "en": "where is the phone?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "telefón"
   },
   {
     "id": "home75_055",
@@ -5537,7 +5591,8 @@
         "en": "where is the charger?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "zaryádka"
   },
   {
     "id": "home75_056",
@@ -5638,7 +5693,8 @@
         "en": "where is the socket?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "rozétka"
   },
   {
     "id": "home75_057",
@@ -5739,7 +5795,8 @@
         "en": "where is the light switch?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "vyklyuchátel'"
   },
   {
     "id": "home75_058",
@@ -5840,7 +5897,8 @@
         "en": "where is the hanger?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "véshalka"
   },
   {
     "id": "home75_059",
@@ -5931,7 +5989,8 @@
         "en": "where is the mattress?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "matrás"
   },
   {
     "id": "home75_060",
@@ -6032,7 +6091,8 @@
         "en": "where is the sheet?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "prostynyá"
   },
   {
     "id": "home75_061",
@@ -6133,7 +6193,8 @@
         "en": "where is the clothes?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "odézhda"
   },
   {
     "id": "home75_062",
@@ -6234,7 +6295,8 @@
         "en": "where is the bag?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "súmka"
   },
   {
     "id": "home75_063",
@@ -6335,7 +6397,8 @@
         "en": "where is the box?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "koróbka"
   },
   {
     "id": "home75_064",
@@ -6436,7 +6499,8 @@
         "en": "where is the microwave?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "mikrovolnóvka"
   },
   {
     "id": "home75_065",
@@ -6537,7 +6601,8 @@
         "en": "where is the oven?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "dukhóvka"
   },
   {
     "id": "home75_066",
@@ -6638,7 +6703,8 @@
         "en": "where is the kettle?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "cháynik"
   },
   {
     "id": "home75_067",
@@ -6739,7 +6805,8 @@
         "en": "where is the trash?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "músor"
   },
   {
     "id": "home75_068",
@@ -6840,7 +6907,8 @@
         "en": "where is the washing machine?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "stirál'naya mashína"
   },
   {
     "id": "home75_069",
@@ -6941,7 +7009,8 @@
         "en": "where is the vacuum cleaner?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "pylesós"
   },
   {
     "id": "home75_070",
@@ -7042,7 +7111,8 @@
         "en": "where is the iron?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "utyúg"
   },
   {
     "id": "home75_071",
@@ -7143,7 +7213,8 @@
         "en": "where is the air conditioner?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "konditsionér"
   },
   {
     "id": "home75_072",
@@ -7244,7 +7315,8 @@
         "en": "where is the heater?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "obogrevátel'"
   },
   {
     "id": "home75_073",
@@ -7345,7 +7417,8 @@
         "en": "where is the broom?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "metlá"
   },
   {
     "id": "home75_074",
@@ -7446,7 +7519,8 @@
         "en": "where is the desk?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "pís'mennyy stol"
   },
   {
     "id": "home75_075",
@@ -7547,6 +7621,7 @@
         "en": "where is the chest of drawers?"
       }
     ],
-    "detailQuality": "full-v8.2"
+    "detailQuality": "full-v8.2",
+    "transliterationStressed": "komód"
   }
 ]
