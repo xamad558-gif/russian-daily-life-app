@@ -39,6 +39,6 @@ This is a static PWA and can be published without a backend.
 3. Open the `Deploy demo` workflow under `Actions` and wait for it to finish.
 4. Use the URL shown in the completed `github-pages` environment.
 
-The workflow publishes only `index.html`, JavaScript, CSS, PWA files, `assets`, and `data`. The PDF files and development scripts are not included in the demo site.
+The workflow publishes only `index.html`, JavaScript, CSS, PWA files, `assets`, `data`, and the runtime `js` modules. The PDF files and development scripts are not included in the demo site.
 
 For local UI validation, run `npm install`, `npx playwright install chromium`, then `npm run test:e2e`.

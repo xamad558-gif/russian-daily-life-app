@@ -32,7 +32,7 @@ jobs:
         run: |
           mkdir site
           cp index.html app.js styles.css manifest.webmanifest service-worker.js site/
-          cp -R assets data site/
+          cp -R assets data js site/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

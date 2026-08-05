@@ -61,16 +61,16 @@ const LEARNING_LANGUAGE_LABELS = { ar:"\u0644\u063a\u0629 \u0627\u0644\u062a\u06
 
 const state = {
   words: [], filtered: [], selectedWordId: null, activeView:"vocabulary",
-  saved: new Set(JSON.parse(localStorage.getItem("savedWords") || "[]")),
-  mastery: JSON.parse(localStorage.getItem("mastery") || "{}"),
-  quiz: JSON.parse(localStorage.getItem("quizStats") || '{"correct":0,"wrong":0}'),
+  saved: new Set(AppStorage.read("savedWords", [])),
+  mastery: AppStorage.read("mastery", {}),
+  quiz: AppStorage.read("quizStats", { correct: 0, wrong: 0 }),
   currentQuiz: null,
   quizAnswered: false,
-  uiLang: localStorage.getItem("uiLang") || "ar",
-  learningLanguage: localStorage.getItem("learningLanguage") || (localStorage.getItem("uiLang") === "ru" ? "ar" : "ru"),
-  lastRoom: localStorage.getItem("lastRoom") || "home",
-  density: localStorage.getItem("density") || "grid",
-  theme: localStorage.getItem("theme") || "light"
+  uiLang: AppStorage.read("uiLang", "ar"),
+  learningLanguage: AppStorage.read("learningLanguage", AppStorage.read("uiLang", "ar") === "ru" ? "ar" : "ru"),
+  lastRoom: AppStorage.read("lastRoom", "home"),
+  density: AppStorage.read("density", "grid"),
+  theme: AppStorage.read("theme", "light")
 };
 
 const $ = (s) => document.querySelector(s);
@@ -96,14 +96,14 @@ async function init(){
   const response = await fetch(`data/words.json?v=${DATA_VERSION}`, { cache: "no-store" });
   state.words = await response.json();
   state.words.forEach(w => { if (state.mastery[w.id] === undefined) state.mastery[w.id] = w.masteryDefault || 0; });
-  localStorage.setItem("mastery", JSON.stringify(state.mastery));
+  AppStorage.write("mastery", state.mastery);
   state.selectedWordId = state.words[0]?.id || null;
   bindEvents();
   populateSubcategories();
   applyTheme(state.theme);
   if (state.learningLanguage === state.uiLang) {
     state.learningLanguage = LANGUAGE_CODES.find(code => code !== state.uiLang);
-    localStorage.setItem("learningLanguage", state.learningLanguage);
+    AppStorage.write("learningLanguage", state.learningLanguage);
   }
   applyUiLanguage(state.uiLang);
   applyLearningLanguage(state.learningLanguage);
@@ -113,7 +113,7 @@ async function init(){
 }
 function bindEvents(){
   els.searchInput.addEventListener("input", applyFilters);
-  els.subCategoryFilter.addEventListener("change", () => { if (els.subCategoryFilter.value !== "all") { state.lastRoom = els.subCategoryFilter.value; localStorage.setItem("lastRoom", state.lastRoom); } applyFilters(); });
+  els.subCategoryFilter.addEventListener("change", () => { if (els.subCategoryFilter.value !== "all") { state.lastRoom = els.subCategoryFilter.value; AppStorage.write("lastRoom", state.lastRoom); } applyFilters(); });
   els.levelFilter.addEventListener("change", applyFilters);
   els.sortFilter.addEventListener("change", applyFilters);
   els.langButtons.forEach(btn => btn.addEventListener("click", () => applyUiLanguage(btn.dataset.uiLang)));
@@ -144,12 +144,12 @@ function populateSubcategories(){
 }
 function applyUiLanguage(lang){
   const previousUiLang = state.uiLang;
-  state.uiLang = lang; localStorage.setItem("uiLang", lang);
+  state.uiLang = lang; AppStorage.write("uiLang", lang);
   if (state.learningLanguage === lang) {
     state.learningLanguage = previousUiLang !== lang
       ? previousUiLang
       : LANGUAGE_CODES.find(code => code !== lang);
-    localStorage.setItem("learningLanguage", state.learningLanguage);
+    AppStorage.write("learningLanguage", state.learningLanguage);
   }
   const t = I18N[lang];
   document.body.dataset.uiLang = lang;
@@ -202,7 +202,7 @@ function syncLanguageAvailability(){
 function applyLearningLanguage(lang){
   if (!LANGUAGE_CODES.includes(lang) || lang === state.uiLang) lang = LANGUAGE_CODES.find(code => code !== state.uiLang);
   state.learningLanguage = lang;
-  localStorage.setItem("learningLanguage", lang);
+  AppStorage.write("learningLanguage", lang);
   document.body.dataset.learningLanguage = lang;
   els.learningLanguageButtons.forEach(button => {
     const active = button.dataset.learningLang === lang;
@@ -240,7 +240,7 @@ function renderRoomStrip(){
 }
 function selectRoom(room){
   state.lastRoom = room;
-  localStorage.setItem("lastRoom", room);
+  AppStorage.write("lastRoom", room);
   els.subCategoryFilter.value = room;
   els.categoryMenu.querySelectorAll(".category-item").forEach(item => item.classList.toggle("active", item.dataset.submenu === room));
   switchView("vocabulary");
@@ -280,7 +280,7 @@ function applyFilters(){
   updateMetrics();
 }
 function applyTheme(theme){
-  state.theme = theme; localStorage.setItem("theme", theme);
+  state.theme = theme; AppStorage.write("theme", theme);
   document.body.classList.toggle("dark", theme === "dark");
   els.themeToggle.textContent = theme === "dark" ? "☀" : "☾";
   els.themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
@@ -292,7 +292,7 @@ function setSidebarOpen(open){
   els.sidebarToggle.setAttribute("aria-label", open ? t.a11y.closeMenu : t.a11y.openMenu);
 }
 function setDensity(density){
-  state.density = density; localStorage.setItem("density", density);
+  state.density = density; AppStorage.write("density", density);
   $$("[data-density]").forEach(btn => btn.classList.toggle("active", btn.dataset.density === density));
   renderCards();
 }
@@ -632,24 +632,24 @@ function playExampleAudio(w, index, lang){
 function toggleFavorite(id, forceSave=false){
   if (forceSave) state.saved.add(id);
   else if (state.saved.has(id)) state.saved.delete(id); else state.saved.add(id);
-  localStorage.setItem("savedWords", JSON.stringify([...state.saved]));
+  AppStorage.write("savedWords", [...state.saved]);
   renderCards(); renderReview(); updateMetrics();
 }
 
 function saveFavoriteOnly(id){
   state.saved.add(id);
-  localStorage.setItem("savedWords", JSON.stringify([...state.saved]));
+  AppStorage.write("savedWords", [...state.saved]);
 }
 
 function updateMasteryOnly(id, delta){
   const current = state.mastery[id] || 0;
   state.mastery[id] = Math.max(0, Math.min(100, current + delta));
-  localStorage.setItem("mastery", JSON.stringify(state.mastery));
+  AppStorage.write("mastery", state.mastery);
 }
 function changeMastery(id, delta){
   const current = state.mastery[id] || 0;
   state.mastery[id] = Math.max(0, Math.min(100, current + delta));
-  localStorage.setItem("mastery", JSON.stringify(state.mastery));
+  AppStorage.write("mastery", state.mastery);
   renderCards(); renderDetail(); updateMetrics(); if (state.activeView === "progress") renderProgress();
 }
 function renderReview(){
@@ -714,7 +714,7 @@ function checkQuiz(btn){
     updateMasteryOnly(state.currentQuiz.id, -5);
   }
 
-  localStorage.setItem("quizStats", JSON.stringify(state.quiz));
+  AppStorage.write("quizStats", state.quiz);
   updateQuizStats();
   updateMetrics();
 

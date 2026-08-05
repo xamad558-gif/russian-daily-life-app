@@ -12,7 +12,7 @@
 - Every word has `detailQuality = full-v8.2`.
 - Detail page labels are localized with `detailText()`.
 - App version is `v8.3-visual-guide`.
-- Service worker cache name is `russian-daily-life-v8-3-visual-guide-v1`.
+- Service worker cache name is `russian-daily-life-v8-3-visual-guide-v2`.
 
 ## Browser smoke test
 - Install dependencies with `npm install`.
