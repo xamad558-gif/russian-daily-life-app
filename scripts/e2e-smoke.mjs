@@ -85,6 +85,8 @@ async function runSmokeTest() {
 
     await page.locator('[data-ui-lang="ru"]').click();
     assert.equal(await page.locator("html").getAttribute("dir"), "ltr", "Russian interface should use LTR");
+    assert.equal(await page.locator("#interfaceLanguageLabel").textContent(), "Язык интерфейса", "Russian interface label should be Russian");
+    assert.doesNotMatch(await page.locator("#interfaceLanguageLabel").textContent(), /[\u0600-\u06ff]/, "Russian interface label should not contain Arabic characters");
     assert.match(await page.locator(".card-translit").first().textContent(), /[\u0400-\u04ff]/, "Russian interface should show Cyrillic pronunciation for Arabic");
 
     await page.locator('[data-ui-lang="ar"]').click();

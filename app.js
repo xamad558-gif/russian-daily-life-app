@@ -172,8 +172,8 @@ function applyUiLanguage(lang){
      totalWordsMetricLabel:"totalWords", savedWordsMetricLabel:"savedWords", masteredWordsMetricLabel:"masteredWords", avgMasteryMetricLabel:"avgMastery", dailyTipText:"dailyTip", emptyState:"emptyState", heroKicker:"homeHeroKicker", heroTitle:"homeHeroTitle", heroSubtitle:"homeHeroSubtitle", heroReviewBtn:"homeHeroCta", heroProgressLabel:"homeProgressLabel", roomStripEyebrow:"roomStripEyebrow", roomStripTitle:"roomStripTitle", roomStripHint:"roomStripHint"
   }).forEach(([elKey, tKey]) => { if (els[elKey]) els[elKey].textContent = t[tKey]; });
   els.searchInput.placeholder = t.searchPlaceholder;
-  if (els.learningLanguageLabel) els.learningLanguageLabel.textContent = LEARNING_LANGUAGE_LABELS[lang] || LEARNING_LANGUAGE_LABELS.en;
-  if (els.interfaceLanguageLabel) els.interfaceLanguageLabel.textContent = INTERFACE_LANGUAGE_LABELS[lang] || INTERFACE_LANGUAGE_LABELS.en;
+  if (els.learningLanguageLabel) els.learningLanguageLabel.textContent = lang === "ru" ? "Язык обучения" : (LEARNING_LANGUAGE_LABELS[lang] || LEARNING_LANGUAGE_LABELS.en);
+  if (els.interfaceLanguageLabel) els.interfaceLanguageLabel.textContent = lang === "ru" ? "Язык интерфейса" : (INTERFACE_LANGUAGE_LABELS[lang] || INTERFACE_LANGUAGE_LABELS.en);
   els.subCategoryFilter.options[0].text = t.allSubCategories;
   [...els.subCategoryFilter.options].forEach((opt, i) => { if (i) opt.text = t.categories[opt.value] || opt.value; });
   els.levelFilter.options[0].text = t.allLevels;
