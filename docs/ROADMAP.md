@@ -1,5 +1,14 @@
 # Roadmap
 
+## Release completion criteria
+
+A release is complete when:
+
+- `node scripts/validate-data.mjs --audio=ignore` passes with zero errors.
+- `node scripts/check-pwa.mjs` has no errors and every warning is documented.
+- The version appears consistently in the app, service worker, README, changelog, and checklist.
+- Manual UI checks are recorded in `TESTS.md`, and unresolved work is tracked in `docs/KNOWN_ISSUES.md`.
+
 ## v8.3-cleanup
 
 - [x] Fix stale HTML title.
@@ -9,11 +18,35 @@
 - [x] Save dark mode preference.
 - [x] Document known issues (see `docs/KNOWN_ISSUES.md`).
 
+Release notes: [`CHANGELOG.md`](../CHANGELOG.md#v83-cleanup).
+
+**Definition of complete:** Data validation passes, the version is synchronized across release files, and remaining audio/PWA limitations are documented.
+
+## v8.3-visual-guide
+
+Status: core visual refresh implemented; release follow-ups remain open.
+
+- [x] Add a real-image hero with progress and review action.
+- [x] Add clickable room cards connected to vocabulary filters.
+- [x] Give A1, A2, and B1 words distinct visual level badges.
+- [x] Keep the layout responsive for Arabic RTL and Russian/English LTR.
+- [x] Update the cache version and release documentation.
+- [x] Add verified 192x192 and 512x512 PNG PWA icons plus `apple-touch-icon`.
+- [ ] Complete the human-authored sentence-variety pass for the unit.
+
+Release notes: [`CHANGELOG.md`](../CHANGELOG.md#v83-visual-guide). Tracking: [`KNOWN_ISSUES.md`](KNOWN_ISSUES.md).
+
+**Definition of complete:** The visual checks pass on desktop and mobile, data/PWA validation passes, release files are synchronized, and the two remaining follow-ups are either completed or explicitly accepted for the release.
+
 ## v8.4-modularization
 
+- [x] Extract local storage behind `js/storage.js`.
+- [x] Extract audio playback and speech fallback behind `js/audio.js`.
 - Split `app.js` into modules.
 - Separate i18n, storage, audio, quiz, progress, filters, cards, and detail page.
 - Preserve current behavior.
+
+**Definition of complete:** The module boundaries are documented, all existing data/UI behavior remains intact, and the full validation plus manual checklist passes.
 
 ## v8.5-learning-engine
 

@@ -73,6 +73,10 @@ const state = {
   theme: AppStorage.read("theme", "light")
 };
 
+AppAudio.configure({ findWord: id => state.words.find(word => word.id === id) });
+const playAudio = (...args) => AppAudio.playAudio(...args);
+const wait = (...args) => AppAudio.wait(...args);
+
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
 
@@ -783,32 +787,6 @@ function resetFilters(){
   els.sortFilter.value = "default";
   applyFilters();
 }
-function playAudio(id, mode, lang){
-  const w = state.words.find(x => x.id === id); if (!w) return;
-  const voice = {ar:"ar-SA",ru:"ru-RU",en:"en-US"}[lang];
-  let text = "", src = "";
-  if (mode === "word") {
-    if (lang === "ar") { text = w.arabic; src = w.audioWordAr; }
-    if (lang === "ru") { text = w.russian; src = w.audioWordRu; }
-    if (lang === "en") { text = w.english; src = w.audioWordEn; }
-  } else {
-    if (lang === "ar") { text = w.exampleAr; src = w.audioSentenceAr; }
-    if (lang === "ru") { text = w.exampleRu; src = w.audioSentenceRu; }
-    if (lang === "en") { text = w.exampleEn; src = w.audioSentenceEn; }
-  }
-  if (src) {
-    const audio = new Audio(src);
-    audio.play().catch(() => speak(text, voice));
-  } else speak(text, voice);
-}
-function speak(text, lang){
-  if (!("speechSynthesis" in window)) return;
-  window.speechSynthesis.cancel();
-  const speechText = String(text || "").replace(/\s*\/\s*/g, lang.startsWith("en") ? ", " : " ").replace(/\s+/g, " ").trim();
-  const u = new SpeechSynthesisUtterance(speechText);
-  u.lang = lang; u.rate = 0.88; window.speechSynthesis.speak(u);
-}
-function wait(ms){ return new Promise(r => setTimeout(r, ms)); }
 function shuffle(arr){ return [...arr].sort(() => Math.random() - .5); }
 function normalize(v){ return String(v || "").toLowerCase().trim().replace(/[ё]/g,"е").replace(/[أإآ]/g,"ا").replace(/[ة]/g,"ه").replace(/[ى]/g,"ي"); }
 function levelClass(level){ return `level-${String(level || "unknown").toLowerCase().replace(/[^a-z0-9]+/g,"-")}`; }
