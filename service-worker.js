@@ -8,6 +8,11 @@ const APP_SHELL = [
   "./data/image_quality_report.json",
   "./manifest.webmanifest",
   "./assets/icons/icon.svg",
+  "./assets/icons/icon-192.png",
+  "./assets/icons/icon-512.png",
+  "./assets/icons/apple-touch-icon.png",
+  "./assets/icons/favicon-32.png",
+  "./assets/icons/favicon-16.png",
   "./assets/images/words/air_conditioner_web.jpg",
   "./assets/images/words/apartment.jpg",
   "./assets/images/words/armchair.jpg",
@@ -94,7 +99,7 @@ self.addEventListener("fetch", event => {
   if (isFreshCritical) {
     event.respondWith(fetch(event.request, { cache: "no-store" }).then(response => {
       const copy = response.clone(); caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy)); return response;
-    }).catch(() => caches.match(event.request).then(cached => cached || caches.match("./index.html"))));
+    }).catch(() => caches.match(event.request).then(cached => cached || (isNavigation ? caches.match("./index.html") : Response.error()))));
     return;
   }
   event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request).then(response => {

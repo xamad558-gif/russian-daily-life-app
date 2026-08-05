@@ -19,15 +19,20 @@ if (!allowedAudioModes.has(audioMode)) {
 }
 
 const required = [
-  'id', 'category', 'subCategory', 'russian', 'transliteration',
+  'id', 'category', 'subCategory', 'russian', 'transliteration', 'transliterationAr',
+  'englishTransliterationAr', 'englishTransliterationRu', 'arabicTransliterationEn',
   'arabic', 'english', 'level', 'frequency', 'type',
-  'exampleRu', 'exampleAr', 'exampleEn', 'imagePath', 'grammar'
+  'exampleRu', 'exampleTransliterationAr', 'exampleTransliterationEn', 'exampleArTransliterationRu',
+  'exampleAr', 'exampleEn', 'imagePath', 'grammar'
 ];
 
 const audioFields = [
   'audioWordAr', 'audioWordRu', 'audioWordEn',
   'audioSentenceAr', 'audioSentenceRu', 'audioSentenceEn'
 ];
+const arabicScript = /[\u0600-\u06ff\u0750-\u077f\u08a0-\u08ff]/u;
+const cyrillicScript = /[\u0400-\u04ff]/u;
+const latinScript = /[A-Za-z]/u;
 
 function existsRel(rel) {
   if (!rel || typeof rel !== 'string') return false;
@@ -67,6 +72,28 @@ for (const [index, word] of words.entries()) {
 
   for (const field of required) {
     if (isEmpty(word[field])) errors.push(`${label}: missing required field "${field}".`);
+  }
+
+  if (word.transliterationAr && !arabicScript.test(word.transliterationAr)) {
+    errors.push(`${label}: transliterationAr must contain Arabic-script characters.`);
+  }
+  if (word.exampleTransliterationAr && !arabicScript.test(word.exampleTransliterationAr)) {
+    errors.push(`${label}: exampleTransliterationAr must contain Arabic-script characters.`);
+  }
+  if (word.exampleTransliterationEn && cyrillicScript.test(word.exampleTransliterationEn)) {
+    errors.push(`${label}: exampleTransliterationEn must not contain Cyrillic characters.`);
+  }
+  if (word.exampleArTransliterationRu && !cyrillicScript.test(word.exampleArTransliterationRu)) {
+    errors.push(`${label}: exampleArTransliterationRu must contain Cyrillic characters.`);
+  }
+  if (word.englishTransliterationAr && !arabicScript.test(word.englishTransliterationAr)) {
+    errors.push(`${label}: englishTransliterationAr must contain Arabic-script characters.`);
+  }
+  if (word.englishTransliterationRu && !cyrillicScript.test(word.englishTransliterationRu)) {
+    errors.push(`${label}: englishTransliterationRu must contain Cyrillic characters.`);
+  }
+  if (word.arabicTransliterationEn && !latinScript.test(word.arabicTransliterationEn)) {
+    errors.push(`${label}: arabicTransliterationEn must contain Latin characters.`);
   }
 
   if (word.id) {

@@ -46,13 +46,18 @@ const I18N = {
 const DATA_VERSION = "v8.3-visual-guide";
 
 const ROOM_FEATURES = [
-  { id:"home", image:"assets/images/words/house.jpg", icon:"🏠" },
-  { id:"living-room", image:"assets/images/words/living_room.jpg", icon:"🛋️" },
-  { id:"bedroom", image:"assets/images/words/bedroom.jpg", icon:"🛏️" },
-  { id:"kitchen", image:"assets/images/words/kitchen.jpg", icon:"🍽️" },
-  { id:"bathroom", image:"assets/images/words/bathroom.jpg", icon:"🛁" },
-  { id:"door-window", image:"assets/images/words/door.jpg", icon:"🚪" }
+  { id:"home", image:"assets/images/words/house.jpg", icon:"🏠", tone:"blue" },
+  { id:"living-room", image:"assets/images/words/living_room.jpg", icon:"🛋️", tone:"red" },
+  { id:"bedroom", image:"assets/images/words/bedroom.jpg", icon:"🛏️", tone:"plum" },
+  { id:"kitchen", image:"assets/images/words/kitchen.jpg", icon:"🍽️", tone:"amber" },
+  { id:"bathroom", image:"assets/images/words/bathroom.jpg", icon:"🛁", tone:"green" },
+  { id:"door-window", image:"assets/images/words/door.jpg", icon:"🚪", tone:"teal" }
 ];
+
+const LANGUAGE_CODES = ["ru", "ar", "en"];
+const INTERFACE_LANGUAGE_LABELS = { ar:"\u0644\u063a\u0629 \u0627\u0644\u0648\u0627\u062c\u0647\u0629", en:"Interface language", ru:"\u042f\u0437\u044b\u043a \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0633\u0430" };
+const LANGUAGE_LABELS = { ru:"\u0420\u0443\u0441\u0441\u043a\u0438\u0439", ar:"\u0627\u0644\u0639\u0631\u0628\u064a\u0629", en:"English" };
+const LEARNING_LANGUAGE_LABELS = { ar:"\u0644\u063a\u0629 \u0627\u0644\u062a\u0639\u0644\u0645", en:"Learning language", ru:"\u042f\u0437\u044b\u043a \u043e\u0431\u0443\u0447\u0435\u043d\u0438\u044f" };
 
 const state = {
   words: [], filtered: [], selectedWordId: null, activeView:"vocabulary",
@@ -62,6 +67,8 @@ const state = {
   currentQuiz: null,
   quizAnswered: false,
   uiLang: localStorage.getItem("uiLang") || "ar",
+  learningLanguage: localStorage.getItem("learningLanguage") || (localStorage.getItem("uiLang") === "ru" ? "ar" : "ru"),
+  lastRoom: localStorage.getItem("lastRoom") || "home",
   density: localStorage.getItem("density") || "grid",
   theme: localStorage.getItem("theme") || "light"
 };
@@ -72,10 +79,10 @@ const $$ = (s) => [...document.querySelectorAll(s)];
 const els = {
   brandSubtitle: $("#brandSubtitle"), vocabNavLabel: $("#vocabNavLabel"), reviewNavLabel: $("#reviewNavLabel"), quizNavLabel: $("#quizNavLabel"), progressNavLabel: $("#progressNavLabel"), quizBadge: $("#quizBadge"),
   sectionsTitle: $("#sectionsTitle"), streakTitle: $("#streakTitle"), streakDays: $("#streakDays"), streakNote: $("#streakNote"), searchInput: $("#searchInput"),
-  heroKicker: $("#heroKicker"), heroTitle: $("#heroTitle"), heroSubtitle: $("#heroSubtitle"), heroReviewBtn: $("#heroReviewBtn"), heroProgressLabel: $("#heroProgressLabel"), heroProgressValue: $("#heroProgressValue"), heroProgressFill: $("#heroProgressFill"), heroPhotoLabel: $("#heroPhotoLabel"), heroWordMeaning: $("#heroWordMeaning"), roomStripEyebrow: $("#roomStripEyebrow"), roomStripTitle: $("#roomStripTitle"), roomStripHint: $("#roomStripHint"), roomStrip: $("#roomStrip"), filtersBar: $("#filtersBar"),
+  heroKicker: $("#heroKicker"), heroTitle: $("#heroTitle"), heroSubtitle: $("#heroSubtitle"), heroReviewBtn: $("#heroReviewBtn"), heroProgressLabel: $("#heroProgressLabel"), heroProgressValue: $("#heroProgressValue"), heroProgressFill: $("#heroProgressFill"), heroPhoto: $("#heroPhoto"), heroPhotoLabel: $("#heroPhotoLabel"), heroWordLabel: $("#heroWordLabel"), heroWordMeaning: $("#heroWordMeaning"), roomStripEyebrow: $("#roomStripEyebrow"), roomStripTitle: $("#roomStripTitle"), roomStripHint: $("#roomStripHint"), roomStrip: $("#roomStrip"), filtersBar: $("#filtersBar"),
   subCategoryFilter: $("#subCategoryFilter"), levelFilter: $("#levelFilter"), sortFilter: $("#sortFilter"), categoryMenu: $("#categoryMenu"),
   pageTitle: $("#pageTitle"), pageCounter: $("#pageCounter"), cardsGrid: $("#cardsGrid"), detailPane: $("#detailPane"), emptyState: $("#emptyState"),
-  langButtons: $$(".lang-btn"), viewButtons: $$("[data-density]"), sidebarToggle: $("#sidebarToggle"), sidebarBackdrop: $("#sidebarBackdrop"), themeToggle: $("#themeToggle"),
+  langButtons: $$(".lang-btn"), learningLanguageButtons: $$('[data-learning-lang]'), learningLanguageLabel: $("#learningLanguageLabel"), interfaceLanguageLabel: $("#interfaceLanguageLabel"), viewButtons: $$("[data-density]"), sidebarToggle: $("#sidebarToggle"), sidebarBackdrop: $("#sidebarBackdrop"), themeToggle: $("#themeToggle"),
   playVisibleBtn: $("#playVisibleBtn"), resetFiltersBtn: $("#resetFiltersBtn"), reviewGrid: $("#reviewGrid"), reviewEmpty: $("#reviewEmpty"),
   reviewTitle: $("#reviewTitle"), reviewSubtitle: $("#reviewSubtitle"), quizTitle: $("#quizTitle"), quizSubtitle: $("#quizSubtitle"), quizBox: $("#quizBox"),
   nextQuizBtn: $("#nextQuizBtn"), speakQuizBtn: $("#speakQuizBtn"), quizStatsTitle: $("#quizStatsTitle"), quizCorrect: $("#quizCorrect"), quizWrong: $("#quizWrong"), quizTotal: $("#quizTotal"),
@@ -94,17 +101,23 @@ async function init(){
   bindEvents();
   populateSubcategories();
   applyTheme(state.theme);
+  if (state.learningLanguage === state.uiLang) {
+    state.learningLanguage = LANGUAGE_CODES.find(code => code !== state.uiLang);
+    localStorage.setItem("learningLanguage", state.learningLanguage);
+  }
   applyUiLanguage(state.uiLang);
+  applyLearningLanguage(state.learningLanguage);
   switchView(state.activeView);
   applyFilters();
   updateMetrics();
 }
 function bindEvents(){
   els.searchInput.addEventListener("input", applyFilters);
-  els.subCategoryFilter.addEventListener("change", applyFilters);
+  els.subCategoryFilter.addEventListener("change", () => { if (els.subCategoryFilter.value !== "all") { state.lastRoom = els.subCategoryFilter.value; localStorage.setItem("lastRoom", state.lastRoom); } applyFilters(); });
   els.levelFilter.addEventListener("change", applyFilters);
   els.sortFilter.addEventListener("change", applyFilters);
   els.langButtons.forEach(btn => btn.addEventListener("click", () => applyUiLanguage(btn.dataset.uiLang)));
+  els.learningLanguageButtons.forEach(btn => btn.addEventListener("click", () => applyLearningLanguage(btn.dataset.learningLang)));
   $$("[data-view-btn]").forEach(btn => btn.addEventListener("click", () => switchView(btn.dataset.viewBtn)));
   $$("[data-density]").forEach(btn => btn.addEventListener("click", () => setDensity(btn.dataset.density)));
   els.sidebarToggle.addEventListener("click", () => setSidebarOpen(!document.body.classList.contains("sidebar-open")));
@@ -113,7 +126,7 @@ function bindEvents(){
   els.playVisibleBtn.addEventListener("click", playVisibleWords);
   els.resetFiltersBtn.addEventListener("click", resetFilters);
   els.nextQuizBtn.addEventListener("click", renderQuiz);
-  els.speakQuizBtn.addEventListener("click", () => state.currentQuiz && playAudio(state.currentQuiz.id, "word", "ru"));
+  els.speakQuizBtn.addEventListener("click", () => state.currentQuiz && playAudio(state.currentQuiz.id, "word", state.learningLanguage));
   if (els.backToWordsBtn) els.backToWordsBtn.addEventListener("click", () => switchView("vocabulary"));
   if (els.heroReviewBtn) els.heroReviewBtn.addEventListener("click", () => switchView("review"));
   if (els.detailSpeakRuBtn) els.detailSpeakRuBtn.addEventListener("click", () => state.selectedWordId && playAudio(state.selectedWordId, "word", "ru"));
@@ -130,9 +143,17 @@ function populateSubcategories(){
   }
 }
 function applyUiLanguage(lang){
+  const previousUiLang = state.uiLang;
   state.uiLang = lang; localStorage.setItem("uiLang", lang);
+  if (state.learningLanguage === lang) {
+    state.learningLanguage = previousUiLang !== lang
+      ? previousUiLang
+      : LANGUAGE_CODES.find(code => code !== lang);
+    localStorage.setItem("learningLanguage", state.learningLanguage);
+  }
   const t = I18N[lang];
   document.body.dataset.uiLang = lang;
+  document.body.dataset.learningLanguage = state.learningLanguage;
   document.documentElement.lang = lang;
   document.documentElement.dir = t.dir;
   els.sidebarToggle.setAttribute("aria-label", document.body.classList.contains("sidebar-open") ? t.a11y.closeMenu : t.a11y.openMenu);
@@ -151,6 +172,8 @@ function applyUiLanguage(lang){
      totalWordsMetricLabel:"totalWords", savedWordsMetricLabel:"savedWords", masteredWordsMetricLabel:"masteredWords", avgMasteryMetricLabel:"avgMastery", dailyTipText:"dailyTip", emptyState:"emptyState", heroKicker:"homeHeroKicker", heroTitle:"homeHeroTitle", heroSubtitle:"homeHeroSubtitle", heroReviewBtn:"homeHeroCta", heroProgressLabel:"homeProgressLabel", roomStripEyebrow:"roomStripEyebrow", roomStripTitle:"roomStripTitle", roomStripHint:"roomStripHint"
   }).forEach(([elKey, tKey]) => { if (els[elKey]) els[elKey].textContent = t[tKey]; });
   els.searchInput.placeholder = t.searchPlaceholder;
+  if (els.learningLanguageLabel) els.learningLanguageLabel.textContent = LEARNING_LANGUAGE_LABELS[lang] || LEARNING_LANGUAGE_LABELS.en;
+  if (els.interfaceLanguageLabel) els.interfaceLanguageLabel.textContent = INTERFACE_LANGUAGE_LABELS[lang] || INTERFACE_LANGUAGE_LABELS.en;
   els.subCategoryFilter.options[0].text = t.allSubCategories;
   [...els.subCategoryFilter.options].forEach((opt, i) => { if (i) opt.text = t.categories[opt.value] || opt.value; });
   els.levelFilter.options[0].text = t.allLevels;
@@ -159,7 +182,37 @@ function applyUiLanguage(lang){
   els.sortFilter.options[2].text = t.sortZA;
   els.sortFilter.options[3].text = t.sortMastery;
   els.langButtons.forEach(btn => btn.classList.toggle("active", btn.dataset.uiLang === lang));
-  renderCategoryMenu(); renderRoomStrip(); applyFilters(); renderQuiz(); updateMetrics();
+  syncLanguageAvailability();
+  renderCategoryMenu(); renderRoomStrip(); applyFilters(); renderQuiz(); renderFullWordDetail(); updateMetrics();
+  if (state.activeView === "review") renderReview();
+  if (state.activeView === "progress") renderProgress();
+}
+function syncLanguageAvailability(){
+  els.langButtons.forEach(btn => {
+    btn.disabled = false;
+    btn.removeAttribute("aria-disabled");
+  });
+  els.learningLanguageButtons.forEach(btn => {
+    const unavailable = btn.dataset.learningLang === state.uiLang;
+    btn.hidden = unavailable;
+    btn.disabled = unavailable;
+    btn.setAttribute("aria-hidden", String(unavailable));
+  });
+}
+function applyLearningLanguage(lang){
+  if (!LANGUAGE_CODES.includes(lang) || lang === state.uiLang) lang = LANGUAGE_CODES.find(code => code !== state.uiLang);
+  state.learningLanguage = lang;
+  localStorage.setItem("learningLanguage", lang);
+  document.body.dataset.learningLanguage = lang;
+  els.learningLanguageButtons.forEach(button => {
+    const active = button.dataset.learningLang === lang;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+  syncLanguageAvailability();
+  renderCards(); renderDetail(); renderFullWordDetail(); renderQuiz(); updateMetrics();
+  if (state.activeView === "review") renderReview();
+  if (state.activeView === "progress") renderProgress();
 }
 function renderCategoryMenu(){
   const t = I18N[state.uiLang];
@@ -177,7 +230,7 @@ function renderRoomStrip(){
   const t = I18N[state.uiLang];
   els.roomStrip.innerHTML = ROOM_FEATURES.map(room => {
     const count = state.words.filter(word => word.subCategory === room.id).length;
-    return `<button class="room-card" type="button" data-room="${room.id}" aria-label="${escapeHTML(`${t.roomOpen}: ${t.categories[room.id] || room.id}`)}">
+    return `<button class="room-card room-${room.tone}" type="button" data-room="${room.id}" aria-label="${escapeHTML(`${t.roomOpen}: ${t.categories[room.id] || room.id}`)}">
       <span class="room-card-image"><img src="${room.image}" alt="" loading="lazy" /><span class="room-card-icon" aria-hidden="true">${room.icon}</span></span>
       <span class="room-card-copy"><strong>${escapeHTML(t.categories[room.id] || room.id)}</strong><small>${count} ${escapeHTML(t.roomWords)}</small></span>
       <span class="room-card-arrow" aria-hidden="true">↗</span>
@@ -186,6 +239,8 @@ function renderRoomStrip(){
   els.roomStrip.querySelectorAll("[data-room]").forEach(btn => btn.addEventListener("click", () => selectRoom(btn.dataset.room)));
 }
 function selectRoom(room){
+  state.lastRoom = room;
+  localStorage.setItem("lastRoom", room);
   els.subCategoryFilter.value = room;
   els.categoryMenu.querySelectorAll(".category-item").forEach(item => item.classList.toggle("active", item.dataset.submenu === room));
   switchView("vocabulary");
@@ -247,25 +302,79 @@ function renderCards(){
   bindCardInteractions(els.cardsGrid, id => { state.selectedWordId = id; renderCards(); renderDetail(); });
   bindCardButtons(els.cardsGrid);
 }
+function languageValue(word, lang){
+  return { ru:word.russian, ar:word.arabic, en:word.english }[lang] || "";
+}
+function orderedLanguages(){
+  return state.learningLanguage === state.uiLang
+    ? [state.learningLanguage]
+    : [state.learningLanguage, state.uiLang];
+}
+function pronunciationForLanguage(word, lang){
+  if (lang === "ru") {
+    if (state.uiLang === "ar") return word.transliterationAr || word.transliteration || "";
+    if (state.uiLang === "en") return word.transliteration || "";
+    return "";
+  }
+  if (lang === "ar") {
+    if (state.uiLang === "ru") return word.arabicTransliterationRu || "";
+    if (state.uiLang === "en") return word.arabicTransliterationEn || "";
+    return "";
+  }
+  if (lang === "en") {
+    if (state.uiLang === "ru") return word.englishTransliterationRu || "";
+    return word.englishTransliterationAr || "";
+  }
+  return "";
+}
+function wordPronunciation(word, lang = state.learningLanguage){
+  return pronunciationForLanguage(word, lang);
+}
+function examplePronunciation(word, lang){
+  if (lang === "ru") {
+    if (state.uiLang === "ar") return word.exampleTransliterationAr || "";
+    if (state.uiLang === "en") return word.exampleTransliterationEn || "";
+  }
+  if (lang === "ar") {
+    if (state.uiLang === "ru") return word.exampleArTransliterationRu || "";
+    if (state.uiLang === "en") return word.exampleArTransliterationEn || "";
+  }
+  if (lang === "en") {
+    if (state.uiLang === "ru") return word.exampleEnTransliterationRu || "";
+    return word.exampleEnTransliterationAr || "";
+  }
+  return "";
+}
+function translationRows(word){
+  return orderedLanguages().slice(1).map(lang => {
+    const pronunciation = pronunciationForLanguage(word, lang);
+    return `<div class="card-translation"><bdi dir="auto">${escapeHTML(languageValue(word, lang))}</bdi>${pronunciation ? `<small class="card-translation-pronunciation" dir="ltr">[${escapeHTML(pronunciation)}]</small>` : ""}</div>`;
+  }).join("");
+}
+function audioButtons(word, includeText = false){
+  return orderedLanguages().map(lang => `<button class="audio-btn ${lang}" data-audio="word" data-lang="${lang}" data-id="${word.id}" type="button" aria-label="${escapeHTML(I18N[state.uiLang].a11y[`play${lang === "ru" ? "Russian" : lang === "ar" ? "Arabic" : "English"}`])}">${languageFlag(lang)} 🔊${includeText ? ` ${escapeHTML(languageValue(word, lang))}` : ""}</button>`).join("");
+}
+function meaningCards(word){
+  return orderedLanguages().map((lang, index) => {
+    const pronunciation = index === 0 ? "" : pronunciationForLanguage(word, lang);
+    return `<div class="meaning-card ${index === 0 ? "is-target" : ""}"><strong>${escapeHTML(languageValue(word, lang))}</strong>${pronunciation ? `<small class="meaning-card-pronunciation" dir="ltr">[${escapeHTML(pronunciation)}]</small>` : ""}</div>`;
+  }).join("");
+}
 function cardTemplate(w){
   const t = I18N[state.uiLang], saved = state.saved.has(w.id), mastery = state.mastery[w.id] || 0;
   return `
-    <article class="word-card ${state.selectedWordId === w.id ? "active":""}" data-card="${w.id}" role="button" tabindex="0" aria-label="${escapeHTML(`${t.a11y.openWord}: ${w.russian}`)}">
+    <article class="word-card ${state.selectedWordId === w.id ? "active":""}" data-card="${w.id}" role="button" tabindex="0" aria-label="${escapeHTML(`${t.a11y.openWord}: ${languageValue(w, state.learningLanguage)}`)}">
       <div class="card-image-wrap">
         <img src="${escapeHTML(w.imagePath)}" alt="${escapeHTML(`${w.russian} — ${w.arabic}`)}" loading="lazy"/>
         <button class="favorite-btn ${saved ? "saved":""}" data-fav="${w.id}" type="button" aria-label="${escapeHTML(saved ? t.a11y.removeReview : t.a11y.saveReview)}" aria-pressed="${saved}">${saved ? "★":"☆"}</button>
         <span class="mastery-chip">${mastery}%</span>
+        <span class="level-chip ${levelClass(w.level)}">${escapeHTML(w.level || "")}</span>
       </div>
       <div class="card-body">
-        <h3 class="card-word">${escapeHTML(w.russian)}</h3>
-        <p class="card-translit">[${escapeHTML(w.transliteration || "")}]</p>
-        <p class="card-meaning">${escapeHTML(w.arabic)}</p>
-        <p class="card-meaning en">${escapeHTML(w.english)}</p>
-        <div class="audio-row">
-          <button class="audio-btn ar" data-audio="word" data-lang="ar" data-id="${w.id}" type="button" aria-label="${escapeHTML(t.a11y.playArabic)}">🇸🇦 🔊</button>
-          <button class="audio-btn ru" data-audio="word" data-lang="ru" data-id="${w.id}" type="button" aria-label="${escapeHTML(t.a11y.playRussian)}">🇷🇺 🔊</button>
-          <button class="audio-btn en" data-audio="word" data-lang="en" data-id="${w.id}" type="button" aria-label="${escapeHTML(t.a11y.playEnglish)}">🇺🇸 🔊</button>
-        </div>
+        <h3 class="card-word">${escapeHTML(languageValue(w, state.learningLanguage))}</h3>
+        ${wordPronunciation(w) ? `<p class="card-translit">[${escapeHTML(wordPronunciation(w))}]</p>` : ""}
+        <div class="card-translations">${translationRows(w)}</div>
+        <div class="audio-row">${audioButtons(w)}</div>
       </div>
     </article>`;
 }
@@ -293,24 +402,19 @@ function renderDetail(){
   const t = I18N[state.uiLang], stars = "⭐".repeat(Number(w.frequency || 1)), mastery = state.mastery[w.id] || 0;
   els.detailPane.innerHTML = `
     <div class="detail-image"><img src="${escapeHTML(w.imagePath)}" alt="${escapeHTML(`${w.russian} — ${w.arabic}`)}"/></div>
-    <h2 class="detail-word">${escapeHTML(w.russian)}</h2>
-    <p class="detail-translit">[${escapeHTML(w.transliteration || "")}]</p>
-    <div class="detail-audio-row">
-      <button class="audio-btn ar" data-audio="word" data-lang="ar" data-id="${w.id}" type="button">🇸🇦 ${escapeHTML(w.arabic)}</button>
-      <button class="audio-btn ru" data-audio="word" data-lang="ru" data-id="${w.id}" type="button">🇷🇺 ${escapeHTML(w.russian)}</button>
-      <button class="audio-btn en" data-audio="word" data-lang="en" data-id="${w.id}" type="button">🇺🇸 ${escapeHTML(w.english)}</button>
-    </div>
+    <h2 class="detail-word">${escapeHTML(languageValue(w, state.learningLanguage))}</h2>
+    ${wordPronunciation(w) ? `<p class="detail-translit">[${escapeHTML(wordPronunciation(w))}]</p>` : ""}
+    <div class="detail-translations">${translationRows(w)}</div>
+    <div class="detail-audio-row">${audioButtons(w, true)}</div>
     <button class="secondary-btn open-detail-btn" data-open-detail="${w.id}" type="button">${detailText("fullPage")}</button>
     <div class="detail-block">
       <h3>${escapeHTML(t.labels.example)}</h3>
-      ${exampleLine(w.exampleRu, "ru", w.id)}
-      ${exampleLine(w.exampleAr, "ar", w.id)}
-      ${exampleLine(w.exampleEn, "en", w.id)}
+      ${orderedLanguages().map(lang => exampleLineForLanguage(w, lang)).join("")}
     </div>
     <div class="detail-block">
       <h3>${escapeHTML(t.labels.info)}</h3>
       <div class="detail-info-grid">
-        <span class="label">${escapeHTML(t.labels.level)}</span><span class="badge">${escapeHTML(w.level)}</span>
+         <span class="label">${escapeHTML(t.labels.level)}</span><span class="badge ${levelClass(w.level)}">${escapeHTML(w.level)}</span>
         <span class="label">${escapeHTML(t.labels.frequency)}</span><span class="stars">${stars}</span>
         <span class="label">${escapeHTML(t.labels.category)}</span><span>${escapeHTML(t.categories[w.subCategory] || w.subCategory)}</span>
         <span class="label">${escapeHTML(t.labels.mastery)}</span><span class="badge">${mastery}%</span>
@@ -334,6 +438,25 @@ function exampleLine(text, lang, id){
 function audioLabel(lang){
   const t = I18N[state.uiLang];
   return {ar:t.a11y.playArabic,ru:t.a11y.playRussian,en:t.a11y.playEnglish}[lang] || t.a11y.playWord;
+}
+
+function russianWordPronunciation(word){
+  return wordPronunciation(word);
+}
+function russianExamplePronunciation(word){
+  return examplePronunciation(word, state.learningLanguage);
+}
+function exampleLineWithPronunciation(text, lang, id, word){
+  const dir = lang === "ru" || lang === "en" ? ' dir="ltr"' : "";
+  const pronunciation = lang === "ru" && word ? russianExamplePronunciation(word) : "";
+  return `<div class="detail-example-line"><div class="detail-example-copy"><p${dir}>${escapeHTML(text)}</p>${pronunciation ? `<small class="example-pronunciation" dir="ltr">[${escapeHTML(pronunciation)}]</small>` : ""}</div><button class="small-icon-btn" data-audio="sentence" data-lang="${lang}" data-id="${id}" type="button" aria-label="${escapeHTML(audioLabel(lang))}">&#128266;</button></div>`;
+}
+function exampleLineForLanguage(word, lang){
+  const values = { ru:word.exampleRu, ar:word.exampleAr, en:word.exampleEn };
+  const text = values[lang] || "";
+  const pronunciation = examplePronunciation(word, lang);
+  const dir = lang === "ar" ? "" : ' dir="ltr"';
+  return `<div class="detail-example-line"><div class="detail-example-copy"><span class="example-language-label">${escapeHTML(LANGUAGE_LABELS[lang])}</span><p${dir}>${escapeHTML(text)}</p>${pronunciation ? `<small class="example-pronunciation" dir="auto">[${escapeHTML(pronunciation)}]</small>` : ""}</div><button class="small-icon-btn" data-audio="sentence" data-lang="${lang}" data-id="${word.id}" type="button" aria-label="${escapeHTML(audioLabel(lang))}">&#128266;</button></div>`;
 }
 
 
@@ -361,17 +484,18 @@ function renderFullWordDetail(){
   const grammar = w.grammar || {};
   const examples = w.examples || [];
   const phrases = w.phrases || [];
+  const showGenderComparison = orderedLanguages().includes("ru") && orderedLanguages().includes("ar");
 
   els.fullWordDetail.innerHTML = `
     <section class="full-detail-hero">
       <div class="full-detail-image"><img src="${escapeHTML(w.imagePath)}" alt="${escapeHTML(`${w.russian} — ${w.arabic}`)}"/></div>
       <div class="full-detail-head">
-        <h1 class="full-detail-word">${escapeHTML(w.russian)}</h1>
-        <p class="full-detail-translit">[${escapeHTML(w.transliteration || "")}]</p>
+        <h1 class="full-detail-word">${escapeHTML(languageValue(w, state.learningLanguage))}</h1>
+        ${wordPronunciation(w) ? `<p class="full-detail-translit">[${escapeHTML(wordPronunciation(w))}]</p>` : ""}
         <div class="full-detail-meanings">
-          <div class="meaning-card"><span>🇷🇺 Russian</span><strong>${escapeHTML(w.russian)}</strong></div>
-          <div class="meaning-card"><span>🇸🇦 العربية</span><strong>${escapeHTML(w.arabic)}</strong></div>
-          <div class="meaning-card"><span>🇺🇸 English</span><strong>${escapeHTML(w.english)}</strong></div>
+          <div class="meaning-card"><strong>${escapeHTML(w.russian)}</strong></div>
+          <div class="meaning-card"><strong>${escapeHTML(w.arabic)}</strong></div>
+          <div class="meaning-card"><strong>${escapeHTML(w.english)}</strong></div>
         </div>
       </div>
     </section>
@@ -384,16 +508,16 @@ function renderFullWordDetail(){
     <section class="detail-section-card">
       <h3>${detailText("examples")}</h3>
       <div class="example-stack">${examples.slice(0,3).map((ex, index) => renderExampleCard(ex, index)).join("")}</div>
+      ${russianExamplePronunciation(w) ? `<p class="example-pronunciation" dir="auto">[${escapeHTML(russianExamplePronunciation(w))}]</p>` : ""}
     </section>
 
     ${phrases.length ? `<section class="detail-section-card"><h3>${detailText("phrases")}</h3><div class="phrase-grid">${phrases.slice(0,6).map(renderPhraseCard).join("")}</div></section>` : ""}
 
-    <section class="detail-section-card">
-      <h3>${genderText("title")}</h3>
-      ${renderGenderComparison(grammar)}
-    </section>
+    ${showGenderComparison ? `<section class="detail-section-card"><h3>${genderText("title")}</h3>${renderGenderComparison(grammar)}</section>` : ""}
   `;
 
+  const meaningCardGrid = els.fullWordDetail.querySelector(".full-detail-meanings");
+  if (meaningCardGrid) meaningCardGrid.innerHTML = meaningCards(w);
   els.fullWordDetail.querySelectorAll("[data-example-audio]").forEach(btn => {
     btn.addEventListener("click", () => {
       const idx = Number(btn.dataset.exampleIndex);
@@ -407,14 +531,22 @@ function renderGrammarTable(grammar){
   const ru = grammar.ru || {};
   const ar = grammar.ar || {};
   const en = grammar.en || {};
+  const grammarByLanguage = { ru, ar, en };
+  const languages = orderedLanguages();
   const rows = [
-    [detailText("word"), ru.word, ar.word, en.word],
-    [detailText("type"), ru.type, ar.type, en.type],
-    [detailText("singular"), ru.singular, ar.singular, en.singular],
-    [detailText("plural"), ru.plural, ar.plural, en.plural],
-    [detailText("gender"), ru.gender, ar.gender, en.gender]
+    [detailText("word"), ...languages.map(lang => grammarByLanguage[lang]?.word)],
+    [detailText("type"), ...languages.map(lang => grammarByLanguage[lang]?.type)],
+    [detailText("singular"), ...languages.map(lang => grammarByLanguage[lang]?.singular)],
+    [detailText("plural"), ...languages.map(lang => grammarByLanguage[lang]?.plural)],
+    [detailText("gender"), ...languages.map(lang => grammarByLanguage[lang]?.gender)]
   ];
-  return `<div class="tri-table-wrap"><table class="tri-table"><thead><tr><th>${detailText("info")}</th><th>🇷🇺 Russian</th><th>🇸🇦 Arabic</th><th>🇺🇸 English</th></tr></thead><tbody>${rows.map(row => `<tr><td>${escapeHTML(row[0])}</td><td dir="ltr">${escapeHTML(row[1] || "—")}</td><td>${escapeHTML(row[2] || "—")}</td><td dir="ltr">${escapeHTML(row[3] || "—")}</td></tr>`).join("")}</tbody></table></div>`;
+  const headers = languages.map(lang => `<th>${languageFlag(lang)} ${escapeHTML(LANGUAGE_LABELS[lang])}</th>`).join("");
+  const cells = rows.map(row => `<tr><td>${escapeHTML(row[0])}</td>${row.slice(1).map(value => `<td dir="auto">${escapeHTML(value || "—")}</td>`).join("")}</tr>`).join("");
+  return `<div class="tri-table-wrap"><table class="tri-table"><thead><tr><th>${detailText("info")}</th>${headers}</tr></thead><tbody>${cells}</tbody></table></div>`;
+}
+
+function languageFlag(lang){
+  return { ru:"🇷🇺", ar:"🇸🇦", en:"🇺🇸" }[lang] || "";
 }
 
 const GENDER_META = {
@@ -471,15 +603,12 @@ function renderGenderComparison(grammar){
 }
 
 function renderExampleCard(ex, index){
-  return `<article class="example-card"><div class="example-card-head"><span>${detailText("example")} ${index + 1}</span></div><div class="example-lines">
-    <div class="example-line"><span class="flag">🇷🇺 RU</span><span dir="ltr">${escapeHTML(ex.ru || "")}</span><button class="small-icon-btn" data-example-audio="1" data-example-index="${index}" data-lang="ru" type="button" aria-label="${escapeHTML(audioLabel("ru"))}">🔊</button></div>
-    <div class="example-line"><span class="flag">🇸🇦 AR</span><span>${escapeHTML(ex.ar || "")}</span><button class="small-icon-btn" data-example-audio="1" data-example-index="${index}" data-lang="ar" type="button" aria-label="${escapeHTML(audioLabel("ar"))}">🔊</button></div>
-    <div class="example-line"><span class="flag">🇺🇸 EN</span><span dir="ltr">${escapeHTML(ex.en || "")}</span><button class="small-icon-btn" data-example-audio="1" data-example-index="${index}" data-lang="en" type="button" aria-label="${escapeHTML(audioLabel("en"))}">🔊</button></div>
-  </div></article>`;
+  const lines = orderedLanguages().map(lang => `<div class="example-line"><span class="flag">${languageFlag(lang)} ${lang.toUpperCase()}</span><span dir="auto">${escapeHTML(ex[lang] || "")}</span><button class="small-icon-btn" data-example-audio="1" data-example-index="${index}" data-lang="${lang}" type="button" aria-label="${escapeHTML(audioLabel(lang))}">🔊</button></div>`).join("");
+  return `<article class="example-card"><div class="example-card-head"><span>${detailText("example")} ${index + 1}</span></div><div class="example-lines">${lines}</div></article>`;
 }
 
 function renderPhraseCard(p){
-  return `<div class="phrase-card"><div class="ru">${escapeHTML(p.ru || "")}</div><div>${escapeHTML(p.ar || "")}</div><div dir="ltr">${escapeHTML(p.en || "")}</div></div>`;
+  return `<div class="phrase-card">${orderedLanguages().map(lang => `<div class="${lang}" dir="auto">${escapeHTML(p[lang] || "")}</div>`).join("")}</div>`;
 }
 
 function playExampleAudio(w, index, lang){
@@ -539,28 +668,26 @@ function renderQuiz(){
   const correct = pool[Math.floor(Math.random()*pool.length)];
   state.currentQuiz = correct;
   const options = shuffle([correct, ...shuffle(state.words.filter(w => w.id !== correct.id)).slice(0,3)]);
+  const quizValue = languageValue(correct, state.learningLanguage);
   els.quizBox.innerHTML = `
-    <div class="quiz-word" role="button" tabindex="0" aria-label="${escapeHTML(`${t.a11y.playWord}: ${correct.russian}`)}">${escapeHTML(correct.russian)}</div>
-    <p class="quiz-translit">[${escapeHTML(correct.transliteration || "")}]</p>
+    <div class="quiz-word" role="button" tabindex="0" aria-label="${escapeHTML(`${t.a11y.playWord}: ${quizValue}`)}">${escapeHTML(quizValue)}</div>
+    ${wordPronunciation(correct) ? `<p class="quiz-translit">[${escapeHTML(wordPronunciation(correct))}]</p>` : ""}
     <div class="quiz-options">
       ${options.map(w => `<button class="quiz-option" data-answer="${w.id}" type="button">${quizOptionText(w)}</button>`).join("")}
     </div>
     <div id="quizFeedback" class="quiz-feedback hidden"></div>`;
   const quizWord = els.quizBox.querySelector(".quiz-word");
-  quizWord.addEventListener("click", () => playAudio(correct.id, "word", "ru"));
+  quizWord.addEventListener("click", () => playAudio(correct.id, "word", state.learningLanguage));
   quizWord.addEventListener("keydown", event => {
     if (!["Enter", " "].includes(event.key)) return;
     event.preventDefault();
-    playAudio(correct.id, "word", "ru");
+    playAudio(correct.id, "word", state.learningLanguage);
   });
   els.quizBox.querySelectorAll("[data-answer]").forEach(btn => btn.addEventListener("click", () => checkQuiz(btn)));
   updateQuizStats();
 }
 function quizOptionText(w){
-  const english = `<bdi dir="ltr">${escapeHTML(w.english)}</bdi>`;
-  const arabic = `<bdi dir="rtl">${escapeHTML(w.arabic)}</bdi>`;
-  if (state.uiLang === "en") return `${english} — ${arabic}`;
-  return `${arabic} — ${english}`;
+  return orderedLanguages().slice(1).map(lang => `<bdi dir="auto">${escapeHTML(languageValue(w, lang))}</bdi>`).join(" — ");
 }
 function checkQuiz(btn){
   if (state.quizAnswered || !state.currentQuiz) return;
@@ -598,7 +725,7 @@ function checkQuiz(btn){
 
   renderCards();
   renderDetail();
-  playAudio(state.currentQuiz.id, "word", "ru");
+  playAudio(state.currentQuiz.id, "word", state.learningLanguage);
 }
 function updateQuizStats(){
   els.quizCorrect.textContent = state.quiz.correct || 0;
@@ -610,7 +737,8 @@ function renderProgress(){
   const t = I18N[state.uiLang];
   els.masteryList.innerHTML = state.words.map(w => {
     const mastery = state.mastery[w.id] || 0;
-    return `<div class="mastery-item"><div><strong>${escapeHTML(w.russian)}</strong><span> — ${escapeHTML(w.arabic)} / ${escapeHTML(w.english)}</span></div><div class="mastery-track"><div class="mastery-fill" style="width:${mastery}%"></div></div></div>`;
+    const secondary = orderedLanguages().slice(1).map(lang => languageValue(w, lang)).join(" / ");
+    return `<div class="mastery-item"><div><strong>${escapeHTML(languageValue(w, state.learningLanguage))}</strong><span> — ${escapeHTML(secondary)}</span></div><div class="mastery-track"><div class="mastery-fill" style="width:${mastery}%"></div></div></div>`;
   }).join("");
 }
 function updateMetrics(){
@@ -629,15 +757,20 @@ function updateMetrics(){
 function renderHomeHero(avg){
   if (!els.heroProgressValue) return;
   const t = I18N[state.uiLang];
-  const homeWord = state.words.find(word => word.id === "home50_001");
+  const roomId = els.subCategoryFilter.value !== "all" ? els.subCategoryFilter.value : state.lastRoom;
+  const room = ROOM_FEATURES.find(item => item.id === roomId) || ROOM_FEATURES[0];
+  const roomWord = state.words.find(word => word.subCategory === room.id) || state.words[0];
   els.heroProgressValue.textContent = `${avg}%`;
   els.heroProgressFill.style.width = `${avg}%`;
-  els.heroPhotoLabel.textContent = t.categories.home;
-  els.heroWordMeaning.textContent = homeWord ? ({ ar:homeWord.arabic, en:homeWord.english, ru:homeWord.russian }[state.uiLang] || homeWord.arabic) : "";
+  els.heroPhoto.src = room.image;
+  els.heroPhoto.alt = t.categories[room.id] || room.id;
+  els.heroPhotoLabel.textContent = t.categories[room.id] || room.id;
+  els.heroWordLabel.textContent = roomWord ? languageValue(roomWord, state.learningLanguage) : "";
+  els.heroWordMeaning.textContent = roomWord ? orderedLanguages().slice(1).map(lang => languageValue(roomWord, lang)).join(" · ") : "";
 }
 async function playVisibleWords(){
   for (const w of state.filtered.slice(0, 8)) {
-    speak(w.russian, "ru-RU");
+    playAudio(w.id, "word", state.learningLanguage);
     await wait(950);
   }
 }
@@ -676,5 +809,6 @@ function speak(text, lang){
 function wait(ms){ return new Promise(r => setTimeout(r, ms)); }
 function shuffle(arr){ return [...arr].sort(() => Math.random() - .5); }
 function normalize(v){ return String(v || "").toLowerCase().trim().replace(/[ё]/g,"е").replace(/[أإآ]/g,"ا").replace(/[ة]/g,"ه").replace(/[ى]/g,"ي"); }
+function levelClass(level){ return `level-${String(level || "unknown").toLowerCase().replace(/[^a-z0-9]+/g,"-")}`; }
 function escapeHTML(v){ return String(v ?? "").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;"); }
 init();

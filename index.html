@@ -6,6 +6,8 @@
   <meta name="theme-color" content="#1f637c" />
   <title>Russian Daily Life — v8.3 Visual Guide</title>
   <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-ui-lang="ar" data-view="vocabulary">
@@ -65,10 +67,23 @@
         </div>
 
         <div class="topbar-actions">
-          <div class="lang-switcher">
-            <button class="lang-btn active" data-ui-lang="ar" type="button">🇸🇦 العربية</button>
-            <button class="lang-btn" data-ui-lang="en" type="button">🇺🇸 English</button>
-            <button class="lang-btn" data-ui-lang="ru" type="button">🇷🇺 Русский</button>
+          <div class="language-controls">
+            <div class="language-control" role="group" aria-label="Learning language">
+              <span class="language-control-label" id="learningLanguageLabel">Learning</span>
+              <div class="learning-language-switcher">
+                <button class="learning-lang-btn active" data-learning-lang="ru" type="button">Русский</button>
+                <button class="learning-lang-btn" data-learning-lang="ar" type="button">العربية</button>
+                <button class="learning-lang-btn" data-learning-lang="en" type="button">English</button>
+              </div>
+            </div>
+            <div class="language-control" role="group" aria-label="Interface language">
+              <span class="language-control-label" id="interfaceLanguageLabel">Interface</span>
+              <div class="lang-switcher">
+                <button class="lang-btn active" data-ui-lang="ar" type="button">🇸🇦 العربية</button>
+                <button class="lang-btn" data-ui-lang="en" type="button">🇺🇸 English</button>
+                <button class="lang-btn" data-ui-lang="ru" type="button">🇷🇺 Русский</button>
+              </div>
+            </div>
           </div>
           <button class="icon-btn" id="themeToggle" type="button" aria-label="تبديل المظهر" aria-pressed="false">☾</button>
         </div>
@@ -90,10 +105,10 @@
           </div>
           <div class="hero-visual" aria-hidden="true">
             <div class="hero-photo-frame">
-              <img src="assets/images/words/house.jpg" alt="" />
+              <img id="heroPhoto" src="assets/images/words/house.jpg" alt="" />
               <span class="hero-photo-label" id="heroPhotoLabel">البيت</span>
             </div>
-            <div class="hero-word-tag"><strong>дом</strong><span id="heroWordMeaning">بيت / منزل</span></div>
+            <div class="hero-word-tag"><strong id="heroWordLabel">дом</strong><span id="heroWordMeaning">بيت / منزل</span></div>
             <span class="hero-sticker">🪆</span>
           </div>
         </section>

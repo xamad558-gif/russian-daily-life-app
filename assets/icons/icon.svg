@@ -1,4 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Russian Daily Life">
-  <rect width="512" height="512" rx="96" fill="#2f6fed"/>
-  <text x="50%" y="58%" font-size="280" text-anchor="middle" dominant-baseline="middle">🪆</text>
+  <rect width="512" height="512" rx="96" fill="#173b52"/>
+  <circle cx="396" cy="116" r="54" fill="#f2c66d" opacity=".95"/>
+  <path d="M112 232 256 104l144 128-26 28L256 160 138 260Z" fill="#f2c66d"/>
+  <path d="M148 232h216v174H148z" fill="#fffdf8"/>
+  <path d="M224 406V294h64v112" fill="#1f637c"/>
+  <rect x="180" y="270" width="48" height="48" rx="8" fill="#1f637c"/>
+  <rect x="284" y="270" width="48" height="48" rx="8" fill="#1f637c"/>
+  <path d="M176 336h160" stroke="#d7e4e3" stroke-width="10" stroke-linecap="round"/>
 </svg>
