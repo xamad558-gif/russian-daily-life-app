@@ -311,6 +311,7 @@ function orderedLanguages(){
     : [state.learningLanguage, state.uiLang];
 }
 function pronunciationForLanguage(word, lang){
+  if (lang === state.uiLang) return "";
   if (lang === "ru") {
     if (state.uiLang === "ar") return word.transliterationAr || word.transliteration || "";
     if (state.uiLang === "en") return word.transliteration || "";
@@ -331,6 +332,7 @@ function wordPronunciation(word, lang = state.learningLanguage){
   return pronunciationForLanguage(word, lang);
 }
 function examplePronunciation(word, lang){
+  if (lang === state.uiLang) return "";
   if (lang === "ru") {
     if (state.uiLang === "ar") return word.exampleTransliterationAr || "";
     if (state.uiLang === "en") return word.exampleTransliterationEn || "";

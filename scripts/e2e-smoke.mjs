@@ -77,6 +77,7 @@ async function runSmokeTest() {
 
     await page.locator('[data-ui-lang="en"]').click();
     assert.equal(await page.locator("html").getAttribute("dir"), "ltr", "English interface should use LTR");
+    assert.equal(await page.locator(".word-card").first().locator(".card-translation-pronunciation").count(), 0, "English interface should not add Arabic pronunciation to English translations");
     await page.locator('[data-learning-lang="ar"]').click();
     assert.equal(await page.locator("body").getAttribute("data-learning-language"), "ar", "Arabic learning mode should be active");
     assert.match(await page.locator(".card-word").first().textContent(), /[\u0600-\u06ff]/, "Arabic should be the primary card language");
