@@ -76,6 +76,7 @@ const state = {
 AppAudio.configure({ findWord: id => state.words.find(word => word.id === id) });
 const playAudio = (...args) => AppAudio.playAudio(...args);
 const wait = (...args) => AppAudio.wait(...args);
+const renderQuiz = (...args) => AppQuiz.render(...args);
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
@@ -663,81 +664,6 @@ function renderReview(){
   bindCardButtons(els.reviewGrid);
   bindCardInteractions(els.reviewGrid, id => { state.selectedWordId = id; switchView("vocabulary"); renderCards(); renderDetail(); });
 }
-function renderQuiz(){
-  const pool = state.filtered.length >= 4 ? state.filtered : state.words;
-  const t = I18N[state.uiLang];
-  state.quizAnswered = false;
-  if (pool.length < 4) {
-    els.quizBox.innerHTML = `<p class="empty-state">${escapeHTML(t.quizNeedWords)}</p>`;
-    return;
-  }
-  const correct = pool[Math.floor(Math.random()*pool.length)];
-  state.currentQuiz = correct;
-  const options = shuffle([correct, ...shuffle(state.words.filter(w => w.id !== correct.id)).slice(0,3)]);
-  const quizValue = languageValue(correct, state.learningLanguage);
-  els.quizBox.innerHTML = `
-    <div class="quiz-word" role="button" tabindex="0" aria-label="${escapeHTML(`${t.a11y.playWord}: ${quizValue}`)}">${escapeHTML(quizValue)}</div>
-    ${wordPronunciation(correct) ? `<p class="quiz-translit">[${escapeHTML(wordPronunciation(correct))}]</p>` : ""}
-    <div class="quiz-options">
-      ${options.map(w => `<button class="quiz-option" data-answer="${w.id}" type="button">${quizOptionText(w)}</button>`).join("")}
-    </div>
-    <div id="quizFeedback" class="quiz-feedback hidden"></div>`;
-  const quizWord = els.quizBox.querySelector(".quiz-word");
-  quizWord.addEventListener("click", () => playAudio(correct.id, "word", state.learningLanguage));
-  quizWord.addEventListener("keydown", event => {
-    if (!["Enter", " "].includes(event.key)) return;
-    event.preventDefault();
-    playAudio(correct.id, "word", state.learningLanguage);
-  });
-  els.quizBox.querySelectorAll("[data-answer]").forEach(btn => btn.addEventListener("click", () => checkQuiz(btn)));
-  updateQuizStats();
-}
-function quizOptionText(w){
-  return orderedLanguages().slice(1).map(lang => `<bdi dir="auto">${escapeHTML(languageValue(w, lang))}</bdi>`).join(" — ");
-}
-function checkQuiz(btn){
-  if (state.quizAnswered || !state.currentQuiz) return;
-  state.quizAnswered = true;
-
-  const ok = btn.dataset.answer === state.currentQuiz.id;
-  const feedback = document.querySelector("#quizFeedback");
-
-  els.quizBox.querySelectorAll(".quiz-option").forEach(x => {
-    x.disabled = true;
-    if (x.dataset.answer === state.currentQuiz.id) x.classList.add("correct");
-  });
-
-  if (!ok) btn.classList.add("wrong");
-
-  if (ok) {
-    state.quiz.correct += 1;
-    updateMasteryOnly(state.currentQuiz.id, +15);
-  } else {
-    state.quiz.wrong += 1;
-    saveFavoriteOnly(state.currentQuiz.id);
-    updateMasteryOnly(state.currentQuiz.id, -5);
-  }
-
-  AppStorage.write("quizStats", state.quiz);
-  updateQuizStats();
-  updateMetrics();
-
-  if (feedback) {
-    feedback.classList.remove("hidden", "good", "bad");
-    feedback.classList.add(ok ? "good" : "bad");
-    const t = I18N[state.uiLang];
-    feedback.textContent = ok ? t.quizFeedbackCorrect : t.quizFeedbackWrong;
-  }
-
-  renderCards();
-  renderDetail();
-  playAudio(state.currentQuiz.id, "word", state.learningLanguage);
-}
-function updateQuizStats(){
-  els.quizCorrect.textContent = state.quiz.correct || 0;
-  els.quizWrong.textContent = state.quiz.wrong || 0;
-  els.quizTotal.textContent = (state.quiz.correct || 0) + (state.quiz.wrong || 0);
-}
 function renderProgress(){
   updateMetrics();
   const t = I18N[state.uiLang];
@@ -787,8 +713,24 @@ function resetFilters(){
   els.sortFilter.value = "default";
   applyFilters();
 }
-function shuffle(arr){ return [...arr].sort(() => Math.random() - .5); }
 function normalize(v){ return String(v || "").toLowerCase().trim().replace(/[ё]/g,"е").replace(/[أإآ]/g,"ا").replace(/[ة]/g,"ه").replace(/[ى]/g,"ي"); }
 function levelClass(level){ return `level-${String(level || "unknown").toLowerCase().replace(/[^a-z0-9]+/g,"-")}`; }
 function escapeHTML(v){ return String(v ?? "").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;"); }
+AppQuiz.configure({
+  state,
+  els,
+  storage: AppStorage,
+  getTranslation: () => I18N[state.uiLang],
+  orderedLanguages,
+  languageValue,
+  wordPronunciation,
+  escapeHTML,
+  playAudio,
+  updateMasteryOnly,
+  saveFavoriteOnly,
+  updateMetrics,
+  renderCards,
+  renderDetail
+});
+
 init();

@@ -1,10 +1,11 @@
-const CACHE_NAME = "russian-daily-life-v8-3-visual-guide-v3";
+const CACHE_NAME = "russian-daily-life-v8-3-visual-guide-v4";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./styles.css",
   "./js/storage.js",
   "./js/audio.js",
+  "./js/quiz.js",
   "./app.js",
   "./data/words.json",
   "./data/image_quality_report.json",

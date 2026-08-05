@@ -42,6 +42,7 @@ Release notes: [`CHANGELOG.md`](../CHANGELOG.md#v83-visual-guide). Tracking: [`K
 
 - [x] Extract local storage behind `js/storage.js`.
 - [x] Extract audio playback and speech fallback behind `js/audio.js`.
+- [x] Extract quiz rendering, scoring, and feedback behind `js/quiz.js`.
 - Split `app.js` into modules.
 - Separate i18n, storage, audio, quiz, progress, filters, cards, and detail page.
 - Preserve current behavior.
