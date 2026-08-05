@@ -2,7 +2,7 @@
   "name": "russian-daily-life",
   "private": true,
   "scripts": {
-    "test:static": "node scripts/validate-data.mjs --audio=ignore && node scripts/check-pwa.mjs",
+    "test:static": "node scripts/validate-data.mjs --audio=ignore && node scripts/check-pwa.mjs && node scripts/audio-smoke.mjs",
     "test:e2e": "node scripts/e2e-smoke.mjs"
   },
   "devDependencies": {

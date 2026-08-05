@@ -7,12 +7,13 @@
 - `node scripts/complete-arabic-vocalization.mjs` rebuilds all 600 Arabic vocalization fields without unknown tokens.
 - `node scripts/complete-arabic-pronunciation-ru.mjs` rebuilds all 450 nested Cyrillic pronunciation fields.
 - `node scripts/validate-arabic.mjs` reports Arabic content and learning-field coverage.
+- `node scripts/audio-smoke.mjs` verifies that speech uses the source word, not its transliteration, and selects a matching voice.
 - `node scripts/validate-arabic.mjs --edition=ru-ar` must pass before releasing the Russian-to-Arabic book.
 - Every word has grammar, examples, and phrases.
 - Every word has `detailQuality = full-v8.2`.
 - Detail page labels are localized with `detailText()`.
 - App version is `v8.3-visual-guide`.
-- Service worker cache name is `russian-daily-life-v8-3-visual-guide-v4`.
+- Service worker cache name is `russian-daily-life-v8-3-visual-guide-v5`.
 
 ## Browser smoke test
 - Install dependencies with `npm install`.
