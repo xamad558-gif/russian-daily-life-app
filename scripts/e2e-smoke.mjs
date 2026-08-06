@@ -75,6 +75,22 @@ async function runSmokeTest() {
     assert.equal(await visibleCount(page, "[data-learning-lang]"), 2, "Only two learning-language choices should be visible");
     assert.equal(await page.locator(".word-card").first().locator(".audio-btn").count(), 2, "Cards should show audio for the two visible languages");
 
+    await page.locator("#searchInput").fill("холодильник");
+    assert.equal(await page.locator("#cardsGrid .word-card").count(), 1, "Search should filter vocabulary results");
+    await page.locator("#resetFiltersBtn").click();
+    assert.equal(await page.locator("#cardsGrid .word-card").count(), 75, "Reset should restore all vocabulary results");
+    await page.locator("#subCategoryFilter").selectOption("kitchen");
+    const kitchenCount = await page.locator("#cardsGrid .word-card").count();
+    assert.ok(kitchenCount > 0 && kitchenCount < 75, "Room filter should narrow vocabulary results");
+    await page.locator("#resetFiltersBtn").click();
+
+    await page.locator("#cardsGrid .word-card").first().locator("[data-fav]").click();
+    await page.locator('[data-view-btn="review"]').click();
+    await page.locator("#reviewGrid .word-card").first().waitFor({ state: "visible" });
+    assert.equal(await page.locator("#reviewGrid .word-card").count(), 1, "Favorited cards should appear in review");
+    await page.locator('[data-view-btn="vocabulary"]').click();
+    await page.locator("#cardsGrid .word-card").first().locator("[data-fav]").click();
+
     await page.locator('[data-ui-lang="en"]').click();
     assert.equal(await page.locator("html").getAttribute("dir"), "ltr", "English interface should use LTR");
     assert.equal(await page.locator(".word-card").first().locator(".card-translation-pronunciation").count(), 0, "English interface should not add Arabic pronunciation to English translations");
@@ -98,14 +114,28 @@ async function runSmokeTest() {
     await page.locator(".word-card").first().click();
     await page.locator("#detailPane .detail-word").waitFor({ state: "visible" });
     assert.ok(await page.locator("#detailPane .detail-word").textContent(), "Opening a card should render its details");
+    await page.locator("#detailPane .open-detail-btn").click();
+    await page.locator("#fullWordDetail .full-detail-word").waitFor({ state: "visible" });
+    assert.ok(await page.locator("#fullWordDetail .tri-table").count(), "Full detail should render grammar table");
+    assert.ok(await page.locator("#fullWordDetail .example-card").count(), "Full detail should render examples");
+    await page.locator("#backToWordsBtn").click();
+    await page.locator("#cardsGrid .word-card").first().waitFor({ state: "visible" });
 
     await page.locator('[data-view-btn="quiz"]').click();
     await page.locator("#quizBox .quiz-option").first().waitFor({ state: "visible" });
     assert.equal(await page.locator("#quizBox .quiz-option").count(), 4, "Quiz should render four answer choices");
     await page.locator("#quizBox .quiz-option").first().click();
     assert.equal(await page.locator("#quizBox .quiz-option:disabled").count(), 4, "Answering should lock all quiz choices");
+    const learningState = await page.evaluate(() => JSON.parse(localStorage.getItem("learningState") || "{}"));
+    assert.equal(Object.keys(learningState).length, 75, "Learning state should be initialized for every word");
+    assert.ok(Object.values(learningState).some(item => item.lastReviewedAt), "Answering should schedule the reviewed word");
     await page.locator("#nextQuizBtn").click();
     assert.equal(await page.locator("#quizBox .quiz-option:disabled").count(), 0, "A new quiz question should unlock its choices");
+
+    await page.locator('[data-view-btn="progress"]').click();
+    await page.locator("#masteryList .mastery-item").first().waitFor({ state: "visible" });
+    assert.equal(await page.locator("#masteryList .mastery-item").count(), 75, "Progress should list every vocabulary word");
+    assert.equal(await page.locator("#masteryList .learning-status").count(), 75, "Progress should show a learning state for every word");
 
     await page.reload({ waitUntil: "domcontentloaded" });
     await page.waitForFunction(() => Boolean(navigator.serviceWorker?.controller));

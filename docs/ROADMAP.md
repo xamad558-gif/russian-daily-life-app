@@ -43,17 +43,25 @@ Release notes: [`CHANGELOG.md`](../CHANGELOG.md#v83-visual-guide). Tracking: [`K
 - [x] Extract local storage behind `js/storage.js`.
 - [x] Extract audio playback and speech fallback behind `js/audio.js`.
 - [x] Extract quiz rendering, scoring, and feedback behind `js/quiz.js`.
-- Split `app.js` into modules.
-- Separate i18n, storage, audio, quiz, progress, filters, cards, and detail page.
-- Preserve current behavior.
+- [x] Extract progress, mastery, and metric updates behind `js/progress.js`.
+- [x] Extract search, sorting, room navigation, and filters behind `js/filters.js`.
+- [x] Extract card templates, audio controls, favorites, and card interaction handlers behind `js/cards.js`.
+- [x] Extract word detail rendering, examples, grammar, and gender comparison behind `js/detail.js`.
+- [x] Extract language switching, view state, theme, density, and sidebar controls behind `js/ui.js`.
+- [x] Extract translations, language labels, and pronunciation helpers behind `js/i18n.js`.
+- [x] Split feature logic from `app.js` into modules.
+- [x] Separate i18n, storage, audio, quiz, progress, filters, cards, and detail page.
+- [x] Preserve current behavior.
+- [x] Extract startup, event binding, review rendering, and hero rendering behind `js/controller.js`.
 
 **Definition of complete:** The module boundaries are documented, all existing data/UI behavior remains intact, and the full validation plus manual checklist passes.
 
 ## v8.5-learning-engine
 
-- Introduce learning states: new, learning, review, known, mastered.
-- Improve quiz weighting.
-- Add error-based review.
+- [x] Introduce learning states: new, learning, review, known, mastered.
+- [x] Schedule review intervals of 1, 3, 7, and 30 days.
+- [x] Prioritize lower-mastery and due words in the quiz.
+- [x] Add error-based review with immediate due dates.
 
 ## v9.0-new-units
 

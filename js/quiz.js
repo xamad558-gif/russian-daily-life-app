@@ -15,8 +15,10 @@
   }
 
   function render() {
-    const { state, els, getTranslation, escapeHTML, languageValue, wordPronunciation, playAudio } = dependencies;
-    const pool = state.filtered.length >= 4 ? state.filtered : state.words;
+    const { state, els, getTranslation, escapeHTML, languageValue, wordPronunciation, playAudio, learning } = dependencies;
+    const candidates = state.filtered.length >= 4 ? state.filtered : state.words;
+    const prioritized = learning ? learning.prioritize(candidates) : candidates;
+    const pool = prioritized.slice(0, Math.max(4, Math.min(prioritized.length, 12)));
     const translation = getTranslation();
     state.quizAnswered = false;
     if (pool.length < 4) {
@@ -46,7 +48,7 @@
   }
 
   function check(button) {
-    const { state, els, getTranslation, storage, updateMasteryOnly, saveFavoriteOnly, updateMetrics, renderCards, renderDetail, playAudio } = dependencies;
+    const { state, els, getTranslation, storage, recordAnswer, saveFavoriteOnly, updateMetrics, renderCards, renderDetail, playAudio } = dependencies;
     if (state.quizAnswered || !state.currentQuiz) return;
     state.quizAnswered = true;
     const correctAnswer = button.dataset.answer === state.currentQuiz.id;
@@ -58,11 +60,11 @@
     if (!correctAnswer) button.classList.add("wrong");
     if (correctAnswer) {
       state.quiz.correct += 1;
-      updateMasteryOnly(state.currentQuiz.id, +15);
+      recordAnswer(state.currentQuiz.id, true);
     } else {
       state.quiz.wrong += 1;
       saveFavoriteOnly(state.currentQuiz.id);
-      updateMasteryOnly(state.currentQuiz.id, -5);
+      recordAnswer(state.currentQuiz.id, false);
     }
     storage.write("quizStats", state.quiz);
     updateStats();
