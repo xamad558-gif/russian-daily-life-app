@@ -12,18 +12,31 @@ This project uses `data/words.json` as the core content database.
   "subCategory": "home",
   "russian": "дом",
   "transliteration": "dom",
-  "arabic": "بيت / منزل",
-  "english": "house / home",
+  "transliterationAr": "دوم",
+  "arabic": "بيت",
+  "english": "house",
   "level": "A1",
   "frequency": 5,
   "type": "noun",
   "exampleRu": "Это наш дом.",
   "exampleAr": "هذا بيتنا.",
+  "exampleTransliterationAr": "إتو ناش دوم.",
+  "exampleTransliterationEn": "Eto nash dom.",
+  "exampleArTransliterationRu": "хаза бейтуна.",
   "exampleEn": "This is our house.",
   "imagePath": "assets/images/words/house.jpg",
   "grammar": {}
 }
 ```
+
+## Pronunciation bridge fields
+
+Each word also carries pronunciation aids for learners crossing between the three languages:
+
+- `englishTransliterationAr`: English word written in Arabic script.
+- `englishTransliterationRu`: English word written in Cyrillic script.
+- `arabicTransliterationEn`: Arabic word written in Latin script.
+- `exampleArTransliterationEn`: Arabic main example written in Latin script.
 
 ## Image path convention
 

@@ -232,7 +232,8 @@ AppCards.configure({
   languageFlag,
   toggleFavorite,
   playAudio,
-  renderDetail
+  renderDetail,
+  openFullDetail
 });
 
 AppQuiz.configure({

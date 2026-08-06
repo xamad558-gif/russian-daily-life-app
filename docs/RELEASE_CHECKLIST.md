@@ -2,12 +2,12 @@
 
 ## Data
 
-- [ ] `data/words.json` is valid JSON.
-- [ ] No duplicate ids.
-- [ ] Required fields exist.
-- [ ] Image paths exist.
-- [ ] Audio policy is clear.
-- [ ] Missing audio is not a release blocker unless strict audio mode is required.
+- [x] `data/words.json` is valid JSON.
+- [x] No duplicate ids.
+- [x] Required fields exist.
+- [x] Image paths exist.
+- [x] Audio policy is clear.
+- [x] Missing audio is not a release blocker unless strict audio mode is required.
 
 ## UI
 
@@ -20,17 +20,21 @@
 - [ ] Review works.
 - [ ] Progress persists after reload.
 
+Mobile detail verification is covered automatically by `npm run test:e2e` at a 390px-wide viewport; complete the manual UI checks before release.
+
 ## PWA
 
-- [ ] Manifest is valid.
-- [ ] Service worker is registered.
-- [ ] Cache version is updated.
-- [ ] Offline app shell works.
-- [ ] App does not fail when audio is missing.
+- [x] Manifest is valid.
+- [x] Service worker is registered.
+- [x] Cache version is updated.
+- [x] Offline app shell works — verified by `npm run test:e2e`.
+- [x] App does not fail when audio is missing.
 
 ## Versioning
 
-- [ ] HTML title updated.
-- [ ] README updated.
-- [ ] Changelog/release notes updated.
-- [ ] Known issues listed.
+- [x] HTML title updated.
+- [x] README updated.
+- [x] Changelog/release notes updated.
+- [x] Known issues listed.
+
+The remaining unchecked UI items require a visual desktop/mobile review; static validation and the browser smoke test do not replace that review.

@@ -13,13 +13,14 @@
 - Every word has `detailQuality = full-v8.2`.
 - Detail page labels are localized with `detailText()`.
 - App version is `v8.3-visual-guide`.
-- Service worker cache name is `russian-daily-life-v8-3-visual-guide-v13`.
+- Service worker cache name is `russian-daily-life-v8-3-visual-guide-v14`.
 
 ## Browser smoke test
 - Install dependencies with `npm install`.
 - Install the browser once with `npx playwright install chromium`.
 - Run `npm run test:e2e` or `npm run test:e2e -- --headed` for a visible run.
 - The smoke test covers the two-language display rule, RTL/LTR direction, pronunciation bridges, card details, quiz state transitions, and the cached offline app shell.
+- The smoke test also opens full word details at a 390x844 mobile viewport and rejects horizontal overflow.
 - GitHub Actions runs `npm run test:static` and `npm run test:e2e` on every push and pull request through `.github/workflows/quality.yml`.
 
 ## Manual checks
@@ -32,3 +33,4 @@
 7. Set the interface to English and confirm English meanings show Arabic pronunciation in brackets.
 8. Set learning language to Arabic with English interface and confirm Arabic pronunciation uses Latin letters.
 9. Set learning language to English with Arabic and Russian interfaces and confirm the English word has Arabic and Cyrillic pronunciation aids.
+10. At a 390px-wide mobile viewport, open full word details and confirm the page does not scroll horizontally.

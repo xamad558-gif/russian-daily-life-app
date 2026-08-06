@@ -111,6 +111,24 @@ async function runSmokeTest() {
     assert.match(await page.locator(".card-word").first().textContent(), /[A-Za-z]/, "English should be the primary card language");
     assert.match(await page.locator(".card-translit").first().textContent(), /[\u0600-\u06ff]/, "Arabic interface should show Arabic pronunciation for English");
 
+    await page.locator("#cardsGrid [data-image-detail]").first().click();
+    await page.locator("#fullWordDetail .full-detail-word").waitFor({ state: "visible" });
+    assert.ok(await page.locator("#fullWordDetail .full-detail-word").textContent(), "Clicking a word image should open the full detail page");
+    await page.locator("#backToWordsBtn").click();
+    await page.locator("#cardsGrid .word-card").first().waitFor({ state: "visible" });
+
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.locator("#cardsGrid [data-image-detail]").first().click();
+    await page.locator("#fullWordDetail .full-detail-word").waitFor({ state: "visible" });
+    const mobileLayout = await page.evaluate(() => ({
+      viewportWidth: document.documentElement.clientWidth,
+      documentWidth: document.documentElement.scrollWidth
+    }));
+    assert.ok(mobileLayout.documentWidth <= mobileLayout.viewportWidth + 1, "Full word detail should fit the mobile viewport without horizontal overflow");
+    await page.locator("#backToWordsBtn").click();
+    await page.locator("#cardsGrid .word-card").first().waitFor({ state: "visible" });
+    await page.setViewportSize({ width: 1280, height: 900 });
+
     await page.locator(".word-card").first().click();
     await page.locator("#detailPane .detail-word").waitFor({ state: "visible" });
     assert.ok(await page.locator("#detailPane .detail-word").textContent(), "Opening a card should render its details");

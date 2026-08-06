@@ -38,7 +38,7 @@
     return `
       <article class="word-card ${state.selectedWordId === word.id ? "active" : ""}" data-card="${word.id}" role="button" tabindex="0" aria-label="${escapeHTML(`${translation.a11y.openWord}: ${languageValue(word, state.learningLanguage)}`)}">
         <div class="card-image-wrap">
-          <img src="${escapeHTML(word.imagePath)}" alt="${escapeHTML(`${word.russian} — ${word.arabic}`)}" loading="lazy"/>
+          <img src="${escapeHTML(word.imagePath)}" alt="${escapeHTML(`${word.russian} — ${word.arabic}`)}" data-image-detail="${word.id}" role="button" tabindex="0" aria-label="${escapeHTML(translation.a11y.openWord)}" loading="lazy"/>
           <button class="favorite-btn ${saved ? "saved" : ""}" data-fav="${word.id}" type="button" aria-label="${escapeHTML(saved ? translation.a11y.removeReview : translation.a11y.saveReview)}" aria-pressed="${saved}">${saved ? "★" : "☆"}</button>
           <span class="mastery-chip">${mastery}%</span>
           <span class="level-chip ${levelClass(word.level)}">${escapeHTML(word.level || "")}</span>
@@ -53,6 +53,7 @@
   }
 
   function bindCardInteractions(root, onOpen) {
+    const { openFullDetail } = dependencies;
     root.querySelectorAll("[data-card]").forEach(card => {
       const open = () => onOpen(card.dataset.card);
       card.addEventListener("click", event => {
@@ -64,6 +65,16 @@
         event.preventDefault();
         open();
       });
+      const image = card.querySelector("[data-image-detail]");
+      if (image && openFullDetail) {
+        image.addEventListener("click", event => { event.stopPropagation(); openFullDetail(image.dataset.imageDetail); });
+        image.addEventListener("keydown", event => {
+          if (!["Enter", " "].includes(event.key)) return;
+          event.preventDefault();
+          event.stopPropagation();
+          openFullDetail(image.dataset.imageDetail);
+        });
+      }
     });
   }
 

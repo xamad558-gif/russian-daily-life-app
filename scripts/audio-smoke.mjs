@@ -31,8 +31,8 @@ vm.runInNewContext(source, context);
 context.window.AppAudio.configure({
   findWord: () => ({
     russian: "дом",
-    arabic: "بيت / منزل",
-    english: "house / home",
+    arabic: "بيت",
+    english: "house",
     exampleRu: "Это наш дом.",
     audioWordRu: "missing.mp3",
     audioWordAr: "missing.mp3",
@@ -44,7 +44,7 @@ context.window.AppAudio.playAudio("home50_001", "word", "ru");
 context.window.AppAudio.playAudio("home50_001", "word", "ar");
 context.window.AppAudio.playAudio("home50_001", "word", "en");
 
-assert.deepEqual(spoken.map(item => item.text), ["дом", "بيت منزل", "house, home"]);
+assert.deepEqual(spoken.map(item => item.text), ["дом", "بيت", "house"]);
 assert.deepEqual(spoken.map(item => item.lang), ["ru-RU", "ar-SA", "en-US"]);
 assert.equal(spoken[0].voice.lang, "ru-RU");
 console.log("Audio smoke test passed: source words and matching voices are selected.");
