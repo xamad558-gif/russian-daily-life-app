@@ -27,7 +27,9 @@
   }
 
   function renderDetail() {
-    const { state, els, getTranslation, languageValue, orderedLanguages, wordPronunciation, escapeHTML, levelClass, translationRows, audioButtons, playAudio, openFullDetail, changeMastery, toggleFavorite } = dependencies;
+    const { els } = dependencies;
+    if (!els.detailPane) return;
+    const { state, getTranslation, languageValue, orderedLanguages, wordPronunciation, escapeHTML, levelClass, translationRows, audioButtons, playAudio, openFullDetail, changeMastery, toggleFavorite } = dependencies;
     const word = state.words.find(item => item.id === state.selectedWordId);
     if (!word) {
       els.detailPane.innerHTML = "";

@@ -1,4 +1,4 @@
-const CACHE_NAME = "russian-daily-life-v8-3-visual-guide-v14";
+const CACHE_NAME = "russian-daily-life-v8-3-visual-guide-v15";
 const APP_SHELL = [
   "./",
   "./index.html",

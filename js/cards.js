@@ -55,7 +55,7 @@
   function bindCardInteractions(root, onOpen) {
     const { openFullDetail } = dependencies;
     root.querySelectorAll("[data-card]").forEach(card => {
-      const open = () => onOpen(card.dataset.card);
+      const open = () => openFullDetail ? openFullDetail(card.dataset.card) : onOpen(card.dataset.card);
       card.addEventListener("click", event => {
         if (event.target.closest("[data-fav]") || event.target.closest("[data-audio]")) return;
         open();

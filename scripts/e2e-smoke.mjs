@@ -130,10 +130,9 @@ async function runSmokeTest() {
     await page.setViewportSize({ width: 1280, height: 900 });
 
     await page.locator(".word-card").first().click();
-    await page.locator("#detailPane .detail-word").waitFor({ state: "visible" });
-    assert.ok(await page.locator("#detailPane .detail-word").textContent(), "Opening a card should render its details");
-    await page.locator("#detailPane .open-detail-btn").click();
     await page.locator("#fullWordDetail .full-detail-word").waitFor({ state: "visible" });
+    assert.ok(await page.locator("#fullWordDetail .full-detail-word").textContent(), "Clicking a word card should open its full details");
+    assert.equal(await page.locator("#detailPane").count(), 0, "The inline detail panel should not be present on the vocabulary page");
     assert.ok(await page.locator("#fullWordDetail .tri-table").count(), "Full detail should render grammar table");
     assert.ok(await page.locator("#fullWordDetail .example-card").count(), "Full detail should render examples");
     await page.locator("#backToWordsBtn").click();
