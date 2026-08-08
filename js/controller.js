@@ -10,9 +10,21 @@
   }
 
   async function init() {
-    const { state, dataVersion, storage, learning, languageCodes, els, populateSubcategories, applyTheme, applyUiLanguage, applyLearningLanguage, switchView, applyFilters, updateMetrics } = dependencies;
-    const response = await fetch(`data/words.json?v=${dataVersion}`, { cache: "no-store" });
-    state.words = await response.json();
+    const { state, dataVersion, storage, learning, languageCodes, els, getTranslation, populateSubcategories, applyTheme, applyUiLanguage, applyLearningLanguage, switchView, applyFilters, updateMetrics } = dependencies;
+    let response;
+    try {
+      response = await fetch(`data/words.json?v=${dataVersion}`, { cache: "no-store" });
+      if (!response.ok) throw new Error(`Word data request failed with ${response.status}`);
+      state.words = await response.json();
+      if (!Array.isArray(state.words)) throw new Error("Word data is not an array");
+    } catch (error) {
+      if (els.appError) {
+        els.appError.textContent = getTranslation().loadError;
+        els.appError.classList.remove("hidden");
+      }
+      console.error("Word data failed to load", error);
+      return;
+    }
     state.words.forEach(word => { if (state.mastery[word.id] === undefined) state.mastery[word.id] = word.masteryDefault || 0; });
     storage.write("mastery", state.mastery);
     learning.ensure(state.words);

@@ -87,7 +87,7 @@ const els = {
   nextQuizBtn: $("#nextQuizBtn"), speakQuizBtn: $("#speakQuizBtn"), quizStatsTitle: $("#quizStatsTitle"), quizCorrect: $("#quizCorrect"), quizWrong: $("#quizWrong"), quizTotal: $("#quizTotal"),
   correctLabel: $("#correctLabel"), wrongLabel: $("#wrongLabel"), totalLabel: $("#totalLabel"), progressTitle: $("#progressTitle"), progressSubtitle: $("#progressSubtitle"),
   totalWordsMetric: $("#totalWordsMetric"), savedWordsMetric: $("#savedWordsMetric"), masteredWordsMetric: $("#masteredWordsMetric"), avgMasteryMetric: $("#avgMasteryMetric"),
-  totalWordsMetricLabel: $("#totalWordsMetricLabel"), savedWordsMetricLabel: $("#savedWordsMetricLabel"), masteredWordsMetricLabel: $("#masteredWordsMetricLabel"), avgMasteryMetricLabel: $("#avgMasteryMetricLabel"),
+  totalWordsMetricLabel: $("#totalWordsMetricLabel"), savedWordsMetricLabel: $("#savedWordsMetricLabel"), masteredWordsMetricLabel: $("#masteredWordsMetricLabel"), avgMasteryMetricLabel: $("#avgMasteryMetricLabel"), appError: $("#appError"),
   masteryList: $("#masteryList"), overallProgressFill: $("#overallProgressFill"), dailyTipText: $("#dailyTipText"), vocabCount: $("#vocabCount"), reviewCount: $("#reviewCount"), fullWordDetail: $("#fullWordDetail"), backToWordsBtn: $("#backToWordsBtn"), detailSpeakRuBtn: $("#detailSpeakRuBtn"), detailMarkReviewBtn: $("#detailMarkReviewBtn"), detailKnownBtn: $("#detailKnownBtn")
 };
 
@@ -98,6 +98,7 @@ const orderedLanguages = (...args) => AppI18N.orderedLanguages(...args);
 const pronunciationForLanguage = (...args) => AppI18N.pronunciationForLanguage(...args);
 const wordPronunciation = (...args) => AppI18N.wordPronunciation(...args);
 const examplePronunciation = (...args) => AppI18N.examplePronunciation(...args);
+const examplePronunciationForExample = (...args) => AppI18N.examplePronunciationForExample(...args);
 const languageFlag = (...args) => AppI18N.languageFlag(...args);
 
 function toggleFavorite(id, forceSave=false){
@@ -176,6 +177,7 @@ AppDetail.configure({
   languageLabels: LANGUAGE_LABELS,
   wordPronunciation,
   examplePronunciation,
+  examplePronunciationForExample,
   escapeHTML,
   levelClass,
   languageFlag,

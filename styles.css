@@ -106,6 +106,8 @@ img{display:block;max-width:100%}
 .progress-fill{width:0%;height:100%;background:#22c55e;border-radius:999px;transition:.25s}
 
 .main-content{display:grid;gap:16px;min-width:0}
+.app-error{margin-bottom:16px;padding:14px 18px;border:1px solid #e7a39a;border-radius:14px;background:#fff0ed;color:#8f2d20;font-weight:700}
+body.dark .app-error{background:#351a1a;color:#ffc1b7;border-color:#8f4238}
 .view-section,.word-detail-page,.full-detail-hero,.full-detail-head,.detail-section-card,.example-card,.phrase-card,.gender-comparison{min-width:0;max-width:100%}
 .topbar{
   display:flex;align-items:center;justify-content:space-between;gap:16px;

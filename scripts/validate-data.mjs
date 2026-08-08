@@ -33,6 +33,16 @@ const audioFields = [
 const arabicScript = /[\u0600-\u06ff\u0750-\u077f\u08a0-\u08ff]/u;
 const cyrillicScript = /[\u0400-\u04ff]/u;
 const latinScript = /[A-Za-z]/u;
+const requiredExampleFields = ['ru', 'ar', 'en', 'arVocalized', 'arTransliterationRu', 'arTransliterationEn'];
+const exampleScriptRules = {
+  arVocalized: arabicScript,
+  arTransliterationRu: cyrillicScript,
+  arTransliterationEn: latinScript,
+  ruTransliterationAr: arabicScript,
+  ruTransliterationEn: latinScript,
+  enTransliterationAr: arabicScript,
+  enTransliterationRu: cyrillicScript
+};
 
 function existsRel(rel) {
   if (!rel || typeof rel !== 'string') return false;
@@ -124,6 +134,21 @@ for (const [index, word] of words.entries()) {
       if (isEmpty(ru.singular)) warnings.push(`${label}: Russian noun missing grammar.ru.singular.`);
       if (isEmpty(ru.plural)) warnings.push(`${label}: Russian noun missing grammar.ru.plural.`);
     }
+  }
+
+  if (!Array.isArray(word.examples) || word.examples.length < 3) {
+    errors.push(`${label}: examples must contain at least three entries.`);
+  } else {
+    word.examples.slice(0, 3).forEach((example, exampleIndex) => {
+      for (const field of requiredExampleFields) {
+        if (isEmpty(example?.[field])) errors.push(`${label}: examples[${exampleIndex}] is missing required field "${field}".`);
+      }
+      for (const [field, pattern] of Object.entries(exampleScriptRules)) {
+        if (!isEmpty(example?.[field]) && !pattern.test(example[field])) {
+          errors.push(`${label}: examples[${exampleIndex}].${field} has an unexpected script.`);
+        }
+      }
+    });
   }
 
   if (audioMode !== 'ignore') {

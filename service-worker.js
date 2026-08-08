@@ -1,4 +1,4 @@
-const CACHE_NAME = "russian-daily-life-v8-3-visual-guide-v15";
+const CACHE_NAME = "russian-daily-life-v8-3-visual-guide-v16";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -109,11 +109,13 @@ self.addEventListener("fetch", event => {
   const isFreshCritical = url.pathname.endsWith("/data/words.json") || url.pathname.endsWith("/app.js") || url.pathname.endsWith("/index.html");
   if (isFreshCritical) {
     event.respondWith(fetch(event.request, { cache: "no-store" }).then(response => {
-      const copy = response.clone(); caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy)); return response;
-    }).catch(() => caches.match(event.request).then(cached => cached || (isNavigation ? caches.match("./index.html") : Response.error()))));
+      if (response.ok) event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.put(event.request, response.clone())));
+      return response;
+    }).catch(() => caches.match(event.request).then(cached => cached || (url.pathname.endsWith("/data/words.json") ? caches.match("./data/words.json") : isNavigation ? caches.match("./index.html") : Response.error()))));
     return;
   }
   event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request).then(response => {
-    const copy = response.clone(); caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy)); return response;
+    if (response.ok) event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.put(event.request, response.clone())));
+    return response;
   }).catch(() => isNavigation ? caches.match("./index.html") : Response.error())));
 });

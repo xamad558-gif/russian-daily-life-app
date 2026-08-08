@@ -6,7 +6,12 @@
   }
 
   function shuffleItems(items) {
-    return [...items].sort(() => Math.random() - 0.5);
+    const shuffled = [...items];
+    for (let index = shuffled.length - 1; index > 0; index -= 1) {
+      const randomIndex = Math.floor(Math.random() * (index + 1));
+      [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
+    }
+    return shuffled;
   }
 
   function optionText(word) {
@@ -27,7 +32,7 @@
     }
     const correct = pool[Math.floor(Math.random() * pool.length)];
     state.currentQuiz = correct;
-    const options = shuffleItems([correct, ...shuffleItems(state.words.filter(word => word.id !== correct.id)).slice(0, 3)]);
+    const options = shuffleItems([correct, ...shuffleItems(candidates.filter(word => word.id !== correct.id)).slice(0, 3)]);
     const quizValue = languageValue(correct, state.learningLanguage);
     els.quizBox.innerHTML = `
       <div class="quiz-word" role="button" tabindex="0" aria-label="${escapeHTML(`${translation.a11y.playWord}: ${quizValue}`)}">${escapeHTML(quizValue)}</div>

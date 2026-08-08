@@ -79,7 +79,7 @@
   }
 
   function renderFullWordDetail() {
-    const { state, els, orderedLanguages, languageValue, wordPronunciation, escapeHTML, meaningCards, languageFlag, languageLabels, speak } = dependencies;
+    const { state, els, orderedLanguages, languageValue, wordPronunciation, examplePronunciationForExample, escapeHTML, meaningCards, languageFlag, languageLabels, speak } = dependencies;
     const word = state.words.find(item => item.id === state.selectedWordId);
     if (!word || !els.fullWordDetail) return;
     if (els.backToWordsBtn) els.backToWordsBtn.textContent = detailText("back");
@@ -104,7 +104,7 @@
         </div>
       </section>
       <section class="detail-section-card"><h3>${detailText("grammar")}</h3>${renderGrammarTable(grammar)}</section>
-      <section class="detail-section-card"><h3>${detailText("examples")}</h3><div class="example-stack">${examples.slice(0, 3).map((example, index) => renderExampleCard(example, index)).join("")}</div>${examplePronunciation(word, state.learningLanguage) ? `<p class="example-pronunciation" dir="auto">[${escapeHTML(examplePronunciation(word, state.learningLanguage))}]</p>` : ""}</section>
+      <section class="detail-section-card"><h3>${detailText("examples")}</h3><div class="example-stack">${examples.slice(0, 3).map((example, index) => renderExampleCard(word, example, index)).join("")}</div></section>
       ${phrases.length ? `<section class="detail-section-card"><h3>${detailText("phrases")}</h3><div class="phrase-grid">${phrases.slice(0, 6).map(renderPhraseCard).join("")}</div></section>` : ""}
       ${showGenderComparison ? `<section class="detail-section-card"><h3>${genderText("title")}</h3>${renderGenderComparison(grammar)}</section>` : ""}`;
 
@@ -180,9 +180,12 @@
     </div>`;
   }
 
-  function renderExampleCard(example, index) {
-    const { orderedLanguages, languageFlag, escapeHTML } = dependencies;
-    const lines = orderedLanguages().map(lang => `<div class="example-line"><span class="flag">${languageFlag(lang)} ${lang.toUpperCase()}</span><span dir="auto">${escapeHTML(example[lang] || "")}</span><button class="small-icon-btn" data-example-audio="1" data-example-index="${index}" data-lang="${lang}" type="button" aria-label="${escapeHTML(audioLabel(lang))}">🔊</button></div>`).join("");
+  function renderExampleCard(word, example, index) {
+    const { orderedLanguages, languageFlag, examplePronunciationForExample, escapeHTML } = dependencies;
+    const lines = orderedLanguages().map(lang => {
+      const pronunciation = examplePronunciationForExample(word, example, index, lang);
+      return `<div class="example-line"><span class="flag">${languageFlag(lang)} ${lang.toUpperCase()}</span><span class="example-line-copy" dir="auto"><span>${escapeHTML(example[lang] || "")}</span>${pronunciation ? `<small class="example-pronunciation" dir="auto">[${escapeHTML(pronunciation)}]</small>` : ""}</span><button class="small-icon-btn" data-example-audio="1" data-example-index="${index}" data-lang="${lang}" type="button" aria-label="${escapeHTML(audioLabel(lang))}">🔊</button></div>`;
+    }).join("");
     return `<article class="example-card"><div class="example-card-head"><span>${detailText("example")} ${index + 1}</span></div><div class="example-lines">${lines}</div></article>`;
   }
 

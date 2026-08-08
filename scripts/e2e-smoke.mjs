@@ -104,6 +104,13 @@ async function runSmokeTest() {
     assert.equal(await page.locator("#interfaceLanguageLabel").textContent(), "Язык интерфейса", "Russian interface label should be Russian");
     assert.doesNotMatch(await page.locator("#interfaceLanguageLabel").textContent(), /[\u0600-\u06ff]/, "Russian interface label should not contain Arabic characters");
     assert.match(await page.locator(".card-translit").first().textContent(), /[\u0400-\u04ff]/, "Russian interface should show Cyrillic pronunciation for Arabic");
+    await page.locator("#cardsGrid [data-image-detail]").first().click();
+    await page.locator("#fullWordDetail .full-detail-word").waitFor({ state: "visible" });
+    assert.equal(await page.locator("#fullWordDetail .example-card").count(), 3, "Full detail should render three examples");
+    assert.equal(await page.locator("#fullWordDetail .example-pronunciation").count(), 3, "Arabic sentence pronunciation should appear for every example");
+    assert.match(await page.locator("#fullWordDetail .example-pronunciation").first().textContent(), /[\u0400-\u04ff]/, "Arabic sentence pronunciation should use Cyrillic for Russian learners");
+    await page.locator("#backToWordsBtn").click();
+    await page.locator("#cardsGrid .word-card").first().waitFor({ state: "visible" });
 
     await page.locator('[data-ui-lang="ar"]').click();
     assert.equal(await page.locator("body").getAttribute("data-learning-language"), "ru", "Changing the interface to the learning language should select another learning language");

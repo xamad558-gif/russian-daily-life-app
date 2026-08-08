@@ -21,6 +21,7 @@
 - Install the browser once with `npx playwright install chromium`.
 - Run `npm run test:e2e` or `npm run test:e2e -- --headed` for a visible run.
 - The smoke test covers the two-language display rule, RTL/LTR direction, pronunciation bridges, card details, quiz state transitions, and the cached offline app shell.
+- Full word details display the available pronunciation bridge inside each example card, including Cyrillic pronunciation for all Arabic examples in Russian UI mode.
 - The smoke test also opens full word details at a 390x844 mobile viewport and rejects horizontal overflow.
 - GitHub Actions runs `npm run test:static` and `npm run test:e2e` on every push and pull request through `.github/workflows/quality.yml`.
 
