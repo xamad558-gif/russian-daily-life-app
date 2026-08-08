@@ -72,8 +72,10 @@
 
   function openFullDetail(id) {
     const { state, switchView } = dependencies;
+    history.replaceState({ view: state.activeView, scrollY: window.scrollY }, "");
     state.selectedWordId = id;
     switchView("wordDetail");
+    history.pushState({ view: "wordDetail", id }, "", `#word/${id}`);
   }
 
   function renderFullWordDetail() {

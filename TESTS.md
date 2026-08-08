@@ -10,6 +10,7 @@
 - `node scripts/audio-smoke.mjs` verifies that speech uses the source word, not its transliteration, and selects a matching voice.
 - `node scripts/validate-arabic.mjs --edition=ru-ar` must pass before releasing the Russian-to-Arabic book.
 - Every word has grammar, examples, and phrases.
+- A1 examples stay short and controlled; A2 examples include varied household contexts.
 - Every word has `detailQuality = full-v8.2`.
 - Detail page labels are localized with `detailText()`.
 - App version is `v8.3-visual-guide`.

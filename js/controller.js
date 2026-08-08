@@ -29,6 +29,17 @@
     switchView(state.activeView);
     applyFilters();
     updateMetrics();
+    openHashWord();
+  }
+
+  function openHashWord() {
+    const { state, switchView } = dependencies;
+    const match = location.hash.match(/^#word\/(.+)$/);
+    const word = match && state.words.find(item => item.id === match[1]);
+    if (!word) return false;
+    state.selectedWordId = word.id;
+    switchView("wordDetail");
+    return true;
   }
 
   function bindEvents() {
@@ -48,11 +59,21 @@
     els.resetFiltersBtn.addEventListener("click", resetFilters);
     els.nextQuizBtn.addEventListener("click", renderQuiz);
     els.speakQuizBtn.addEventListener("click", () => state.currentQuiz && playAudio(state.currentQuiz.id, "word", state.learningLanguage));
-    if (els.backToWordsBtn) els.backToWordsBtn.addEventListener("click", () => switchView("vocabulary"));
+    if (els.backToWordsBtn) els.backToWordsBtn.addEventListener("click", () => history.back());
     if (els.heroReviewBtn) els.heroReviewBtn.addEventListener("click", () => switchView("review"));
     if (els.detailSpeakRuBtn) els.detailSpeakRuBtn.addEventListener("click", () => state.selectedWordId && playAudio(state.selectedWordId, "word", "ru"));
     if (els.detailMarkReviewBtn) els.detailMarkReviewBtn.addEventListener("click", () => state.selectedWordId && toggleFavorite(state.selectedWordId, true));
     if (els.detailKnownBtn) els.detailKnownBtn.addEventListener("click", () => state.selectedWordId && changeMastery(state.selectedWordId, +25));
+    window.addEventListener("popstate", event => {
+      const view = event.state?.view || "vocabulary";
+      if (view === "wordDetail" && event.state?.id) state.selectedWordId = event.state.id;
+      switchView(view);
+      if (typeof event.state?.scrollY === "number") {
+        const targetY = event.state.scrollY;
+        requestAnimationFrame(() => window.scrollTo(0, targetY));
+      }
+    });
+    window.addEventListener("hashchange", openHashWord);
   }
 
   function renderReview() {

@@ -110,6 +110,7 @@ img{display:block;max-width:100%}
 .topbar{
   display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
+body[data-view="wordDetail"] .topbar{display:none}
 .search-wrap{
   background:var(--surface);border:1px solid var(--line);border-radius:999px;
   padding:12px 18px;display:flex;align-items:center;gap:12px;flex:1;min-height:58px;

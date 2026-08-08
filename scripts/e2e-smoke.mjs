@@ -138,6 +138,30 @@ async function runSmokeTest() {
     await page.locator("#backToWordsBtn").click();
     await page.locator("#cardsGrid .word-card").first().waitFor({ state: "visible" });
 
+    await page.goto(`${url}/index.html`, { waitUntil: "domcontentloaded" });
+    await page.locator("#cardsGrid .word-card").first().waitFor({ state: "visible" });
+    const routedCard = page.locator("#cardsGrid .word-card").nth(8);
+    const routedWordId = await routedCard.getAttribute("data-card");
+    await routedCard.scrollIntoViewIfNeeded();
+    const sourceScrollY = await page.evaluate(() => window.scrollY);
+    await routedCard.click();
+    await page.waitForFunction(() => document.body.dataset.view === "wordDetail" && Boolean(document.querySelector("#fullWordDetail .full-detail-word")?.textContent));
+    assert.ok(await page.evaluate(() => { const rect = document.querySelector("#fullWordDetail .full-detail-word")?.getBoundingClientRect(); return Boolean(rect && rect.width > 0 && rect.height > 0); }), "Routed word detail should have visible dimensions");
+    assert.equal(await page.evaluate(() => location.hash), `#word/${routedWordId}`, "Opening a word should create a shareable hash URL");
+    assert.equal(await page.locator("body").getAttribute("data-view"), "wordDetail", "Hash navigation should activate the word detail view");
+    assert.ok((await page.evaluate(() => window.scrollY)) <= 1, "Opening a word should start at the top");
+    await page.goBack();
+    await page.waitForFunction(() => location.hash === "" && document.body.dataset.view === "vocabulary");
+    await page.waitForFunction(expected => Math.abs(window.scrollY - expected) <= 2, sourceScrollY);
+    assert.ok(Math.abs((await page.evaluate(() => window.scrollY)) - sourceScrollY) <= 2, "Back navigation should restore the vocabulary scroll position");
+
+    await page.goto(`${url}/index.html#word/${routedWordId}`, { waitUntil: "domcontentloaded" });
+    await page.waitForFunction(() => document.body.dataset.view === "wordDetail" && Boolean(document.querySelector("#fullWordDetail .full-detail-word")?.textContent));
+    assert.equal(await page.locator("body").getAttribute("data-view"), "wordDetail", "A direct word URL should open the detail view");
+    assert.ok((await page.evaluate(() => window.scrollY)) <= 1, "A direct word URL should start at the top");
+    await page.goto(`${url}/index.html`, { waitUntil: "domcontentloaded" });
+    await page.locator("#cardsGrid .word-card").first().waitFor({ state: "visible" });
+
     await page.locator('[data-view-btn="quiz"]').click();
     await page.locator("#quizBox .quiz-option").first().waitFor({ state: "visible" });
     assert.equal(await page.locator("#quizBox .quiz-option").count(), 4, "Quiz should render four answer choices");

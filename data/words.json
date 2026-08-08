@@ -1383,8 +1383,8 @@
           "en": "assets/audio/en/examples/gde-kartina?.mp3"
         },
         "arVocalized": "أَيْنَ اللَّوْحَة؟",
-        "arTransliterationRu": "айн аль-лавха؟",
-        "arTransliterationEn": "ayn al'-lavkha؟"
+        "arTransliterationRu": "айн аль-лявха؟",
+        "arTransliterationEn": "ayn al'-lyavkha؟"
       },
       {
         "ru": "Картина новая.",
@@ -1396,8 +1396,8 @@
           "en": "assets/audio/en/examples/kartina-novaya.mp3"
         },
         "arVocalized": "هَذِهِ لَوْحَة جَدِيدَة.",
-        "arTransliterationRu": "хазихи лавха джадида.",
-        "arTransliterationEn": "khazikhi lavkha dzhadida."
+        "arTransliterationRu": "хазихи лявха джадида.",
+        "arTransliterationEn": "khazikhi lyavkha dzhadida."
       }
     ],
     "phrases": [
@@ -1406,24 +1406,24 @@
         "ar": "هذه لوحة",
         "en": "this picture",
         "arVocalized": "هَذِهِ لَوْحَة",
-        "arTransliterationRu": "хазихи лавха",
-        "arTransliterationEn": "khazikhi lavkha"
+        "arTransliterationRu": "хазихи лявха",
+        "arTransliterationEn": "khazikhi lyavkha"
       },
       {
         "ru": "новая картина",
         "ar": "لوحة جديدة",
         "en": "new picture",
         "arVocalized": "لَوْحَة جَدِيدَة",
-        "arTransliterationRu": "лавха джадида",
-        "arTransliterationEn": "lavkha dzhadida"
+        "arTransliterationRu": "лявха джадида",
+        "arTransliterationEn": "lyavkha dzhadida"
       },
       {
         "ru": "где картина?",
         "ar": "أين اللوحة؟",
         "en": "where is the picture?",
         "arVocalized": "أَيْنَ اللَّوْحَة؟",
-        "arTransliterationRu": "айн аль-лавха؟",
-        "arTransliterationEn": "ayn al'-lavkha؟"
+        "arTransliterationRu": "айн аль-лявха؟",
+        "arTransliterationEn": "ayn al'-lyavkha؟"
       }
     ],
     "detailQuality": "full-v8.2",
@@ -3086,8 +3086,8 @@
           "en": "assets/audio/en/examples/gde-plita?.mp3"
         },
         "arVocalized": "أَيْنَ الْمَوْقِد؟",
-        "arTransliterationRu": "айн аль-маукид؟",
-        "arTransliterationEn": "ayn al'-maukid؟"
+        "arTransliterationRu": "айн аль-мавкид؟",
+        "arTransliterationEn": "ayn al'-mavkid؟"
       },
       {
         "ru": "Плита новая.",
@@ -3099,8 +3099,8 @@
           "en": "assets/audio/en/examples/plita-novaya.mp3"
         },
         "arVocalized": "هَذَا مَوْقِد جَدِيد.",
-        "arTransliterationRu": "хаза маукид джадид.",
-        "arTransliterationEn": "khaza maukid dzhadid."
+        "arTransliterationRu": "хаза мавкид джадид.",
+        "arTransliterationEn": "khaza mavkid dzhadid."
       }
     ],
     "phrases": [
@@ -3109,24 +3109,24 @@
         "ar": "هذا موقد",
         "en": "this stove",
         "arVocalized": "هَذَا مَوْقِد",
-        "arTransliterationRu": "хаза маукид",
-        "arTransliterationEn": "khaza maukid"
+        "arTransliterationRu": "хаза мавкид",
+        "arTransliterationEn": "khaza mavkid"
       },
       {
         "ru": "новая плита",
         "ar": "موقد جديد",
         "en": "new stove",
         "arVocalized": "مَوْقِد جَدِيد",
-        "arTransliterationRu": "маукид джадид",
-        "arTransliterationEn": "maukid dzhadid"
+        "arTransliterationRu": "мавкид джадид",
+        "arTransliterationEn": "mavkid dzhadid"
       },
       {
         "ru": "где плита?",
         "ar": "أين الموقد؟",
         "en": "where is the stove?",
         "arVocalized": "أَيْنَ الْمَوْقِد؟",
-        "arTransliterationRu": "айн аль-маукид؟",
-        "arTransliterationEn": "ayn al'-maukid؟"
+        "arTransliterationRu": "айн аль-мавкид؟",
+        "arTransliterationEn": "ayn al'-mavkid؟"
       }
     ],
     "detailQuality": "full-v8.2",
@@ -4265,8 +4265,8 @@
           "en": "assets/audio/en/examples/gde-kastryulya?.mp3"
         },
         "arVocalized": "أَيْنَ الْحَلَّة؟",
-        "arTransliterationRu": "айн аль-халаа؟",
-        "arTransliterationEn": "ayn al'-khalaa؟"
+        "arTransliterationRu": "айн аль-халла؟",
+        "arTransliterationEn": "ayn al'-khalla؟"
       },
       {
         "ru": "Кастрюля новая.",
@@ -4278,8 +4278,8 @@
           "en": "assets/audio/en/examples/kastryulya-novaya.mp3"
         },
         "arVocalized": "هَذِهِ حَلَّة جَدِيدَة.",
-        "arTransliterationRu": "хазихи халаа джадида.",
-        "arTransliterationEn": "khazikhi khalaa dzhadida."
+        "arTransliterationRu": "хазихи халла джадида.",
+        "arTransliterationEn": "khazikhi khalla dzhadida."
       }
     ],
     "phrases": [
@@ -4288,24 +4288,24 @@
         "ar": "هذه حلة",
         "en": "this pot",
         "arVocalized": "هَذِهِ حَلَّة",
-        "arTransliterationRu": "хазихи халаа",
-        "arTransliterationEn": "khazikhi khalaa"
+        "arTransliterationRu": "хазихи халла",
+        "arTransliterationEn": "khazikhi khalla"
       },
       {
         "ru": "новая кастрюля",
         "ar": "حلة جديدة",
         "en": "new pot",
         "arVocalized": "حَلَّة جَدِيدَة",
-        "arTransliterationRu": "халаа джадида",
-        "arTransliterationEn": "khalaa dzhadida"
+        "arTransliterationRu": "халла джадида",
+        "arTransliterationEn": "khalla dzhadida"
       },
       {
         "ru": "где кастрюля?",
         "ar": "أين الحلة؟",
         "en": "where is the pot?",
         "arVocalized": "أَيْنَ الْحَلَّة؟",
-        "arTransliterationRu": "айн аль-халаа؟",
-        "arTransliterationEn": "ayn al'-khalaa؟"
+        "arTransliterationRu": "айн аль-халла؟",
+        "arTransliterationEn": "ayn al'-khalla؟"
       }
     ],
     "detailQuality": "full-v8.2",
@@ -4527,8 +4527,8 @@
           "en": "assets/audio/en/examples/gde-vanna?.mp3"
         },
         "arVocalized": "أَيْنَ الْبَانِيُو؟",
-        "arTransliterationRu": "айн аль-банийув؟",
-        "arTransliterationEn": "ayn al'-baniyuv؟"
+        "arTransliterationRu": "айн аль-баньо؟",
+        "arTransliterationEn": "ayn al'-ban'o؟"
       },
       {
         "ru": "Ванна новая.",
@@ -4540,8 +4540,8 @@
           "en": "assets/audio/en/examples/vanna-novaya.mp3"
         },
         "arVocalized": "هَذَا بَانِيُو جَدِيد.",
-        "arTransliterationRu": "хаза банийув джадид.",
-        "arTransliterationEn": "khaza baniyuv dzhadid."
+        "arTransliterationRu": "хаза баньо джадид.",
+        "arTransliterationEn": "khaza ban'o dzhadid."
       }
     ],
     "phrases": [
@@ -4550,24 +4550,24 @@
         "ar": "هذا بانيو",
         "en": "this bathtub",
         "arVocalized": "هَذَا بَانِيُو",
-        "arTransliterationRu": "хаза банийув",
-        "arTransliterationEn": "khaza baniyuv"
+        "arTransliterationRu": "хаза баньо",
+        "arTransliterationEn": "khaza ban'o"
       },
       {
         "ru": "новая ванна",
         "ar": "بانيو جديد",
         "en": "new bathtub",
         "arVocalized": "بَانِيُو جَدِيد",
-        "arTransliterationRu": "банийув джадид",
-        "arTransliterationEn": "baniyuv dzhadid"
+        "arTransliterationRu": "баньо джадид",
+        "arTransliterationEn": "ban'o dzhadid"
       },
       {
         "ru": "где ванна?",
         "ar": "أين البانيو؟",
         "en": "where is the bathtub?",
         "arVocalized": "أَيْنَ الْبَانِيُو؟",
-        "arTransliterationRu": "айн аль-банийув؟",
-        "arTransliterationEn": "ayn al'-baniyuv؟"
+        "arTransliterationRu": "айн аль-баньо؟",
+        "arTransliterationEn": "ayn al'-ban'o؟"
       }
     ],
     "detailQuality": "full-v8.2",
@@ -5042,25 +5042,25 @@
         "arTransliterationEn": "ayn as-sabun؟"
       },
       {
-        "ru": "Мыло лежит у раковины.",
+        "ru": "Мыло лежит возле раковины.",
         "ar": "الصابون بجانب الحوض.",
-        "en": "The soap is by the sink.",
+        "en": "The soap is near the sink.",
         "arVocalized": "الصَّابُون بِجَانِب الْحَوْض.",
         "arTransliterationRu": "аль-сабун биджаниб аль-хавд.",
         "arTransliterationEn": "al'-sabun bidzhanib al'-khavd."
       },
       {
-        "ru": "Мыло новое.",
-        "ar": "هذا صابون جديد.",
-        "en": "This soap is new.",
+        "ru": "Возьми мыло, пожалуйста.",
+        "ar": "خذ الصابون من فضلك.",
+        "en": "Please take the soap.",
         "audio": {
           "ru": "assets/audio/ru/examples/mylo-novoe.mp3",
           "ar": "assets/audio/ar/examples/mylo-novoe.mp3",
           "en": "assets/audio/en/examples/mylo-novoe.mp3"
         },
-        "arVocalized": "هَذَا صَابُون جَدِيد.",
-        "arTransliterationRu": "хаза сабун джадид.",
-        "arTransliterationEn": "khaza sabun dzhadid."
+        "arVocalized": "خُذْ الصَّابُون مِنْ فَضْلِكَ.",
+        "arTransliterationRu": "хуз аль-сабун мин фадлика.",
+        "arTransliterationEn": "khuz al'-sabun min fadlika."
       }
     ],
     "phrases": [
@@ -5168,30 +5168,30 @@
         "arTransliterationEn": "khazikhi fursha asnani."
       },
       {
-        "ru": "Где зубная щётка?",
-        "ar": "أين فرشاة الأسنان؟",
-        "en": "Where is the toothbrush?",
+        "ru": "Зубная щётка лежит в стакане.",
+        "ar": "فرشاة الأسنان في الكوب.",
+        "en": "The toothbrush is in the glass.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-zubnaya-shchyotka?.mp3",
           "ar": "assets/audio/ar/examples/gde-zubnaya-shchyotka?.mp3",
           "en": "assets/audio/en/examples/gde-zubnaya-shchyotka?.mp3"
         },
-        "arVocalized": "أَيْنَ فُرْشَاة الْأَسْنَان؟",
-        "arTransliterationRu": "айн фуршат аль-аснан؟",
-        "arTransliterationEn": "ayn furshat al'-asnan؟"
+        "arVocalized": "فُرْشَاة الْأَسْنَان فِي الْكُوب.",
+        "arTransliterationRu": "фуршат аль-аснан фи аль-куб.",
+        "arTransliterationEn": "furshat al'-asnan fi al'-kub."
       },
       {
-        "ru": "Зубная щётка новая.",
-        "ar": "هذه فرشاة أسنان جديدة.",
-        "en": "This toothbrush is new.",
+        "ru": "Возьми зубную щётку и пасту.",
+        "ar": "خذ فرشاة الأسنان والمعجون.",
+        "en": "Take the toothbrush and toothpaste.",
         "audio": {
           "ru": "assets/audio/ru/examples/zubnaya-shchyotka-novaya.mp3",
           "ar": "assets/audio/ar/examples/zubnaya-shchyotka-novaya.mp3",
           "en": "assets/audio/en/examples/zubnaya-shchyotka-novaya.mp3"
         },
-        "arVocalized": "هَذِهِ فُرْشَاة أَسْنَان جَدِيدَة.",
-        "arTransliterationRu": "хазихи фуршат аснан джадида.",
-        "arTransliterationEn": "khazikhi furshat asnan dzhadida."
+        "arVocalized": "خُذْ فُرْشَاة الْأَسْنَان وَالمَعْجُون.",
+        "arTransliterationRu": "хуз фуршат аль-аснан валмаджувн.",
+        "arTransliterationEn": "khuz furshat al'-asnan valmadzhuvn."
       }
     ],
     "phrases": [
@@ -5299,30 +5299,30 @@
         "arTransliterationEn": "akhtadzh madzhun asnan."
       },
       {
-        "ru": "Где зубная паста?",
-        "ar": "أين معجون الأسنان؟",
-        "en": "Where is the toothpaste?",
+        "ru": "Зубная паста стоит на полке.",
+        "ar": "معجون الأسنان على الرف.",
+        "en": "The toothpaste is on the shelf.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-zubnaya-pasta?.mp3",
           "ar": "assets/audio/ar/examples/gde-zubnaya-pasta?.mp3",
           "en": "assets/audio/en/examples/gde-zubnaya-pasta?.mp3"
         },
-        "arVocalized": "أَيْنَ مَعْجُون الْأَسْنَان؟",
-        "arTransliterationRu": "айн маджун аль-аснан؟",
-        "arTransliterationEn": "ayn madzhun al'-asnan؟"
+        "arVocalized": "مَعْجُون الْأَسْنَان عَلَى الرَّفّ.",
+        "arTransliterationRu": "маджун аль-аснан аля аль-рафф.",
+        "arTransliterationEn": "madzhun al'-asnan alya al'-raff."
       },
       {
-        "ru": "Зубная паста новая.",
-        "ar": "هذا معجون أسنان جديد.",
-        "en": "This toothpaste is new.",
+        "ru": "Не забудь взять зубную пасту.",
+        "ar": "لا تنسَ أخذ معجون الأسنان.",
+        "en": "Do not forget to take the toothpaste.",
         "audio": {
           "ru": "assets/audio/ru/examples/zubnaya-pasta-novaya.mp3",
           "ar": "assets/audio/ar/examples/zubnaya-pasta-novaya.mp3",
           "en": "assets/audio/en/examples/zubnaya-pasta-novaya.mp3"
         },
-        "arVocalized": "هَذَا مَعْجُون أَسْنَان جَدِيد.",
-        "arTransliterationRu": "хаза маджун аснан джадид.",
-        "arTransliterationEn": "khaza madzhun asnan dzhadid."
+        "arVocalized": "لَا تَنْسَ أَخَذَ مَعْجُون الْأَسْنَان.",
+        "arTransliterationRu": "ла танса ахаза маджун аль-аснан.",
+        "arTransliterationEn": "la tansa akhaza madzhun al'-asnan."
       }
     ],
     "phrases": [
@@ -5430,30 +5430,30 @@
         "arTransliterationEn": "al-khammam mashgul."
       },
       {
-        "ru": "Где туалет?",
-        "ar": "أين المرحاض؟",
-        "en": "Where is the toilet?",
+        "ru": "Туалет находится рядом с ванной.",
+        "ar": "المرحاض بجانب حوض الاستحمام.",
+        "en": "The toilet is next to the bathtub.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-tualet?.mp3",
           "ar": "assets/audio/ar/examples/gde-tualet?.mp3",
           "en": "assets/audio/en/examples/gde-tualet?.mp3"
         },
-        "arVocalized": "أَيْنَ الْمِرْحَاض؟",
-        "arTransliterationRu": "айн аль-мирхад؟",
-        "arTransliterationEn": "ayn al'-mirkhad؟"
+        "arVocalized": "الْمِرْحَاض بِجَانِب حَوْض الْاِسْتِحْمَام.",
+        "arTransliterationRu": "аль-мирхад биджаниб хавд аль-аистихмам.",
+        "arTransliterationEn": "al'-mirkhad bidzhanib khavd al'-aistikhmam."
       },
       {
-        "ru": "Туалет новый.",
-        "ar": "هذا مرحاض جديد.",
-        "en": "This toilet is new.",
+        "ru": "В туалете чисто.",
+        "ar": "المرحاض نظيف.",
+        "en": "The toilet is clean.",
         "audio": {
           "ru": "assets/audio/ru/examples/tualet-novyy.mp3",
           "ar": "assets/audio/ar/examples/tualet-novyy.mp3",
           "en": "assets/audio/en/examples/tualet-novyy.mp3"
         },
-        "arVocalized": "هَذَا مِرْحَاض جَدِيد.",
-        "arTransliterationRu": "хаза мирхад джадид.",
-        "arTransliterationEn": "khaza mirkhad dzhadid."
+        "arVocalized": "الْمِرْحَاض نَظِيف.",
+        "arTransliterationRu": "аль-мирхад назийф.",
+        "arTransliterationEn": "al'-mirkhad naziyf."
       }
     ],
     "phrases": [
@@ -5561,30 +5561,30 @@
         "arTransliterationEn": "iftakh al-bab."
       },
       {
-        "ru": "Где дверь?",
-        "ar": "أين الباب؟",
-        "en": "Where is the door?",
+        "ru": "Дверь закрыта.",
+        "ar": "الباب مغلق.",
+        "en": "The door is closed.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-dver?.mp3",
           "ar": "assets/audio/ar/examples/gde-dver?.mp3",
           "en": "assets/audio/en/examples/gde-dver?.mp3"
         },
-        "arVocalized": "أَيْنَ الْبَاب؟",
-        "arTransliterationRu": "айн аль-баб؟",
-        "arTransliterationEn": "ayn al'-bab؟"
+        "arVocalized": "الْبَاب مُغْلَق.",
+        "arTransliterationRu": "аль-баб муглак.",
+        "arTransliterationEn": "al'-bab muglak."
       },
       {
-        "ru": "Дверь новая.",
-        "ar": "هذا باب جديد.",
-        "en": "This door is new.",
+        "ru": "Пожалуйста, закрой дверь.",
+        "ar": "من فضلك، أغلق الباب.",
+        "en": "Please close the door.",
         "audio": {
           "ru": "assets/audio/ru/examples/dver-novaya.mp3",
           "ar": "assets/audio/ar/examples/dver-novaya.mp3",
           "en": "assets/audio/en/examples/dver-novaya.mp3"
         },
-        "arVocalized": "هَذَا بَاب جَدِيد.",
-        "arTransliterationRu": "хаза баб джадид.",
-        "arTransliterationEn": "khaza bab dzhadid."
+        "arVocalized": "مِنْ فَضْلِكَ، أُغْلِقُ الْبَاب.",
+        "arTransliterationRu": "мин фадлика، углик аль-баб.",
+        "arTransliterationEn": "min fadlika، uglik al'-bab."
       }
     ],
     "phrases": [
@@ -5692,30 +5692,30 @@
         "arTransliterationEn": "aglik ash-shubbak."
       },
       {
-        "ru": "Где окно?",
-        "ar": "أين النافذة؟",
-        "en": "Where is the window?",
+        "ru": "Окно открыто.",
+        "ar": "النافذة مفتوحة.",
+        "en": "The window is open.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-okno?.mp3",
           "ar": "assets/audio/ar/examples/gde-okno?.mp3",
           "en": "assets/audio/en/examples/gde-okno?.mp3"
         },
-        "arVocalized": "أَيْنَ النَّافِذَة؟",
-        "arTransliterationRu": "айн аль-нафиза؟",
-        "arTransliterationEn": "ayn al'-nafiza؟"
+        "arVocalized": "النَّافِذَة مَفْتُوحَة.",
+        "arTransliterationRu": "аль-нафиза мафтувха.",
+        "arTransliterationEn": "al'-nafiza maftuvkha."
       },
       {
-        "ru": "Окно новое.",
-        "ar": "هذه نافذة جديدة.",
-        "en": "This window is new.",
+        "ru": "Закрой окно перед сном.",
+        "ar": "أغلق النافذة قبل النوم.",
+        "en": "Close the window before bed.",
         "audio": {
           "ru": "assets/audio/ru/examples/okno-novoe.mp3",
           "ar": "assets/audio/ar/examples/okno-novoe.mp3",
           "en": "assets/audio/en/examples/okno-novoe.mp3"
         },
-        "arVocalized": "هَذِهِ نَافِذَة جَدِيدَة.",
-        "arTransliterationRu": "хазихи нафиза джадида.",
-        "arTransliterationEn": "khazikhi nafiza dzhadida."
+        "arVocalized": "أُغْلِقُ النَّافِذَة قَبْلَ النَّوْم.",
+        "arTransliterationRu": "углик аль-нафиза кабла ан-навм.",
+        "arTransliterationEn": "uglik al'-nafiza kabla an-navm."
       }
     ],
     "phrases": [
@@ -5823,30 +5823,30 @@
         "arTransliterationEn": "ayn miftakhi؟"
       },
       {
-        "ru": "Где ключ?",
-        "ar": "أين المفتاح؟",
-        "en": "Where is the key?",
+        "ru": "Ключ лежит в сумке.",
+        "ar": "المفتاح في الحقيبة.",
+        "en": "The key is in the bag.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-klyuch?.mp3",
           "ar": "assets/audio/ar/examples/gde-klyuch?.mp3",
           "en": "assets/audio/en/examples/gde-klyuch?.mp3"
         },
-        "arVocalized": "أَيْنَ الْمِفْتَاح؟",
-        "arTransliterationRu": "айн аль-мифтах؟",
-        "arTransliterationEn": "ayn al'-miftakh؟"
+        "arVocalized": "الْمِفْتَاح فِي الْحَقِيبَة.",
+        "arTransliterationRu": "аль-мифтах фи аль-хакиба.",
+        "arTransliterationEn": "al'-miftakh fi al'-khakiba."
       },
       {
-        "ru": "Ключ новый.",
-        "ar": "هذا مفتاح جديد.",
-        "en": "This key is new.",
+        "ru": "Я не могу найти ключ.",
+        "ar": "لا أستطيع العثور على المفتاح.",
+        "en": "I cannot find the key.",
         "audio": {
           "ru": "assets/audio/ru/examples/klyuch-novyy.mp3",
           "ar": "assets/audio/ar/examples/klyuch-novyy.mp3",
           "en": "assets/audio/en/examples/klyuch-novyy.mp3"
         },
-        "arVocalized": "هَذَا مِفْتَاح جَدِيد.",
-        "arTransliterationRu": "хаза мифтах джадид.",
-        "arTransliterationEn": "khaza miftakh dzhadid."
+        "arVocalized": "لَا أَسْتَطِيعُ العُثُور عَلَى الْمِفْتَاح.",
+        "arTransliterationRu": "ла астатийау аль-аусувр аля аль-мифтах.",
+        "arTransliterationEn": "la astatiyau al'-ausuvr alya al'-miftakh."
       }
     ],
     "phrases": [
@@ -5954,30 +5954,30 @@
         "arTransliterationEn": "al-kifl ala al-bab."
       },
       {
-        "ru": "Где замок?",
-        "ar": "أين القفل؟",
-        "en": "Where is the lock?",
+        "ru": "Замок на двери сломан.",
+        "ar": "قفل الباب مكسور.",
+        "en": "The lock on the door is broken.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-zamok?.mp3",
           "ar": "assets/audio/ar/examples/gde-zamok?.mp3",
           "en": "assets/audio/en/examples/gde-zamok?.mp3"
         },
-        "arVocalized": "أَيْنَ الْقُفْل؟",
-        "arTransliterationRu": "айн аль-кифль؟",
-        "arTransliterationEn": "ayn al'-kifl'؟"
+        "arVocalized": "قُفْل الْبَاب مَكْسُور.",
+        "arTransliterationRu": "кифль аль-баб максувр.",
+        "arTransliterationEn": "kifl' al'-bab maksuvr."
       },
       {
-        "ru": "Замок новый.",
-        "ar": "هذا قفل جديد.",
-        "en": "This lock is new.",
+        "ru": "Проверь замок, пожалуйста.",
+        "ar": "تحقق من القفل من فضلك.",
+        "en": "Please check the lock.",
         "audio": {
           "ru": "assets/audio/ru/examples/zamok-novyy.mp3",
           "ar": "assets/audio/ar/examples/zamok-novyy.mp3",
           "en": "assets/audio/en/examples/zamok-novyy.mp3"
         },
-        "arVocalized": "هَذَا قُفْل جَدِيد.",
-        "arTransliterationRu": "хаза кифль джадид.",
-        "arTransliterationEn": "khaza kifl' dzhadid."
+        "arVocalized": "تَحَقَّقْ مِنْ الْقُفْل مِنْ فَضْلِكَ.",
+        "arTransliterationRu": "тахакак мин аль-кифль мин фадлика.",
+        "arTransliterationEn": "takhakak min al'-kifl' min fadlika."
       }
     ],
     "phrases": [
@@ -6085,30 +6085,30 @@
         "arTransliterationEn": "ala al-khait lavkha."
       },
       {
-        "ru": "Где стена?",
-        "ar": "أين الحائط؟",
-        "en": "Where is the wall?",
+        "ru": "На стене висит картина.",
+        "ar": "توجد لوحة معلقة على الحائط.",
+        "en": "A picture is hanging on the wall.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-stena?.mp3",
           "ar": "assets/audio/ar/examples/gde-stena?.mp3",
           "en": "assets/audio/en/examples/gde-stena?.mp3"
         },
-        "arVocalized": "أَيْنَ الْحَائِط؟",
-        "arTransliterationRu": "айн аль-хаит؟",
-        "arTransliterationEn": "ayn al'-khait؟"
+        "arVocalized": "تُوجَدُ لَوْحَة مُعَلَّقَة عَلَى الْحَائِط.",
+        "arTransliterationRu": "тувджаду лявха муалака аля аль-хаит.",
+        "arTransliterationEn": "tuvdzhadu lyavkha mualaka alya al'-khait."
       },
       {
-        "ru": "Стена новая.",
-        "ar": "هذا حائط جديد.",
-        "en": "This wall is new.",
+        "ru": "Мы покрасили стену вчера.",
+        "ar": "دهنا الحائط أمس.",
+        "en": "We painted the wall yesterday.",
         "audio": {
           "ru": "assets/audio/ru/examples/stena-novaya.mp3",
           "ar": "assets/audio/ar/examples/stena-novaya.mp3",
           "en": "assets/audio/en/examples/stena-novaya.mp3"
         },
-        "arVocalized": "هَذَا حَائِط جَدِيد.",
-        "arTransliterationRu": "хаза хаит джадид.",
-        "arTransliterationEn": "khaza khait dzhadid."
+        "arVocalized": "دَهَنَّا الْحَائِط أَمْسِ.",
+        "arTransliterationRu": "даханаа аль-хаит амси.",
+        "arTransliterationEn": "dakhanaa al'-khait amsi."
       }
     ],
     "phrases": [
@@ -6216,30 +6216,30 @@
         "arTransliterationEn": "al-khakiba ala al-ard."
       },
       {
-        "ru": "Где пол?",
-        "ar": "أين الأرضية؟",
-        "en": "Where is the floor?",
+        "ru": "На полу лежит ковёр.",
+        "ar": "توجد سجادة على الأرضية.",
+        "en": "There is a rug on the floor.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-pol?.mp3",
           "ar": "assets/audio/ar/examples/gde-pol?.mp3",
           "en": "assets/audio/en/examples/gde-pol?.mp3"
         },
-        "arVocalized": "أَيْنَ الْأَرْضِيَّة؟",
-        "arTransliterationRu": "айн аль-ардия؟",
-        "arTransliterationEn": "ayn al'-ardiya؟"
+        "arVocalized": "تُوجَدُ سَجَّادَة عَلَى الْأَرْضِيَّة.",
+        "arTransliterationRu": "тувджаду саджада аля аль-ардия.",
+        "arTransliterationEn": "tuvdzhadu sadzhada alya al'-ardiya."
       },
       {
-        "ru": "Пол новый.",
-        "ar": "هذه أرضية جديدة.",
-        "en": "This floor is new.",
+        "ru": "Пол нужно помыть.",
+        "ar": "يجب تنظيف الأرضية.",
+        "en": "The floor needs to be washed.",
         "audio": {
           "ru": "assets/audio/ru/examples/pol-novyy.mp3",
           "ar": "assets/audio/ar/examples/pol-novyy.mp3",
           "en": "assets/audio/en/examples/pol-novyy.mp3"
         },
-        "arVocalized": "هَذِهِ أَرْضِيَّة جَدِيدَة.",
-        "arTransliterationRu": "хазихи ардия джадида.",
-        "arTransliterationEn": "khazikhi ardiya dzhadida."
+        "arVocalized": "يَجِبُ تَنْظِيف الْأَرْضِيَّة.",
+        "arTransliterationRu": "йаджибу танзийф аль-ардия.",
+        "arTransliterationEn": "yadzhibu tanziyf al'-ardiya."
       }
     ],
     "phrases": [
@@ -6347,30 +6347,30 @@
         "arTransliterationEn": "as-sakf abyad."
       },
       {
-        "ru": "Где потолок?",
-        "ar": "أين السقف؟",
-        "en": "Where is the ceiling?",
+        "ru": "На потолке висит лампа.",
+        "ar": "يوجد مصباح معلق في السقف.",
+        "en": "A lamp hangs from the ceiling.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-potolok?.mp3",
           "ar": "assets/audio/ar/examples/gde-potolok?.mp3",
           "en": "assets/audio/en/examples/gde-potolok?.mp3"
         },
-        "arVocalized": "أَيْنَ السَّقْف؟",
-        "arTransliterationRu": "айн аль-сакф؟",
-        "arTransliterationEn": "ayn al'-sakf؟"
+        "arVocalized": "يُوجَدُ مِصْبَاح مُعَلَّق فِي السَّقْف.",
+        "arTransliterationRu": "йувджаду мисбах муалак фи аль-сакф.",
+        "arTransliterationEn": "yuvdzhadu misbakh mualak fi al'-sakf."
       },
       {
-        "ru": "Потолок новый.",
-        "ar": "هذا سقف جديد.",
-        "en": "This ceiling is new.",
+        "ru": "Потолок недавно покрасили.",
+        "ar": "طُلي السقف مؤخرًا.",
+        "en": "The ceiling was painted recently.",
         "audio": {
           "ru": "assets/audio/ru/examples/potolok-novyy.mp3",
           "ar": "assets/audio/ar/examples/potolok-novyy.mp3",
           "en": "assets/audio/en/examples/potolok-novyy.mp3"
         },
-        "arVocalized": "هَذَا سَقْف جَدِيد.",
-        "arTransliterationRu": "хаза сакф джадид.",
-        "arTransliterationEn": "khaza sakf dzhadid."
+        "arVocalized": "طُلِيَ السَّقْف مُؤَخَّرًا.",
+        "arTransliterationRu": "тулийа аль-сакф муахарана.",
+        "arTransliterationEn": "tuliya al'-sakf muakharana."
       }
     ],
     "phrases": [
@@ -6478,30 +6478,30 @@
         "arTransliterationEn": "ana akif fi al-balkuna."
       },
       {
-        "ru": "Где балкон?",
-        "ar": "أين البلكونة؟",
-        "en": "Where is the balcony?",
+        "ru": "На балконе растут цветы.",
+        "ar": "تنمو الزهور في الشرفة.",
+        "en": "Flowers grow on the balcony.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-balkon?.mp3",
           "ar": "assets/audio/ar/examples/gde-balkon?.mp3",
           "en": "assets/audio/en/examples/gde-balkon?.mp3"
         },
-        "arVocalized": "أَيْنَ الْبَلْكُونَة؟",
-        "arTransliterationRu": "айн аль-балькона؟",
-        "arTransliterationEn": "ayn al'-bal'kona؟"
+        "arVocalized": "تَنْمُو الزُّهُور فِي الشُّرْفَة.",
+        "arTransliterationRu": "танмув аль-зухувр фи аль-шурфа.",
+        "arTransliterationEn": "tanmuv al'-zukhuvr fi al'-shurfa."
       },
       {
-        "ru": "Балкон новый.",
-        "ar": "هذه بلكونة جديدة.",
-        "en": "This balcony is new.",
+        "ru": "Летом мы завтракаем на балконе.",
+        "ar": "نتناول الفطور في الشرفة صيفًا.",
+        "en": "We have breakfast on the balcony in summer.",
         "audio": {
           "ru": "assets/audio/ru/examples/balkon-novyy.mp3",
           "ar": "assets/audio/ar/examples/balkon-novyy.mp3",
           "en": "assets/audio/en/examples/balkon-novyy.mp3"
         },
-        "arVocalized": "هَذِهِ بَلْكُونَة جَدِيدَة.",
-        "arTransliterationRu": "хазихи балькона джадида.",
-        "arTransliterationEn": "khazikhi bal'kona dzhadida."
+        "arVocalized": "نَتَنَاوَلُ الفُطُور فِي الشُّرْفَة صَيْفًا.",
+        "arTransliterationRu": "натанавалу аль-футувр фи аль-шурфа сайфана.",
+        "arTransliterationEn": "natanavalu al'-futuvr fi al'-shurfa sayfana."
       }
     ],
     "phrases": [
@@ -6609,25 +6609,25 @@
         "arTransliterationEn": "ayn ar-rimut؟"
       },
       {
-        "ru": "Пульт лежит рядом с телевизором.",
-        "ar": "الريموت بجانب التلفزيون.",
-        "en": "The remote control is next to the television.",
-        "arVocalized": "الرِّيمُوت بِجَانِب التِّلْفِزْيُون.",
-        "arTransliterationRu": "аль-римут биджаниб аль-тилфизьон.",
-        "arTransliterationEn": "al'-rimut bidzhanib al'-tilfiz'on."
+        "ru": "Пульт лежит на диване.",
+        "ar": "جهاز التحكم على الأريكة.",
+        "en": "The remote control is on the sofa.",
+        "arVocalized": "جِهَاز التَّحَكُّم عَلَى الْأَرِيكَة.",
+        "arTransliterationRu": "джихаз аль-тахакум аля аль-арика.",
+        "arTransliterationEn": "dzhikhaz al'-takhakum alya al'-arika."
       },
       {
-        "ru": "Пульт новый.",
-        "ar": "هذا ريموت جديد.",
-        "en": "This remote control is new.",
+        "ru": "Где пульт от телевизора?",
+        "ar": "أين جهاز التحكم بالتلفزيون؟",
+        "en": "Where is the television remote?",
         "audio": {
           "ru": "assets/audio/ru/examples/pult-novyy.mp3",
           "ar": "assets/audio/ar/examples/pult-novyy.mp3",
           "en": "assets/audio/en/examples/pult-novyy.mp3"
         },
-        "arVocalized": "هَذَا رِيمُوت جَدِيد.",
-        "arTransliterationRu": "хаза римут джадид.",
-        "arTransliterationEn": "khaza rimut dzhadid."
+        "arVocalized": "أَيْنَ جِهَاز التَّحَكُّم بِالتِّلْفَاز؟",
+        "arTransliterationRu": "айн джихаз аль-тахакум биалтилфаз؟",
+        "arTransliterationEn": "ayn dzhikhaz al'-takhakum bialtilfaz؟"
       }
     ],
     "phrases": [
@@ -6636,16 +6636,16 @@
         "ar": "هذا ريموت",
         "en": "this remote control",
         "arVocalized": "هَذَا رِيمُوت",
-        "arTransliterationRu": "хаза римут",
-        "arTransliterationEn": "khaza rimut"
+        "arTransliterationRu": "хаза римот",
+        "arTransliterationEn": "khaza rimot"
       },
       {
         "ru": "новый пульт",
         "ar": "ريموت جديد",
         "en": "new remote control",
         "arVocalized": "رِيمُوت جَدِيد",
-        "arTransliterationRu": "римут джадид",
-        "arTransliterationEn": "rimut dzhadid"
+        "arTransliterationRu": "римот джадид",
+        "arTransliterationEn": "rimot dzhadid"
       },
       {
         "ru": "где пульт?",
@@ -6735,30 +6735,30 @@
         "arTransliterationEn": "asa ala al-khait."
       },
       {
-        "ru": "Где часы?",
-        "ar": "أين الساعة؟",
-        "en": "Where is the clock?",
+        "ru": "Часы показывают десять часов.",
+        "ar": "تُظهر الساعة العاشرة.",
+        "en": "The clock shows ten o'clock.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-chasy?.mp3",
           "ar": "assets/audio/ar/examples/gde-chasy?.mp3",
           "en": "assets/audio/en/examples/gde-chasy?.mp3"
         },
-        "arVocalized": "أَيْنَ السَّاعَة؟",
-        "arTransliterationRu": "айн аль-саа؟",
-        "arTransliterationEn": "ayn al'-saa؟"
+        "arVocalized": "تُظْهِرُ السَّاعَة العَاشِرَة.",
+        "arTransliterationRu": "тузхиру аль-саа аль-аашира.",
+        "arTransliterationEn": "tuzkhiru al'-saa al'-aashira."
       },
       {
-        "ru": "Часы новые.",
-        "ar": "ساعة جديدة.",
-        "en": "The clock is new.",
+        "ru": "Эти часы висят на стене.",
+        "ar": "هذه الساعة معلقة على الحائط.",
+        "en": "This clock hangs on the wall.",
         "audio": {
           "ru": "assets/audio/ru/examples/chasy-novye.mp3",
           "ar": "assets/audio/ar/examples/chasy-novye.mp3",
           "en": "assets/audio/en/examples/chasy-novye.mp3"
         },
-        "arVocalized": "سَاعَة جَدِيدَة.",
-        "arTransliterationRu": "саа джадида.",
-        "arTransliterationEn": "saa dzhadida."
+        "arVocalized": "هَذِهِ السَّاعَة مُعَلَّقَة عَلَى الْحَائِط.",
+        "arTransliterationRu": "хазихи аль-саа муалака аля аль-хаит.",
+        "arTransliterationEn": "khazikhi al'-saa mualaka alya al'-khait."
       }
     ],
     "phrases": [
@@ -6866,30 +6866,30 @@
         "arTransliterationEn": "al-kitab ala at-tavila."
       },
       {
-        "ru": "Где книга?",
-        "ar": "أين الكتاب؟",
-        "en": "Where is the book?",
+        "ru": "Книга лежит на столе.",
+        "ar": "الكتاب على الطاولة.",
+        "en": "The book is on the table.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-kniga?.mp3",
           "ar": "assets/audio/ar/examples/gde-kniga?.mp3",
           "en": "assets/audio/en/examples/gde-kniga?.mp3"
         },
-        "arVocalized": "أَيْنَ الْكِتَاب؟",
-        "arTransliterationRu": "айн аль-китаб؟",
-        "arTransliterationEn": "ayn al'-kitab؟"
+        "arVocalized": "الْكِتَاب عَلَى الطَّاوِلَة.",
+        "arTransliterationRu": "ал-китаб ала ат-тавила.",
+        "arTransliterationEn": "al-kitab ala at-tavila."
       },
       {
-        "ru": "Книга новая.",
-        "ar": "هذا كتاب جديد.",
-        "en": "This book is new.",
+        "ru": "Я читаю книгу вечером.",
+        "ar": "أقرأ الكتاب مساءً.",
+        "en": "I read the book in the evening.",
         "audio": {
           "ru": "assets/audio/ru/examples/kniga-novaya.mp3",
           "ar": "assets/audio/ar/examples/kniga-novaya.mp3",
           "en": "assets/audio/en/examples/kniga-novaya.mp3"
         },
-        "arVocalized": "هَذَا كِتَاب جَدِيد.",
-        "arTransliterationRu": "хаза китаб джадид.",
-        "arTransliterationEn": "khaza kitab dzhadid."
+        "arVocalized": "أَقْرَأُ الْكِتَاب مَسَاءً.",
+        "arTransliterationRu": "акрау аль-китаб масаъан.",
+        "arTransliterationEn": "akrau al'-kitab masaъan."
       }
     ],
     "phrases": [
@@ -6997,30 +6997,30 @@
         "arTransliterationEn": "al-khatif ala at-tavila."
       },
       {
-        "ru": "Где телефон?",
-        "ar": "أين الهاتف؟",
-        "en": "Where is the phone?",
+        "ru": "Телефон заряжается на столе.",
+        "ar": "الهاتف يُشحن على الطاولة.",
+        "en": "The phone is charging on the table.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-telefon?.mp3",
           "ar": "assets/audio/ar/examples/gde-telefon?.mp3",
           "en": "assets/audio/en/examples/gde-telefon?.mp3"
         },
-        "arVocalized": "أَيْنَ الْهَاتِف؟",
-        "arTransliterationRu": "айн аль-хатиф؟",
-        "arTransliterationEn": "ayn al'-khatif؟"
+        "arVocalized": "الْهَاتِف يَشْحَنُ عَلَى الطَّاوِلَة.",
+        "arTransliterationRu": "аль-хатиф йашхану аля аль-тавиля.",
+        "arTransliterationEn": "al'-khatif yashkhanu alya al'-tavilya."
       },
       {
-        "ru": "Телефон новый.",
-        "ar": "هذا هاتف جديد.",
-        "en": "This phone is new.",
+        "ru": "Позвони мне, когда найдёшь телефон.",
+        "ar": "اتصل بي عندما تجد الهاتف.",
+        "en": "Call me when you find the phone.",
         "audio": {
           "ru": "assets/audio/ru/examples/telefon-novyy.mp3",
           "ar": "assets/audio/ar/examples/telefon-novyy.mp3",
           "en": "assets/audio/en/examples/telefon-novyy.mp3"
         },
-        "arVocalized": "هَذَا هَاتِف جَدِيد.",
-        "arTransliterationRu": "хаза хатиф джадид.",
-        "arTransliterationEn": "khaza khatif dzhadid."
+        "arVocalized": "اِتَّصِلْ بِي عِنْدَمَا تَجِدُ الْهَاتِف.",
+        "arTransliterationRu": "аитасил бий аиндама таджиду аль-хатиф.",
+        "arTransliterationEn": "aitasil biy aindama tadzhidu al'-khatif."
       }
     ],
     "phrases": [
@@ -7128,25 +7128,25 @@
         "arTransliterationEn": "ayn ash-shakhin؟"
       },
       {
-        "ru": "Зарядка лежит на столе.",
-        "ar": "الشاحن على الطاولة.",
-        "en": "The charger is on the table.",
-        "arVocalized": "الشَّاحِن عَلَى الطَّاوِلَة.",
-        "arTransliterationRu": "аль-шахин аля аль-тавиля.",
-        "arTransliterationEn": "al'-shakhin alya al'-tavilya."
+        "ru": "Зарядка лежит рядом с телефоном.",
+        "ar": "الشاحن بجانب الهاتف.",
+        "en": "The charger is next to the phone.",
+        "arVocalized": "الشَّاحِن بِجَانِب الْهَاتِف.",
+        "arTransliterationRu": "аль-шахин биджаниб аль-хатиф.",
+        "arTransliterationEn": "al'-shakhin bidzhanib al'-khatif."
       },
       {
-        "ru": "Зарядка новая.",
-        "ar": "هذا شاحن جديد.",
-        "en": "This charger is new.",
+        "ru": "Мне нужна зарядка для телефона.",
+        "ar": "أحتاج إلى شاحن للهاتف.",
+        "en": "I need a charger for the phone.",
         "audio": {
           "ru": "assets/audio/ru/examples/zaryadka-novaya.mp3",
           "ar": "assets/audio/ar/examples/zaryadka-novaya.mp3",
           "en": "assets/audio/en/examples/zaryadka-novaya.mp3"
         },
-        "arVocalized": "هَذَا شَاحِن جَدِيد.",
-        "arTransliterationRu": "хаза шахин джадид.",
-        "arTransliterationEn": "khaza shakhin dzhadid."
+        "arVocalized": "أَحْتَاجُ إِلَى شَاحِن لِلهَاتِف.",
+        "arTransliterationRu": "ахтадж иля шахин лилхатиф.",
+        "arTransliterationEn": "akhtadzh ilya shakhin lilkhatif."
       }
     ],
     "phrases": [
@@ -7254,30 +7254,30 @@
         "arTransliterationEn": "al-makbas bidzhanib as-sarir."
       },
       {
-        "ru": "Где розетка?",
-        "ar": "أين مقبس الكهرباء؟",
-        "en": "Where is the socket?",
+        "ru": "Розетка находится у стола.",
+        "ar": "مقبس الكهرباء بجانب الطاولة.",
+        "en": "The socket is next to the table.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-rozetka?.mp3",
           "ar": "assets/audio/ar/examples/gde-rozetka?.mp3",
           "en": "assets/audio/en/examples/gde-rozetka?.mp3"
         },
-        "arVocalized": "أَيْنَ مَقْبَس الْكَهْرَبَاء؟",
-        "arTransliterationRu": "айн макбис аль-кахраба؟",
-        "arTransliterationEn": "ayn makbis al'-kakhraba؟"
+        "arVocalized": "مَقْبَس الْكَهْرَبَاء بِجَانِب الطَّاوِلَة.",
+        "arTransliterationRu": "макбис аль-кахраба биджаниб аль-тавиля.",
+        "arTransliterationEn": "makbis al'-kakhraba bidzhanib al'-tavilya."
       },
       {
-        "ru": "Розетка новая.",
-        "ar": "هذا مقبس كهرباء جديد.",
-        "en": "This socket is new.",
+        "ru": "Не трогай розетку мокрыми руками.",
+        "ar": "لا تلمس مقبس الكهرباء بيدين مبللتين.",
+        "en": "Do not touch the socket with wet hands.",
         "audio": {
           "ru": "assets/audio/ru/examples/rozetka-novaya.mp3",
           "ar": "assets/audio/ar/examples/rozetka-novaya.mp3",
           "en": "assets/audio/en/examples/rozetka-novaya.mp3"
         },
-        "arVocalized": "هَذَا مَقْبَس كَهْرَبَاء جَدِيد.",
-        "arTransliterationRu": "хаза макбис кахраба джадид.",
-        "arTransliterationEn": "khaza makbis kakhraba dzhadid."
+        "arVocalized": "لَا تَلْمَسْ مَقْبَس الْكَهْرَبَاء بِيَدَيْنِ مُبَلَّلَتَيْنِ.",
+        "arTransliterationRu": "ла талмас макбис аль-кахраба бийадайни мубалалатайни.",
+        "arTransliterationEn": "la talmas makbis al'-kakhraba biyadayni mubalalatayni."
       }
     ],
     "phrases": [
@@ -7385,30 +7385,30 @@
         "arTransliterationEn": "idgat ala miftakh an-nur."
       },
       {
-        "ru": "Где выключатель?",
-        "ar": "أين مفتاح النور؟",
-        "en": "Where is the light switch?",
+        "ru": "Выключатель возле двери.",
+        "ar": "مفتاح النور بجانب الباب.",
+        "en": "The light switch is by the door.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-vyklyuchatel?.mp3",
           "ar": "assets/audio/ar/examples/gde-vyklyuchatel?.mp3",
           "en": "assets/audio/en/examples/gde-vyklyuchatel?.mp3"
         },
-        "arVocalized": "أَيْنَ مِفْتَاح النُّور؟",
-        "arTransliterationRu": "айн мифтах аль-нур؟",
-        "arTransliterationEn": "ayn miftakh al'-nur؟"
+        "arVocalized": "مِفْتَاح النُّور بِجَانِب الْبَاب.",
+        "arTransliterationRu": "мифтах аль-нур биджаниб аль-баб.",
+        "arTransliterationEn": "miftakh al'-nur bidzhanib al'-bab."
       },
       {
-        "ru": "Выключатель новый.",
-        "ar": "هذا مفتاح نور جديد.",
-        "en": "This light switch is new.",
+        "ru": "Нажми на выключатель, пожалуйста.",
+        "ar": "اضغط على مفتاح النور من فضلك.",
+        "en": "Please press the light switch.",
         "audio": {
           "ru": "assets/audio/ru/examples/vyklyuchatel-novyy.mp3",
           "ar": "assets/audio/ar/examples/vyklyuchatel-novyy.mp3",
           "en": "assets/audio/en/examples/vyklyuchatel-novyy.mp3"
         },
-        "arVocalized": "هَذَا مِفْتَاح نُور جَدِيد.",
-        "arTransliterationRu": "хаза мифтах нур джадид.",
-        "arTransliterationEn": "khaza miftakh nur dzhadid."
+        "arVocalized": "اِضْغَطْ عَلَى مِفْتَاح النُّور مِنْ فَضْلِكَ.",
+        "arTransliterationRu": "идгат аля мифтах аль-нур мин фадлика.",
+        "arTransliterationEn": "idgat alya miftakh al'-nur min fadlika."
       }
     ],
     "phrases": [
@@ -7516,30 +7516,30 @@
         "arTransliterationEn": "al-dzhakit ala ash-shama."
       },
       {
-        "ru": "Где вешалка?",
-        "ar": "أين الشماعة؟",
-        "en": "Where is the hanger?",
+        "ru": "Вешалка стоит в прихожей.",
+        "ar": "الشماعة في المدخل.",
+        "en": "The hanger is in the hallway.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-veshalka?.mp3",
           "ar": "assets/audio/ar/examples/gde-veshalka?.mp3",
           "en": "assets/audio/en/examples/gde-veshalka?.mp3"
         },
-        "arVocalized": "أَيْنَ الشَّمَّاعَة؟",
-        "arTransliterationRu": "айн аль-шамаа؟",
-        "arTransliterationEn": "ayn al'-shamaa؟"
+        "arVocalized": "الشَّمَّاعَة فِي المَدْخَل.",
+        "arTransliterationRu": "аль-шамаа фи аль-мадхал.",
+        "arTransliterationEn": "al'-shamaa fi al'-madkhal."
       },
       {
-        "ru": "Вешалка новая.",
-        "ar": "هذه شماعة جديدة.",
-        "en": "This hanger is new.",
+        "ru": "Повесь пальто на вешалку.",
+        "ar": "علّق المعطف على الشماعة.",
+        "en": "Hang the coat on the hanger.",
         "audio": {
           "ru": "assets/audio/ru/examples/veshalka-novaya.mp3",
           "ar": "assets/audio/ar/examples/veshalka-novaya.mp3",
           "en": "assets/audio/en/examples/veshalka-novaya.mp3"
         },
-        "arVocalized": "هَذِهِ شَمَّاعَة جَدِيدَة.",
-        "arTransliterationRu": "хазихи шамаа джадида.",
-        "arTransliterationEn": "khazikhi shamaa dzhadida."
+        "arVocalized": "عَلِّقْ المِعْطَف عَلَى الشَّمَّاعَة.",
+        "arTransliterationRu": "алик аль-миатаф аля аль-шамаа.",
+        "arTransliterationEn": "alik al'-miataf alya al'-shamaa."
       }
     ],
     "phrases": [
@@ -7647,20 +7647,20 @@
         "arTransliterationEn": "al-martaba dzhadida."
       },
       {
-        "ru": "Где матрас?",
-        "ar": "أين المرتبة؟",
-        "en": "Where is the mattress?",
-        "arVocalized": "أَيْنَ الْمَرْتَبَة؟",
-        "arTransliterationRu": "айн аль-мартаба؟",
-        "arTransliterationEn": "ayn al'-martaba؟"
-      },
-      {
         "ru": "Матрас лежит на кровати.",
         "ar": "المرتبة على السرير.",
         "en": "The mattress is on the bed.",
         "arVocalized": "الْمَرْتَبَة عَلَى السَّرِير.",
         "arTransliterationRu": "аль-мартаба аля аль-сарир.",
         "arTransliterationEn": "al'-martaba alya al'-sarir."
+      },
+      {
+        "ru": "Мы купили новый матрас.",
+        "ar": "اشترينا مرتبة جديدة.",
+        "en": "We bought a new mattress.",
+        "arVocalized": "اِشْتَرَيْنَا مَرْتَبَة جَدِيدَة.",
+        "arTransliterationRu": "аиштарайна мартаба джадида.",
+        "arTransliterationEn": "aishtarayna martaba dzhadida."
       }
     ],
     "phrases": [
@@ -7768,30 +7768,30 @@
         "arTransliterationEn": "al-mala nazifa."
       },
       {
-        "ru": "Где простыня?",
-        "ar": "أين الملاءة؟",
-        "en": "Where is the sheet?",
+        "ru": "Простыня лежит на кровати.",
+        "ar": "الملاءة على السرير.",
+        "en": "The sheet is on the bed.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-prostynya?.mp3",
           "ar": "assets/audio/ar/examples/gde-prostynya?.mp3",
           "en": "assets/audio/en/examples/gde-prostynya?.mp3"
         },
-        "arVocalized": "أَيْنَ الْمِلَاءَة؟",
-        "arTransliterationRu": "айн аль-маляа؟",
-        "arTransliterationEn": "ayn al'-malyaa؟"
+        "arVocalized": "الْمِلَاءَة عَلَى السَّرِير.",
+        "arTransliterationRu": "аль-маляа аля аль-сарир.",
+        "arTransliterationEn": "al'-malyaa alya al'-sarir."
       },
       {
-        "ru": "Простыня новая.",
-        "ar": "هذه ملاءة جديدة.",
-        "en": "This sheet is new.",
+        "ru": "Постирай простыню, пожалуйста.",
+        "ar": "اغسل الملاءة من فضلك.",
+        "en": "Please wash the sheet.",
         "audio": {
           "ru": "assets/audio/ru/examples/prostynya-novaya.mp3",
           "ar": "assets/audio/ar/examples/prostynya-novaya.mp3",
           "en": "assets/audio/en/examples/prostynya-novaya.mp3"
         },
-        "arVocalized": "هَذِهِ مِلَاءَة جَدِيدَة.",
-        "arTransliterationRu": "хазихи маляа джадида.",
-        "arTransliterationEn": "khazikhi malyaa dzhadida."
+        "arVocalized": "اِغْسِلْ الْمِلَاءَة مِنْ فَضْلِكَ.",
+        "arTransliterationRu": "аигсил аль-маляа мин фадлика.",
+        "arTransliterationEn": "aigsil al'-malyaa min fadlika."
       }
     ],
     "phrases": [
@@ -7899,30 +7899,30 @@
         "arTransliterationEn": "al-malabis fi ad-dulab."
       },
       {
-        "ru": "Где одежда?",
-        "ar": "أين الملابس؟",
-        "en": "Where is the clothes?",
+        "ru": "Одежда висит в шкафу.",
+        "ar": "الملابس معلقة في الدولاب.",
+        "en": "The clothes are hanging in the wardrobe.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-odezhda?.mp3",
           "ar": "assets/audio/ar/examples/gde-odezhda?.mp3",
           "en": "assets/audio/en/examples/gde-odezhda?.mp3"
         },
-        "arVocalized": "أَيْنَ الْمَلَابِس؟",
-        "arTransliterationRu": "айн аль-малабис؟",
-        "arTransliterationEn": "ayn al'-malabis؟"
+        "arVocalized": "الْمَلَابِس مُعَلَّقَة فِي الدُّولَاب.",
+        "arTransliterationRu": "аль-малабис муалака фи аль-дулаб.",
+        "arTransliterationEn": "al'-malabis mualaka fi al'-dulab."
       },
       {
-        "ru": "Одежда новая.",
-        "ar": "هذه ملابس جديدة.",
-        "en": "This clothes is new.",
+        "ru": "Я складываю одежду в сумку.",
+        "ar": "أضع الملابس في الحقيبة.",
+        "en": "I put the clothes in the bag.",
         "audio": {
           "ru": "assets/audio/ru/examples/odezhda-novaya.mp3",
           "ar": "assets/audio/ar/examples/odezhda-novaya.mp3",
           "en": "assets/audio/en/examples/odezhda-novaya.mp3"
         },
-        "arVocalized": "هَذِهِ مَلَابِس جَدِيدَة.",
-        "arTransliterationRu": "хазихи малабис джадида.",
-        "arTransliterationEn": "khazikhi malabis dzhadida."
+        "arVocalized": "أَضَعُ الْمَلَابِس فِي الْحَقِيبَة.",
+        "arTransliterationRu": "адау аль-малабис фи аль-хакиба.",
+        "arTransliterationEn": "adau al'-malabis fi al'-khakiba."
       }
     ],
     "phrases": [
@@ -8030,30 +8030,30 @@
         "arTransliterationEn": "al-khakiba ala al-ard."
       },
       {
-        "ru": "Где сумка?",
-        "ar": "أين الحقيبة؟",
-        "en": "Where is the bag?",
+        "ru": "Сумка стоит у двери.",
+        "ar": "الحقيبة بجانب الباب.",
+        "en": "The bag is by the door.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-sumka?.mp3",
           "ar": "assets/audio/ar/examples/gde-sumka?.mp3",
           "en": "assets/audio/en/examples/gde-sumka?.mp3"
         },
-        "arVocalized": "أَيْنَ الْحَقِيبَة؟",
-        "arTransliterationRu": "айн аль-хакиба؟",
-        "arTransliterationEn": "ayn al'-khakiba؟"
+        "arVocalized": "الْحَقِيبَة بِجَانِب الْبَاب.",
+        "arTransliterationRu": "аль-хакиба биджаниб аль-баб.",
+        "arTransliterationEn": "al'-khakiba bidzhanib al'-bab."
       },
       {
-        "ru": "Сумка новая.",
-        "ar": "هذه حقيبة جديدة.",
-        "en": "This bag is new.",
+        "ru": "Положи книгу в сумку.",
+        "ar": "ضع الكتاب في الحقيبة.",
+        "en": "Put the book in the bag.",
         "audio": {
           "ru": "assets/audio/ru/examples/sumka-novaya.mp3",
           "ar": "assets/audio/ar/examples/sumka-novaya.mp3",
           "en": "assets/audio/en/examples/sumka-novaya.mp3"
         },
-        "arVocalized": "هَذِهِ حَقِيبَة جَدِيدَة.",
-        "arTransliterationRu": "хазихи хакиба джадида.",
-        "arTransliterationEn": "khazikhi khakiba dzhadida."
+        "arVocalized": "ضَعْ الْكِتَاب فِي الْحَقِيبَة.",
+        "arTransliterationRu": "да аль-китаб фи аль-хакиба.",
+        "arTransliterationEn": "da al'-kitab fi al'-khakiba."
       }
     ],
     "phrases": [
@@ -8161,30 +8161,30 @@
         "arTransliterationEn": "as-sunduk takht at-tavila."
       },
       {
-        "ru": "Где коробка?",
-        "ar": "أين الصندوق؟",
-        "en": "Where is the box?",
+        "ru": "Коробка стоит на полу.",
+        "ar": "الصندوق على الأرضية.",
+        "en": "The box is on the floor.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-korobka?.mp3",
           "ar": "assets/audio/ar/examples/gde-korobka?.mp3",
           "en": "assets/audio/en/examples/gde-korobka?.mp3"
         },
-        "arVocalized": "أَيْنَ الصُّنْدُوق؟",
-        "arTransliterationRu": "айн аль-сандук؟",
-        "arTransliterationEn": "ayn al'-sanduk؟"
+        "arVocalized": "الصُّنْدُوق عَلَى الْأَرْضِيَّة.",
+        "arTransliterationRu": "аль-сундук аля аль-ардия.",
+        "arTransliterationEn": "al'-sunduk alya al'-ardiya."
       },
       {
-        "ru": "Коробка новая.",
-        "ar": "هذا صندوق جديد.",
-        "en": "This box is new.",
+        "ru": "Открой эту коробку, пожалуйста.",
+        "ar": "افتح هذا الصندوق من فضلك.",
+        "en": "Please open this box.",
         "audio": {
           "ru": "assets/audio/ru/examples/korobka-novaya.mp3",
           "ar": "assets/audio/ar/examples/korobka-novaya.mp3",
           "en": "assets/audio/en/examples/korobka-novaya.mp3"
         },
-        "arVocalized": "هَذَا صُنْدُوق جَدِيد.",
-        "arTransliterationRu": "хаза сандук джадид.",
-        "arTransliterationEn": "khaza sanduk dzhadid."
+        "arVocalized": "اِفْتَحْ هَذَا الصُّنْدُوق مِنْ فَضْلِكَ.",
+        "arTransliterationRu": "ифтах хаза аль-сундук мин фадлика.",
+        "arTransliterationEn": "iftakh khaza al'-sunduk min fadlika."
       }
     ],
     "phrases": [
@@ -8193,24 +8193,24 @@
         "ar": "هذا صندوق",
         "en": "this box",
         "arVocalized": "هَذَا صُنْدُوق",
-        "arTransliterationRu": "хаза сандук",
-        "arTransliterationEn": "khaza sanduk"
+        "arTransliterationRu": "хаза сундук",
+        "arTransliterationEn": "khaza sunduk"
       },
       {
         "ru": "новая коробка",
         "ar": "صندوق جديد",
         "en": "new box",
         "arVocalized": "صُنْدُوق جَدِيد",
-        "arTransliterationRu": "сандук джадид",
-        "arTransliterationEn": "sanduk dzhadid"
+        "arTransliterationRu": "сундук джадид",
+        "arTransliterationEn": "sunduk dzhadid"
       },
       {
         "ru": "где коробка?",
         "ar": "أين الصندوق؟",
         "en": "where is the box?",
         "arVocalized": "أَيْنَ الصُّنْدُوق؟",
-        "arTransliterationRu": "айн аль-сандук؟",
-        "arTransliterationEn": "ayn al'-sanduk؟"
+        "arTransliterationRu": "айн аль-сундук؟",
+        "arTransliterationEn": "ayn al'-sunduk؟"
       }
     ],
     "detailQuality": "full-v8.2",
@@ -8292,30 +8292,30 @@
         "arTransliterationEn": "sakhkhin al-akl fi al-mikruvayf."
       },
       {
-        "ru": "Где микроволновка?",
-        "ar": "أين الميكروويف؟",
-        "en": "Where is the microwave?",
+        "ru": "Микроволновка стоит на кухне.",
+        "ar": "الميكروويف في المطبخ.",
+        "en": "The microwave is in the kitchen.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-mikrovolnovka?.mp3",
           "ar": "assets/audio/ar/examples/gde-mikrovolnovka?.mp3",
           "en": "assets/audio/en/examples/gde-mikrovolnovka?.mp3"
         },
-        "arVocalized": "أَيْنَ الْمِيكْرُووِيف؟",
-        "arTransliterationRu": "айн аль-майкровайф؟",
-        "arTransliterationEn": "ayn al'-maykrovayf؟"
+        "arVocalized": "الْمِيكْرُووِيف فِي الْمَطْبَخ.",
+        "arTransliterationRu": "аль-майкровайф фи аль-матбах.",
+        "arTransliterationEn": "al'-maykrovayf fi al'-matbakh."
       },
       {
-        "ru": "Микроволновка новая.",
-        "ar": "هذا ميكروويف جديد.",
-        "en": "This microwave is new.",
+        "ru": "Разогрей суп в микроволновке.",
+        "ar": "سخّن الحساء في الميكروويف.",
+        "en": "Heat the soup in the microwave.",
         "audio": {
           "ru": "assets/audio/ru/examples/mikrovolnovka-novaya.mp3",
           "ar": "assets/audio/ar/examples/mikrovolnovka-novaya.mp3",
           "en": "assets/audio/en/examples/mikrovolnovka-novaya.mp3"
         },
-        "arVocalized": "هَذَا مِيكْرُووِيف جَدِيد.",
-        "arTransliterationRu": "хаза майкровайф джадид.",
-        "arTransliterationEn": "khaza maykrovayf dzhadid."
+        "arVocalized": "سَخِّنْ الحَسَاء فِي الْمِيكْرُووِيف.",
+        "arTransliterationRu": "сахин аль-хасаъ фи аль-майкровайф.",
+        "arTransliterationEn": "sakhin al'-khasaъ fi al'-maykrovayf."
       }
     ],
     "phrases": [
@@ -8423,30 +8423,30 @@
         "arTransliterationEn": "al-fatira fi al-furn."
       },
       {
-        "ru": "Где духовка?",
-        "ar": "أين الفرن؟",
-        "en": "Where is the oven?",
+        "ru": "Духовка включена.",
+        "ar": "الفرن قيد التشغيل.",
+        "en": "The oven is on.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-dukhovka?.mp3",
           "ar": "assets/audio/ar/examples/gde-dukhovka?.mp3",
           "en": "assets/audio/en/examples/gde-dukhovka?.mp3"
         },
-        "arVocalized": "أَيْنَ الْفُرْن؟",
-        "arTransliterationRu": "айн аль-фурн؟",
-        "arTransliterationEn": "ayn al'-furn؟"
+        "arVocalized": "الْفُرْن قَيْدَ التَّشْغِيل.",
+        "arTransliterationRu": "аль-фурн кайда аль-ташгийл.",
+        "arTransliterationEn": "al'-furn kayda al'-tashgiyl."
       },
       {
-        "ru": "Духовка новая.",
-        "ar": "هذا فرن جديد.",
-        "en": "This oven is new.",
+        "ru": "Поставь пирог в духовку.",
+        "ar": "ضع الكعكة في الفرن.",
+        "en": "Put the cake in the oven.",
         "audio": {
           "ru": "assets/audio/ru/examples/dukhovka-novaya.mp3",
           "ar": "assets/audio/ar/examples/dukhovka-novaya.mp3",
           "en": "assets/audio/en/examples/dukhovka-novaya.mp3"
         },
-        "arVocalized": "هَذَا فُرْن جَدِيد.",
-        "arTransliterationRu": "хаза фурн джадид.",
-        "arTransliterationEn": "khaza furn dzhadid."
+        "arVocalized": "ضَعْ الكَعْكَة فِي الْفُرْن.",
+        "arTransliterationRu": "да аль-кака фи аль-фурн.",
+        "arTransliterationEn": "da al'-kaka fi al'-furn."
       }
     ],
     "phrases": [
@@ -8554,30 +8554,30 @@
         "arTransliterationEn": "al-gallaya fi al-matbakh."
       },
       {
-        "ru": "Где чайник?",
-        "ar": "أين الغلاية؟",
-        "en": "Where is the kettle?",
+        "ru": "Чайник кипит на кухне.",
+        "ar": "الغلاية تغلي في المطبخ.",
+        "en": "The kettle is boiling in the kitchen.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-chaynik?.mp3",
           "ar": "assets/audio/ar/examples/gde-chaynik?.mp3",
           "en": "assets/audio/en/examples/gde-chaynik?.mp3"
         },
-        "arVocalized": "أَيْنَ الْغَلَّايَة؟",
-        "arTransliterationRu": "айн аль-галляйя؟",
-        "arTransliterationEn": "ayn al'-gallyayya؟"
+        "arVocalized": "الْغَلَّايَة تَغْلِي فِي الْمَطْبَخ.",
+        "arTransliterationRu": "аль-галлая таглий фи аль-матбах.",
+        "arTransliterationEn": "al'-gallaya tagliy fi al'-matbakh."
       },
       {
-        "ru": "Чайник новый.",
-        "ar": "هذه غلاية جديدة.",
-        "en": "This kettle is new.",
+        "ru": "Налей воду из чайника.",
+        "ar": "اسكب الماء من الغلاية.",
+        "en": "Pour water from the kettle.",
         "audio": {
           "ru": "assets/audio/ru/examples/chaynik-novyy.mp3",
           "ar": "assets/audio/ar/examples/chaynik-novyy.mp3",
           "en": "assets/audio/en/examples/chaynik-novyy.mp3"
         },
-        "arVocalized": "هَذِهِ غَلَّايَة جَدِيدَة.",
-        "arTransliterationRu": "хазихи галляйя джадида.",
-        "arTransliterationEn": "khazikhi gallyayya dzhadida."
+        "arVocalized": "اِسْكُبْ الْمَاء مِنْ الْغَلَّايَة.",
+        "arTransliterationRu": "аискуб аль-маа мин аль-галлая.",
+        "arTransliterationEn": "aiskub al'-maa min al'-gallaya."
       }
     ],
     "phrases": [
@@ -8586,24 +8586,24 @@
         "ar": "هذه غلاية",
         "en": "this kettle",
         "arVocalized": "هَذِهِ غَلَّايَة",
-        "arTransliterationRu": "хазихи галляйя",
-        "arTransliterationEn": "khazikhi gallyayya"
+        "arTransliterationRu": "хазихи галлая",
+        "arTransliterationEn": "khazikhi gallaya"
       },
       {
         "ru": "новый чайник",
         "ar": "غلاية جديدة",
         "en": "new kettle",
         "arVocalized": "غَلَّايَة جَدِيدَة",
-        "arTransliterationRu": "галляйя джадида",
-        "arTransliterationEn": "gallyayya dzhadida"
+        "arTransliterationRu": "галлая джадида",
+        "arTransliterationEn": "gallaya dzhadida"
       },
       {
         "ru": "где чайник?",
         "ar": "أين الغلاية؟",
         "en": "where is the kettle?",
         "arVocalized": "أَيْنَ الْغَلَّايَة؟",
-        "arTransliterationRu": "айн аль-галляйя؟",
-        "arTransliterationEn": "ayn al'-gallyayya؟"
+        "arTransliterationRu": "айн аль-галлая؟",
+        "arTransliterationEn": "ayn al'-gallaya؟"
       }
     ],
     "detailQuality": "full-v8.2",
@@ -8685,30 +8685,30 @@
         "arTransliterationEn": "irmi al-kumama."
       },
       {
-        "ru": "Где мусор?",
-        "ar": "أين القمامة؟",
-        "en": "Where is the trash?",
+        "ru": "Мусор лежит в ведре.",
+        "ar": "القمامة في سلة المهملات.",
+        "en": "The trash is in the bin.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-musor?.mp3",
           "ar": "assets/audio/ar/examples/gde-musor?.mp3",
           "en": "assets/audio/en/examples/gde-musor?.mp3"
         },
-        "arVocalized": "أَيْنَ الْقُمَامَة؟",
-        "arTransliterationRu": "айн аль-кумама؟",
-        "arTransliterationEn": "ayn al'-kumama؟"
+        "arVocalized": "الْقُمَامَة فِي سَلَّة المُهْمَلَات.",
+        "arTransliterationRu": "аль-кумама фи салаа аль-мухмалат.",
+        "arTransliterationEn": "al'-kumama fi salaa al'-mukhmalat."
       },
       {
-        "ru": "Мусор новый.",
-        "ar": "هذه قمامة جديدة.",
-        "en": "This trash is new.",
+        "ru": "Вынеси мусор, пожалуйста.",
+        "ar": "أخرج القمامة من فضلك.",
+        "en": "Please take out the trash.",
         "audio": {
           "ru": "assets/audio/ru/examples/musor-novyy.mp3",
           "ar": "assets/audio/ar/examples/musor-novyy.mp3",
           "en": "assets/audio/en/examples/musor-novyy.mp3"
         },
-        "arVocalized": "هَذِهِ قُمَامَة جَدِيدَة.",
-        "arTransliterationRu": "хазихи кумама джадида.",
-        "arTransliterationEn": "khazikhi kumama dzhadida."
+        "arVocalized": "أُخْرِجُ الْقُمَامَة مِنْ فَضْلِكَ.",
+        "arTransliterationRu": "аухриджу аль-кумама мин фадлика.",
+        "arTransliterationEn": "aukhridzhu al'-kumama min fadlika."
       }
     ],
     "phrases": [
@@ -8816,30 +8816,30 @@
         "arTransliterationEn": "al-gassala tamal."
       },
       {
-        "ru": "Где стиральная машина?",
-        "ar": "أين الغسالة؟",
-        "en": "Where is the washing machine?",
+        "ru": "Стиральная машина работает.",
+        "ar": "غسالة الملابس تعمل.",
+        "en": "The washing machine is running.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-stiralnaya-mashina?.mp3",
           "ar": "assets/audio/ar/examples/gde-stiralnaya-mashina?.mp3",
           "en": "assets/audio/en/examples/gde-stiralnaya-mashina?.mp3"
         },
-        "arVocalized": "أَيْنَ الْغَسَّالَة؟",
-        "arTransliterationRu": "айн аль-гассалят؟",
-        "arTransliterationEn": "ayn al'-gassalyat؟"
+        "arVocalized": "غَسَّالَة الْمَلَابِس تَعْمَلُ.",
+        "arTransliterationRu": "гассалят аль-малабис таамаль.",
+        "arTransliterationEn": "gassalyat al'-malabis taamal'."
       },
       {
-        "ru": "Стиральная машина новая.",
-        "ar": "هذه غسالة ملابس جديدة.",
-        "en": "This washing machine is new.",
+        "ru": "Положи одежду в стиральную машину.",
+        "ar": "ضع الملابس في غسالة الملابس.",
+        "en": "Put the clothes in the washing machine.",
         "audio": {
           "ru": "assets/audio/ru/examples/stiralnaya-mashina-novaya.mp3",
           "ar": "assets/audio/ar/examples/stiralnaya-mashina-novaya.mp3",
           "en": "assets/audio/en/examples/stiralnaya-mashina-novaya.mp3"
         },
-        "arVocalized": "هَذِهِ غَسَّالَة مَلَابِس جَدِيدَة.",
-        "arTransliterationRu": "хазихи гассалят малабис джадида.",
-        "arTransliterationEn": "khazikhi gassalyat malabis dzhadida."
+        "arVocalized": "ضَعْ الْمَلَابِس فِي غَسَّالَة الْمَلَابِس.",
+        "arTransliterationRu": "да аль-малабис фи гассалят аль-малабис.",
+        "arTransliterationEn": "da al'-malabis fi gassalyat al'-malabis."
       }
     ],
     "phrases": [
@@ -8947,30 +8947,30 @@
         "arTransliterationEn": "al-miknasa al-kakhrabaiya fi al-gurfa."
       },
       {
-        "ru": "Где пылесос?",
-        "ar": "أين المكنسة الكهربائية؟",
-        "en": "Where is the vacuum cleaner?",
+        "ru": "Пылесос стоит в шкафу.",
+        "ar": "المكنسة الكهربائية في الدولاب.",
+        "en": "The vacuum cleaner is in the wardrobe.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-pylesos?.mp3",
           "ar": "assets/audio/ar/examples/gde-pylesos?.mp3",
           "en": "assets/audio/en/examples/gde-pylesos?.mp3"
         },
-        "arVocalized": "أَيْنَ الْمِكْنَسَة الْكَهْرَبَائِيَّة؟",
-        "arTransliterationRu": "айн аль-микнаса аль-кахрабаия؟",
-        "arTransliterationEn": "ayn al'-miknasa al'-kakhrabaiya؟"
+        "arVocalized": "الْمِكْنَسَة الْكَهْرَبَائِيَّة فِي الدُّولَاب.",
+        "arTransliterationRu": "аль-микнаса аль-кахрабаия фи аль-дулаб.",
+        "arTransliterationEn": "al'-miknasa al'-kakhrabaiya fi al'-dulab."
       },
       {
-        "ru": "Пылесос новый.",
-        "ar": "هذه مكنسة كهربائية جديدة.",
-        "en": "This vacuum cleaner is new.",
+        "ru": "Я убираю комнату пылесосом.",
+        "ar": "أنظف الغرفة بالمكنسة الكهربائية.",
+        "en": "I clean the room with a vacuum cleaner.",
         "audio": {
           "ru": "assets/audio/ru/examples/pylesos-novyy.mp3",
           "ar": "assets/audio/ar/examples/pylesos-novyy.mp3",
           "en": "assets/audio/en/examples/pylesos-novyy.mp3"
         },
-        "arVocalized": "هَذِهِ مِكْنَسَة كَهْرَبَائِيَّة جَدِيدَة.",
-        "arTransliterationRu": "хазихи микнаса кахрабаия джадида.",
-        "arTransliterationEn": "khazikhi miknasa kakhrabaiya dzhadida."
+        "arVocalized": "أُنَظِّفُ الْغُرْفَة بِالمِكْنَسَة الْكَهْرَبَائِيَّة.",
+        "arTransliterationRu": "ауназифу аль-гурфа биалмикнаса аль-кахрабаия.",
+        "arTransliterationEn": "aunazifu al'-gurfa bialmiknasa al'-kakhrabaiya."
       }
     ],
     "phrases": [
@@ -9078,30 +9078,30 @@
         "arTransliterationEn": "al-mikva sakhina."
       },
       {
-        "ru": "Где утюг?",
-        "ar": "أين المكواة؟",
-        "en": "Where is the iron?",
+        "ru": "Утюг нагрелся.",
+        "ar": "سخنت المكواة.",
+        "en": "The iron is hot.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-utyug?.mp3",
           "ar": "assets/audio/ar/examples/gde-utyug?.mp3",
           "en": "assets/audio/en/examples/gde-utyug?.mp3"
         },
-        "arVocalized": "أَيْنَ الْمِكْوَاة؟",
-        "arTransliterationRu": "айн аль-миква؟",
-        "arTransliterationEn": "ayn al'-mikva؟"
+        "arVocalized": "سَخُنَتْ الْمِكْوَاة.",
+        "arTransliterationRu": "сахунат аль-миква.",
+        "arTransliterationEn": "sakhunat al'-mikva."
       },
       {
-        "ru": "Утюг новый.",
-        "ar": "هذه مكواة جديدة.",
-        "en": "This iron is new.",
+        "ru": "Поставь утюг на место.",
+        "ar": "أعد المكواة إلى مكانها.",
+        "en": "Put the iron back in its place.",
         "audio": {
           "ru": "assets/audio/ru/examples/utyug-novyy.mp3",
           "ar": "assets/audio/ar/examples/utyug-novyy.mp3",
           "en": "assets/audio/en/examples/utyug-novyy.mp3"
         },
-        "arVocalized": "هَذِهِ مِكْوَاة جَدِيدَة.",
-        "arTransliterationRu": "хазихи миква джадида.",
-        "arTransliterationEn": "khazikhi mikva dzhadida."
+        "arVocalized": "أَعِدْ الْمِكْوَاة إِلَى مَكَانِهَا.",
+        "arTransliterationRu": "ааид аль-миква иля маканиха.",
+        "arTransliterationEn": "aaid al'-mikva ilya makanikha."
       }
     ],
     "phrases": [
@@ -9209,30 +9209,30 @@
         "arTransliterationEn": "shaggil al-mukayyif."
       },
       {
-        "ru": "Где кондиционер?",
-        "ar": "أين المكيّف؟",
-        "en": "Where is the air conditioner?",
+        "ru": "Кондиционер работает.",
+        "ar": "المكيّف يعمل.",
+        "en": "The air conditioner is working.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-konditsioner?.mp3",
           "ar": "assets/audio/ar/examples/gde-konditsioner?.mp3",
           "en": "assets/audio/en/examples/gde-konditsioner?.mp3"
         },
-        "arVocalized": "أَيْنَ الْمُكَيِّف؟",
-        "arTransliterationRu": "айн аль-мукайиф؟",
-        "arTransliterationEn": "ayn al'-mukayif؟"
+        "arVocalized": "الْمُكَيِّف يَعْمَلُ.",
+        "arTransliterationRu": "аль-мукайиф иамаль.",
+        "arTransliterationEn": "al'-mukayif iamal'."
       },
       {
-        "ru": "Кондиционер новый.",
-        "ar": "هذا مكيّف جديد.",
-        "en": "This air conditioner is new.",
+        "ru": "Включи кондиционер, пожалуйста.",
+        "ar": "شغّل المكيّف من فضلك.",
+        "en": "Please turn on the air conditioner.",
         "audio": {
           "ru": "assets/audio/ru/examples/konditsioner-novyy.mp3",
           "ar": "assets/audio/ar/examples/konditsioner-novyy.mp3",
           "en": "assets/audio/en/examples/konditsioner-novyy.mp3"
         },
-        "arVocalized": "هَذَا مُكَيِّف جَدِيد.",
-        "arTransliterationRu": "хаза мукайиф джадид.",
-        "arTransliterationEn": "khaza mukayif dzhadid."
+        "arVocalized": "شَغِّلْ الْمُكَيِّف مِنْ فَضْلِكَ.",
+        "arTransliterationRu": "шагил аль-мукайиф мин фадлика.",
+        "arTransliterationEn": "shagil al'-mukayif min fadlika."
       }
     ],
     "phrases": [
@@ -9340,30 +9340,30 @@
         "arTransliterationEn": "ad-daffaya tamal."
       },
       {
-        "ru": "Где обогреватель?",
-        "ar": "أين الدفاية؟",
-        "en": "Where is the heater?",
+        "ru": "Обогреватель стоит у окна.",
+        "ar": "الدفاية بجانب النافذة.",
+        "en": "The heater is by the window.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-obogrevatel?.mp3",
           "ar": "assets/audio/ar/examples/gde-obogrevatel?.mp3",
           "en": "assets/audio/en/examples/gde-obogrevatel?.mp3"
         },
-        "arVocalized": "أَيْنَ الدَّفَّايَة؟",
-        "arTransliterationRu": "айн аль-дафаайа؟",
-        "arTransliterationEn": "ayn al'-dafaaya؟"
+        "arVocalized": "الدَّفَّايَة بِجَانِب النَّافِذَة.",
+        "arTransliterationRu": "аль-даффая биджаниб аль-нафиза.",
+        "arTransliterationEn": "al'-daffaya bidzhanib al'-nafiza."
       },
       {
-        "ru": "Обогреватель новый.",
-        "ar": "هذه دفاية جديدة.",
-        "en": "This heater is new.",
+        "ru": "Зимой мы включаем обогреватель.",
+        "ar": "نشغّل الدفاية في الشتاء.",
+        "en": "We turn on the heater in winter.",
         "audio": {
           "ru": "assets/audio/ru/examples/obogrevatel-novyy.mp3",
           "ar": "assets/audio/ar/examples/obogrevatel-novyy.mp3",
           "en": "assets/audio/en/examples/obogrevatel-novyy.mp3"
         },
-        "arVocalized": "هَذِهِ دَفَّايَة جَدِيدَة.",
-        "arTransliterationRu": "хазихи дафаайа джадида.",
-        "arTransliterationEn": "khazikhi dafaaya dzhadida."
+        "arVocalized": "نُشَغِّلُ الدَّفَّايَة فِي الشِّتَاء.",
+        "arTransliterationRu": "нушагилу аль-даффая фи аль-шитаъ.",
+        "arTransliterationEn": "nushagilu al'-daffaya fi al'-shitaъ."
       }
     ],
     "phrases": [
@@ -9372,24 +9372,24 @@
         "ar": "هذه دفاية",
         "en": "this heater",
         "arVocalized": "هَذِهِ دَفَّايَة",
-        "arTransliterationRu": "хазихи дафаайа",
-        "arTransliterationEn": "khazikhi dafaaya"
+        "arTransliterationRu": "хазихи даффая",
+        "arTransliterationEn": "khazikhi daffaya"
       },
       {
         "ru": "новый обогреватель",
         "ar": "دفاية جديدة",
         "en": "new heater",
         "arVocalized": "دَفَّايَة جَدِيدَة",
-        "arTransliterationRu": "дафаайа джадида",
-        "arTransliterationEn": "dafaaya dzhadida"
+        "arTransliterationRu": "даффая джадида",
+        "arTransliterationEn": "daffaya dzhadida"
       },
       {
         "ru": "где обогреватель?",
         "ar": "أين الدفاية؟",
         "en": "where is the heater?",
         "arVocalized": "أَيْنَ الدَّفَّايَة؟",
-        "arTransliterationRu": "айн аль-дафаайа؟",
-        "arTransliterationEn": "ayn al'-dafaaya؟"
+        "arTransliterationRu": "айн аль-даффая؟",
+        "arTransliterationEn": "ayn al'-daffaya؟"
       }
     ],
     "detailQuality": "full-v8.2",
@@ -9471,30 +9471,30 @@
         "arTransliterationEn": "al-mikashsha bidzhanib al-khait."
       },
       {
-        "ru": "Где метла?",
-        "ar": "أين المقشة؟",
-        "en": "Where is the broom?",
+        "ru": "Метла стоит за дверью.",
+        "ar": "المقشة خلف الباب.",
+        "en": "The broom is behind the door.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-metla?.mp3",
           "ar": "assets/audio/ar/examples/gde-metla?.mp3",
           "en": "assets/audio/en/examples/gde-metla?.mp3"
         },
-        "arVocalized": "أَيْنَ الْمِقَشَّة؟",
-        "arTransliterationRu": "айн аль-микашша؟",
-        "arTransliterationEn": "ayn al'-mikashsha؟"
+        "arVocalized": "الْمِقَشَّة خَلْفَ الْبَاب.",
+        "arTransliterationRu": "аль-микашша халфа аль-баб.",
+        "arTransliterationEn": "al'-mikashsha khalfa al'-bab."
       },
       {
-        "ru": "Метла новая.",
-        "ar": "هذه مقشة جديدة.",
-        "en": "This broom is new.",
+        "ru": "Возьми метлу и подмети пол.",
+        "ar": "خذ المقشة واكنس الأرضية.",
+        "en": "Take the broom and sweep the floor.",
         "audio": {
           "ru": "assets/audio/ru/examples/metla-novaya.mp3",
           "ar": "assets/audio/ar/examples/metla-novaya.mp3",
           "en": "assets/audio/en/examples/metla-novaya.mp3"
         },
-        "arVocalized": "هَذِهِ مِقَشَّة جَدِيدَة.",
-        "arTransliterationRu": "хазихи микашша джадида.",
-        "arTransliterationEn": "khazikhi mikashsha dzhadida."
+        "arVocalized": "خُذْ الْمِقَشَّة وَاكْنُسْ الْأَرْضِيَّة.",
+        "arTransliterationRu": "хуз аль-микашша вакнус аль-ардия.",
+        "arTransliterationEn": "khuz al'-mikashsha vaknus al'-ardiya."
       }
     ],
     "phrases": [
@@ -9602,30 +9602,30 @@
         "arTransliterationEn": "ana amal ala al-maktab."
       },
       {
-        "ru": "Где письменный стол?",
-        "ar": "أين المكتب؟",
-        "en": "Where is the desk?",
+        "ru": "Письменный стол стоит у окна.",
+        "ar": "المكتب بجانب النافذة.",
+        "en": "The desk is by the window.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-pismennyy-stol?.mp3",
           "ar": "assets/audio/ar/examples/gde-pismennyy-stol?.mp3",
           "en": "assets/audio/en/examples/gde-pismennyy-stol?.mp3"
         },
-        "arVocalized": "أَيْنَ الْمَكْتَب؟",
-        "arTransliterationRu": "айн аль-мактаб؟",
-        "arTransliterationEn": "ayn al'-maktab؟"
+        "arVocalized": "الْمَكْتَب بِجَانِب النَّافِذَة.",
+        "arTransliterationRu": "аль-мактаб биджаниб аль-нафиза.",
+        "arTransliterationEn": "al'-maktab bidzhanib al'-nafiza."
       },
       {
-        "ru": "Письменный стол новый.",
-        "ar": "هذا مكتب جديد.",
-        "en": "This desk is new.",
+        "ru": "Я делаю домашнее задание за письменным столом.",
+        "ar": "أحل واجبي على المكتب.",
+        "en": "I do my homework at the desk.",
         "audio": {
           "ru": "assets/audio/ru/examples/pismennyy-stol-novyy.mp3",
           "ar": "assets/audio/ar/examples/pismennyy-stol-novyy.mp3",
           "en": "assets/audio/en/examples/pismennyy-stol-novyy.mp3"
         },
-        "arVocalized": "هَذَا مَكْتَب جَدِيد.",
-        "arTransliterationRu": "хаза мактаб джадид.",
-        "arTransliterationEn": "khaza maktab dzhadid."
+        "arVocalized": "أَحُلُّ وَاجِبِي عَلَى الْمَكْتَب.",
+        "arTransliterationRu": "ахулу ваджибий аля аль-мактаб.",
+        "arTransliterationEn": "akhulu vadzhibiy alya al'-maktab."
       }
     ],
     "phrases": [
@@ -9733,30 +9733,30 @@
         "arTransliterationEn": "khizana al-adradzh fi gurfa an-naum."
       },
       {
-        "ru": "Где комод?",
-        "ar": "أين خزانة الأدراج؟",
-        "en": "Where is the chest of drawers?",
+        "ru": "Комод стоит рядом с окном.",
+        "ar": "خزانة الأدراج بجانب النافذة.",
+        "en": "The chest of drawers is next to the window.",
         "audio": {
           "ru": "assets/audio/ru/examples/gde-komod?.mp3",
           "ar": "assets/audio/ar/examples/gde-komod?.mp3",
           "en": "assets/audio/en/examples/gde-komod?.mp3"
         },
-        "arVocalized": "أَيْنَ خِزَانَة الْأَدْرَاج؟",
-        "arTransliterationRu": "айн хизанат аль-адрадж؟",
-        "arTransliterationEn": "ayn khizanat al'-adradzh؟"
+        "arVocalized": "خِزَانَة الْأَدْرَاج بِجَانِب النَّافِذَة.",
+        "arTransliterationRu": "хизанат аль-адрадж биджаниб аль-нафиза.",
+        "arTransliterationEn": "khizanat al'-adradzh bidzhanib al'-nafiza."
       },
       {
-        "ru": "Комод новый.",
-        "ar": "هذه خزانة أدراج جديدة.",
-        "en": "This chest of drawers is new.",
+        "ru": "В верхнем ящике комода лежат носки.",
+        "ar": "الجوارب في الدرج العلوي لخزانة الأدراج.",
+        "en": "Socks are in the top drawer of the chest of drawers.",
         "audio": {
           "ru": "assets/audio/ru/examples/komod-novyy.mp3",
           "ar": "assets/audio/ar/examples/komod-novyy.mp3",
           "en": "assets/audio/en/examples/komod-novyy.mp3"
         },
-        "arVocalized": "هَذِهِ خِزَانَة أَدْرَاج جَدِيدَة.",
-        "arTransliterationRu": "хазихи хизанат адрадж джадида.",
-        "arTransliterationEn": "khazikhi khizanat adradzh dzhadida."
+        "arVocalized": "الجَوَارِب فِي الدُّرْج العُلْوِي لِخَزَانَة الْأَدْرَاج.",
+        "arTransliterationRu": "аль-джавариб фи аль-дурдж аль-аулвий лихазана аль-адрадж.",
+        "arTransliterationEn": "al'-dzhavarib fi al'-durdzh al'-aulviy likhazana al'-adradzh."
       }
     ],
     "phrases": [

@@ -107,6 +107,8 @@
       if (panel) panel.classList.toggle("hidden", viewName !== view);
     });
     setSidebarOpen(false);
+    window.scrollTo(0, 0);
+    if (view !== "wordDetail") history.replaceState({ view }, "");
     if (view === "review") renderReview();
     if (view === "quiz") renderQuiz();
     if (view === "progress") renderProgress();

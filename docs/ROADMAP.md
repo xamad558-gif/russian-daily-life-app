@@ -32,7 +32,8 @@ Status: core visual refresh implemented; release follow-ups remain open.
 - [x] Keep the layout responsive for Arabic RTL and Russian/English LTR.
 - [x] Update the cache version and release documentation.
 - [x] Add verified 192x192 and 512x512 PNG PWA icons plus `apple-touch-icon`.
-- [ ] Complete the human-authored sentence-variety pass for the unit.
+- [x] Apply level-aware examples: controlled A1 sentences and contextual A2 sentences.
+- [ ] Add B1 vocabulary and richer B1 sentence patterns when the unit expands.
 
 Release notes: [`CHANGELOG.md`](../CHANGELOG.md#v83-visual-guide). Tracking: [`KNOWN_ISSUES.md`](KNOWN_ISSUES.md).
 

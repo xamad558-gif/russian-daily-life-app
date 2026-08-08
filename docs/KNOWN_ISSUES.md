@@ -12,7 +12,7 @@ Tracked as of v8.3-visual-guide (2026-07-26). Update this list whenever a releas
 - **Browser smoke test depends on the CI/runtime browser.** `npm run test:e2e` covers the main language/card/quiz/offline flow locally; the repository workflow installs Chromium before running it.
 - **`app.js` remains the orchestration entry point.** Feature logic now lives under `js/`; the remaining cleanup is limited to further reducing its event wiring and startup code.
 - **Search has no fuzzy/typo tolerance.** `normalize()` only does lowercasing, trimming, and a few Cyrillic/Arabic letter-variant substitutions — no Levenshtein or similar matching.
-- **Example variety remains limited.** The high-confidence translation and duplicate-example fixes are complete, but many entries still need a human-authored sentence variation pass before a content-quality release.
+- **Advanced example variety is not yet applicable.** A1 examples remain intentionally short, and all A2 entries now use additional household contexts; B1 examples will be added when the unit contains B1 vocabulary.
 
 ## Verified working (do not re-flag without checking)
 
