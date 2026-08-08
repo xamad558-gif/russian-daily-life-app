@@ -111,6 +111,17 @@ async function runSmokeTest() {
     assert.match(await page.locator("#fullWordDetail .example-pronunciation").first().textContent(), /[\u0400-\u04ff]/, "Arabic sentence pronunciation should use Cyrillic for Russian learners");
     await page.locator("#backToWordsBtn").click();
     await page.locator("#cardsGrid .word-card").first().waitFor({ state: "visible" });
+    for (const viewport of [{ width: 320, height: 700 }, { width: 768, height: 1024 }]) {
+      await page.setViewportSize(viewport);
+      const responsiveLayout = await page.evaluate(() => ({ viewportWidth: document.documentElement.clientWidth, documentWidth: document.documentElement.scrollWidth }));
+      assert.ok(responsiveLayout.documentWidth <= responsiveLayout.viewportWidth + 1, `Vocabulary should not overflow at ${viewport.width}px`);
+      await page.locator("#cardsGrid [data-image-detail]").first().click();
+      await page.locator("#fullWordDetail .full-detail-word").waitFor({ state: "visible" });
+      const responsiveDetail = await page.evaluate(() => ({ viewportWidth: document.documentElement.clientWidth, documentWidth: document.documentElement.scrollWidth }));
+      assert.ok(responsiveDetail.documentWidth <= responsiveDetail.viewportWidth + 1, `Word details should not overflow at ${viewport.width}px`);
+      await page.locator("#backToWordsBtn").click();
+      await page.locator("#cardsGrid .word-card").first().waitFor({ state: "visible" });
+    }
 
     await page.locator('[data-ui-lang="ar"]').click();
     assert.equal(await page.locator("body").getAttribute("data-learning-language"), "ru", "Changing the interface to the learning language should select another learning language");
