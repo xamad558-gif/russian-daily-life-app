@@ -1,8 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const dataPath = path.join(process.cwd(), 'data', 'words.json');
-const words = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+const dataPath = path.join(process.cwd(), 'data', 'units', 'home.json');
+const unitFile = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+const words = unitFile.words;
 
 const questionArabicById = {
   home50_001: 'أين البيت؟',
@@ -139,5 +140,5 @@ mattress.examples[2] = {
   en: 'The mattress is on the bed.'
 };
 
-fs.writeFileSync(dataPath, `${JSON.stringify(words, null, 2)}\n`, 'utf8');
+fs.writeFileSync(dataPath, `${JSON.stringify(unitFile, null, 2)}\n`, 'utf8');
 console.log(`Cleaned ${words.length} home entries.`);

@@ -29,7 +29,7 @@
   function renderDetail() {
     const { els } = dependencies;
     if (!els.detailPane) return;
-    const { state, getTranslation, languageValue, orderedLanguages, wordPronunciation, escapeHTML, levelClass, translationRows, audioButtons, playAudio, openFullDetail, changeMastery, toggleFavorite } = dependencies;
+    const { state, getTranslation, languageValue, orderedLanguages, wordPronunciation, escapeHTML, levelClass, roomLabel, translationRows, audioButtons, playAudio, openFullDetail, changeMastery, toggleFavorite } = dependencies;
     const word = state.words.find(item => item.id === state.selectedWordId);
     if (!word) {
       els.detailPane.innerHTML = "";
@@ -54,7 +54,7 @@
         <div class="detail-info-grid">
           <span class="label">${escapeHTML(translation.labels.level)}</span><span class="badge ${levelClass(word.level)}">${escapeHTML(word.level)}</span>
           <span class="label">${escapeHTML(translation.labels.frequency)}</span><span class="stars">${stars}</span>
-          <span class="label">${escapeHTML(translation.labels.category)}</span><span>${escapeHTML(translation.categories[word.subCategory] || word.subCategory)}</span>
+          <span class="label">${escapeHTML(translation.labels.category)}</span><span>${escapeHTML(roomLabel(word.subCategory))}</span>
           <span class="label">${escapeHTML(translation.labels.mastery)}</span><span class="badge">${mastery}%</span>
           <span class="label">${escapeHTML(translation.labels.updated)}</span><span>${escapeHTML(word.addedAt || "2026-07-05")}</span>
         </div>

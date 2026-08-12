@@ -2,7 +2,7 @@
   const translations = {
     ar: {
       dir: "rtl", brandSubtitle: "تعلم الروسية بسهولة", vocabNavLabel: "الكلمات", reviewNavLabel: "المراجعة", quizNavLabel: "الاختبار", progressNavLabel: "التقدم", quizBadge: "جديد",
-      sectionsTitle: "الأقسام", streakTitle: "سلسلة التعلم", streakDays: "7 أيام", streakNote: "استمر في وحدة المنزل!", searchPlaceholder: "ابحث عن كلمة...", loadError: "تعذر تحميل بيانات الكلمات. أعد تحميل الصفحة وحاول مرة أخرى.",
+      sectionsTitle: "الأقسام", unitsTitle: "الوحدات", streakTitle: "سلسلة التعلم", streakDays: "7 أيام", streakNote: "استمر في وحدة المنزل!", searchPlaceholder: "ابحث عن كلمة...", loadError: "تعذر تحميل بيانات الكلمات. أعد تحميل الصفحة وحاول مرة أخرى.",
       pageTitle: "البيت", pageCounterWord: "كلمة", emptyState: "لا توجد نتائج مطابقة.", allSubCategories: "جميع الأقسام الفرعية", allLevels: "جميع المستويات",
       sortPopular: "الأكثر شيوعًا", sortAZ: "أبجديًا A-Z", sortZA: "أبجديًا Z-A", sortMastery: "الأقل إتقانًا",
       playVisible: "🔊 تشغيل الكلمات الظاهرة", resetFilters: "إعادة ضبط", reviewTitle: "كلمات المراجعة", reviewSubtitle: "تظهر هنا كلمات وحدة المنزل التي حفظتها للمراجعة.", reviewEmpty: "لا توجد كلمات محفوظة بعد.", homeHeroKicker: "وحدة البيت · تعلّم بصري", homeHeroTitle: "تعلّم الروسية من الأشياء حولك", homeHeroSubtitle: "اختر الغرفة التي تريدها، ثم اربط الكلمة بالصورة والصوت والجملة.", homeHeroCta: "ابدأ مراجعة اليوم", homeProgressLabel: "تقدم الوحدة", roomStripEyebrow: "استكشف حسب المكان", roomStripTitle: "غرفتك التالية", roomStripHint: "اختر صورة للبدء", roomWords: "كلمة", roomOpen: "افتح قسم",
@@ -13,12 +13,10 @@
       learningStates: { new: "جديدة", learning: "قيد التعلم", review: "للمراجعة", known: "معروفة", mastered: "متقنة" }, dueNow: "مستحقة الآن",
       detail: { fullPage: "📖 صفحة الكلمة", back: "→ رجوع", review: "☆ مراجعة", known: "✓ أعرفها", grammar: "جدول المقارنة", examples: "أمثلة", phrases: "عبارات مهمة", info: "البيان", word: "الكلمة", type: "نوع الكلمة", singular: "المفرد", plural: "الجمع", gender: "الجنس / النوع", example: "مثال" },
       a11y: { openMenu: "فتح القائمة", closeMenu: "إغلاق القائمة", toggleTheme: "تبديل المظهر", openWord: "فتح تفاصيل الكلمة", saveReview: "حفظ للمراجعة", removeReview: "إزالة من المراجعة", playArabic: "تشغيل النطق بالعربية", playRussian: "تشغيل النطق بالروسية", playEnglish: "تشغيل النطق بالإنجليزية", playWord: "تشغيل نطق الكلمة الروسية", gridView: "عرض شبكي", compactView: "عرض مختصر", back: "رجوع" },
-      categories: { home: "الأساسيات", "living-room": "غرفة المعيشة", bedroom: "غرفة النوم", kitchen: "المطبخ", bathroom: "الحمام", "door-window": "الأبواب والنوافذ" },
-      categoryIcons: { home: "🏠", "living-room": "🛋️", bedroom: "🛏️", kitchen: "🍽️", bathroom: "🛁", "door-window": "🚪" }
     },
     en: {
       dir: "ltr", brandSubtitle: "Learn Russian easily", vocabNavLabel: "Words", reviewNavLabel: "Review", quizNavLabel: "Quiz", progressNavLabel: "Progress", quizBadge: "New",
-      sectionsTitle: "Sections", streakTitle: "Learning streak", streakDays: "7 days", streakNote: "Keep going with Home Unit!", searchPlaceholder: "Search for a word...", loadError: "Word data could not be loaded. Reload the page and try again.",
+      sectionsTitle: "Sections", unitsTitle: "Units", streakTitle: "Learning streak", streakDays: "7 days", streakNote: "Keep going with Home Unit!", searchPlaceholder: "Search for a word...", loadError: "Word data could not be loaded. Reload the page and try again.",
       pageTitle: "Home", pageCounterWord: "words", emptyState: "No matching results.", allSubCategories: "All subcategories", allLevels: "All levels",
       sortPopular: "Most common", sortAZ: "Alphabetical A-Z", sortZA: "Alphabetical Z-A", sortMastery: "Lowest mastery",
       playVisible: "🔊 Play visible words", resetFilters: "Reset", reviewTitle: "Review words", reviewSubtitle: "Core Home words you saved appear here for review.", reviewEmpty: "No saved words yet.", homeHeroKicker: "Home unit · visual learning", homeHeroTitle: "Learn Russian from the things around you", homeHeroSubtitle: "Choose a room, then connect each word to its image, sound, and sentence.", homeHeroCta: "Start today’s review", homeProgressLabel: "Unit progress", roomStripEyebrow: "Explore by place", roomStripTitle: "Choose your next room", roomStripHint: "Select an image to begin", roomWords: "words", roomOpen: "Open section",
@@ -29,12 +27,10 @@
       learningStates: { new: "New", learning: "Learning", review: "Due for review", known: "Known", mastered: "Mastered" }, dueNow: "Due now",
       detail: { fullPage: "📖 Full word page", back: "← Back", review: "☆ Review", known: "✓ I know it", grammar: "Grammar comparison", examples: "Examples", phrases: "Useful phrases", info: "Info", word: "Word", type: "Type", singular: "Singular", plural: "Plural", gender: "Gender", example: "Example" },
       a11y: { openMenu: "Open menu", closeMenu: "Close menu", toggleTheme: "Toggle theme", openWord: "Open word details", saveReview: "Save for review", removeReview: "Remove from review", playArabic: "Play Arabic pronunciation", playRussian: "Play Russian pronunciation", playEnglish: "Play English pronunciation", playWord: "Play Russian word pronunciation", gridView: "Grid view", compactView: "Compact view", back: "Back" },
-      categories: { home: "Basics", "living-room": "Living room", bedroom: "Bedroom", kitchen: "Kitchen", bathroom: "Bathroom", "door-window": "Doors & windows" },
-      categoryIcons: { home: "🏠", "living-room": "🛋️", bedroom: "🛏️", kitchen: "🍽️", bathroom: "🛁", "door-window": "🚪" }
     },
     ru: {
       dir: "ltr", brandSubtitle: "Учите русский легко", vocabNavLabel: "Слова", reviewNavLabel: "Повторение", quizNavLabel: "Тест", progressNavLabel: "Прогресс", quizBadge: "Новый",
-      sectionsTitle: "Разделы", streakTitle: "Серия обучения", streakDays: "7 дней", streakNote: "Продолжайте блок Дом!", searchPlaceholder: "Найдите слово...", loadError: "Не удалось загрузить данные слов. Перезагрузите страницу и попробуйте снова.",
+      sectionsTitle: "Разделы", unitsTitle: "Модули", streakTitle: "Серия обучения", streakDays: "7 дней", streakNote: "Продолжайте блок Дом!", searchPlaceholder: "Найдите слово...", loadError: "Не удалось загрузить данные слов. Перезагрузите страницу и попробуйте снова.",
       pageTitle: "Дом", pageCounterWord: "слов", emptyState: "Нет подходящих результатов.", allSubCategories: "Все подразделы", allLevels: "Все уровни",
       sortPopular: "Наиболее частые", sortAZ: "По алфавиту A-Z", sortZA: "По алфавиту Z-A", sortMastery: "Слабое усвоение",
       playVisible: "🔊 Произнести слова", resetFilters: "Сбросить", reviewTitle: "Слова для повторения", reviewSubtitle: "Здесь появляются сохранённые слова из блока Дом.", reviewEmpty: "Сохранённых слов пока нет.", homeHeroKicker: "Блок «Дом» · визуальное обучение", homeHeroTitle: "Учите русский по предметам вокруг вас", homeHeroSubtitle: "Выберите комнату и свяжите слово с изображением, звуком и примером.", homeHeroCta: "Начать повторение", homeProgressLabel: "Прогресс блока", roomStripEyebrow: "По месту в доме", roomStripTitle: "Выберите следующую комнату", roomStripHint: "Нажмите на изображение", roomWords: "слов", roomOpen: "Открыть раздел",
@@ -45,8 +41,6 @@
       learningStates: { new: "Новое", learning: "Изучается", review: "Повторить", known: "Знакомо", mastered: "Выучено" }, dueNow: "Пора повторить",
       detail: { fullPage: "📖 Страница слова", back: "← Назад", review: "☆ Повторение", known: "✓ Знаю", grammar: "Сравнение", examples: "Примеры", phrases: "Полезные фразы", info: "Инфо", word: "Слово", type: "Часть речи", singular: "Ед. число", plural: "Мн. число", gender: "Род", example: "Пример" },
       a11y: { openMenu: "Открыть меню", closeMenu: "Закрыть меню", toggleTheme: "Сменить тему", openWord: "Открыть страницу слова", saveReview: "Сохранить для повторения", removeReview: "Убрать из повторения", playArabic: "Слушать арабское произношение", playRussian: "Слушать русское произношение", playEnglish: "Слушать английское произношение", playWord: "Слушать русское слово", gridView: "Сетка", compactView: "Компактный вид", back: "Назад" },
-      categories: { home: "База", "living-room": "Гостиная", bedroom: "Спальня", kitchen: "Кухня", bathroom: "Ванная", "door-window": "Двери и окна" },
-      categoryIcons: { home: "🏠", "living-room": "🛋️", bedroom: "🛏️", kitchen: "🍽️", bathroom: "🛁", "door-window": "🚪" }
     }
   };
 
@@ -130,5 +124,18 @@
     return { ru: "🇷🇺", ar: "🇸🇦", en: "🇺🇸" }[lang] || "";
   }
 
-  window.AppI18N = Object.freeze({ translations, languageCodes, interfaceLanguageLabels, languageLabels, learningLanguageLabels, configure, languageValue, orderedLanguages, pronunciationForLanguage, wordPronunciation, examplePronunciation, examplePronunciationForExample, languageFlag });
+  function findRoom(roomId) {
+    return (state.rooms || []).find(room => room.id === roomId);
+  }
+
+  function roomLabel(roomId) {
+    const room = findRoom(roomId);
+    return room?.title?.[state.uiLang] || room?.title?.en || roomId;
+  }
+
+  function roomIcon(roomId) {
+    return findRoom(roomId)?.icon || "📘";
+  }
+
+  window.AppI18N = Object.freeze({ translations, languageCodes, interfaceLanguageLabels, languageLabels, learningLanguageLabels, configure, languageValue, orderedLanguages, pronunciationForLanguage, wordPronunciation, examplePronunciation, examplePronunciationForExample, languageFlag, roomLabel, roomIcon });
 })();

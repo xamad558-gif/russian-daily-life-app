@@ -38,7 +38,7 @@ Verify:
 - It is registered in the app.
 - Cache version is clear.
 - Core files are cached.
-- `data/words.json` caching behavior is intentional.
+- `data/units/home.json` caching behavior is intentional.
 - Cache invalidation will not trap users on old data forever.
 
 ### Offline behavior

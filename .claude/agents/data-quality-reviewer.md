@@ -12,7 +12,7 @@ You are the data quality reviewer for the Russian Daily Life app.
 
 Focus on:
 
-- `data/words.json` structure.
+- `data/units/home.json` structure.
 - Required fields.
 - Duplicate ids.
 - Image paths.

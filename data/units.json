@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "units": [
+    {
+      "id": "home",
+      "dataPath": "data/units/home.json",
+      "title": {
+        "ar": "المنزل",
+        "en": "Home",
+        "ru": "Дом"
+      },
+      "description": {
+        "ar": "كلمات من الحياة اليومية في المنزل",
+        "en": "Words from everyday life at home",
+        "ru": "Слова из повседневной жизни дома"
+      },
+      "coverImage": "assets/images/words/house.jpg",
+      "icon": "🏠",
+      "order": 1
+    }
+  ]
+}

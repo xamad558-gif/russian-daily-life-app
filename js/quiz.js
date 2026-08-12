@@ -71,7 +71,7 @@
       saveFavoriteOnly(state.currentQuiz.id);
       recordAnswer(state.currentQuiz.id, false);
     }
-    storage.write("quizStats", state.quiz);
+    storage.saveQuizStats(state.quiz);
     updateStats();
     updateMetrics();
     if (feedback) {

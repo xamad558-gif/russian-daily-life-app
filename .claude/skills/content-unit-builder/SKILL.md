@@ -27,7 +27,7 @@ Each word should behave like a small learning card:
 
 Check:
 
-- Existing categories and subcategories in `data/words.json`.
+- Existing categories and subcategories in `data/units/home.json`.
 - Existing id naming style.
 - Existing image folder structure.
 - Existing detail schema.

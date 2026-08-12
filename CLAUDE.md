@@ -8,7 +8,7 @@ Current technical baseline:
 
 - Static web app.
 - HTML, CSS, vanilla JavaScript.
-- Vocabulary content stored in `data/words.json`.
+- Vocabulary content stored per learning unit under `data/units/` (e.g. `data/units/home.json`), indexed by the registry at `data/units.json`. See `docs/UNIT_ARCHITECTURE.md`.
 - Images stored under `assets/images/`.
 - Audio paths may exist in data, but audio files may be missing. Do not assume audio exists.
 - Arabic UI must support RTL correctly.
@@ -74,6 +74,7 @@ For each image change, check:
 ## Arabic and RTL rules
 
 - Arabic labels must be natural, not literal machine translation.
+- Russian pronunciation aids for Arabic learners belong in `transliterationAr` and `exampleTransliterationAr`.
 - Arabic interface must keep RTL layout.
 - Mixed Russian/English inside Arabic UI should remain readable.
 - Avoid awkward business-like Arabic inside learning screens.
@@ -91,6 +92,8 @@ For each image change, check:
 Before release:
 
 - Run `node scripts/validate-data.mjs` if Node is available.
+- Run `node scripts/validate-arabic.mjs` for the Arabic content inventory.
+- Run `node scripts/validate-arabic.mjs --edition=ru-ar` before building the Russian-to-Arabic edition.
 - Check duplicate ids.
 - Check missing images.
 - Check missing required fields.

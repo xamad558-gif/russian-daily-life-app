@@ -59,7 +59,7 @@
     const { state, storage } = dependencies;
     state.learning = state.learning || {};
     words.forEach(ensureWord);
-    storage.write("learningState", state.learning);
+    storage.saveProgress({ learningState: state.learning });
   }
 
   function get(id) {
@@ -85,7 +85,7 @@
     else if (mastery === 0 && !item.correct && !item.wrong) item.status = "new";
     else if (item.status === "mastered") item.status = "known";
     state.learning[id] = item;
-    storage.write("learningState", state.learning);
+    storage.saveProgress({ learningState: state.learning });
   }
 
   function recordAnswer(id, correct) {
@@ -111,8 +111,7 @@
       item.status = "learning";
     }
     state.learning[id] = item;
-    storage.write("mastery", state.mastery);
-    storage.write("learningState", state.learning);
+    storage.saveProgress({ mastery: state.mastery, learningState: state.learning });
   }
 
   function recordManual(id, delta) {
@@ -133,7 +132,7 @@
       item.lapses += 1;
     }
     state.learning[id] = item;
-    storage.write("learningState", state.learning);
+    storage.saveProgress({ learningState: state.learning });
   }
 
   function prioritize(words) {

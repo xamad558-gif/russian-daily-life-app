@@ -2,7 +2,7 @@
 
 ## Data
 
-- [x] `data/words.json` is valid JSON.
+- [x] `data/units.json` and `data/units/home.json` are valid JSON.
 - [x] No duplicate ids.
 - [x] Required fields exist.
 - [x] Image paths exist.

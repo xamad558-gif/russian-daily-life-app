@@ -9,7 +9,7 @@ You are the project orchestration skill for the Russian Daily Life trilingual PW
 
 ## Project context
 
-The app is a static PWA using HTML, CSS, vanilla JavaScript, `data/words.json`, images, optional audio, localStorage progress, quiz/review screens, Arabic RTL, Russian, and English.
+The app is a static PWA using HTML, CSS, vanilla JavaScript, `data/units/home.json`, images, optional audio, localStorage progress, quiz/review screens, Arabic RTL, Russian, and English.
 
 ## Routing method
 
@@ -79,6 +79,7 @@ Use or recommend these skills:
 - `/app-builder` for cross-domain feature implementation, visual design integration, and coordinated validation.
 - `/data-auditor` for `words.json`, image paths, audio paths, duplicated ids, schema problems.
 - `/russian-language-auditor` for Russian grammar, gender, plural, examples, transliteration.
+- `/arabic-language-auditor` for Arabic spelling, naturalness, vocalization, examples, and Cyrillic pronunciation.
 - `/ui-rtl-reviewer` for mobile UI, Arabic RTL, detail page, card layout.
 - `/pwa-release-checker` for manifest, service worker, offline behavior, installability.
 - `/content-unit-builder` for adding new vocabulary units.

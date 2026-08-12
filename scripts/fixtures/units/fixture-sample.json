@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "unitId": "fixture-sample",
+  "contentVersion": "fixture-sample-v1",
+  "rooms": [
+    {
+      "id": "fixture-room",
+      "title": { "ar": "غرفة تجريبية", "en": "Fixture room", "ru": "Тестовая комната" },
+      "image": "assets/images/words/house.jpg",
+      "icon": "🧪",
+      "tone": "blue",
+      "order": 1
+    }
+  ],
+  "words": [
+    {
+      "id": "fixture_sample_001",
+      "unitId": "fixture-sample",
+      "subCategory": "fixture-room",
+      "russian": "тест",
+      "arabic": "اختبار",
+      "english": "test"
+    },
+    {
+      "id": "fixture_sample_002",
+      "unitId": "fixture-sample",
+      "subCategory": "fixture-room",
+      "russian": "образец",
+      "arabic": "عينة",
+      "english": "sample"
+    }
+  ]
+}

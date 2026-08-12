@@ -10,13 +10,18 @@
   }
 
   async function init() {
-    const { state, dataVersion, storage, learning, languageCodes, els, getTranslation, populateSubcategories, applyTheme, applyUiLanguage, applyLearningLanguage, switchView, applyFilters, updateMetrics } = dependencies;
-    let response;
+    const { state, storage, learning, units, languageCodes, els, getTranslation, populateSubcategories, applyTheme, applyUiLanguage, applyLearningLanguage, switchView, applyFilters, updateMetrics } = dependencies;
     try {
-      response = await fetch(`data/words.json?v=${dataVersion}`, { cache: "no-store" });
-      if (!response.ok) throw new Error(`Word data request failed with ${response.status}`);
-      state.words = await response.json();
-      if (!Array.isArray(state.words)) throw new Error("Word data is not an array");
+      const registry = await units.loadRegistry();
+      state.unitRegistry = registry;
+      const unitHashMatch = location.hash.match(/^#unit\/([^/]+)$/);
+      const requestedUnitId = unitHashMatch ? unitHashMatch[1] : state.activeUnit;
+      const resolved = await units.loadActiveUnit(registry, requestedUnitId);
+      if (!Array.isArray(resolved.words)) throw new Error("Word data is not an array");
+      state.words = resolved.words;
+      state.rooms = resolved.rooms;
+      state.activeUnit = resolved.unit.id;
+      storage.saveSettings({ activeUnit: state.activeUnit });
     } catch (error) {
       if (els.appError) {
         els.appError.textContent = getTranslation().loadError;
@@ -26,7 +31,7 @@
       return;
     }
     state.words.forEach(word => { if (state.mastery[word.id] === undefined) state.mastery[word.id] = word.masteryDefault || 0; });
-    storage.write("mastery", state.mastery);
+    storage.saveProgress({ mastery: state.mastery });
     learning.ensure(state.words);
     state.selectedWordId = state.words[0]?.id || null;
     bindEvents();
@@ -34,7 +39,7 @@
     applyTheme(state.theme);
     if (state.learningLanguage === state.uiLang) {
       state.learningLanguage = languageCodes.find(code => code !== state.uiLang);
-      storage.write("learningLanguage", state.learningLanguage);
+      storage.saveSettings({ learningLanguage: state.learningLanguage });
     }
     applyUiLanguage(state.uiLang);
     applyLearningLanguage(state.learningLanguage);
@@ -54,10 +59,38 @@
     return true;
   }
 
+  async function selectUnit(unitId) {
+    const { state, storage, learning, units, populateSubcategories, renderCategoryMenu, renderRoomStrip, renderUnitMenu, resetFilters, switchView } = dependencies;
+    if (!state.unitRegistry || unitId === state.activeUnit) return;
+    try {
+      const resolved = await units.loadActiveUnit(state.unitRegistry, unitId);
+      if (!Array.isArray(resolved.words)) throw new Error("Word data is not an array");
+      state.words = resolved.words;
+      state.rooms = resolved.rooms;
+      state.activeUnit = resolved.unit.id;
+      storage.saveSettings({ activeUnit: state.activeUnit });
+    } catch (error) {
+      console.error("Unit switch failed", error);
+      return;
+    }
+    state.words.forEach(word => { if (state.mastery[word.id] === undefined) state.mastery[word.id] = word.masteryDefault || 0; });
+    storage.saveProgress({ mastery: state.mastery });
+    learning.ensure(state.words);
+    state.selectedWordId = state.words[0]?.id || null;
+    state.lastRoom = state.rooms[0]?.id || "all";
+    storage.saveSettings({ lastRoom: state.lastRoom });
+    populateSubcategories();
+    renderCategoryMenu();
+    renderRoomStrip();
+    renderUnitMenu();
+    switchView("vocabulary");
+    resetFilters();
+  }
+
   function bindEvents() {
     const { state, els, storage, applyFilters, applyUiLanguage, applyLearningLanguage, switchView, setDensity, setSidebarOpen, applyTheme, playVisibleWords, resetFilters, renderQuiz, playAudio, toggleFavorite, changeMastery } = dependencies;
     els.searchInput.addEventListener("input", applyFilters);
-    els.subCategoryFilter.addEventListener("change", () => { if (els.subCategoryFilter.value !== "all") { state.lastRoom = els.subCategoryFilter.value; storage.write("lastRoom", state.lastRoom); } applyFilters(); });
+    els.subCategoryFilter.addEventListener("change", () => { if (els.subCategoryFilter.value !== "all") { state.lastRoom = els.subCategoryFilter.value; storage.saveSettings({ lastRoom: state.lastRoom }); } applyFilters(); });
     els.levelFilter.addEventListener("change", applyFilters);
     els.sortFilter.addEventListener("change", applyFilters);
     els.langButtons.forEach(button => button.addEventListener("click", () => applyUiLanguage(button.dataset.uiLang)));
@@ -98,17 +131,16 @@
   }
 
   function renderHomeHero(average) {
-    const { state, els, rooms, getTranslation, languageValue, orderedLanguages } = dependencies;
+    const { state, els, roomLabel, languageValue, orderedLanguages } = dependencies;
     if (!els.heroProgressValue) return;
-    const translation = getTranslation();
     const roomId = els.subCategoryFilter.value !== "all" ? els.subCategoryFilter.value : state.lastRoom;
-    const room = rooms.find(item => item.id === roomId) || rooms[0];
+    const room = state.rooms.find(item => item.id === roomId) || state.rooms[0];
     const roomWord = state.words.find(word => word.subCategory === room.id) || state.words[0];
     els.heroProgressValue.textContent = `${average}%`;
     els.heroProgressFill.style.width = `${average}%`;
     els.heroPhoto.src = room.image;
-    els.heroPhoto.alt = translation.categories[room.id] || room.id;
-    els.heroPhotoLabel.textContent = translation.categories[room.id] || room.id;
+    els.heroPhoto.alt = roomLabel(room.id);
+    els.heroPhotoLabel.textContent = roomLabel(room.id);
     els.heroWordLabel.textContent = roomWord ? languageValue(roomWord, state.learningLanguage) : "";
     els.heroWordMeaning.textContent = roomWord ? orderedLanguages().slice(1).map(lang => languageValue(roomWord, lang)).join(" · ") : "";
   }
@@ -121,5 +153,5 @@
     }
   }
 
-  window.AppController = Object.freeze({ configure, init, renderReview, renderHomeHero, playVisibleWords });
+  window.AppController = Object.freeze({ configure, init, selectUnit, renderReview, renderHomeHero, playVisibleWords });
 })();

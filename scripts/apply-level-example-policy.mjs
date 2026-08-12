@@ -1,8 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const dataPath = path.join(process.cwd(), "data", "words.json");
-const words = JSON.parse(fs.readFileSync(dataPath, "utf8"));
+const dataPath = path.join(process.cwd(), "data", "units", "home.json");
+const unitFile = JSON.parse(fs.readFileSync(dataPath, "utf8"));
+const words = unitFile.words;
 
 const replacements = {
   home50_039: [
@@ -168,5 +169,5 @@ for (const word of words) {
 
 if (missing.length) throw new Error(`Missing A2 example replacements: ${missing.join(", ")}`);
 
-fs.writeFileSync(dataPath, `${JSON.stringify(words, null, 2)}\n`, "utf8");
+fs.writeFileSync(dataPath, `${JSON.stringify(unitFile, null, 2)}\n`, "utf8");
 console.log(`Updated level-aware examples for ${Object.keys(replacements).length} A2 words.`);

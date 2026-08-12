@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "units": [
+    {
+      "id": "fixture-sample",
+      "dataPath": "scripts/fixtures/units/fixture-sample.json",
+      "title": { "ar": "وحدة تجريبية أ", "en": "Fixture unit A", "ru": "Тестовый модуль A" },
+      "description": { "ar": "بيانات اختبار فقط، ليست محتوى حقيقي.", "en": "Test fixture only, not real content.", "ru": "Только тестовые данные, не реальный контент." },
+      "coverImage": "assets/images/words/house.jpg",
+      "icon": "🧪",
+      "order": 1
+    },
+    {
+      "id": "fixture-sample-two",
+      "dataPath": "scripts/fixtures/units/fixture-sample-two.json",
+      "title": { "ar": "وحدة تجريبية ب", "en": "Fixture unit B", "ru": "Тестовый модуль B" },
+      "description": { "ar": "بيانات اختبار فقط، ليست محتوى حقيقي.", "en": "Test fixture only, not real content.", "ru": "Только тестовые данные, не реальный контент." },
+      "coverImage": "assets/images/words/house.jpg",
+      "icon": "🧪",
+      "order": 2
+    }
+  ]
+}

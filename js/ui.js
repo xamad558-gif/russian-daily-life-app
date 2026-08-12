@@ -10,14 +10,13 @@
   }
 
   function applyUiLanguage(lang) {
-    const { state, els, storage, languageCodes, getTranslation, interfaceLanguageLabels, learningLanguageLabels, detailText, renderCategoryMenu, renderRoomStrip, applyFilters, renderQuiz, renderFullWordDetail, updateMetrics, renderReview, renderProgress } = dependencies;
+    const { state, els, storage, languageCodes, getTranslation, interfaceLanguageLabels, learningLanguageLabels, detailText, roomLabel, renderCategoryMenu, renderRoomStrip, renderUnitMenu, applyFilters, renderQuiz, renderFullWordDetail, updateMetrics, renderReview, renderProgress } = dependencies;
     const previousUiLang = state.uiLang;
     state.uiLang = lang;
-    storage.write("uiLang", lang);
     if (state.learningLanguage === lang) {
       state.learningLanguage = previousUiLang !== lang ? previousUiLang : languageCodes.find(code => code !== lang);
-      storage.write("learningLanguage", state.learningLanguage);
     }
+    storage.saveSettings({ uiLang: lang, learningLanguage: state.learningLanguage });
     const translation = getTranslation();
     document.body.dataset.uiLang = lang;
     document.body.dataset.learningLanguage = state.learningLanguage;
@@ -33,7 +32,7 @@
     els.viewButtons.forEach(button => button.setAttribute("aria-label", button.dataset.density === "grid" ? translation.a11y.gridView : translation.a11y.compactView));
     Object.entries({
       brandSubtitle: "brandSubtitle", vocabNavLabel: "vocabNavLabel", reviewNavLabel: "reviewNavLabel", quizNavLabel: "quizNavLabel", progressNavLabel: "progressNavLabel", quizBadge: "quizBadge",
-      sectionsTitle: "sectionsTitle", streakTitle: "streakTitle", streakDays: "streakDays", streakNote: "streakNote", pageTitle: "pageTitle", playVisibleBtn: "playVisible", resetFiltersBtn: "resetFilters",
+      sectionsTitle: "sectionsTitle", unitsTitle: "unitsTitle", streakTitle: "streakTitle", streakDays: "streakDays", streakNote: "streakNote", pageTitle: "pageTitle", playVisibleBtn: "playVisible", resetFiltersBtn: "resetFilters",
       reviewTitle: "reviewTitle", reviewSubtitle: "reviewSubtitle", reviewEmpty: "reviewEmpty", quizTitle: "quizTitle", quizSubtitle: "quizSubtitle", nextQuizBtn: "nextQuiz", speakQuizBtn: "speakQuiz",
       quizStatsTitle: "quizStatsTitle", correctLabel: "correct", wrongLabel: "wrong", totalLabel: "total", progressTitle: "progressTitle", progressSubtitle: "progressSubtitle",
       totalWordsMetricLabel: "totalWords", savedWordsMetricLabel: "savedWords", masteredWordsMetricLabel: "masteredWords", avgMasteryMetricLabel: "avgMastery", dailyTipText: "dailyTip", emptyState: "emptyState", heroKicker: "homeHeroKicker", heroTitle: "homeHeroTitle", heroSubtitle: "homeHeroSubtitle", heroReviewBtn: "homeHeroCta", heroProgressLabel: "homeProgressLabel", roomStripEyebrow: "roomStripEyebrow", roomStripTitle: "roomStripTitle", roomStripHint: "roomStripHint"
@@ -44,7 +43,7 @@
     if (els.learningLanguageLabel) els.learningLanguageLabel.textContent = lang === "ru" ? "Язык обучения" : (learningLanguageLabels[lang] || learningLanguageLabels.en);
     if (els.interfaceLanguageLabel) els.interfaceLanguageLabel.textContent = lang === "ru" ? "Язык интерфейса" : (interfaceLanguageLabels[lang] || interfaceLanguageLabels.en);
     els.subCategoryFilter.options[0].text = translation.allSubCategories;
-    [...els.subCategoryFilter.options].forEach((option, index) => { if (index) option.text = translation.categories[option.value] || option.value; });
+    [...els.subCategoryFilter.options].forEach((option, index) => { if (index) option.text = roomLabel(option.value); });
     els.levelFilter.options[0].text = translation.allLevels;
     els.sortFilter.options[0].text = translation.sortPopular;
     els.sortFilter.options[1].text = translation.sortAZ;
@@ -54,6 +53,7 @@
     syncLanguageAvailability();
     renderCategoryMenu();
     renderRoomStrip();
+    renderUnitMenu();
     applyFilters();
     renderQuiz();
     renderFullWordDetail();
@@ -80,7 +80,7 @@
     const { state, els, storage, languageCodes, renderCards, renderDetail, renderFullWordDetail, renderQuiz, updateMetrics, renderReview, renderProgress } = dependencies;
     if (!languageCodes.includes(lang) || lang === state.uiLang) lang = languageCodes.find(code => code !== state.uiLang);
     state.learningLanguage = lang;
-    storage.write("learningLanguage", lang);
+    storage.saveSettings({ learningLanguage: lang });
     document.body.dataset.learningLanguage = lang;
     els.learningLanguageButtons.forEach(button => {
       const active = button.dataset.learningLang === lang;
@@ -118,7 +118,7 @@
   function applyTheme(theme) {
     const { state, els, storage } = dependencies;
     state.theme = theme;
-    storage.write("theme", theme);
+    storage.saveSettings({ theme });
     document.body.classList.toggle("dark", theme === "dark");
     els.themeToggle.textContent = theme === "dark" ? "☀" : "☾";
     els.themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
@@ -135,7 +135,7 @@
   function setDensity(density) {
     const { state, els, storage, renderCards } = dependencies;
     state.density = density;
-    storage.write("density", density);
+    storage.saveSettings({ density });
     queryAll("[data-density]").forEach(button => button.classList.toggle("active", button.dataset.density === density));
     renderCards();
   }
