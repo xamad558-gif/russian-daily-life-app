@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dataPath = path.join(root, 'data', 'units', 'home.json');
 const dryRun = process.argv.includes('--dry-run');
-const voice = process.env.AZURE_SPEECH_VOICE || 'ar-SA-ZariyahNeural';
+const voice = process.env.AZURE_SPEECH_VOICE || 'ru-RU-DmitryNeural';
 const region = process.env.AZURE_SPEECH_REGION?.trim();
 const key = process.env.AZURE_SPEECH_KEY?.trim();
 
@@ -24,10 +24,6 @@ function escapeXml(value) {
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&apos;');
-}
-
-function primaryArabic(value) {
-  return String(value || '').split(/\s*\/\s*/)[0].trim();
 }
 
 function outputPath(relativePath) {
@@ -51,7 +47,7 @@ async function synthesize(text) {
       'Ocp-Apim-Subscription-Key': key,
       'Content-Type': 'application/ssml+xml',
       'X-Microsoft-OutputFormat': 'audio-24khz-48kbitrate-mono-mp3',
-      'User-Agent': 'russian-daily-life-audio-sample'
+      'User-Agent': 'russian-daily-life-russian-audio-sample'
     },
     body: buildSsml(text)
   });
@@ -72,14 +68,14 @@ if (!dryRun && (!key || !region)) {
   throw new Error('Set AZURE_SPEECH_KEY and AZURE_SPEECH_REGION first, or run with --dry-run.');
 }
 
-console.log(`Azure Arabic sample: ${selected.length} words, voice ${voice}`);
+console.log(`Azure Russian sample: ${selected.length} words, voice ${voice}`);
 for (const word of selected) {
-  const text = primaryArabic(word.arabic);
-  const target = outputPath(word.audioWordAr);
+  const text = word.russian;
+  const target = outputPath(word.audioWordRu);
   console.log(`${dryRun ? '[dry-run] ' : ''}${word.id}: ${text} -> ${path.relative(root, target)}`);
   if (dryRun) continue;
   await fs.mkdir(path.dirname(target), { recursive: true });
   await fs.writeFile(target, await synthesize(text));
 }
 
-if (!dryRun) console.log('Generated the five Arabic word files. The existing data paths now point to them.');
+if (!dryRun) console.log('Generated the five Russian word files.');

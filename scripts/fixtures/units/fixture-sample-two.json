@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "unitId": "fixture-sample-two",
+  "contentVersion": "fixture-sample-two-v1",
+  "rooms": [
+    {
+      "id": "fixture-room-two",
+      "title": { "ar": "غرفة تجريبية ثانية", "en": "Second fixture room", "ru": "Вторая тестовая комната" },
+      "image": "assets/images/words/house.jpg",
+      "icon": "🧪",
+      "tone": "green",
+      "order": 1
+    }
+  ],
+  "words": [
+    {
+      "id": "fixture_sample_two_001",
+      "unitId": "fixture-sample-two",
+      "subCategory": "fixture-room-two",
+      "russian": "второй",
+      "arabic": "ثاني",
+      "english": "second"
+    }
+  ]
+}

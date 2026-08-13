@@ -3,36 +3,32 @@ const LANGUAGE_CODES = AppI18N.languageCodes;
 
 const DATA_VERSION = "v8.3-visual-guide";
 
-const ROOM_FEATURES = [
-  { id:"home", image:"assets/images/words/house.jpg", icon:"🏠", tone:"blue" },
-  { id:"living-room", image:"assets/images/words/living_room.jpg", icon:"🛋️", tone:"red" },
-  { id:"bedroom", image:"assets/images/words/bedroom.jpg", icon:"🛏️", tone:"plum" },
-  { id:"kitchen", image:"assets/images/words/kitchen.jpg", icon:"🍽️", tone:"amber" },
-  { id:"bathroom", image:"assets/images/words/bathroom.jpg", icon:"🛁", tone:"green" },
-  { id:"door-window", image:"assets/images/words/door.jpg", icon:"🚪", tone:"teal" }
-];
-
 const INTERFACE_LANGUAGE_LABELS = { ar:"\u0644\u063a\u0629 \u0627\u0644\u0648\u0627\u062c\u0647\u0629", en:"Interface language", ru:"\u042f\u0437\u044b\u043a \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0633\u0430" };
 const LANGUAGE_LABELS = { ru:"\u0420\u0443\u0441\u0441\u043a\u0438\u0439", ar:"\u0627\u0644\u0639\u0631\u0628\u064a\u0629", en:"English" };
 const LEARNING_LANGUAGE_LABELS = { ar:"\u0644\u063a\u0629 \u0627\u0644\u062a\u0639\u0644\u0645", en:"Learning language", ru:"\u042f\u0437\u044b\u043a \u043e\u0431\u0443\u0447\u0435\u043d\u0438\u044f" };
 
+const settings = AppStorage.loadSettings();
+const progress = AppStorage.loadProgress();
 const state = {
-  words: [], filtered: [], selectedWordId: null, activeView:"vocabulary",
-  saved: new Set(AppStorage.read("savedWords", [])),
-  mastery: AppStorage.read("mastery", {}),
-  learning: AppStorage.read("learningState", {}),
-  quiz: AppStorage.read("quizStats", { correct: 0, wrong: 0 }),
+  words: [], filtered: [], rooms: [], selectedWordId: null, activeView:"vocabulary",
+  saved: new Set(AppStorage.loadFavorites()),
+  mastery: progress.mastery,
+  learning: progress.learningState,
+  quiz: AppStorage.loadQuizStats(),
   currentQuiz: null,
   quizAnswered: false,
-  uiLang: AppStorage.read("uiLang", "ar"),
-  learningLanguage: AppStorage.read("learningLanguage", AppStorage.read("uiLang", "ar") === "ru" ? "ar" : "ru"),
-  lastRoom: AppStorage.read("lastRoom", "home"),
-  density: AppStorage.read("density", "grid"),
-  theme: AppStorage.read("theme", "light")
+  uiLang: settings.uiLang,
+  learningLanguage: settings.learningLanguage,
+  lastRoom: settings.lastRoom,
+  density: settings.density,
+  theme: settings.theme,
+  activeUnit: settings.activeUnit,
+  unitRegistry: null
 };
 
 AppI18N.configure({ state });
 AppLearning.configure({ state, storage: AppStorage });
+AppUnits.configure({ dataVersion: DATA_VERSION });
 
 AppAudio.configure({ findWord: id => state.words.find(word => word.id === id) });
 const playAudio = (...args) => AppAudio.playAudio(...args);
@@ -48,6 +44,7 @@ const changeMastery = (...args) => AppProgress.changeMastery(...args);
 const populateSubcategories = (...args) => AppFilters.populateSubcategories(...args);
 const renderCategoryMenu = (...args) => AppFilters.renderCategoryMenu(...args);
 const renderRoomStrip = (...args) => AppFilters.renderRoomStrip(...args);
+const renderUnitMenu = (...args) => AppFilters.renderUnitMenu(...args);
 const selectRoom = (...args) => AppFilters.selectRoom(...args);
 const applyFilters = (...args) => AppFilters.apply(...args);
 const resetFilters = (...args) => AppFilters.reset(...args);
@@ -79,7 +76,7 @@ const els = {
   brandSubtitle: $("#brandSubtitle"), vocabNavLabel: $("#vocabNavLabel"), reviewNavLabel: $("#reviewNavLabel"), quizNavLabel: $("#quizNavLabel"), progressNavLabel: $("#progressNavLabel"), quizBadge: $("#quizBadge"),
   sectionsTitle: $("#sectionsTitle"), streakTitle: $("#streakTitle"), streakDays: $("#streakDays"), streakNote: $("#streakNote"), searchInput: $("#searchInput"),
   heroKicker: $("#heroKicker"), heroTitle: $("#heroTitle"), heroSubtitle: $("#heroSubtitle"), heroReviewBtn: $("#heroReviewBtn"), heroProgressLabel: $("#heroProgressLabel"), heroProgressValue: $("#heroProgressValue"), heroProgressFill: $("#heroProgressFill"), heroPhoto: $("#heroPhoto"), heroPhotoLabel: $("#heroPhotoLabel"), heroWordLabel: $("#heroWordLabel"), heroWordMeaning: $("#heroWordMeaning"), roomStripEyebrow: $("#roomStripEyebrow"), roomStripTitle: $("#roomStripTitle"), roomStripHint: $("#roomStripHint"), roomStrip: $("#roomStrip"), filtersBar: $("#filtersBar"),
-  subCategoryFilter: $("#subCategoryFilter"), levelFilter: $("#levelFilter"), sortFilter: $("#sortFilter"), categoryMenu: $("#categoryMenu"),
+  subCategoryFilter: $("#subCategoryFilter"), levelFilter: $("#levelFilter"), sortFilter: $("#sortFilter"), categoryMenu: $("#categoryMenu"), unitMenu: $("#unitMenu"), unitsTitle: $("#unitsTitle"),
   pageTitle: $("#pageTitle"), pageCounter: $("#pageCounter"), cardsGrid: $("#cardsGrid"), emptyState: $("#emptyState"),
   langButtons: $$(".lang-btn"), learningLanguageButtons: $$('[data-learning-lang]'), learningLanguageLabel: $("#learningLanguageLabel"), interfaceLanguageLabel: $("#interfaceLanguageLabel"), viewButtons: $$("[data-density]"), sidebarToggle: $("#sidebarToggle"), sidebarBackdrop: $("#sidebarBackdrop"), themeToggle: $("#themeToggle"),
   playVisibleBtn: $("#playVisibleBtn"), resetFiltersBtn: $("#resetFiltersBtn"), reviewGrid: $("#reviewGrid"), reviewEmpty: $("#reviewEmpty"),
@@ -100,17 +97,20 @@ const wordPronunciation = (...args) => AppI18N.wordPronunciation(...args);
 const examplePronunciation = (...args) => AppI18N.examplePronunciation(...args);
 const examplePronunciationForExample = (...args) => AppI18N.examplePronunciationForExample(...args);
 const languageFlag = (...args) => AppI18N.languageFlag(...args);
+const roomLabel = (...args) => AppI18N.roomLabel(...args);
+const roomIcon = (...args) => AppI18N.roomIcon(...args);
 
 function toggleFavorite(id, forceSave=false){
   if (forceSave) state.saved.add(id);
   else if (state.saved.has(id)) state.saved.delete(id); else state.saved.add(id);
-  AppStorage.write("savedWords", [...state.saved]);
+  AppStorage.saveFavorites([...state.saved]);
   renderCards(); renderReview(); updateMetrics();
 }
 
 const renderReview = (...args) => AppController.renderReview(...args);
 const renderHomeHero = (...args) => AppController.renderHomeHero(...args);
 const playVisibleWords = (...args) => AppController.playVisibleWords(...args);
+const selectUnit = (...args) => AppController.selectUnit(...args);
 function levelClass(level){ return `level-${String(level || "unknown").toLowerCase().replace(/[^a-z0-9]+/g,"-")}`; }
 function escapeHTML(v){ return String(v ?? "").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;"); }
 AppController.configure({
@@ -119,12 +119,16 @@ AppController.configure({
   dataVersion: DATA_VERSION,
   storage: AppStorage,
   learning: AppLearning,
+  units: AppUnits,
   languageCodes: LANGUAGE_CODES,
-  rooms: ROOM_FEATURES,
   getTranslation: () => I18N[state.uiLang],
   languageValue,
   orderedLanguages,
+  roomLabel,
   populateSubcategories,
+  renderCategoryMenu,
+  renderRoomStrip,
+  renderUnitMenu,
   applyTheme,
   applyUiLanguage,
   applyLearningLanguage,
@@ -156,8 +160,10 @@ AppUI.configure({
   interfaceLanguageLabels: INTERFACE_LANGUAGE_LABELS,
   learningLanguageLabels: LEARNING_LANGUAGE_LABELS,
   detailText,
+  roomLabel,
   renderCategoryMenu,
   renderRoomStrip,
+  renderUnitMenu,
   applyFilters,
   renderCards,
   renderDetail,
@@ -181,6 +187,7 @@ AppDetail.configure({
   escapeHTML,
   levelClass,
   languageFlag,
+  roomLabel,
   translationRows,
   audioButtons,
   meaningCards,
@@ -209,12 +216,14 @@ AppProgress.configure({
 AppFilters.configure({
   state,
   els,
-  rooms: ROOM_FEATURES,
   storage: AppStorage,
   getTranslation: () => I18N[state.uiLang],
   escapeHTML,
+  roomLabel,
+  roomIcon,
   switchView,
   selectRoom,
+  selectUnit,
   renderCards,
   renderDetail,
   updateMetrics,

@@ -1,6 +1,6 @@
 ---
 name: data-auditor
-description: Audits data/words.json and related assets for missing fields, duplicate ids, missing images, fake audio paths, schema drift, and release-blocking content issues.
+description: Audits data/units/home.json and related assets for missing fields, duplicate ids, missing images, fake audio paths, schema drift, and release-blocking content issues.
 ---
 
 # Data Auditor
@@ -9,7 +9,7 @@ Use this skill when checking or improving vocabulary data quality.
 
 ## Primary files
 
-- `data/words.json`
+- `data/units/home.json`
 - `assets/images/**`
 - `assets/audio/**`
 - `scripts/validate-data.mjs`
@@ -18,7 +18,7 @@ Use this skill when checking or improving vocabulary data quality.
 
 ## Core checks
 
-Inspect `data/words.json` for:
+Inspect `data/units/home.json` for:
 
 - JSON syntax validity.
 - Duplicate `id` values.

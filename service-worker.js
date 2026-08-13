@@ -1,9 +1,10 @@
-const CACHE_NAME = "russian-daily-life-v8-3-visual-guide-v16";
+const CACHE_NAME = "russian-daily-life-v8-3-visual-guide-v19";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./styles.css",
   "./js/storage.js",
+  "./js/units.js",
   "./js/audio.js",
   "./js/learning.js",
   "./js/controller.js",
@@ -15,7 +16,8 @@ const APP_SHELL = [
   "./js/i18n.js",
   "./js/ui.js",
   "./app.js",
-  "./data/words.json",
+  "./data/units.json",
+  "./data/units/home.json",
   "./data/image_quality_report.json",
   "./manifest.webmanifest",
   "./assets/icons/icon.svg",
@@ -24,81 +26,7 @@ const APP_SHELL = [
   "./assets/icons/apple-touch-icon.png",
   "./assets/icons/favicon-32.png",
   "./assets/icons/favicon-16.png",
-  "./assets/images/words/air_conditioner_web.jpg",
-  "./assets/images/words/apartment.jpg",
-  "./assets/images/words/armchair.jpg",
-  "./assets/images/words/bag_web.jpg",
-  "./assets/images/words/balcony.jpg",
-  "./assets/images/words/bathroom.jpg",
-  "./assets/images/words/bathtub.jpg",
-  "./assets/images/words/bed.jpg",
-  "./assets/images/words/bedroom.jpg",
-  "./assets/images/words/bedside_table.jpg",
-  "./assets/images/words/blanket.jpg",
-  "./assets/images/words/book_web.jpg",
-  "./assets/images/words/box_web.jpg",
-  "./assets/images/words/broom_real.jpg",
-  "./assets/images/words/ceiling.jpg",
-  "./assets/images/words/chair.jpg",
-  "./assets/images/words/charger_web.jpg",
-  "./assets/images/words/clock_web.jpg",
-  "./assets/images/words/clothes.jpg",
-  "./assets/images/words/cup.jpg",
-  "./assets/images/words/curtain.jpg",
-  "./assets/images/words/desk.jpg",
-  "./assets/images/words/door.jpg",
-  "./assets/images/words/drawer.jpg",
-  "./assets/images/words/floor.jpg",
-  "./assets/images/words/fork_real.jpg",
-  "./assets/images/words/fridge.jpg",
-  "./assets/images/words/glass.jpg",
-  "./assets/images/words/hanger_web.jpg",
-  "./assets/images/words/heater_web.jpg",
   "./assets/images/words/house.jpg",
-  "./assets/images/words/iron_web.jpg",
-  "./assets/images/words/kettle.jpg",
-  "./assets/images/words/key_real.jpg",
-  "./assets/images/words/kitchen.jpg",
-  "./assets/images/words/knife_real.jpg",
-  "./assets/images/words/lamp.jpg",
-  "./assets/images/words/living_room.jpg",
-  "./assets/images/words/lock_real.jpg",
-  "./assets/images/words/mattress.jpg",
-  "./assets/images/words/microwave.jpg",
-  "./assets/images/words/mirror.jpg",
-  "./assets/images/words/oven.jpg",
-  "./assets/images/words/phone_web.jpg",
-  "./assets/images/words/picture.jpg",
-  "./assets/images/words/pillow.jpg",
-  "./assets/images/words/plant.jpg",
-  "./assets/images/words/plate.jpg",
-  "./assets/images/words/pot.jpg",
-  "./assets/images/words/remote_web.jpg",
-  "./assets/images/words/room.jpg",
-  "./assets/images/words/rug.jpg",
-  "./assets/images/words/sheet.jpg",
-  "./assets/images/words/shelf.jpg",
-  "./assets/images/words/shower.jpg",
-  "./assets/images/words/sink_quality.jpg",
-  "./assets/images/words/soap_real2.jpg",
-  "./assets/images/words/socket_web.jpg",
-  "./assets/images/words/sofa.jpg",
-  "./assets/images/words/spoon.jpg",
-  "./assets/images/words/stove.jpg",
-  "./assets/images/words/switch_web.jpg",
-  "./assets/images/words/table.jpg",
-  "./assets/images/words/tap_quality.jpg",
-  "./assets/images/words/television.jpg",
-  "./assets/images/words/toilet.jpg",
-  "./assets/images/words/toothbrush_real.jpg",
-  "./assets/images/words/toothpaste_real.jpg",
-  "./assets/images/words/towel_quality.jpg",
-  "./assets/images/words/trash_web.jpg",
-  "./assets/images/words/vacuum_real.jpg",
-  "./assets/images/words/wall.jpg",
-  "./assets/images/words/wardrobe.jpg",
-  "./assets/images/words/washing_machine_real.jpg",
-  "./assets/images/words/window.jpg",
 ];
 self.addEventListener("install", event => { self.skipWaiting(); event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL))); });
 self.addEventListener("activate", event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
@@ -106,12 +34,12 @@ self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
   const url = new URL(event.request.url);
   const isNavigation = event.request.mode === "navigate" || event.request.headers.get("accept")?.includes("text/html");
-  const isFreshCritical = url.pathname.endsWith("/data/words.json") || url.pathname.endsWith("/app.js") || url.pathname.endsWith("/index.html");
+  const isFreshCritical = url.pathname.endsWith("/data/units.json") || url.pathname.endsWith("/app.js") || url.pathname.endsWith("/index.html");
   if (isFreshCritical) {
     event.respondWith(fetch(event.request, { cache: "no-store" }).then(response => {
       if (response.ok) event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.put(event.request, response.clone())));
       return response;
-    }).catch(() => caches.match(event.request).then(cached => cached || (url.pathname.endsWith("/data/words.json") ? caches.match("./data/words.json") : isNavigation ? caches.match("./index.html") : Response.error()))));
+    }).catch(() => caches.match(event.request).then(cached => cached || (url.pathname.endsWith("/data/units.json") ? caches.match("./data/units.json") : isNavigation ? caches.match("./index.html") : Response.error()))));
     return;
   }
   event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request).then(response => {

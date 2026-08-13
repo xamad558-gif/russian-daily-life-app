@@ -1,6 +1,8 @@
 # Word Schema Guide
 
-This project uses `data/words.json` as the core content database.
+This document describes the word record shape. The content layout, loading contract, storage boundary, and migration rules are defined in [`UNIT_ARCHITECTURE.md`](UNIT_ARCHITECTURE.md).
+
+Word records for the Home unit live in `data/units/home.json`, inside a unit file (`{schemaVersion, unitId, contentVersion, rooms, words}`). The registry at `data/units.json` points to it. Every word carries a `unitId` field matching its unit. The legacy flat `data/words.json` has been removed; do not recreate it or add a second copy of content anywhere else.
 
 ## Required base fields
 
@@ -74,4 +76,4 @@ Each word also carries pronunciation aids for learners crossing between the thre
 
 Audio fields are optional unless real files exist. Missing audio should not crash the app. Browser TTS fallback is acceptable, but the UI should not pretend real MP3 files exist.
 
-**Status (decided 2026-07-09):** Keep the existing `audioWord*` / `audioSentence*` paths in `data/words.json` as-is for now — do not delete them and do not fabricate new ones. The app already falls back to `speechSynthesis` silently when a file is missing (see `playAudio()` / `playExampleAudio()` in `app.js`), so this is not blocking a release. Real audio recording/generation is planned for a later phase once content is stable; at that point the existing paths should be filled in rather than restructured. Run `node scripts/validate-data.mjs --audio=warn` to see the current gap (currently 450 warnings, 0 errors) — do not switch to `--audio=strict` until real files start landing.
+**Status (decided 2026-07-09):** Keep the existing `audioWord*` / `audioSentence*` paths in `data/units/home.json` as-is for now — do not delete them and do not fabricate new ones. The app already falls back to `speechSynthesis` silently when a file is missing (see `playAudio()` / `playExampleAudio()` in `app.js`), so this is not blocking a release. Real audio recording/generation is planned for a later phase once content is stable; at that point the existing paths should be filled in rather than restructured. Run `node scripts/validate-data.mjs --audio=warn` to see the current gap (currently 450 warnings, 0 errors) — do not switch to `--audio=strict` until real files start landing.

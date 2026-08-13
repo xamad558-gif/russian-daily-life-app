@@ -21,7 +21,6 @@ from reportlab.lib.utils import ImageReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA_PATH = ROOT / "data" / "words.json"
 OUTPUT_DIR = ROOT / "output" / "pdf"
 
 PAGE_WIDTH, PAGE_HEIGHT = A4
@@ -44,13 +43,17 @@ FONT_REGULAR = "Tahoma"
 FONT_BOLD = "Tahoma-Bold"
 
 SECTION_ORDER = ["home", "living-room", "bedroom", "kitchen", "bathroom", "door-window"]
+# (English, Arabic, Russian) - English is the universal/reference label shown
+# for full/ar/en editions; Russian replaces it as the native-language label
+# for the "ru" (Arabic for Russian speakers) edition. Arabic is always shown
+# in its own header slot regardless of edition.
 SECTION_TITLES = {
-    "home": ("Home Basics", "الأساسيات المنزلية"),
-    "living-room": ("Living Room", "غرفة المعيشة"),
-    "bedroom": ("Bedroom", "غرفة النوم"),
-    "kitchen": ("Kitchen", "المطبخ"),
-    "bathroom": ("Bathroom", "الحمام"),
-    "door-window": ("Doors and Windows", "الأبواب والنوافذ"),
+    "home": ("Home Basics", "الأساسيات المنزلية", "Основы дома"),
+    "living-room": ("Living Room", "غرفة المعيشة", "Гостиная"),
+    "bedroom": ("Bedroom", "غرفة النوم", "Спальня"),
+    "kitchen": ("Kitchen", "المطبخ", "Кухня"),
+    "bathroom": ("Bathroom", "الحمام", "Ванная"),
+    "door-window": ("Doors and Windows", "الأبواب والنوافذ", "Двери и окна"),
 }
 
 ACCENT = colors.HexColor("#134E6F")
@@ -75,6 +78,8 @@ LANGUAGE_PROFILES = {
         "output_name": "russian_daily_life_workbook.pdf",
         "edition_en": "Full Reference Edition",
         "edition_ar": "النسخة المرجعية الشاملة",
+        "target_lang": "ru",
+        "native_langs": ("ar", "en"),
         "card_meanings": ("ar", "en"),
         "example_langs": ("ar", "en"),
         "index_langs": ("ru", "ar", "en"),
@@ -85,6 +90,8 @@ LANGUAGE_PROFILES = {
         "output_name": "russian_daily_life_workbook_ar.pdf",
         "edition_en": "Arabic Learner Edition",
         "edition_ar": "نسخة المتعلم الناطق بالعربية",
+        "target_lang": "ru",
+        "native_langs": ("ar",),
         "card_meanings": ("ar",),
         "example_langs": ("ar",),
         "index_langs": ("ru", "ar"),
@@ -95,24 +102,188 @@ LANGUAGE_PROFILES = {
         "output_name": "russian_daily_life_workbook_en.pdf",
         "edition_en": "English Learner Edition",
         "edition_ar": "نسخة المتعلم الناطق بالإنجليزية",
+        "target_lang": "ru",
+        "native_langs": ("en",),
         "card_meanings": ("en",),
         "example_langs": ("en",),
         "index_langs": ("ru", "en"),
         "footer_label": "Russian Daily Life - English learner edition",
     },
     "ru": {
+        # Mirror direction: this edition is FOR a Russian-speaking reader
+        # LEARNING ARABIC, not a Russian-immersion edition of the Russian
+        # course. Arabic is the target/primary word on every card, writing
+        # line, and exercise (see primary_word/primary_example/primary_grammar
+        # and is_arabic_target() - they read target_lang, not a hardcoded
+        # "russian" field); Russian is the native/meaning language shown
+        # underneath. The existing Arabic-to-Cyrillic pronunciation field is
+        # used for this profile.
         "key": "ru",
         "output_name": "russian_daily_life_workbook_ru.pdf",
-        "edition_en": "Russian Immersion Edition",
-        "edition_ar": "نسخة الانغماس الروسي",
-        "card_meanings": ("ar", "en"),
-        "example_langs": (),
-        "index_langs": ("ru",),
-        "footer_label": "Russian Daily Life - Russian immersion edition",
+        "edition_en": "Arabic for Russian Speakers",
+        "edition_ar": "العربية للناطقين بالروسية",
+        "edition_ru": "Арабский для русскоговорящих",
+        "target_lang": "ar",
+        "native_langs": ("ru",),
+        "card_meanings": ("ru",),
+        "example_langs": ("ru",),
+        "index_langs": ("ar", "ru"),
+        "footer_label": "Russian Daily Life - Арабский для русскоговорящих",
     },
 }
 
-MEANING_LABELS = {"ar": "SA Arabic", "en": "US English"}
+MEANING_LABELS = {"ar": "SA Arabic", "en": "US English", "ru": "RU Russian"}
+MEANING_LABELS_RU = {"ar": "арабский", "en": "английский", "ru": "русский"}
+
+# Every piece of book "chrome" (headers, column labels, instructions,
+# checklists) that isn't actual vocabulary content. Only the "ru" profile
+# (target_lang == "ar") swaps English for Russian here - full/ar/en keep the
+# original English chrome, since English has always been the universal
+# reference label alongside the native-language label in this book's header
+# pattern. Each value is (english, russian); dynamic strings use {name}
+# placeholders filled in by t().
+UI_TEXT = {
+    "contents_title": ("Contents", "Содержание"),
+    "contents_subtitle": ("Reference, writing, and review map", "Справочник, письмо и повторение"),
+    "chapter_overview": ("Chapter overview", "Обзор разделов"),
+    "contents_intro": ("Every section is followed by writing practice and a self-test.", "После каждого раздела идёт практика письма и самопроверка."),
+    "col_section": ("Section", "Раздел"),
+    "col_reference": ("Reference", "Справочник"),
+    "col_writing": ("Writing", "Письмо"),
+    "col_test": ("Test", "Тест"),
+    "book_tools": ("Book tools", "Инструменты книги"),
+    "tool_pronunciation": ("Pronunciation guide: page {page}.", "Руководство по произношению: стр. {page}."),
+    "tool_cumulative": ("Cumulative reviews: pages {start}-{end}.", "Накопительные повторения: стр. {start}-{end}."),
+    "tool_index": ("Word index: pages {start}-{end}.", "Указатель слов: стр. {start}-{end}."),
+    "tool_answers": ("Answer keys are placed at the end so you can test yourself first.", "Ответы находятся в конце книги, чтобы вы могли сначала проверить себя."),
+    "how_to_use": ("How to use each word", "Как работать с каждым словом"),
+    "step2": ("2. Cover the meaning column and recall it from memory.", "2. Закройте столбец со значением и вспомните его по памяти."),
+    "step3": ("3. Complete the writing page and section test before checking the answer key.", "3. Заполните страницу письма и тест раздела, прежде чем смотреть ответы."),
+    "step4": ("4. Scan the QR code if you want to hear an external pronunciation check.", "4. Отсканируйте QR-код, если хотите проверить произношение."),
+    "my_progress": ("My progress", "Мой прогресс"),
+    "progress_subtitle": ("Check each part as you complete it", "Отмечайте каждую часть по мере выполнения"),
+    "start_promise": ("Start with a small promise", "Начните с небольшого обещания"),
+    "start_promise_body": ("Write your name, choose a pace, and mark the work you finish on paper.", "Напишите своё имя, выберите темп и отмечайте выполненную работу на бумаге."),
+    "name_label": ("Name:", "Имя:"),
+    "start_date_label": ("Start date:", "Дата начала:"),
+    "col_words": ("Words", "Слов"),
+    "checkbox_done": ("done", "готово"),
+    "four_marks": ("Four marks of a useful study session", "Четыре признака полезного занятия"),
+    "mark1": ("I said the word aloud.", "Я произнёс(ла) слово вслух."),
+    "mark2": ("I checked the pronunciation.", "Я проверил(а) произношение."),
+    "mark3": ("I wrote it from memory.", "Я написал(а) его по памяти."),
+    "mark4": ("I reviewed it again later.", "Я повторил(а) его позже."),
+    "writing_practice": ("Writing practice", "Практика письма"),
+    "writing_page_subtitle": ("{section} - part {part} of {total}", "{section} - часть {part} из {total}"),
+    "trace_instruction": ("Trace once, then write the word three times.", "Обведите один раз, затем напишите слово три раза."),
+    "trace_cover_hint": ("Cover the meaning and write from memory", "Закройте значение и напишите по памяти"),
+    "col_meaning_cover": ("Meaning - cover this", "Значение - закройте"),
+    "col_trace_write": ("Trace and write", "Обведите и напишите"),
+    "bonus_title": ("Bonus: build your own sentence", "Бонус: составьте своё предложение"),
+    "bonus_kicker": ("Bonus: build your own sentence", "Бонус: составьте своё предложение"),
+    "match_title": ("1. Match the Russian word to its meaning", "1. Соедините арабское слово с его значением"),
+    "fill_title": ("2. Complete the Russian sentence", "2. Допишите арабское предложение"),
+    "grammar_title": ("3. Grammar check: gender and plural", "3. Проверка грамматики: род и число"),
+    "grammar_subtitle": ("Determine the gender and write the plural", "Определите род и напишите множественное число"),
+    "col_word": ("Word", "Слово"),
+    "col_gender": ("Gender", "Род"),
+    "col_plural": ("Plural", "Множественное число"),
+    "section_test": ("Section test", "Тест раздела"),
+    "section_test_subtitle": ("{section} - close the book before you begin", "{section} - закройте книгу перед началом"),
+    "score_line": (
+        "Score: ____ / ____     Date: __________     I used the website audio:  Yes / No",
+        "Баллы: ____ / ____     Дата: __________     Я использовал(а) аудио сайта:  Да / Нет",
+    ),
+    "answer_key": ("Answer key", "Ответы"),
+    "answer_key_section_subtitle": ("Section test answers", "Ответы к тесту раздела"),
+    "matching_label": ("Matching", "Соответствие"),
+    "sentence_answers": ("Sentence answers", "Ответы к предложениям"),
+    "gender_plural_label": ("Gender and plural", "Род и число"),
+    "cumulative_review": ("Cumulative review", "Накопительное повторение"),
+    "cumulative_subtitle": ("Mixed words - review {n} of {total}", "Смешанные слова - повторение {n} из {total}"),
+    "cumulative_answer_subtitle": ("Cumulative review {n} answers", "Ответы к накопительному повторению {n}"),
+    "mix_rooms": (
+        "Mix the rooms: recall the word, write it, then check the answer key later.",
+        "Смешайте комнаты: вспомните слово, напишите его, затем проверьте ответы позже.",
+    ),
+    "word_index": ("Word index", "Указатель слов"),
+    "index_subtitle": ("Lookup - part {n} of {total}", "Поиск - часть {n} из {total}"),
+    "qr_scan_note": (
+        "Scan a QR code on any reference card for an external pronunciation check.",
+        "Отсканируйте QR-код на любой карточке, чтобы проверить произношение.",
+    ),
+    "qr_scan_body": (
+        "The QR codes link to a free, unofficial text-to-speech service. If a code does not load, use the speaker button on the website instead - it always works offline once the page is cached.",
+        "QR-коды ведут на бесплатный неофициальный сервис синтеза речи. Если код не загружается, используйте кнопку звука на сайте - она всегда работает офлайн после кэширования страницы.",
+    ),
+    "workbook_guide": ("Workbook guide", "Руководство по рабочей тетради"),
+    "workbook_guide_subtitle": ("{edition} - a practical companion for the website", "{edition} - практическое дополнение к сайту"),
+    "use_as_cycle": ("Use the book as a cycle, not a one-time read", "Используйте книгу циклично, а не как разовое чтение"),
+    "notes_intro": (
+        "The website supplies audio and interactive quizzes; these pages make recall and handwriting visible.",
+        "Сайт даёт аудио и интерактивные тесты; эти страницы делают видимыми запоминание и письмо от руки.",
+    ),
+    "step_reference_label": ("1. Reference", "1. Справочник"),
+    "step_cover_recall_label": ("2. Cover and recall", "2. Закрыть и вспомнить"),
+    "step_cover_recall_body": ("Hide the meaning column and say the meaning from memory.", "Закройте столбец со значением и назовите его по памяти."),
+    "step_write_label": ("3. Write", "3. Написать"),
+    "step_write_body": ("Trace the word once, then write it on all three lines without looking.", "Обведите слово один раз, затем напишите его на всех трёх строках, не глядя."),
+    "step_test_label": ("4. Test", "4. Тест"),
+    "step_test_body": (
+        "Complete matching, sentence gaps, gender, and plural before opening the answer key.",
+        "Выполните соответствие, пропуски в предложениях, род и число, прежде чем открыть ответы.",
+    ),
+    "step_revisit_label": ("5. Revisit", "5. Повторить"),
+    "step_revisit_body": (
+        "Use the cumulative review pages on day 1, day 3, after one week, and after one month.",
+        "Используйте страницы накопительного повторения на 1-й день, 3-й день, через неделю и через месяц.",
+    ),
+    "keep_closed": ("Keep the answer key closed", "Не открывайте ответы заранее"),
+    "wrong_answer_note": (
+        "A wrong answer is useful when it shows what to review. Mark the word, return to its photo card, listen on the website, and try again later.",
+        "Неправильный ответ полезен, если показывает, что нужно повторить. Отметьте слово, вернитесь к его карточке, послушайте на сайте и попробуйте снова позже.",
+    ),
+    "website_features": (
+        "Website features: audio - progress tracking - quizzes - dark mode - Arabic, Russian, and English",
+        "Возможности сайта: аудио - отслеживание прогресса - тесты - тёмная тема - арабский, русский и английский",
+    ),
+    "reference_page_subtitle": ("{count} photo cards - pronunciation + examples", "{count} карточек с фото - произношение и примеры"),
+    "page_label": ("Page {n}", "Стр. {n}"),
+    "pronunciation_subtitle": ("Sounds and letters that need extra attention", "Звуки и буквы, требующие особого внимания"),
+    "level_tag": ("Lv {level} | Freq {freq}", "Ур {level} | Част {freq}"),
+    "workbook_edition": ("Workbook - {edition}", "Рабочая тетрадь - {edition}"),
+    "cover_word_count": (
+        "{count} words - 6 sections - photo cards + writing + review pages",
+        "{count} слов - 6 разделов - карточки с фото + письмо + повторение",
+    ),
+    "cover_offline_note": (
+        "Use this book offline while the website handles audio, progress, and quizzes.",
+        "Используйте эту книгу офлайн, пока сайт обеспечивает аудио, прогресс и тесты.",
+    ),
+    "what_is_inside": ("What is inside", "Что внутри"),
+    "meaning_shown_in": ("Meaning shown in: {meaning}.", "Значение показано на: {meaning}."),
+    "bullet_example": ("Example sentence to support reading and speaking.", "Пример предложения для чтения и разговорной практики."),
+    "bullet_pages": (
+        "Writing, recall, matching, and spaced-review pages.",
+        "Страницы для письма, запоминания, сопоставления и интервального повторения.",
+    ),
+    "bullet_qr": ("QR code per word for a quick external pronunciation check.", "QR-код для каждого слова - быстрая проверка произношения."),
+}
+
+
+def t(profile: dict, key: str, **kwargs) -> str:
+    en, ru = UI_TEXT[key]
+    text = ru if is_arabic_target(profile) else en
+    return text.format(**kwargs) if kwargs else text
+
+
+def section_title_left(profile: dict, section: str) -> str:
+    title_en, _title_ar, title_ru = SECTION_TITLES[section]
+    return title_ru if is_arabic_target(profile) else title_en
+
+
+def section_title_ar(section: str) -> str:
+    return SECTION_TITLES[section][1]
 
 
 def register_fonts() -> None:
@@ -131,9 +302,10 @@ def shape_arabic(text: str) -> str:
     return get_display(arabic_reshaper.reshape(text))
 
 
-def load_words() -> list[dict]:
-    with DATA_PATH.open("r", encoding="utf-8") as handle:
-        return json.load(handle)
+def load_words(unit_id: str = "home") -> list[dict]:
+    data_path = ROOT / "data" / "units" / f"{unit_id}.json"
+    with data_path.open("r", encoding="utf-8") as handle:
+        return json.load(handle)["words"]
 
 
 def group_words(words: list[dict]) -> dict[str, list[dict]]:
@@ -224,14 +396,54 @@ def draw_rule(pdf: canvas.Canvas, x: float, y: float, width: float, dashed: bool
     pdf.setDash()
 
 
-def gender_label(item: dict) -> str:
-    gender = item.get("grammar", {}).get("ru", {}).get("gender", "")
+def gender_label(item: dict, profile: dict) -> str:
+    lang = profile.get("target_lang", "ru")
+    gender = item.get("grammar", {}).get(lang, {}).get("gender", "")
+    if lang != "ru":
+        # Arabic grammar values are already human-readable Arabic text
+        # (e.g. "مذكر"/"مؤنث"), unlike the English enum keys Russian uses.
+        return gender or "unknown"
     labels = {
         "masculine": "M mужской",
         "feminine": "F женский",
         "neuter": "N средний",
     }
     return labels.get(gender, "unknown")
+
+
+def is_arabic_target(profile: dict) -> bool:
+    return profile.get("target_lang") == "ar"
+
+
+def primary_word(item: dict, profile: dict) -> str:
+    return item["arabic"] if is_arabic_target(profile) else item["russian"]
+
+
+def primary_pronunciation(item: dict, profile: dict) -> str:
+    if is_arabic_target(profile):
+        return item.get("arabicTransliterationRu", "")
+    if profile.get("key") == "ar":
+        return item.get("transliterationAr") or item.get("transliteration", "")
+    return item.get("transliterationStressed") or item.get("transliteration", "")
+
+
+def primary_example(item: dict, profile: dict) -> str:
+    return item.get("exampleAr", "") if is_arabic_target(profile) else item.get("exampleRu", "")
+
+
+def primary_example_pronunciation(item: dict, profile: dict) -> str:
+    if is_arabic_target(profile):
+        return item.get("exampleArTransliterationRu", "")
+    if profile.get("key") == "ar":
+        return item.get("exampleTransliterationAr", "")
+    if profile.get("key") == "en":
+        return item.get("exampleTransliterationEn", "")
+    return ""
+
+
+def primary_grammar(item: dict, profile: dict) -> dict:
+    lang = profile.get("target_lang", "ru")
+    return item.get("grammar", {}).get(lang, {})
 
 
 def choose_items(items: list[dict], limit: int) -> list[dict]:
@@ -241,17 +453,24 @@ def choose_items(items: list[dict], limit: int) -> list[dict]:
     return [items[position] for position in positions]
 
 
-def make_blank_sentence(item: dict) -> str:
-    sentence = item.get("exampleRu", "")
-    russian = item.get("russian", "")
+def make_blank_sentence(item: dict, profile: dict) -> str:
+    target_word = primary_word(item, profile)
+    sentence = primary_example(item, profile)
+    arabic_target = is_arabic_target(profile)
+    char_class = r"[ء-ي]" if arabic_target else r"[\wёЁ]"
     parts = []
-    for token in russian.split():
-        clean_token = re.sub(r"[^\wёЁ]", "", token)
+    for token in target_word.split():
+        clean_token = re.sub(r"[^ء-ي]" if arabic_target else r"[^\wёЁ]", "", token)
         if not clean_token:
             continue
-        stem_length = max(3, len(clean_token) - 3)
-        parts.append(re.escape(clean_token[:stem_length]) + r"\w*")
-    pattern = r"\s+".join(parts) if parts else re.escape(russian)
+        # Arabic nouns commonly carry an attached prefix (ال، و، ب...) in a
+        # sentence, so lean on a slightly shorter stem than the Russian
+        # case-ending heuristic uses; either way this only trims the tail,
+        # a substring search still finds the stem after a leading prefix.
+        trim = 2 if arabic_target else 3
+        stem_length = max(2, len(clean_token) - trim)
+        parts.append(re.escape(clean_token[:stem_length]) + char_class + "*")
+    pattern = r"\s+".join(parts) if parts else re.escape(target_word)
     blanked = re.sub(pattern, "____________", sentence, count=1, flags=re.IGNORECASE)
     return blanked if blanked != sentence else f"{sentence}  ____________"
 
@@ -320,17 +539,19 @@ def draw_wrapped_text(
 
 
 def fit_image(path: Path, max_width: float, max_height: float) -> ImageReader:
+    # Crop-to-fill (like the website's CSS object-fit:cover), not pad-to-fit.
+    # 27 of the 75 photos are portrait or square, not the card's landscape
+    # ratio; padding them left visible white bars next to edge-to-edge
+    # neighbors on the same page, which read as inconsistent formatting.
     image = Image.open(path).convert("RGB")
-    fitted = ImageOps.contain(image, (int(max_width * 2), int(max_height * 2)), Image.Resampling.LANCZOS)
-    canvas_image = Image.new("RGB", (int(max_width * 2), int(max_height * 2)), "white")
-    canvas_image.paste(fitted, ((canvas_image.width - fitted.width) // 2, (canvas_image.height - fitted.height) // 2))
-    return ImageReader(canvas_image)
+    fitted = ImageOps.fit(image, (int(max_width * 2), int(max_height * 2)), Image.Resampling.LANCZOS, centering=(0.5, 0.5))
+    return ImageReader(fitted)
 
 
 _QR_CACHE: dict[str, ImageReader] = {}
 
 
-def pronunciation_qr(russian_word: str) -> ImageReader:
+def pronunciation_qr(word: str, tts_lang: str = "ru") -> ImageReader:
     """QR code linking to an external, unofficial Google Translate TTS URL.
 
     There is no real audio in this project (see docs/WORD_SCHEMA.md Audio
@@ -338,28 +559,29 @@ def pronunciation_qr(russian_word: str) -> ImageReader:
     external TTS endpoint instead. It is unofficial and can rate-limit or
     change without notice - treat it as a bonus, not a guarantee.
     """
-    if russian_word in _QR_CACHE:
-        return _QR_CACHE[russian_word]
-    query = urllib.parse.quote(russian_word)
-    url = f"https://translate.google.com/translate_tts?ie=UTF-8&tl=ru&client=tw-ob&q={query}"
+    cache_key = f"{tts_lang}:{word}"
+    if cache_key in _QR_CACHE:
+        return _QR_CACHE[cache_key]
+    query = urllib.parse.quote(word)
+    url = f"https://translate.google.com/translate_tts?ie=UTF-8&tl={tts_lang}&client=tw-ob&q={query}"
     qr = qrcode.make(url, border=1, box_size=4)
     reader = ImageReader(qr.get_image())
-    _QR_CACHE[russian_word] = reader
+    _QR_CACHE[cache_key] = reader
     return reader
 
 
-def draw_header(pdf: canvas.Canvas, title_en: str, title_ar: str, subtitle: str, page_no: int) -> None:
+def draw_header(pdf: canvas.Canvas, title_left: str, title_ar: str, subtitle: str, page_no: int, profile: dict) -> None:
     pdf.setFillColor(ACCENT)
     pdf.rect(0, PAGE_HEIGHT - 16, PAGE_WIDTH, 16, fill=1, stroke=0)
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 20)
-    pdf.drawString(MARGIN, PAGE_HEIGHT - 44, title_en)
+    pdf.drawString(MARGIN, PAGE_HEIGHT - 44, title_left)
     pdf.setFont(FONT_BOLD, 15)
     pdf.drawRightString(PAGE_WIDTH - MARGIN, PAGE_HEIGHT - 44, shape_arabic(title_ar))
     pdf.setFillColor(MUTED)
     pdf.setFont(FONT_REGULAR, 9.5)
     pdf.drawString(MARGIN, PAGE_HEIGHT - 58, subtitle)
-    pdf.drawRightString(PAGE_WIDTH - MARGIN, PAGE_HEIGHT - 58, f"Page {page_no}")
+    pdf.drawRightString(PAGE_WIDTH - MARGIN, PAGE_HEIGHT - 58, t(profile, "page_label", n=page_no))
     pdf.setStrokeColor(CARD_BORDER)
     pdf.line(MARGIN, PAGE_HEIGHT - 66, PAGE_WIDTH - MARGIN, PAGE_HEIGHT - 66)
 
@@ -385,11 +607,13 @@ def draw_cover(pdf: canvas.Canvas, total_words: int, profile: dict) -> None:
     pdf.setFont(FONT_BOLD, 20)
     pdf.drawRightString(PAGE_WIDTH - MARGIN, PAGE_HEIGHT - 54, shape_arabic("الحياة اليومية الروسية"))
     pdf.setFont(FONT_REGULAR, 14)
-    pdf.drawString(MARGIN, PAGE_HEIGHT - 98, f"Workbook - {profile['edition_en']}")
+    arabic_target_cover = is_arabic_target(profile)
+    edition_label_cover = profile.get("edition_ru", profile["edition_en"]) if arabic_target_cover else profile["edition_en"]
+    pdf.drawString(MARGIN, PAGE_HEIGHT - 98, t(profile, "workbook_edition", edition=edition_label_cover))
     pdf.setFillColor(MUTED)
     pdf.setFont(FONT_REGULAR, 10.5)
-    pdf.drawString(MARGIN, PAGE_HEIGHT - 118, f"{total_words} words - 6 sections - photo cards + writing + review pages")
-    pdf.drawString(MARGIN, PAGE_HEIGHT - 136, "Use this book offline while the website handles audio, progress, and quizzes.")
+    pdf.drawString(MARGIN, PAGE_HEIGHT - 118, t(profile, "cover_word_count", count=total_words))
+    pdf.drawString(MARGIN, PAGE_HEIGHT - 136, t(profile, "cover_offline_note"))
 
     cover_images = [
         ("assets/images/words/house.jpg", MARGIN, PAGE_HEIGHT - 300, 160, 108),
@@ -402,26 +626,32 @@ def draw_cover(pdf: canvas.Canvas, total_words: int, profile: dict) -> None:
         pdf.roundRect(x, y, width, height, 10, fill=0, stroke=1)
         pdf.drawImage(fit_image(image_path, width - 8, height - 8), x + 4, y + 4, width - 8, height - 8, preserveAspectRatio=True, anchor="c")
 
-    pdf.setFillColor(TEXT)
-    pdf.setFont(FONT_BOLD, 13)
-    pdf.drawString(MARGIN, 255, "What is inside")
-    pdf.setFont(FONT_REGULAR, 11)
-    meaning_note = " and ".join(MEANING_LABELS[lang] for lang in profile["card_meanings"])
-    bullets = [
-        "Photo cards for every word in the app - Russian first, with stressed pronunciation.",
-        f"Meaning shown in: {meaning_note}.",
-        "Example sentence to support reading and speaking.",
-        "Writing, recall, matching, and spaced-review pages.",
-        "QR code per word for a quick external pronunciation check.",
-    ]
-    bullet_y = 232
-    for bullet in bullets:
-        pdf.circle(MARGIN + 4, bullet_y + 3, 1.6, fill=1, stroke=0)
-        pdf.drawString(MARGIN + 12, bullet_y, bullet)
-        bullet_y -= 19
-
     callout_x = PAGE_WIDTH - MARGIN - 240
     callout_y = 152
+
+    pdf.setFillColor(TEXT)
+    pdf.setFont(FONT_BOLD, 13)
+    pdf.drawString(MARGIN, 268, t(profile, "what_is_inside"))
+    pdf.setFont(FONT_REGULAR, 11)
+    labels_source = MEANING_LABELS_RU if arabic_target_cover else MEANING_LABELS
+    joiner = ", " if arabic_target_cover else " and "
+    meaning_note = joiner.join(labels_source[lang] for lang in profile["card_meanings"])
+    word_intro = "Карточки с фото для каждого слова - сначала арабское слово." if arabic_target_cover else "Photo cards for every word in the app - Russian first, with stressed pronunciation."
+    bullets = [
+        word_intro,
+        t(profile, "meaning_shown_in", meaning=meaning_note),
+        t(profile, "bullet_example"),
+        t(profile, "bullet_pages"),
+        t(profile, "bullet_qr"),
+    ]
+    # Bullets share the row with the edition callout box on the right;
+    # wrap well before callout_x so long lines never run under the box.
+    bullet_width = callout_x - (MARGIN + 12) - 14
+    bullet_y = 245
+    for bullet in bullets:
+        pdf.circle(MARGIN + 4, bullet_y + 3, 1.6, fill=1, stroke=0)
+        used = draw_wrapped_text(pdf, bullet, MARGIN + 12, bullet_y, bullet_width, FONT_REGULAR, 11, 14, color=TEXT)
+        bullet_y -= max(used, 14) + 5
     pdf.setStrokeColor(CARD_BORDER)
     pdf.setFillColor(colors.white)
     pdf.roundRect(callout_x, callout_y, 240, 110, 12, fill=1, stroke=1)
@@ -446,13 +676,13 @@ def draw_cover(pdf: canvas.Canvas, total_words: int, profile: dict) -> None:
 
 
 def draw_contents_v2(pdf: canvas.Canvas, grouped: dict[str, list[dict]], page_no: int, plan: dict, profile: dict) -> None:
-    draw_header(pdf, "Contents", "الفهرس", "Reference, writing, and review map", page_no)
+    draw_header(pdf, t(profile, "contents_title"), "الفهرس", t(profile, "contents_subtitle"), page_no, profile)
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 16)
-    pdf.drawString(MARGIN, PAGE_HEIGHT - 100, "Chapter overview")
+    pdf.drawString(MARGIN, PAGE_HEIGHT - 100, t(profile, "chapter_overview"))
     pdf.setFillColor(MUTED)
     pdf.setFont(FONT_REGULAR, 10.5)
-    pdf.drawString(MARGIN, PAGE_HEIGHT - 118, "Every section is followed by writing practice and a self-test.")
+    pdf.drawString(MARGIN, PAGE_HEIGHT - 118, t(profile, "contents_intro"))
 
     table_x = MARGIN
     table_y = PAGE_HEIGHT - 145
@@ -469,20 +699,19 @@ def draw_contents_v2(pdf: canvas.Canvas, grouped: dict[str, list[dict]], page_no
     pdf.rect(table_x, table_y, table_width, row_h, fill=1, stroke=0)
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 9.5)
-    pdf.drawString(table_x + 10, table_y + 9, "Section")
-    pdf.drawString(table_x + col_w1 + 10, table_y + 9, "Reference")
-    pdf.drawString(table_x + col_w1 + col_w2 + 10, table_y + 9, "Writing")
-    pdf.drawString(table_x + col_w1 + col_w2 + col_w3 + 10, table_y + 9, "Test")
+    pdf.drawString(table_x + 10, table_y + 9, t(profile, "col_section"))
+    pdf.drawString(table_x + col_w1 + 10, table_y + 9, t(profile, "col_reference"))
+    pdf.drawString(table_x + col_w1 + col_w2 + 10, table_y + 9, t(profile, "col_writing"))
+    pdf.drawString(table_x + col_w1 + col_w2 + col_w3 + 10, table_y + 9, t(profile, "col_test"))
     for index, section in enumerate(SECTION_ORDER, start=1):
         row_y = table_y - index * row_h
         pdf.setStrokeColor(CARD_BORDER)
         pdf.line(table_x, row_y, table_x + table_width, row_y)
-        title_en, title_ar = SECTION_TITLES[section]
         pdf.setFillColor(TEXT)
         pdf.setFont(FONT_BOLD, 9.5)
-        pdf.drawString(table_x + 10, row_y + 9, f"{index}. {title_en}")
+        pdf.drawString(table_x + 10, row_y + 9, f"{index}. {section_title_left(profile, section)}")
         pdf.setFont(FONT_REGULAR, 8.6)
-        pdf.drawRightString(table_x + col_w1 - 10, row_y + 9, shape_arabic(title_ar))
+        pdf.drawRightString(table_x + col_w1 - 10, row_y + 9, shape_arabic(section_title_ar(section)))
         pdf.setFont(FONT_BOLD, 9.5)
         pdf.drawString(table_x + col_w1 + 10, row_y + 9, str(plan["reference_pages"][section][0]))
         pdf.drawString(table_x + col_w1 + col_w2 + 10, row_y + 9, str(plan["writing_pages"][section][0]))
@@ -490,13 +719,13 @@ def draw_contents_v2(pdf: canvas.Canvas, grouped: dict[str, list[dict]], page_no
 
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 13)
-    pdf.drawString(MARGIN, 425, "Book tools")
+    pdf.drawString(MARGIN, 425, t(profile, "book_tools"))
     pdf.setFont(FONT_REGULAR, 10.2)
     tools = [
-        f"Pronunciation guide: page {plan['pronunciation_page']}.",
-        f"Cumulative reviews: pages {plan['cumulative_pages'][0]}-{plan['cumulative_pages'][-1]}.",
-        f"Word index: pages {plan['index_pages'][0]}-{plan['index_pages'][-1]}.",
-        "Answer keys are placed at the end so you can test yourself first.",
+        t(profile, "tool_pronunciation", page=plan["pronunciation_page"]),
+        t(profile, "tool_cumulative", start=plan["cumulative_pages"][0], end=plan["cumulative_pages"][-1]),
+        t(profile, "tool_index", start=plan["index_pages"][0], end=plan["index_pages"][-1]),
+        t(profile, "tool_answers"),
     ]
     tool_y = 403
     for tool in tools:
@@ -506,12 +735,17 @@ def draw_contents_v2(pdf: canvas.Canvas, grouped: dict[str, list[dict]], page_no
 
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 13)
-    pdf.drawString(MARGIN, 313, "How to use each word")
+    pdf.drawString(MARGIN, 313, t(profile, "how_to_use"))
+    first_step = (
+        "1. Взгляните на фото, произнесите арабское слово, затем проверьте столбец со значением."
+        if is_arabic_target(profile)
+        else "1. Look at the photo, say the Russian word, then check the stressed pronunciation line."
+    )
     steps = [
-        "1. Look at the photo, say the Russian word, then check the stressed pronunciation line.",
-        "2. Cover the meaning column and recall it from memory.",
-        "3. Complete the writing page and section test before checking the answer key.",
-        "4. Scan the QR code if you want to hear an external pronunciation check.",
+        first_step,
+        t(profile, "step2"),
+        t(profile, "step3"),
+        t(profile, "step4"),
     ]
     pdf.setFont(FONT_REGULAR, 10.2)
     step_y = 291
@@ -535,7 +769,7 @@ def draw_card_v3(pdf: canvas.Canvas, item: dict, x: float, y: float, section_lab
     pdf.drawString(x + 16, tag_y, f"{item['id']} - {section_label}")
     pdf.setFillColor(MUTED)
     pdf.setFont(FONT_REGULAR, 8)
-    pdf.drawRightString(x + CARD_WIDTH - 12, tag_y, f"Lv {item.get('level', '')} | Freq {item.get('frequency', '')}")
+    pdf.drawRightString(x + CARD_WIDTH - 12, tag_y, t(profile, "level_tag", level=item.get("level", ""), freq=item.get("frequency", "")))
 
     image_top = tag_y - 12
     image_path = resolve_image_path(item["imagePath"])
@@ -554,26 +788,30 @@ def draw_card_v3(pdf: canvas.Canvas, item: dict, x: float, y: float, section_lab
     qr_y = image_top - QR_SIZE
     pdf.setFillColor(colors.white)
     pdf.roundRect(qr_x - 2, qr_y - 2, QR_SIZE + 4, QR_SIZE + 4, 4, fill=1, stroke=0)
-    pdf.drawImage(pronunciation_qr(item["russian"]), qr_x, qr_y, QR_SIZE, QR_SIZE)
+    pdf.drawImage(pronunciation_qr(primary_word(item, profile), profile.get("target_lang", "ru")), qr_x, qr_y, QR_SIZE, QR_SIZE)
 
     text_x = x + CARD_TEXT_X
     cursor = image_top - CARD_IMAGE_HEIGHT - 14
+    arabic_target = is_arabic_target(profile)
+    word_align = "right" if arabic_target else "left"
 
     pdf.setFillColor(TEXT)
-    pdf.setFont(FONT_BOLD, 19)
-    pdf.drawString(text_x, cursor, item["russian"])
-    cursor -= 16
+    used = draw_wrapped_text(pdf, primary_word(item, profile), text_x, cursor, CARD_TEXT_WIDTH, FONT_BOLD, 19, 21, color=TEXT, align=word_align)
+    cursor -= max(used, 16)
 
-    pdf.setFillColor(ACCENT)
-    pdf.setFont(FONT_REGULAR, 10.5)
-    pdf.drawString(text_x, cursor, item.get("transliterationStressed") or item.get("transliteration", ""))
-    cursor -= 16
+    pronunciation = primary_pronunciation(item, profile)
+    if pronunciation:
+        pdf.setFillColor(ACCENT)
+        pdf.setFont(FONT_REGULAR, 10.5)
+        pdf.drawString(text_x, cursor, pronunciation)
+        cursor -= 16
 
     meaning_font_size = 10.6 if len(profile["card_meanings"]) == 1 else 9.2
     meaning_leading = 13 if len(profile["card_meanings"]) == 1 else 11.2
     meaning_color = TEXT if len(profile["card_meanings"]) == 1 else MUTED
+    meaning_values = {"ar": item.get("arabic"), "en": item.get("english"), "ru": item.get("russian")}
     for lang in profile["card_meanings"]:
-        value = item.get("arabic") if lang == "ar" else item.get("english")
+        value = meaning_values[lang]
         align = "right" if lang == "ar" else "left"
         used = draw_wrapped_text(pdf, value, text_x, cursor, CARD_TEXT_WIDTH, FONT_BOLD, meaning_font_size, meaning_leading, color=meaning_color, align=align)
         cursor -= max(used, meaning_leading)
@@ -581,13 +819,20 @@ def draw_card_v3(pdf: canvas.Canvas, item: dict, x: float, y: float, section_lab
     cursor -= 6
     pdf.setFillColor(MUTED)
     pdf.setFont(FONT_BOLD, 9)
-    pdf.drawString(text_x, cursor, "Russian example")
+    pdf.drawString(text_x, cursor, "Пример на арабском" if arabic_target else "Russian example")
     cursor -= 12
     pdf.setFillColor(TEXT)
-    used = draw_wrapped_text(pdf, item["exampleRu"], text_x, cursor, CARD_TEXT_WIDTH, FONT_REGULAR, 8.7, 10.5, color=TEXT)
+    used = draw_wrapped_text(pdf, primary_example(item, profile), text_x, cursor, CARD_TEXT_WIDTH, FONT_REGULAR, 8.7, 10.5, color=TEXT, align=word_align)
     cursor -= max(used, 10.5)
+    example_pronunciation = primary_example_pronunciation(item, profile)
+    if example_pronunciation:
+        pdf.setFillColor(ACCENT)
+        pronunciation_align = "right" if profile.get("key") == "ar" else "left"
+        used = draw_wrapped_text(pdf, example_pronunciation, text_x, cursor, CARD_TEXT_WIDTH, FONT_REGULAR, 7.8, 9.2, color=ACCENT, align=pronunciation_align)
+        cursor -= max(used, 9.2)
+    example_values = {"ar": item.get("exampleAr"), "en": item.get("exampleEn"), "ru": item.get("exampleRu")}
     for lang in profile["example_langs"]:
-        value = item.get("exampleAr") if lang == "ar" else item.get("exampleEn")
+        value = example_values[lang]
         align = "right" if lang == "ar" else "left"
         used = draw_wrapped_text(pdf, value, text_x, cursor, CARD_TEXT_WIDTH, FONT_REGULAR, 8.3, 9.8, color=MUTED, align=align)
         cursor -= max(used, 9.8)
@@ -598,9 +843,10 @@ def draw_section_pages_v2(pdf: canvas.Canvas, grouped: dict[str, list[dict]], pl
         items = grouped.get(section, [])
         if not items:
             continue
-        title_en, title_ar = SECTION_TITLES[section]
+        title_left = section_title_left(profile, section)
+        title_ar = section_title_ar(section)
         for page_index, page_no in enumerate(plan["reference_pages"][section]):
-            draw_header(pdf, title_en, title_ar, f"{len(items)} photo cards - pronunciation + examples", page_no)
+            draw_header(pdf, title_left, title_ar, t(profile, "reference_page_subtitle", count=len(items)), page_no, profile)
             page_items = items[page_index * 4 : (page_index + 1) * 4]
             positions = [
                 (MARGIN, PAGE_HEIGHT - 66 - HEADER_HEIGHT - CARD_HEIGHT),
@@ -609,7 +855,7 @@ def draw_section_pages_v2(pdf: canvas.Canvas, grouped: dict[str, list[dict]], pl
                 (MARGIN + CARD_WIDTH + GAP, MARGIN + FOOTER_HEIGHT + GAP),
             ]
             for item, (x, y) in zip(page_items, positions):
-                draw_card_v3(pdf, item, x, y, title_en, profile)
+                draw_card_v3(pdf, item, x, y, title_left, profile)
             draw_footer(pdf, page_no, profile)
             pdf.showPage()
 
@@ -623,19 +869,19 @@ def draw_section_pages_v2(pdf: canvas.Canvas, grouped: dict[str, list[dict]], pl
 
 
 def draw_progress_page(pdf: canvas.Canvas, grouped: dict[str, list[dict]], page_no: int, profile: dict) -> None:
-    draw_header(pdf, "My progress", "متابعة تقدمي", "Check each part as you complete it", page_no)
+    draw_header(pdf, t(profile, "my_progress"), "متابعة تقدمي", t(profile, "progress_subtitle"), page_no, profile)
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 16)
-    pdf.drawString(MARGIN, PAGE_HEIGHT - 100, "Start with a small promise")
+    pdf.drawString(MARGIN, PAGE_HEIGHT - 100, t(profile, "start_promise"))
     pdf.setFillColor(MUTED)
     pdf.setFont(FONT_REGULAR, 10.3)
-    pdf.drawString(MARGIN, PAGE_HEIGHT - 118, "Write your name, choose a pace, and mark the work you finish on paper.")
+    pdf.drawString(MARGIN, PAGE_HEIGHT - 118, t(profile, "start_promise_body"))
 
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 10.5)
-    pdf.drawString(MARGIN, PAGE_HEIGHT - 155, "Name:")
+    pdf.drawString(MARGIN, PAGE_HEIGHT - 155, t(profile, "name_label"))
     draw_rule(pdf, MARGIN + 42, PAGE_HEIGHT - 153, 180)
-    pdf.drawString(MARGIN + 250, PAGE_HEIGHT - 155, "Start date:")
+    pdf.drawString(MARGIN + 250, PAGE_HEIGHT - 155, t(profile, "start_date_label"))
     draw_rule(pdf, MARGIN + 310, PAGE_HEIGHT - 153, 100)
 
     table_x = MARGIN
@@ -649,26 +895,26 @@ def draw_progress_page(pdf: canvas.Canvas, grouped: dict[str, list[dict]], page_
     pdf.rect(table_x, table_y, table_width, row_h, fill=1, stroke=0)
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 9.5)
-    pdf.drawString(table_x + 10, table_y + 18, "Section")
-    pdf.drawString(table_x + 210, table_y + 18, "Words")
-    pdf.drawString(table_x + 270, table_y + 18, "Reference")
-    pdf.drawString(table_x + 360, table_y + 18, "Writing")
-    pdf.drawString(table_x + 450, table_y + 18, "Test")
+    pdf.drawString(table_x + 10, table_y + 18, t(profile, "col_section"))
+    pdf.drawString(table_x + 210, table_y + 18, t(profile, "col_words"))
+    pdf.drawString(table_x + 270, table_y + 18, t(profile, "col_reference"))
+    pdf.drawString(table_x + 360, table_y + 18, t(profile, "col_writing"))
+    pdf.drawString(table_x + 450, table_y + 18, t(profile, "col_test"))
     for index, section in enumerate(SECTION_ORDER, start=1):
         row_y = table_y - index * row_h
         pdf.setStrokeColor(CARD_BORDER)
         pdf.line(table_x, row_y, table_x + table_width, row_y)
-        title_en, title_ar = SECTION_TITLES[section]
         pdf.setFillColor(TEXT)
         pdf.setFont(FONT_BOLD, 9.3)
-        pdf.drawString(table_x + 10, row_y + 28, title_en)
+        pdf.drawString(table_x + 10, row_y + 28, section_title_left(profile, section))
         pdf.setFont(FONT_REGULAR, 8.7)
-        pdf.drawRightString(table_x + 195, row_y + 14, shape_arabic(title_ar))
+        pdf.drawRightString(table_x + 195, row_y + 14, shape_arabic(section_title_ar(section)))
         pdf.setFont(FONT_BOLD, 10)
         pdf.drawString(table_x + 210, row_y + 22, str(len(grouped.get(section, []))))
-        draw_checkbox(pdf, table_x + 270, row_y + 25, "done")
-        draw_checkbox(pdf, table_x + 360, row_y + 25, "done")
-        draw_checkbox(pdf, table_x + 450, row_y + 25, "done")
+        done_label = t(profile, "checkbox_done")
+        draw_checkbox(pdf, table_x + 270, row_y + 25, done_label)
+        draw_checkbox(pdf, table_x + 360, row_y + 25, done_label)
+        draw_checkbox(pdf, table_x + 450, row_y + 25, done_label)
 
     callout_y = 112
     pdf.setFillColor(SUCCESS_FILL)
@@ -676,10 +922,10 @@ def draw_progress_page(pdf: canvas.Canvas, grouped: dict[str, list[dict]], page_
     pdf.roundRect(MARGIN, callout_y, PAGE_WIDTH - 2 * MARGIN, 82, 12, fill=1, stroke=1)
     pdf.setFillColor(ACCENT)
     pdf.setFont(FONT_BOLD, 12)
-    pdf.drawString(MARGIN + 14, callout_y + 57, "Four marks of a useful study session")
+    pdf.drawString(MARGIN + 14, callout_y + 57, t(profile, "four_marks"))
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_REGULAR, 9.5)
-    for index, text in enumerate(["I said the word aloud.", "I checked the pronunciation.", "I wrote it from memory.", "I reviewed it again later."]):
+    for index, text in enumerate([t(profile, "mark1"), t(profile, "mark2"), t(profile, "mark3"), t(profile, "mark4")]):
         draw_checkbox(pdf, MARGIN + 14 + (index % 2) * 255, callout_y + 30 - (index // 2) * 22, text, 220)
     draw_footer(pdf, page_no, profile)
 
@@ -694,11 +940,12 @@ def draw_writing_page(
     profile: dict,
     bonus: bool = False,
 ) -> None:
-    title_en, title_ar = SECTION_TITLES[section]
-    draw_header(pdf, "Writing practice", f"{title_ar} - الكتابة", f"{title_en} - part {part_index} of {total_parts}", page_no)
+    title_left = section_title_left(profile, section)
+    title_ar = section_title_ar(section)
+    draw_header(pdf, t(profile, "writing_practice"), f"{title_ar} - الكتابة", t(profile, "writing_page_subtitle", section=title_left, part=part_index, total=total_parts), page_no, profile)
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 13)
-    pdf.drawString(MARGIN, PAGE_HEIGHT - 91, "Trace once, then write the word three times.")
+    pdf.drawString(MARGIN, PAGE_HEIGHT - 91, t(profile, "trace_instruction"))
     pdf.setFillColor(MUTED)
     pdf.setFont(FONT_REGULAR, 9.2)
     pdf.drawRightString(PAGE_WIDTH - MARGIN, PAGE_HEIGHT - 91, shape_arabic("غطِّ المعنى واكتب من الذاكرة"))
@@ -720,15 +967,18 @@ def draw_writing_page(
     pdf.rect(table_x, table_top - header_h, table_width, header_h, fill=1, stroke=0)
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 9)
+    arabic_target = is_arabic_target(profile)
+    word_column_width = (meaning_x - 14) - word_x
     pdf.drawString(table_x + 8, table_top - 16, "#")
-    pdf.drawString(word_x, table_top - 16, "Russian word")
-    pdf.drawString(meaning_x, table_top - 16, "Meaning - cover this")
-    pdf.drawString(writing_x, table_top - 16, "Trace and write")
+    pdf.drawString(word_x, table_top - 16, "Арабское слово" if arabic_target else "Russian word")
+    pdf.drawString(meaning_x, table_top - 16, t(profile, "col_meaning_cover"))
+    pdf.drawString(writing_x, table_top - 16, t(profile, "col_trace_write"))
     for column_x in (meaning_x - 14, writing_x - 14):
         pdf.setStrokeColor(CARD_BORDER)
         pdf.line(column_x, table_top - table_height, column_x, table_top)
 
     meaning_langs = profile["card_meanings"]
+    meaning_values_all = {"ar": lambda i: i["arabic"], "en": lambda i: i["english"], "ru": lambda i: i["russian"]}
     for index, item in enumerate(items, start=1):
         row_top = table_top - header_h - (index - 1) * row_h
         row_bottom = row_top - row_h
@@ -741,21 +991,26 @@ def draw_writing_page(
         pdf.setFont(FONT_BOLD, 9)
         pdf.drawString(table_x + 8, row_top - 22, str(index))
         pdf.setFillColor(TEXT)
-        pdf.setFont(FONT_BOLD, 11.5)
-        pdf.drawString(word_x, row_top - 20, item["russian"])
-        pdf.setFillColor(ACCENT)
-        pdf.setFont(FONT_REGULAR, 8.7)
-        pdf.drawString(word_x, row_top - 35, item.get("transliterationStressed") or item.get("transliteration", ""))
+        draw_wrapped_text(pdf, primary_word(item, profile), word_x, row_top - 20, word_column_width, FONT_BOLD, 11.5, 15, color=TEXT, align="right" if arabic_target else "left")
+        pronunciation = primary_pronunciation(item, profile)
+        if pronunciation:
+            pdf.setFillColor(ACCENT)
+            pdf.setFont(FONT_REGULAR, 8.7)
+            pdf.drawString(word_x, row_top - 35, pronunciation)
         meaning_cursor = row_top - 18
         for lang in meaning_langs:
-            value = item["arabic"] if lang == "ar" else item["english"]
+            value = meaning_values_all[lang](item)
             align = "right" if lang == "ar" else "left"
             pdf.setFillColor(TEXT if lang == meaning_langs[0] else MUTED)
             used = draw_wrapped_text(pdf, value, meaning_x, meaning_cursor, 155, FONT_BOLD if lang == meaning_langs[0] else FONT_REGULAR, 9.3 if lang == meaning_langs[0] else 8.3, 11, color=TEXT if lang == meaning_langs[0] else MUTED, align=align)
             meaning_cursor -= max(used, 11)
         pdf.setFillColor(TRACE_TEXT)
         pdf.setFont(FONT_REGULAR, 9.5)
-        pdf.drawString(writing_x, row_top - 17, f"Trace: {item['russian']}")
+        trace_word = primary_word(item, profile)
+        if arabic_target:
+            pdf.drawRightString(writing_x + writing_width, row_top - 17, shape_arabic(f"{trace_word} :تتبّع"))
+        else:
+            pdf.drawString(writing_x, row_top - 17, f"Trace: {trace_word}")
         draw_rule(pdf, writing_x, row_top - 31, writing_width, dashed=True)
         draw_rule(pdf, writing_x, row_top - 46, writing_width)
         draw_rule(pdf, writing_x, row_top - 60, writing_width)
@@ -767,13 +1022,14 @@ def draw_writing_page(
         pdf.roundRect(table_x, 60, table_width, bonus_top - 60, 10, fill=1, stroke=1)
         pdf.setFillColor(TEXT)
         pdf.setFont(FONT_BOLD, 10.5)
-        pdf.drawString(table_x + 14, bonus_top - 20, "Bonus: build your own sentence")
+        pdf.drawString(table_x + 14, bonus_top - 20, t(profile, "bonus_title"))
         pdf.setFillColor(MUTED)
         pdf.setFont(FONT_REGULAR, 8.8)
         pdf.drawRightString(table_x + table_width - 14, bonus_top - 20, shape_arabic("مكافأة: كوّن جملتك الخاصة"))
         pdf.setFillColor(TEXT)
         pdf.setFont(FONT_REGULAR, 9.2)
-        pdf.drawString(table_x + 14, bonus_top - 38, "Pick two words from this page and write one Russian sentence using both of them.")
+        bonus_body = "Составьте одно арабское предложение, используя два слова с этой страницы." if arabic_target else "Pick two words from this page and write one Russian sentence using both of them."
+        pdf.drawString(table_x + 14, bonus_top - 38, bonus_body)
         for line_y in range(int(bonus_top) - 58, 75, -22):
             draw_rule(pdf, table_x + 14, line_y, table_width - 28)
 
@@ -788,16 +1044,21 @@ def matching_items(items: list[dict]) -> tuple[list[dict], list[dict]]:
     return selected, selected[rotation:] + selected[:rotation]
 
 
+def meaning_value(item: dict, lang: str) -> str:
+    return {"ar": item["arabic"], "en": item["english"], "ru": item["russian"]}[lang]
+
+
 def meaning_text(item: dict, profile: dict) -> str:
-    parts = [item["arabic"] if lang == "ar" else item["english"] for lang in profile["card_meanings"]]
+    parts = [meaning_value(item, lang) for lang in profile["card_meanings"]]
     return " / ".join(parts)
 
 
 def draw_matching_exercise(pdf: canvas.Canvas, items: list[dict], y_top: float, profile: dict) -> float:
+    arabic_target = is_arabic_target(profile)
     selected, meanings = matching_items(items)
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 11.5)
-    pdf.drawString(MARGIN, y_top, "1. Match the Russian word to its meaning")
+    pdf.drawString(MARGIN, y_top, t(profile, "match_title"))
     pdf.setFillColor(MUTED)
     pdf.setFont(FONT_REGULAR, 8.7)
     pdf.drawRightString(PAGE_WIDTH - MARGIN, y_top, shape_arabic("صِل الكلمة بالمعنى الصحيح"))
@@ -809,10 +1070,12 @@ def draw_matching_exercise(pdf: canvas.Canvas, items: list[dict], y_top: float, 
         row_y = y_top - index * row_h
         pdf.setFillColor(TEXT)
         pdf.setFont(FONT_BOLD, 9.5)
-        pdf.drawString(left_x, row_y, f"{index + 1}. {item['russian']}")
-        pdf.setFillColor(ACCENT)
-        pdf.setFont(FONT_REGULAR, 7.8)
-        pdf.drawString(left_x + 3, row_y - 11, item.get("transliterationStressed") or item.get("transliteration", ""))
+        draw_wrapped_text(pdf, f"{index + 1}. {primary_word(item, profile)}", left_x, row_y, 140, FONT_BOLD, 9.5, 11, color=TEXT, align="right" if arabic_target else "left")
+        pronunciation = primary_pronunciation(item, profile)
+        if pronunciation:
+            pdf.setFillColor(ACCENT)
+            pdf.setFont(FONT_REGULAR, 7.8)
+            pdf.drawString(left_x + 3, row_y - 11, pronunciation)
         pdf.setStrokeColor(WRITING_LINE)
         pdf.setDash(2, 2)
         pdf.line(left_x + 150, row_y - 2, right_x - 16, row_y - 2)
@@ -821,51 +1084,62 @@ def draw_matching_exercise(pdf: canvas.Canvas, items: list[dict], y_top: float, 
         pdf.setFont(FONT_BOLD, 9)
         pdf.drawString(right_x, row_y, f"{chr(65 + index)}.")
         primary_lang = profile["card_meanings"][0]
-        primary_value = meanings[index]["arabic"] if primary_lang == "ar" else meanings[index]["english"]
+        primary_value = meaning_value(meanings[index], primary_lang)
         draw_wrapped_text(pdf, primary_value, right_x + 18, row_y, 212, FONT_BOLD, 8.7, 9.5, color=TEXT, align="right" if primary_lang == "ar" else "left")
         if len(profile["card_meanings"]) > 1:
             secondary_lang = profile["card_meanings"][1]
-            secondary_value = meanings[index]["arabic"] if secondary_lang == "ar" else meanings[index]["english"]
+            secondary_value = meaning_value(meanings[index], secondary_lang)
             pdf.setFillColor(MUTED)
             pdf.setFont(FONT_REGULAR, 7.8)
             pdf.drawString(right_x + 18, row_y - 11, secondary_value)
     return y_top - len(selected) * row_h - 8
 
 
+def example_value(item: dict, lang: str) -> str:
+    return {"ar": item["exampleAr"], "en": item["exampleEn"], "ru": item["exampleRu"]}[lang]
+
+
 def draw_fill_exercise(pdf: canvas.Canvas, items: list[dict], y_top: float, profile: dict) -> tuple[float, list[dict]]:
+    arabic_target = is_arabic_target(profile)
     selected = choose_items(items, min(3, len(items)))
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 11.5)
-    pdf.drawString(MARGIN, y_top, "2. Complete the Russian sentence")
+    pdf.drawString(MARGIN, y_top, t(profile, "fill_title"))
     pdf.setFillColor(MUTED)
     pdf.setFont(FONT_REGULAR, 8.7)
-    pdf.drawRightString(PAGE_WIDTH - MARGIN, y_top, shape_arabic("اكتب الكلمة الروسية الناقصة"))
+    subtitle = "اكتب الكلمة العربية الناقصة" if arabic_target else "اكتب الكلمة الروسية الناقصة"
+    pdf.drawRightString(PAGE_WIDTH - MARGIN, y_top, shape_arabic(subtitle))
     y_top -= 19
     row_height = 39 if profile["example_langs"] else 26
     for index, item in enumerate(selected, start=1):
         sentence_y = y_top - (index - 1) * row_height
         pdf.setFillColor(TEXT)
         pdf.setFont(FONT_REGULAR, 9.2)
-        pdf.drawString(MARGIN + 10, sentence_y, f"{index}. {make_blank_sentence(item)}")
+        blanked = make_blank_sentence(item, profile)
+        if arabic_target:
+            draw_wrapped_text(pdf, f"{blanked}  .{index}", MARGIN + 10, sentence_y, PAGE_WIDTH - 2 * MARGIN - 20, FONT_REGULAR, 9.2, 11, color=TEXT, align="right")
+        else:
+            pdf.drawString(MARGIN + 10, sentence_y, f"{index}. {blanked}")
         hint_y = sentence_y - 13
         for lang in profile["example_langs"]:
-            value = item["exampleAr"] if lang == "ar" else item["exampleEn"]
+            value = example_value(item, lang)
             pdf.setFillColor(MUTED)
             used = draw_wrapped_text(pdf, value, MARGIN + 10, hint_y, PAGE_WIDTH - 2 * MARGIN - 20, FONT_REGULAR, 8.2, 9.5, color=MUTED, align="right" if lang == "ar" else "left")
             hint_y -= max(used, 9.5)
     return y_top - len(selected) * row_height - 9, selected
 
 
-def draw_grammar_exercise(pdf: canvas.Canvas, items: list[dict], y_top: float) -> None:
+def draw_grammar_exercise(pdf: canvas.Canvas, items: list[dict], y_top: float, profile: dict) -> None:
+    arabic_target = is_arabic_target(profile)
     selected = choose_items(items, min(3, len(items)))
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 11.5)
-    pdf.drawString(MARGIN, y_top, "3. Grammar check: gender and plural")
+    pdf.drawString(MARGIN, y_top, t(profile, "grammar_title"))
     pdf.setFillColor(MUTED)
     pdf.setFont(FONT_REGULAR, 8.7)
     pdf.drawRightString(PAGE_WIDTH - MARGIN, y_top, shape_arabic("حدّد الجنس واكتب الجمع"))
     y_top -= 21
-    columns = [(MARGIN + 10, "Word"), (MARGIN + 190, "Gender"), (MARGIN + 310, "Plural")]
+    columns = [(MARGIN + 10, t(profile, "col_word")), (MARGIN + 190, t(profile, "col_gender")), (MARGIN + 310, t(profile, "col_plural"))]
     pdf.setFillColor(MUTED)
     pdf.setFont(FONT_BOLD, 8.4)
     for x, label in columns:
@@ -874,47 +1148,61 @@ def draw_grammar_exercise(pdf: canvas.Canvas, items: list[dict], y_top: float) -
         row_y = y_top - index * 29
         pdf.setFillColor(TEXT)
         pdf.setFont(FONT_REGULAR, 9.2)
-        pdf.drawString(MARGIN + 10, row_y, f"{index}. {item['russian']}")
+        draw_wrapped_text(pdf, f"{index}. {primary_word(item, profile)}", MARGIN + 10, row_y, 170, FONT_REGULAR, 9.2, 11, color=TEXT, align="right" if arabic_target else "left")
         pdf.setFont(FONT_REGULAR, 8.8)
-        pdf.drawString(MARGIN + 190, row_y, "M   F   N")
+        pdf.drawString(MARGIN + 190, row_y, "М   Ж" if arabic_target else "M   F   N")
         draw_rule(pdf, MARGIN + 310, row_y - 1, 190)
 
 
 def draw_section_test_page(pdf: canvas.Canvas, section: str, items: list[dict], page_no: int, profile: dict) -> None:
-    title_en, title_ar = SECTION_TITLES[section]
-    draw_header(pdf, "Section test", f"اختبار - {title_ar}", f"{title_en} - close the book before you begin", page_no)
+    title_left = section_title_left(profile, section)
+    title_ar = section_title_ar(section)
+    draw_header(pdf, t(profile, "section_test"), f"اختبار - {title_ar}", t(profile, "section_test_subtitle", section=title_left), page_no, profile)
     pdf.setFillColor(EXERCISE_FILL)
     pdf.setStrokeColor(CARD_BORDER)
     pdf.roundRect(MARGIN, PAGE_HEIGHT - 112, PAGE_WIDTH - 2 * MARGIN, 28, 8, fill=1, stroke=1)
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_REGULAR, 9.2)
-    pdf.drawString(MARGIN + 12, PAGE_HEIGHT - 101, "Score: ____ / ____     Date: __________     I used the website audio:  Yes / No")
+    pdf.drawString(MARGIN + 12, PAGE_HEIGHT - 101, t(profile, "score_line"))
     y = PAGE_HEIGHT - 137
     y = draw_matching_exercise(pdf, items, y, profile)
     fill_y, fill_items = draw_fill_exercise(pdf, items, y, profile)
-    draw_grammar_exercise(pdf, items, fill_y)
+    draw_grammar_exercise(pdf, items, fill_y, profile)
     draw_footer(pdf, page_no, profile)
 
 
 def draw_solution_page(pdf: canvas.Canvas, title_en: str, title_ar: str, items: list[dict], page_no: int, subtitle: str, profile: dict) -> None:
-    draw_header(pdf, "Answer key", f"الإجابات - {title_ar}", subtitle, page_no)
+    arabic_target = is_arabic_target(profile)
+    draw_header(pdf, t(profile, "answer_key"), f"الإجابات - {title_ar}", subtitle, page_no, profile)
     selected, meanings = matching_items(items)
     right_index = {item["id"]: chr(65 + index) for index, item in enumerate(meanings)}
 
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 11.5)
-    pdf.drawString(MARGIN, PAGE_HEIGHT - 95, "Matching")
+    pdf.drawString(MARGIN, PAGE_HEIGHT - 95, t(profile, "matching_label"))
     y = PAGE_HEIGHT - 116
     for index, item in enumerate(selected, start=1):
         pdf.setFillColor(TEXT)
         pdf.setFont(FONT_REGULAR, 9.2)
-        # The Latin prefix and the meaning are drawn as two separate calls,
-        # and the meaning itself is shaped/bidi-processed as one unit via
-        # draw_wrapped_text (which calls shape_arabic internally) instead of
-        # being concatenated raw into an f-string - that raw concatenation
-        # was the old bug: unshaped Arabic glyphs rendering disconnected and
-        # in the wrong visual order next to Latin text.
-        pdf.drawString(MARGIN + 12, y, f"{index}. {item['russian']}  ({item.get('transliterationStressed') or item.get('transliteration', '')})  ->  {right_index[item['id']]}")
+        # Every piece that might contain Arabic is shaped on its own via
+        # shape_arabic()/draw_wrapped_text BEFORE it is drawn, and Latin
+        # structural bits (index, arrow, letter) are drawn as separate,
+        # unshaped calls positioned by measuring the already-shaped text's
+        # width - never concatenate raw Arabic into an f-string and draw it
+        # as one unshaped block; that was the old bug (disconnected glyphs,
+        # wrong visual order next to Latin text).
+        prefix = f"{index}. "
+        pdf.drawString(MARGIN + 12, y, prefix)
+        cursor_x = MARGIN + 12 + pdfmetrics.stringWidth(prefix, FONT_REGULAR, 9.2)
+        word = primary_word(item, profile)
+        if arabic_target:
+            word_display = shape_arabic(word)
+        else:
+            pronunciation = primary_pronunciation(item, profile)
+            word_display = f"{word}  ({pronunciation})" if pronunciation else word
+        pdf.drawString(cursor_x, y, word_display)
+        cursor_x += pdfmetrics.stringWidth(word_display, FONT_REGULAR, 9.2)
+        pdf.drawString(cursor_x, y, f"  ->  {right_index[item['id']]}")
         meaning_x = MARGIN + 320
         draw_wrapped_text(pdf, meaning_text(item, profile), meaning_x, y, PAGE_WIDTH - MARGIN - meaning_x, FONT_REGULAR, 9.2, 11, color=MUTED)
         y -= 20
@@ -923,26 +1211,31 @@ def draw_solution_page(pdf: canvas.Canvas, title_en: str, title_ar: str, items: 
     y -= 8
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 11.5)
-    pdf.drawString(MARGIN, y, "Sentence answers")
+    pdf.drawString(MARGIN, y, t(profile, "sentence_answers"))
     y -= 20
     for item in fill_items:
         pdf.setFillColor(TEXT)
         pdf.setFont(FONT_REGULAR, 9.2)
-        pdf.drawString(MARGIN + 12, y, item["russian"])
+        draw_wrapped_text(pdf, primary_word(item, profile), MARGIN + 12, y, 75, FONT_REGULAR, 9.2, 11, color=TEXT, align="right" if arabic_target else "left")
         pdf.setFont(FONT_REGULAR, 8.8)
-        pdf.drawString(MARGIN + 12 + 90, y, item["exampleRu"])
+        draw_wrapped_text(pdf, primary_example(item, profile), MARGIN + 12 + 90, y, PAGE_WIDTH - MARGIN - (MARGIN + 12 + 90), FONT_REGULAR, 8.8, 10.5, color=TEXT, align="right" if arabic_target else "left")
         y -= 19
 
     y -= 8
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 11.5)
-    pdf.drawString(MARGIN, y, "Gender and plural")
+    pdf.drawString(MARGIN, y, t(profile, "gender_plural_label"))
     y -= 20
     for item in choose_items(items, min(3, len(items))):
-        plural = item.get("grammar", {}).get("ru", {}).get("plural", "")
+        plural = primary_grammar(item, profile).get("plural", "")
         pdf.setFillColor(TEXT)
         pdf.setFont(FONT_REGULAR, 9.2)
-        pdf.drawString(MARGIN + 12, y, f"{item['russian']}  -  {gender_label(item)}  -  {plural}")
+        word = primary_word(item, profile)
+        gender = gender_label(item, profile)
+        if arabic_target:
+            draw_wrapped_text(pdf, f"{word}  -  {gender}  -  {plural}", MARGIN + 12, y, PAGE_WIDTH - 2 * MARGIN - 24, FONT_REGULAR, 9.2, 11, color=TEXT, align="right")
+        else:
+            pdf.drawString(MARGIN + 12, y, f"{word}  -  {gender}  -  {plural}")
         y -= 19
     draw_footer(pdf, page_no, profile)
 
@@ -950,17 +1243,17 @@ def draw_solution_page(pdf: canvas.Canvas, title_en: str, title_ar: str, items: 
 def draw_cumulative_review_pages(pdf: canvas.Canvas, words: list[dict], plan: dict, profile: dict) -> list[list[dict]]:
     chunks = chunk_items(words, CUMULATIVE_REVIEW_SIZE)
     for index, (page_no, items) in enumerate(zip(plan["cumulative_pages"], chunks), start=1):
-        draw_header(pdf, "Cumulative review", "مراجعة تراكمية", f"Mixed words - review {index} of {len(chunks)}", page_no)
+        draw_header(pdf, t(profile, "cumulative_review"), "مراجعة تراكمية", t(profile, "cumulative_subtitle", n=index, total=len(chunks)), page_no, profile)
         pdf.setFillColor(EXERCISE_FILL)
         pdf.setStrokeColor(CARD_BORDER)
         pdf.roundRect(MARGIN, PAGE_HEIGHT - 112, PAGE_WIDTH - 2 * MARGIN, 28, 8, fill=1, stroke=1)
         pdf.setFillColor(TEXT)
         pdf.setFont(FONT_REGULAR, 9.2)
-        pdf.drawString(MARGIN + 12, PAGE_HEIGHT - 101, "Mix the rooms: recall the word, write it, then check the answer key later.")
+        pdf.drawString(MARGIN + 12, PAGE_HEIGHT - 101, t(profile, "mix_rooms"))
         y = PAGE_HEIGHT - 137
         y = draw_matching_exercise(pdf, items, y, profile)
         fill_y, _ = draw_fill_exercise(pdf, items, y, profile)
-        draw_grammar_exercise(pdf, items, fill_y)
+        draw_grammar_exercise(pdf, items, fill_y, profile)
         draw_footer(pdf, page_no, profile)
         pdf.showPage()
     return chunks
@@ -975,13 +1268,15 @@ def draw_index_pages(pdf: canvas.Canvas, words: list[dict], plan: dict, profile:
         "ar": lambda item: item["arabic"].casefold(),
         "en": lambda item: item["english"].casefold(),
     }
-    column_labels = {"ru": "Russian -> page", "ar": "Arabic -> page", "en": "English -> page"}
+    column_labels_en = {"ru": "Russian -> page", "ar": "Arabic -> page", "en": "English -> page"}
+    column_labels_ru = {"ru": "Русский -> страница", "ar": "Арабский -> страница", "en": "Английский -> страница"}
+    column_labels = column_labels_ru if is_arabic_target(profile) else column_labels_en
     entries_by_lang = {lang: sorted(words, key=sort_key[lang]) for lang in index_langs}
 
     for page_index, page_no in enumerate(plan["index_pages"]):
         start = page_index * INDEX_ENTRIES_PER_PAGE
         end = start + INDEX_ENTRIES_PER_PAGE
-        draw_header(pdf, "Word index", "الفهرس", f"Lookup - part {page_index + 1} of {len(plan['index_pages'])}", page_no)
+        draw_header(pdf, t(profile, "word_index"), "الفهرس", t(profile, "index_subtitle", n=page_index + 1, total=len(plan["index_pages"])), page_no, profile)
         for col_index, lang in enumerate(index_langs):
             col_x = MARGIN + col_index * column_width
             pdf.setFillColor(TEXT)
@@ -1048,26 +1343,82 @@ PRONUNCIATION_POINTS = [
     ),
 ]
 
+# For the "ru" profile (Arabic for Russian speakers): the native/explaining
+# language is Russian, not English, so this is a separate content set about
+# ARABIC sounds that are hard for a Russian speaker specifically - emphatic
+# consonants, pharyngeal ع/ح, uvular ق/غ, and sun/moon letter assimilation -
+# not a translation of PRONUNCIATION_POINTS (which is about Russian sounds).
+ARABIC_PRONUNCIATION_POINTS = [
+    (
+        "Глубокий гортанный звук ع",
+        "حرف العين (ع) صوت حلقي عميق",
+        "ع (айн) - звонкий гортанный звук, которого нет в русском. Он образуется сжатием глотки, а не горла - глубже и напряжённее, чем при русском 'а'.",
+        "لا يوجد له مقابل في الروسية. يُنطق بضغط عميق في الحلق، ويجب تمييزه عن الهمزة (ء) التي هي مجرد وقفة صوتية خفيفة.",
+    ),
+    (
+        "ح - не путать с х",
+        "حرف الحاء (ح) مختلف عن الخاء (خ)",
+        "خ ближе к русскому 'х' (как в 'хлеб'). ح - более глубокий гортанный выдох без трения, почти беззвучный шёпот из глубины горла.",
+        "الحاء صوت حلقي مهموس عميق، بينما الخاء صوت احتكاكي من الحلق أقرب لصوت 'х' الروسي.",
+    ),
+    (
+        "Эмфатические согласные ص ض ط ظ",
+        "الحروف المفخّمة ص ض ط ظ",
+        "Эти буквы произносятся с оттягиванием языка назад и утяжелением звука - в отличие от их лёгких пар س د ت ذ. Точного аналога нет ни в русском, ни в английском.",
+        "تُنطق بتفخيم ورفع مؤخرة اللسان، بعكس نظيراتها المرقّقة س د ت ذ. الفرق في النطق يغيّر معنى الكلمة أحيانًا.",
+    ),
+    (
+        "ق - не путать с к",
+        "حرف القاف (ق) صوت لهوي عميق",
+        "ق произносится глубоко в горле, у язычка (увулы), а не у нёба, как русское 'к'. قلب (сердце) и كلب (собака) различаются только этим звуком.",
+        "يُنطق من أقصى الحلق قرب اللهاة، وهو أعمق من نطق الكاف الروسية. كلمتا قلب وكلب تفترقان بهذا الصوت فقط.",
+    ),
+    (
+        "غ - не русское 'г'",
+        "حرف الغين (غ) صوت مجهور من اللهاة",
+        "غ - звонкий увулярный звук, похожий на грассированное французское 'r', а не на русское 'г'. Встречается в غرفة (комната).",
+        "أقرب لصوت الراء الفرنسية المجهورة، وليس لصوت الغين كما قد يتخيله متعلم روسي.",
+    ),
+    (
+        "Солнечные буквы: ال иногда «исчезает»",
+        "الحروف الشمسية والقمرية",
+        "Перед 'солнечными' буквами (ت ث د ذ ر ز س ش ص ض ط ظ ل ن) буква л в артикле ال не произносится - вместо неё удваивается следующая согласная: الشمس звучит 'аш-шамс', не 'аль-шамс'.",
+        "أمام الحروف الشمسية تُدغم لام «ال» ولا تُنطق، ويُشدَّد الحرف بعدها: الشمس تُنطق «الشّمس» بتشديد الشين لا بنطق اللام.",
+    ),
+]
+
 
 def draw_pronunciation_page(pdf: canvas.Canvas, page_no: int, profile: dict) -> None:
-    draw_header(pdf, "Russian pronunciation", "النطق الروسي", "Sounds and letters that need extra attention", page_no)
+    arabic_target = is_arabic_target(profile)
+    if arabic_target:
+        header_title, header_subtitle = "Произношение арабского", "النطق العربي"
+        intro = "Прочитайте один раз перед началом, а потом возвращайтесь, когда слово трудно произнести."
+        points = ARABIC_PRONUNCIATION_POINTS
+    else:
+        header_title, header_subtitle = "Russian pronunciation", "النطق الروسي"
+        intro = "Read this once before you start, then come back whenever a word feels hard to say."
+        points = PRONUNCIATION_POINTS
+    draw_header(pdf, header_title, header_subtitle, t(profile, "pronunciation_subtitle"), page_no, profile)
     pdf.setFillColor(MUTED)
     pdf.setFont(FONT_REGULAR, 10)
-    pdf.drawString(MARGIN, PAGE_HEIGHT - 88, "Read this once before you start, then come back whenever a word feels hard to say.")
+    # Reader-facing prose follows the reader's native reading direction, not
+    # the target word's script - the "ru" profile's reader is Russian-native
+    # (LTR), even though the vocabulary being taught is Arabic.
+    draw_wrapped_text(pdf, intro, MARGIN, PAGE_HEIGHT - 88, PAGE_WIDTH - 2 * MARGIN, FONT_REGULAR, 10, 13, color=MUTED, align="left")
 
     y = PAGE_HEIGHT - 116
-    for title_en, title_ar, body_en, body_ar in PRONUNCIATION_POINTS:
+    for title_left, title_ar, body_left, body_ar in points:
         pdf.setFillColor(colors.white)
         pdf.setStrokeColor(CARD_BORDER)
         block_height = 74
         pdf.roundRect(MARGIN, y - block_height, PAGE_WIDTH - 2 * MARGIN, block_height, 10, fill=1, stroke=1)
         pdf.setFillColor(ACCENT)
         pdf.setFont(FONT_BOLD, 11.5)
-        pdf.drawString(MARGIN + 14, y - 20, title_en)
+        pdf.drawString(MARGIN + 14, y - 20, title_left)
         pdf.setFont(FONT_BOLD, 10.5)
         pdf.drawRightString(PAGE_WIDTH - MARGIN - 14, y - 20, shape_arabic(title_ar))
         pdf.setFillColor(TEXT)
-        draw_wrapped_text(pdf, body_en, MARGIN + 14, y - 37, (PAGE_WIDTH - 2 * MARGIN - 28) / 2 - 8, FONT_REGULAR, 8.8, 11, color=TEXT)
+        draw_wrapped_text(pdf, body_left, MARGIN + 14, y - 37, (PAGE_WIDTH - 2 * MARGIN - 28) / 2 - 8, FONT_REGULAR, 8.8, 11, color=TEXT)
         draw_wrapped_text(pdf, body_ar, MARGIN + (PAGE_WIDTH - 2 * MARGIN) / 2 + 8, y - 37, (PAGE_WIDTH - 2 * MARGIN - 28) / 2, FONT_REGULAR, 8.6, 11, color=TEXT, align="right")
         y -= block_height + 10
 
@@ -1076,12 +1427,12 @@ def draw_pronunciation_page(pdf: canvas.Canvas, page_no: int, profile: dict) -> 
     pdf.roundRect(MARGIN, 55, PAGE_WIDTH - 2 * MARGIN, 68, 10, fill=1, stroke=1)
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 10.5)
-    pdf.drawString(MARGIN + 14, 100, "Scan a QR code on any reference card for an external pronunciation check.")
+    pdf.drawString(MARGIN + 14, 100, t(profile, "qr_scan_note"))
     pdf.setFillColor(MUTED)
     pdf.setFont(FONT_REGULAR, 8.6)
     draw_wrapped_text(
         pdf,
-        "The QR codes link to a free, unofficial text-to-speech service. If a code does not load, use the speaker button on the website instead - it always works offline once the page is cached.",
+        t(profile, "qr_scan_body"),
         MARGIN + 14,
         82,
         PAGE_WIDTH - 2 * MARGIN - 28,
@@ -1094,20 +1445,27 @@ def draw_pronunciation_page(pdf: canvas.Canvas, page_no: int, profile: dict) -> 
 
 
 def draw_notes_v2(pdf: canvas.Canvas, page_no: int, profile: dict) -> None:
-    draw_header(pdf, "Workbook guide", "دليل استخدام الكتاب", f"{profile['edition_en']} - a practical companion for the website", page_no)
+    arabic_target = is_arabic_target(profile)
+    edition_label = profile.get("edition_ru", profile["edition_en"]) if arabic_target else profile["edition_en"]
+    draw_header(pdf, t(profile, "workbook_guide"), "دليل استخدام الكتاب", t(profile, "workbook_guide_subtitle", edition=edition_label), page_no, profile)
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_BOLD, 15)
-    pdf.drawString(MARGIN, PAGE_HEIGHT - 100, "Use the book as a cycle, not a one-time read")
+    pdf.drawString(MARGIN, PAGE_HEIGHT - 100, t(profile, "use_as_cycle"))
     pdf.setFillColor(MUTED)
     pdf.setFont(FONT_REGULAR, 10.2)
-    pdf.drawString(MARGIN, PAGE_HEIGHT - 120, "The website supplies audio and interactive quizzes; these pages make recall and handwriting visible.")
+    pdf.drawString(MARGIN, PAGE_HEIGHT - 120, t(profile, "notes_intro"))
 
+    reference_step = (
+        "Изучите картинку, сначала арабское слово, затем значение."
+        if arabic_target
+        else "Study the image, Russian word first, its stressed pronunciation, then the meaning."
+    )
     steps = [
-        ("1. Reference", "Study the image, Russian word first, its stressed pronunciation, then the meaning."),
-        ("2. Cover and recall", "Hide the meaning column and say the meaning from memory."),
-        ("3. Write", "Trace the word once, then write it on all three lines without looking."),
-        ("4. Test", "Complete matching, sentence gaps, gender, and plural before opening the answer key."),
-        ("5. Revisit", "Use the cumulative review pages on day 1, day 3, after one week, and after one month."),
+        (t(profile, "step_reference_label"), reference_step),
+        (t(profile, "step_cover_recall_label"), t(profile, "step_cover_recall_body")),
+        (t(profile, "step_write_label"), t(profile, "step_write_body")),
+        (t(profile, "step_test_label"), t(profile, "step_test_body")),
+        (t(profile, "step_revisit_label"), t(profile, "step_revisit_body")),
     ]
     y = PAGE_HEIGHT - 165
     for heading, body in steps:
@@ -1124,12 +1482,12 @@ def draw_notes_v2(pdf: canvas.Canvas, page_no: int, profile: dict) -> None:
     pdf.roundRect(MARGIN, callout_y, PAGE_WIDTH - 2 * MARGIN, 120, 12, fill=1, stroke=1)
     pdf.setFillColor(ACCENT)
     pdf.setFont(FONT_BOLD, 13)
-    pdf.drawString(MARGIN + 14, callout_y + 92, "Keep the answer key closed")
+    pdf.drawString(MARGIN + 14, callout_y + 92, t(profile, "keep_closed"))
     pdf.setFillColor(TEXT)
     pdf.setFont(FONT_REGULAR, 10)
     draw_wrapped_text(
         pdf,
-        "A wrong answer is useful when it shows what to review. Mark the word, return to its photo card, listen on the website, and try again later.",
+        t(profile, "wrong_answer_note"),
         MARGIN + 14,
         callout_y + 70,
         PAGE_WIDTH - 2 * MARGIN - 28,
@@ -1140,13 +1498,13 @@ def draw_notes_v2(pdf: canvas.Canvas, page_no: int, profile: dict) -> None:
     )
     pdf.setFillColor(MUTED)
     pdf.setFont(FONT_REGULAR, 9)
-    pdf.drawString(MARGIN + 14, callout_y + 18, "Website features: audio - progress tracking - quizzes - dark mode - Arabic, Russian, and English")
+    pdf.drawString(MARGIN + 14, callout_y + 18, t(profile, "website_features"))
     draw_footer(pdf, page_no, profile)
 
 
-def build_pdf(output_path: Path, profile: dict) -> None:
+def build_pdf(output_path: Path, profile: dict, unit_id: str = "home") -> None:
     register_fonts()
-    words = load_words()
+    words = load_words(unit_id)
     grouped = group_words(words)
     all_words = ordered_words(grouped)
     plan = build_page_plan(grouped)
@@ -1177,16 +1535,16 @@ def build_pdf(output_path: Path, profile: dict) -> None:
     for section in SECTION_ORDER:
         draw_solution_page(
             pdf,
-            SECTION_TITLES[section][0],
-            SECTION_TITLES[section][1],
+            section_title_left(profile, section),
+            section_title_ar(section),
             grouped.get(section, []),
             plan["solution_section_pages"][section],
-            "Section test answers",
+            t(profile, "answer_key_section_subtitle"),
             profile,
         )
         pdf.showPage()
     for index, (page_no, items) in enumerate(zip(plan["solution_cumulative_pages"], cumulative_chunks), start=1):
-        draw_solution_page(pdf, "Cumulative review", "مراجعة تراكمية", items, page_no, f"Cumulative review {index} answers", profile)
+        draw_solution_page(pdf, t(profile, "cumulative_review"), "مراجعة تراكمية", items, page_no, t(profile, "cumulative_answer_subtitle", n=index), profile)
         pdf.showPage()
 
     draw_notes_v2(pdf, plan["notes_page"], profile)
@@ -1199,18 +1557,19 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--language", choices=["full", "ar", "en", "ru", "all"], default="full", help="Which audience edition(s) to build. 'full' is the comprehensive teacher/review reference (default). 'all' builds the three audience editions (ar, en, ru), not 'full'.")
     parser.add_argument("--output", default=None, help="Only valid for a single edition (full/ar/en/ru); ignored with --language all.")
+    parser.add_argument("--unit", default="home", help="Unit id under data/units/ to build the workbook from (default: home).")
     args = parser.parse_args()
 
     if args.language == "all":
         for key in ("ar", "en", "ru"):
             profile = LANGUAGE_PROFILES[key]
-            build_pdf(OUTPUT_DIR / profile["output_name"], profile)
+            build_pdf(OUTPUT_DIR / profile["output_name"], profile, unit_id=args.unit)
             print(f"Built {profile['output_name']}")
         return
 
     profile = LANGUAGE_PROFILES[args.language]
     output_path = Path(args.output) if args.output else OUTPUT_DIR / profile["output_name"]
-    build_pdf(output_path, profile)
+    build_pdf(output_path, profile, unit_id=args.unit)
     print(f"Built {output_path}")
 
 

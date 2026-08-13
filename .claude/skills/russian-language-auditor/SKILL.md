@@ -11,7 +11,7 @@ Use this skill before releasing vocabulary content or after adding new words.
 
 Audit Russian-learning content in:
 
-- `data/words.json`
+- `data/units/home.json`
 - Any generated unit files.
 - UI labels that include Russian learning text.
 

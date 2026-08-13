@@ -10,7 +10,33 @@ The VS Code extension **Azure AI Speech Toolkit** is installed and can configure
 - `кровать` — `سرير`
 - `пылесос` — `مكنسة كهربائية`
 
-The sample uses Azure voice `ar-SA-ZariyahNeural` and the existing `audioWordAr` paths in `data/words.json`.
+The sample uses Azure voice `ar-SA-ZariyahNeural` and the existing `audioWordAr` paths in `data/units/home.json`.
+
+## Russian word sample
+
+To create real Russian pronunciation for the same five words, use the Russian generator. It sends the Cyrillic `russian` field to Azure; it never sends the Latin transliteration.
+
+```powershell
+$env:AZURE_SPEECH_VOICE = "ru-RU-DmitryNeural"
+node scripts/generate-azure-russian-sample.mjs --dry-run
+node scripts/generate-azure-russian-sample.mjs
+```
+
+The files are written to the existing `audioWordRu` paths under `assets/audio/ru/`.
+
+## ElevenLabs Russian sample
+
+ElevenLabs can generate the same Russian word sample. The API key and voice ID must stay in environment variables and must never be committed.
+
+```powershell
+$env:ELEVENLABS_API_KEY = "your-new-key"
+node scripts/generate-elevenlabs-russian-sample.mjs --list-voices
+$env:ELEVENLABS_VOICE_ID = "your-voice-id"
+node scripts/generate-elevenlabs-russian-sample.mjs --dry-run
+node scripts/generate-elevenlabs-russian-sample.mjs
+```
+
+The generator sends the Cyrillic `russian` value to ElevenLabs and writes only the existing `audioWordRu` files.
 
 ## Run from VS Code PowerShell
 

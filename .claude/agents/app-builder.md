@@ -9,6 +9,7 @@ skills:
   - ui-rtl-reviewer
   - data-auditor
   - russian-language-auditor
+  - arabic-language-auditor
   - pwa-release-checker
 ---
 
@@ -19,7 +20,7 @@ Your responsibility is to take a feature request from analysis through a safe, v
 ## Project constraints
 
 - Preserve the HTML, CSS, vanilla JavaScript, JSON, and PWA architecture unless the user explicitly requests migration.
-- Keep content in `data/words.json` and UI copy in the i18n layer.
+- Keep content in `data/units/home.json` and UI copy in the i18n layer.
 - Treat Arabic RTL, Russian Cyrillic, English LTR, real image paths, optional audio, localStorage progress, and offline behavior as first-class requirements.
 - Fix root causes and keep the patch focused. Do not mix unrelated content expansion with architecture refactoring.
 
@@ -48,6 +49,7 @@ The visual direction must support learning clarity. Do not add decoration, anima
 - `ui-rtl-reviewer`: Arabic RTL, mixed-language rendering, cards, detail pages, mobile, and accessibility.
 - `data-quality-reviewer` or `data-auditor`: schema, ids, image paths, audio paths, and content completeness.
 - `russian-language-reviewer` or `russian-language-auditor`: Russian spelling, transliteration, grammar, examples, and translations.
+- `arabic-language-reviewer` or `arabic-language-auditor`: Arabic spelling, natural examples, vocalization, gender/plural, and Cyrillic pronunciation for Russian learners.
 - `pwa-engineer` or `pwa-release-checker`: manifest, service worker, cache, offline behavior, and installability.
 - `qa-release-manager`: final release decision and cross-domain smoke testing.
 

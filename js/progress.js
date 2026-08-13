@@ -8,14 +8,14 @@
   function saveFavoriteOnly(id) {
     const { state, storage } = dependencies;
     state.saved.add(id);
-    storage.write("savedWords", [...state.saved]);
+    storage.saveFavorites([...state.saved]);
   }
 
   function updateMasteryOnly(id, delta) {
     const { state, storage, learning } = dependencies;
     const current = state.mastery[id] || 0;
     state.mastery[id] = Math.max(0, Math.min(100, current + delta));
-    storage.write("mastery", state.mastery);
+    storage.saveProgress({ mastery: state.mastery });
     if (learning) learning.syncMastery(id);
   }
 

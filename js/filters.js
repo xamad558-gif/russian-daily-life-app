@@ -11,6 +11,7 @@
 
   function populateSubcategories() {
     const { state, els } = dependencies;
+    [...els.subCategoryFilter.options].slice(1).forEach(option => option.remove());
     const seen = new Set();
     state.words.forEach(word => seen.add(word.subCategory));
     for (const subCategory of seen) {
@@ -20,28 +21,38 @@
     }
   }
 
+  function renderUnitMenu() {
+    const { state, els, escapeHTML, selectUnit } = dependencies;
+    if (!els.unitMenu || !state.unitRegistry) return;
+    const units = [...state.unitRegistry.units].sort((first, second) => (first.order || 0) - (second.order || 0));
+    els.unitMenu.innerHTML = units.map(unit => `
+      <button class="category-item ${unit.id === state.activeUnit ? "active" : ""}" type="button" data-unit="${unit.id}">
+        <span class="category-item-left"><span>${unit.icon || "📘"}</span><span>${escapeHTML(unit.title?.[state.uiLang] || unit.title?.en || unit.id)}</span></span>
+      </button>`).join("");
+    els.unitMenu.querySelectorAll("[data-unit]").forEach(button => button.addEventListener("click", () => selectUnit(button.dataset.unit)));
+  }
+
   function renderCategoryMenu() {
-    const { state, els, getTranslation, escapeHTML, selectRoom } = dependencies;
-    const translation = getTranslation();
+    const { state, els, roomLabel, roomIcon, escapeHTML, selectRoom } = dependencies;
     const counts = {};
     state.words.forEach(word => counts[word.subCategory] = (counts[word.subCategory] || 0) + 1);
     els.categoryMenu.innerHTML = Object.keys(counts).map((subCategory, index) => `
       <button class="category-item ${index === 0 ? "active" : ""}" type="button" data-submenu="${subCategory}">
-        <span class="category-item-left"><span>${translation.categoryIcons[subCategory] || "📘"}</span><span>${escapeHTML(translation.categories[subCategory] || subCategory)}</span></span>
+        <span class="category-item-left"><span>${roomIcon(subCategory)}</span><span>${escapeHTML(roomLabel(subCategory))}</span></span>
         <span class="category-count">${counts[subCategory]}</span>
       </button>`).join("");
     els.categoryMenu.querySelectorAll("[data-submenu]").forEach(button => button.addEventListener("click", () => selectRoom(button.dataset.submenu)));
   }
 
   function renderRoomStrip() {
-    const { state, els, rooms, getTranslation, escapeHTML, selectRoom } = dependencies;
+    const { state, els, roomLabel, getTranslation, escapeHTML, selectRoom } = dependencies;
     if (!els.roomStrip) return;
     const translation = getTranslation();
-    els.roomStrip.innerHTML = rooms.map(room => {
+    els.roomStrip.innerHTML = state.rooms.map(room => {
       const count = state.words.filter(word => word.subCategory === room.id).length;
-      return `<button class="room-card room-${room.tone}" type="button" data-room="${room.id}" aria-label="${escapeHTML(`${translation.roomOpen}: ${translation.categories[room.id] || room.id}`)}">
+      return `<button class="room-card room-${room.tone}" type="button" data-room="${room.id}" aria-label="${escapeHTML(`${translation.roomOpen}: ${roomLabel(room.id)}`)}">
         <span class="room-card-image"><img src="${room.image}" alt="" loading="lazy" /><span class="room-card-icon" aria-hidden="true">${room.icon}</span></span>
-        <span class="room-card-copy"><strong>${escapeHTML(translation.categories[room.id] || room.id)}</strong><small>${count} ${escapeHTML(translation.roomWords)}</small></span>
+        <span class="room-card-copy"><strong>${escapeHTML(roomLabel(room.id))}</strong><small>${count} ${escapeHTML(translation.roomWords)}</small></span>
         <span class="room-card-arrow" aria-hidden="true">↗</span>
       </button>`;
     }).join("");
@@ -51,7 +62,7 @@
   function selectRoom(room) {
     const { state, els, storage, switchView, apply } = dependencies;
     state.lastRoom = room;
-    storage.write("lastRoom", room);
+    storage.saveSettings({ lastRoom: room });
     els.subCategoryFilter.value = room;
     els.categoryMenu.querySelectorAll(".category-item").forEach(item => item.classList.toggle("active", item.dataset.submenu === room));
     switchView("vocabulary");
@@ -91,5 +102,5 @@
     apply();
   }
 
-  window.AppFilters = Object.freeze({ configure, populateSubcategories, renderCategoryMenu, renderRoomStrip, selectRoom, apply, reset });
+  window.AppFilters = Object.freeze({ configure, populateSubcategories, renderCategoryMenu, renderRoomStrip, renderUnitMenu, selectRoom, apply, reset });
 })();

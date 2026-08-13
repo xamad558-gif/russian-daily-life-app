@@ -1,8 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const dataPath = path.join(process.cwd(), "data", "words.json");
-const words = JSON.parse(fs.readFileSync(dataPath, "utf8"));
+const dataPath = path.join(process.cwd(), "data", "units", "home.json");
+const unitFile = JSON.parse(fs.readFileSync(dataPath, "utf8"));
+const words = unitFile.words;
 const cyrillicToLatin = new Map(Object.entries({
   а: "a", б: "b", в: "v", г: "g", д: "d", е: "e", ё: "yo", ж: "zh", з: "z", и: "i", й: "y",
   к: "k", л: "l", м: "m", н: "n", о: "o", п: "p", р: "r", с: "s", т: "t", у: "u", ф: "f",
@@ -20,5 +21,5 @@ for (const word of words) {
   for (const phrase of word.phrases || []) phrase.arTransliterationEn = toLatin(phrase.arTransliterationRu);
 }
 
-fs.writeFileSync(dataPath, `${JSON.stringify(words, null, 2)}\n`, "utf8");
+fs.writeFileSync(dataPath, `${JSON.stringify(unitFile, null, 2)}\n`, "utf8");
 console.log(`Refreshed Arabic-to-Latin pronunciation for ${words.length} words.`);

@@ -9,7 +9,8 @@ const args = new Map(process.argv.slice(2).map(arg => {
 }));
 
 const audioMode = args.get('audio') || 'warn'; // warn | strict | ignore
-const dataPath = path.join(root, 'data', 'words.json');
+const fileRel = args.get('file') || 'data/units/home.json';
+const dataPath = path.join(root, fileRel);
 const allowedLevels = new Set(['A1', 'A2', 'B1', 'B2', 'C1', 'C2']);
 const allowedAudioModes = new Set(['warn', 'strict', 'ignore']);
 
@@ -19,7 +20,7 @@ if (!allowedAudioModes.has(audioMode)) {
 }
 
 const required = [
-  'id', 'category', 'subCategory', 'russian', 'transliteration', 'transliterationAr',
+  'id', 'unitId', 'category', 'subCategory', 'russian', 'transliteration', 'transliterationAr',
   'englishTransliterationAr', 'englishTransliterationRu', 'arabicTransliterationEn',
   'arabic', 'english', 'level', 'frequency', 'type',
   'exampleRu', 'exampleTransliterationAr', 'exampleTransliterationEn', 'exampleArTransliterationRu',
@@ -54,17 +55,18 @@ function isEmpty(value) {
     (Array.isArray(value) && value.length === 0);
 }
 
-let words;
+let unitFile;
 try {
-  words = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+  unitFile = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 } catch (err) {
   console.error(`FAIL: Cannot read or parse ${dataPath}`);
   console.error(err.message);
   process.exit(1);
 }
 
+const words = unitFile?.words;
 if (!Array.isArray(words)) {
-  console.error('FAIL: data/words.json must be a JSON array.');
+  console.error(`FAIL: ${fileRel} must be a unit file with a "words" array.`);
   process.exit(1);
 }
 

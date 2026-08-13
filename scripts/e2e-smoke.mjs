@@ -32,8 +32,10 @@ function startServer() {
       response.writeHead(200, { "Content-Type": contentTypes[path.extname(filePath)] || "application/octet-stream" });
       response.end(body);
     } catch {
-      response.writeHead(404);
-      response.end("Not found");
+      if (!response.headersSent) {
+        response.writeHead(404);
+        response.end("Not found");
+      }
     }
   });
   return new Promise((resolve, reject) => {
@@ -65,6 +67,8 @@ async function runSmokeTest() {
     const page = await context.newPage();
     await page.goto(`${url}/index.html`, { waitUntil: "domcontentloaded" });
     await page.locator("#cardsGrid .word-card").first().waitFor({ state: "visible" });
+    const totalWords = await page.locator("#cardsGrid .word-card").count();
+    assert.ok(totalWords > 0, "The loaded unit should contain at least one word");
     const serviceWorkerReady = await page.evaluate(async () => {
       if (!("serviceWorker" in navigator)) return false;
       const registration = await navigator.serviceWorker.ready;
@@ -78,10 +82,10 @@ async function runSmokeTest() {
     await page.locator("#searchInput").fill("холодильник");
     assert.equal(await page.locator("#cardsGrid .word-card").count(), 1, "Search should filter vocabulary results");
     await page.locator("#resetFiltersBtn").click();
-    assert.equal(await page.locator("#cardsGrid .word-card").count(), 75, "Reset should restore all vocabulary results");
+    assert.equal(await page.locator("#cardsGrid .word-card").count(), totalWords, "Reset should restore all vocabulary results");
     await page.locator("#subCategoryFilter").selectOption("kitchen");
     const kitchenCount = await page.locator("#cardsGrid .word-card").count();
-    assert.ok(kitchenCount > 0 && kitchenCount < 75, "Room filter should narrow vocabulary results");
+    assert.ok(kitchenCount > 0 && kitchenCount < totalWords, "Room filter should narrow vocabulary results");
     await page.locator("#resetFiltersBtn").click();
 
     await page.locator("#cardsGrid .word-card").first().locator("[data-fav]").click();
@@ -185,18 +189,20 @@ async function runSmokeTest() {
     assert.equal(await page.locator("#quizBox .quiz-option").count(), 4, "Quiz should render four answer choices");
     await page.locator("#quizBox .quiz-option").first().click();
     assert.equal(await page.locator("#quizBox .quiz-option:disabled").count(), 4, "Answering should lock all quiz choices");
-    const learningState = await page.evaluate(() => JSON.parse(localStorage.getItem("learningState") || "{}"));
-    assert.equal(Object.keys(learningState).length, 75, "Learning state should be initialized for every word");
+    const learningState = await page.evaluate(() => window.AppStorage.loadProgress().learningState);
+    assert.equal(Object.keys(learningState).length, totalWords, "Learning state should be initialized for every word");
     assert.ok(Object.values(learningState).some(item => item.lastReviewedAt), "Answering should schedule the reviewed word");
     await page.locator("#nextQuizBtn").click();
     assert.equal(await page.locator("#quizBox .quiz-option:disabled").count(), 0, "A new quiz question should unlock its choices");
 
     await page.locator('[data-view-btn="progress"]').click();
     await page.locator("#masteryList .mastery-item").first().waitFor({ state: "visible" });
-    assert.equal(await page.locator("#masteryList .mastery-item").count(), 75, "Progress should list every vocabulary word");
-    assert.equal(await page.locator("#masteryList .learning-status").count(), 75, "Progress should show a learning state for every word");
+    assert.equal(await page.locator("#masteryList .mastery-item").count(), totalWords, "Progress should list every vocabulary word");
+    assert.equal(await page.locator("#masteryList .learning-status").count(), totalWords, "Progress should show a learning state for every word");
 
     await page.reload({ waitUntil: "domcontentloaded" });
+    await page.locator("#cardsGrid .word-card").first().waitFor({ state: "visible" });
+    assert.equal(await page.evaluate(() => window.AppStorage.loadSettings().activeUnit), "home", "activeUnit should persist across reloads");
     await page.waitForFunction(() => Boolean(navigator.serviceWorker?.controller));
     await context.setOffline(true);
     await page.reload({ waitUntil: "domcontentloaded" });
