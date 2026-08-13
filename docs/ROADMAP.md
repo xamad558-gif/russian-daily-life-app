@@ -75,8 +75,8 @@ Phase mapping: **Phase 0–3** in [`UNIT_ARCHITECTURE.md`](UNIT_ARCHITECTURE.md)
 - [x] Phase 2: add an explicit active-unit selector and load one unit at a time.
 - [x] Phase 2: move room metadata, labels, icons, and cover images into unit data.
 - [x] Phase 2: keep `subCategory` for rooms and reserve `unitId` for learning units.
-- [ ] Phase 3: update filters, review, quiz, progress, audio checks, PDF generation, and service-worker rules.
-- [ ] Phase 3: remove `data/words.json` only after every consumer uses the unit loader.
+- [x] Phase 3: update filters, review, quiz, progress, audio checks, PDF generation, and service-worker rules.
+- [x] Phase 3: remove `data/words.json` only after every consumer uses the unit loader.
 - [ ] Phase 6: add one new unit at a time after the Home migration is stable.
 - Recommended first new units: restaurant, university, work, supermarket, transportation.
 - Require validation and responsive E2E checks before every unit release.

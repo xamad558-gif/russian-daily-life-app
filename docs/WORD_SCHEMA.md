@@ -2,7 +2,7 @@
 
 This document describes the word record shape. The content layout, loading contract, storage boundary, and migration rules are defined in [`UNIT_ARCHITECTURE.md`](UNIT_ARCHITECTURE.md).
 
-Word records for the Home unit live in `data/units/home.json`, inside a unit file (`{schemaVersion, unitId, contentVersion, rooms, words}`). The registry at `data/units.json` points to it. Every word carries a `unitId` field matching its unit. `data/words.json` is deprecated and no longer read by the app or any script — it is kept only until a full `npm run test:e2e` pass confirms the migration end to end (see `docs/KNOWN_ISSUES.md`), then it will be deleted. Do not read from it or add a second copy of content anywhere else.
+Word records for the Home unit live in `data/units/home.json`, inside a unit file (`{schemaVersion, unitId, contentVersion, rooms, words}`). The registry at `data/units.json` points to it. Every word carries a `unitId` field matching its unit. The legacy flat `data/words.json` has been removed; do not recreate it or add a second copy of content anywhere else.
 
 ## Required base fields
 
