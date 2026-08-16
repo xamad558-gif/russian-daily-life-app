@@ -1262,6 +1262,1106 @@
           "arTransliterationEn": "sikkin wa shawka"
         }
       ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_012",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "food",
+      "russian": "стакан",
+      "transliteration": "stakan",
+      "transliterationStressed": "stakán",
+      "arabic": "كوب زجاج",
+      "english": "glass",
+      "level": "A1",
+      "frequency": 4,
+      "type": "noun",
+      "exampleRu": "Принесите стакан воды, пожалуйста.",
+      "exampleAr": "أحضر كوب ماء من فضلك.",
+      "exampleEn": "Bring a glass of water, please.",
+      "imagePath": "assets/images/words/glass.jpg",
+      "addedAt": "2026-08-16",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "куб зуджадж",
+      "transliterationAr": "ستاكان",
+      "exampleTransliterationAr": "برينيسيتي ستاكان ڤودي, بوجالوستا.",
+      "exampleTransliterationEn": "Prinesite stakan vody, pozhaluysta.",
+      "exampleArTransliterationRu": "ахдир ку́ба ма’ мин фа́длик.",
+      "arabicVocalized": "كُوب زُجَاج",
+      "exampleArVocalized": "أَحْضِرْ كُوبَ مَاءٍ مِنْ فَضْلِكَ.",
+      "englishTransliterationAr": "غلاس",
+      "englishTransliterationRu": "глас",
+      "arabicTransliterationEn": "kub zudzhadzh",
+      "exampleArTransliterationEn": "ahdir kuba maa min fadlik",
+      "grammar": {
+        "ru": {
+          "word": "стакан",
+          "type": "существительное",
+          "singular": "стакан",
+          "plural": "стаканы",
+          "gender": "masculine",
+          "transliteration": "stakan"
+        },
+        "ar": {
+          "word": "كوب زجاج",
+          "type": "اسم",
+          "singular": "كوب زجاج",
+          "plural": "أكواب زجاجية",
+          "gender": "مذكر"
+        },
+        "en": {
+          "word": "glass",
+          "type": "noun",
+          "singular": "glass",
+          "plural": "glasses",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Принесите стакан воды, пожалуйста.",
+          "ar": "أحضر كوب ماء من فضلك.",
+          "en": "Bring a glass of water, please.",
+          "arVocalized": "أَحْضِرْ كُوبَ مَاءٍ مِنْ فَضْلِكَ.",
+          "arTransliterationRu": "ахдир ку́ба ма’ мин фа́длик.",
+          "arTransliterationEn": "ahdir kuba maa min fadlik"
+        },
+        {
+          "ru": "Стакан пустой.",
+          "ar": "الكوب فارغ.",
+          "en": "The glass is empty.",
+          "arVocalized": "الْكُوبُ فَارِغٌ.",
+          "arTransliterationRu": "аль-ку́б фа́риг.",
+          "arTransliterationEn": "al-kub farigh"
+        },
+        {
+          "ru": "Официант поставил стакан на стол.",
+          "ar": "وضع النادل الكوب على الطاولة.",
+          "en": "The waiter put the glass on the table.",
+          "arVocalized": "وَضَعَ النَّادِلُ الْكُوبَ عَلَى الطَّاوِلَةِ.",
+          "arTransliterationRu": "вада‘а ан-на́диль аль-ку́б а́ля ат-та́виля.",
+          "arTransliterationEn": "wadaa an-naadil al-kub ala at-tawilah"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "стакан воды",
+          "ar": "كوب ماء",
+          "en": "a glass of water",
+          "arVocalized": "كُوبُ مَاءٍ",
+          "arTransliterationRu": "ку́б ма’",
+          "arTransliterationEn": "kub maa"
+        },
+        {
+          "ru": "пустой стакан",
+          "ar": "كوب فارغ",
+          "en": "an empty glass",
+          "arVocalized": "كُوبٌ فَارِغٌ",
+          "arTransliterationRu": "куб фа́риг",
+          "arTransliterationEn": "kub farigh"
+        },
+        {
+          "ru": "чистый стакан",
+          "ar": "كوب نظيف",
+          "en": "a clean glass",
+          "arVocalized": "كُوبٌ نَظِيفٌ",
+          "arTransliterationRu": "куб нази́ф",
+          "arTransliterationEn": "kub nazif"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_013",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "food",
+      "russian": "хлеб",
+      "transliteration": "khleb",
+      "transliterationStressed": "khleb",
+      "arabic": "خبز",
+      "english": "bread",
+      "level": "A1",
+      "frequency": 5,
+      "type": "noun",
+      "exampleRu": "Принесите хлеб, пожалуйста.",
+      "exampleAr": "أحضر خبزًا من فضلك.",
+      "exampleEn": "Bring bread, please.",
+      "imagePath": "assets/images/restaurant/bread.jpg",
+      "addedAt": "2026-08-16",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "хубз",
+      "transliterationAr": "خلب",
+      "exampleTransliterationAr": "برينيسيتي خليب, بوجالوستا.",
+      "exampleTransliterationEn": "Prinesite khleb, pozhaluysta.",
+      "exampleArTransliterationRu": "ахдир хубз мин фа́длик.",
+      "arabicVocalized": "خُبْز",
+      "exampleArVocalized": "أَحْضِرْ خُبْزًا مِنْ فَضْلِكَ.",
+      "englishTransliterationAr": "بريد",
+      "englishTransliterationRu": "брэд",
+      "arabicTransliterationEn": "khubz",
+      "exampleArTransliterationEn": "ahdir khubz min fadlik",
+      "grammar": {
+        "ru": {
+          "word": "хлеб",
+          "type": "существительное",
+          "singular": "хлеб",
+          "plural": "хлеба",
+          "gender": "masculine",
+          "transliteration": "khleb"
+        },
+        "ar": {
+          "word": "خبز",
+          "type": "اسم",
+          "singular": "خبز",
+          "plural": "أخباز",
+          "gender": "مذكر"
+        },
+        "en": {
+          "word": "bread",
+          "type": "noun",
+          "singular": "bread",
+          "plural": "breads",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Принесите хлеб, пожалуйста.",
+          "ar": "أحضر خبزًا من فضلك.",
+          "en": "Bring bread, please.",
+          "arVocalized": "أَحْضِرْ خُبْزًا مِنْ فَضْلِكَ.",
+          "arTransliterationRu": "ахдир хубз мин фа́длик.",
+          "arTransliterationEn": "ahdir khubz min fadlik"
+        },
+        {
+          "ru": "Хлеб свежий.",
+          "ar": "الخبز طازج.",
+          "en": "The bread is fresh.",
+          "arVocalized": "الْخُبْزُ طَازِجٌ.",
+          "arTransliterationRu": "аль-хубз та́зидж.",
+          "arTransliterationEn": "al-khubz tazij"
+        },
+        {
+          "ru": "Мы едим хлеб с супом.",
+          "ar": "نأكل الخبز مع الحساء.",
+          "en": "We eat bread with soup.",
+          "arVocalized": "نَأْكُلُ الْخُبْزَ مَعَ الْحَسَاءِ.",
+          "arTransliterationRu": "на’куль аль-хубз ма‘а аль-хаса’.",
+          "arTransliterationEn": "nakul al-khubz maa al-hasaa"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "свежий хлеб",
+          "ar": "خبز طازج",
+          "en": "fresh bread",
+          "arVocalized": "خُبْزٌ طَازِجٌ",
+          "arTransliterationRu": "хубз та́зидж",
+          "arTransliterationEn": "khubz tazij"
+        },
+        {
+          "ru": "тёплый хлеб",
+          "ar": "خبز دافئ",
+          "en": "warm bread",
+          "arVocalized": "خُبْزٌ دَافِئٌ",
+          "arTransliterationRu": "хубз да́фи’",
+          "arTransliterationEn": "khubz dafi"
+        },
+        {
+          "ru": "кусок хлеба",
+          "ar": "قطعة خبز",
+          "en": "a piece of bread",
+          "arVocalized": "قِطْعَةُ خُبْزٍ",
+          "arTransliterationRu": "кыт‘ат хубз",
+          "arTransliterationEn": "qitat khubz"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_014",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "payment",
+      "russian": "чаевые",
+      "transliteration": "chayevye",
+      "transliterationStressed": "chayevýe",
+      "arabic": "بقشيش",
+      "english": "tip",
+      "level": "A1",
+      "frequency": 3,
+      "type": "noun",
+      "exampleRu": "Оставьте чаевые официанту.",
+      "exampleAr": "اترك بقشيشًا للنادل.",
+      "exampleEn": "Leave a tip for the waiter.",
+      "imagePath": "assets/images/restaurant/tip-jar.jpg",
+      "addedAt": "2026-08-16",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "бакши́ш",
+      "transliterationAr": "تشاييفيه",
+      "exampleTransliterationAr": "أوستافيتي تشاييفيه أوفيتسيانتو.",
+      "exampleTransliterationEn": "Ostavte chayevye ofitsiantu.",
+      "exampleArTransliterationRu": "утрук бакши́ш лин-на́диль.",
+      "arabicVocalized": "بَقْشِيش",
+      "exampleArVocalized": "اتْرُكْ بَقْشِيشًا لِلنَّادِلِ.",
+      "englishTransliterationAr": "تيب",
+      "englishTransliterationRu": "тип",
+      "arabicTransliterationEn": "bakshish",
+      "exampleArTransliterationEn": "utruk bakshish lin-naadil",
+      "grammar": {
+        "ru": {
+          "word": "чаевые",
+          "type": "существительное (мн.ч.)",
+          "singular": "чаевые",
+          "plural": "чаевые",
+          "gender": "plural-only",
+          "transliteration": "chayevye"
+        },
+        "ar": {
+          "word": "بقشيش",
+          "type": "اسم",
+          "singular": "بقشيش",
+          "plural": "بقاشيش",
+          "gender": "مذكر"
+        },
+        "en": {
+          "word": "tip",
+          "type": "noun",
+          "singular": "tip",
+          "plural": "tips",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Оставьте чаевые официанту.",
+          "ar": "اترك بقشيشًا للنادل.",
+          "en": "Leave a tip for the waiter.",
+          "arVocalized": "اتْرُكْ بَقْشِيشًا لِلنَّادِلِ.",
+          "arTransliterationRu": "утрук бакши́ш лин-на́диль.",
+          "arTransliterationEn": "utruk bakshish lin-naadil"
+        },
+        {
+          "ru": "Чаевые уже включены в счёт.",
+          "ar": "البقشيش مضاف بالفعل إلى الفاتورة.",
+          "en": "The tip is already included in the bill.",
+          "arVocalized": "الْبَقْشِيشُ مُضَافٌ بِالْفِعْلِ إِلَى الْفَاتُورَةِ.",
+          "arTransliterationRu": "аль-бакши́ш муда́ф биль-фи‘ль иля аль-фа́тура.",
+          "arTransliterationEn": "al-bakshish mudaf bil-fil ila al-fatura"
+        },
+        {
+          "ru": "Сколько чаевых обычно оставляют?",
+          "ar": "كم بقشيشًا يترك الناس عادة؟",
+          "en": "How much tip do people usually leave?",
+          "arVocalized": "كَمْ بَقْشِيشًا يَتْرُكُ النَّاسُ عَادَةً؟",
+          "arTransliterationRu": "кам бакши́ш ятрук ан-на́с ‘а́да؟",
+          "arTransliterationEn": "kam bakshish yatruk an-naas aada?"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "оставить чаевые",
+          "ar": "ترك بقشيش",
+          "en": "to leave a tip",
+          "arVocalized": "تَرْكُ بَقْشِيشٍ",
+          "arTransliterationRu": "тарк бакши́ш",
+          "arTransliterationEn": "tark bakshish"
+        },
+        {
+          "ru": "маленькие чаевые",
+          "ar": "بقشيش صغير",
+          "en": "a small tip",
+          "arVocalized": "بَقْشِيشٌ صَغِيرٌ",
+          "arTransliterationRu": "бакши́ш сагы́р",
+          "arTransliterationEn": "bakshish sagheer"
+        },
+        {
+          "ru": "хорошие чаевые",
+          "ar": "بقشيش جيد",
+          "en": "a good tip",
+          "arVocalized": "بَقْشِيشٌ جَيِّدٌ",
+          "arTransliterationRu": "бакши́ш джа́йид",
+          "arTransliterationEn": "bakshish jayyid"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_015",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "food",
+      "russian": "вода",
+      "transliteration": "voda",
+      "transliterationStressed": "vodá",
+      "arabic": "ماء",
+      "english": "water",
+      "level": "A1",
+      "frequency": 5,
+      "type": "noun",
+      "exampleRu": "Дайте мне воду, пожалуйста.",
+      "exampleAr": "أعطني ماءً من فضلك.",
+      "exampleEn": "Give me water, please.",
+      "imagePath": "assets/images/restaurant/water.jpg",
+      "addedAt": "2026-08-16",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "ма’",
+      "transliterationAr": "ڤودا",
+      "exampleTransliterationAr": "دايتيه مني ڤودو, بوجالوستا.",
+      "exampleTransliterationEn": "Dayte mne vodu, pozhaluysta.",
+      "exampleArTransliterationRu": "а‘тыни ма’ мин фа́длик.",
+      "arabicVocalized": "مَاء",
+      "exampleArVocalized": "أَعْطِنِي مَاءً مِنْ فَضْلِكَ.",
+      "englishTransliterationAr": "ووتر",
+      "englishTransliterationRu": "уотэр",
+      "arabicTransliterationEn": "maa",
+      "exampleArTransliterationEn": "atini maa min fadlik",
+      "grammar": {
+        "ru": {
+          "word": "вода",
+          "type": "существительное",
+          "singular": "вода",
+          "plural": "воды",
+          "gender": "feminine",
+          "transliteration": "voda"
+        },
+        "ar": {
+          "word": "ماء",
+          "type": "اسم",
+          "singular": "ماء",
+          "plural": "مياه",
+          "gender": "مذكر"
+        },
+        "en": {
+          "word": "water",
+          "type": "noun",
+          "singular": "water",
+          "plural": "-",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Дайте мне воду, пожалуйста.",
+          "ar": "أعطني ماءً من فضلك.",
+          "en": "Give me water, please.",
+          "arVocalized": "أَعْطِنِي مَاءً مِنْ فَضْلِكَ.",
+          "arTransliterationRu": "а‘тыни ма’ мин фа́длик.",
+          "arTransliterationEn": "atini maa min fadlik"
+        },
+        {
+          "ru": "Вода холодная.",
+          "ar": "الماء بارد.",
+          "en": "The water is cold.",
+          "arVocalized": "الْمَاءُ بَارِدٌ.",
+          "arTransliterationRu": "аль-ма’ ба́рид.",
+          "arTransliterationEn": "al-maa barid"
+        },
+        {
+          "ru": "Я пью много воды.",
+          "ar": "أشرب الكثير من الماء.",
+          "en": "I drink a lot of water.",
+          "arVocalized": "أَشْرَبُ الْكَثِيرَ مِنَ الْمَاءِ.",
+          "arTransliterationRu": "ашраб аль-каси́р мин аль-ма’.",
+          "arTransliterationEn": "ashrab al-kathir min al-maa"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "холодная вода",
+          "ar": "ماء بارد",
+          "en": "cold water",
+          "arVocalized": "مَاءٌ بَارِدٌ",
+          "arTransliterationRu": "ма’ ба́рид",
+          "arTransliterationEn": "maa barid"
+        },
+        {
+          "ru": "бутылка воды",
+          "ar": "زجاجة ماء",
+          "en": "a bottle of water",
+          "arVocalized": "زُجَاجَةُ مَاءٍ",
+          "arTransliterationRu": "зуджа́джат ма’",
+          "arTransliterationEn": "zujajat maa"
+        },
+        {
+          "ru": "пить воду",
+          "ar": "شرب الماء",
+          "en": "to drink water",
+          "arVocalized": "شُرْبُ الْمَاءِ",
+          "arTransliterationRu": "шурб аль-ма’",
+          "arTransliterationEn": "shurb al-maa"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_016",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "food",
+      "russian": "соль",
+      "transliteration": "sol",
+      "transliterationStressed": "sol",
+      "arabic": "ملح",
+      "english": "salt",
+      "level": "A1",
+      "frequency": 4,
+      "type": "noun",
+      "exampleRu": "Передайте соль, пожалуйста.",
+      "exampleAr": "مرر الملح من فضلك.",
+      "exampleEn": "Pass the salt, please.",
+      "imagePath": "assets/images/restaurant/salt.jpg",
+      "addedAt": "2026-08-16",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "мильх",
+      "transliterationAr": "سول",
+      "exampleTransliterationAr": "بيريدايتيه سول, بوجالوستا.",
+      "exampleTransliterationEn": "Peredayte sol, pozhaluysta.",
+      "exampleArTransliterationRu": "марриры аль-мильх мин фа́длик.",
+      "arabicVocalized": "مِلْح",
+      "exampleArVocalized": "مَرِّرِ الْمِلْحَ مِنْ فَضْلِكَ.",
+      "englishTransliterationAr": "سولت",
+      "englishTransliterationRu": "солт",
+      "arabicTransliterationEn": "milh",
+      "exampleArTransliterationEn": "marriri al-milh min fadlik",
+      "grammar": {
+        "ru": {
+          "word": "соль",
+          "type": "существительное",
+          "singular": "соль",
+          "plural": "соли",
+          "gender": "feminine",
+          "transliteration": "sol"
+        },
+        "ar": {
+          "word": "ملح",
+          "type": "اسم",
+          "singular": "ملح",
+          "plural": "أملاح",
+          "gender": "مذكر"
+        },
+        "en": {
+          "word": "salt",
+          "type": "noun",
+          "singular": "salt",
+          "plural": "-",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Передайте соль, пожалуйста.",
+          "ar": "مرر الملح من فضلك.",
+          "en": "Pass the salt, please.",
+          "arVocalized": "مَرِّرِ الْمِلْحَ مِنْ فَضْلِكَ.",
+          "arTransliterationRu": "марриры аль-мильх мин фа́длик.",
+          "arTransliterationEn": "marriri al-milh min fadlik"
+        },
+        {
+          "ru": "В супе мало соли.",
+          "ar": "الحساء قليل الملح.",
+          "en": "There isn't much salt in the soup.",
+          "arVocalized": "الْحَسَاءُ قَلِيلُ الْمِلْحِ.",
+          "arTransliterationRu": "аль-хаса’ кали́ль аль-мильх.",
+          "arTransliterationEn": "al-hasaa qalil al-milh"
+        },
+        {
+          "ru": "Соль на столе.",
+          "ar": "الملح على الطاولة.",
+          "en": "The salt is on the table.",
+          "arVocalized": "الْمِلْحُ عَلَى الطَّاوِلَةِ.",
+          "arTransliterationRu": "аль-мильх а́ля ат-та́виля.",
+          "arTransliterationEn": "al-milh ala at-tawilah"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "немного соли",
+          "ar": "قليل من الملح",
+          "en": "a little salt",
+          "arVocalized": "قَلِيلٌ مِنَ الْمِلْحِ",
+          "arTransliterationRu": "кали́ль мин аль-мильх",
+          "arTransliterationEn": "qalil min al-milh"
+        },
+        {
+          "ru": "без соли",
+          "ar": "بدون ملح",
+          "en": "without salt",
+          "arVocalized": "بِدُونِ مِلْحٍ",
+          "arTransliterationRu": "биду́ни мильх",
+          "arTransliterationEn": "biduni milh"
+        },
+        {
+          "ru": "морская соль",
+          "ar": "ملح البحر",
+          "en": "sea salt",
+          "arVocalized": "مِلْحُ الْبَحْرِ",
+          "arTransliterationRu": "мильх аль-бахр",
+          "arTransliterationEn": "milh al-bahr"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_017",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "food",
+      "russian": "перец",
+      "transliteration": "perets",
+      "transliterationStressed": "pérets",
+      "arabic": "فلفل",
+      "english": "pepper",
+      "level": "A1",
+      "frequency": 4,
+      "type": "noun",
+      "exampleRu": "Добавьте немного перца.",
+      "exampleAr": "أضف قليلاً من الفلفل.",
+      "exampleEn": "Add a little pepper.",
+      "imagePath": "assets/images/restaurant/pepper.jpg",
+      "addedAt": "2026-08-16",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "фульфуль",
+      "transliterationAr": "بيريتس",
+      "exampleTransliterationAr": "دوباڤتيه نيمنوغو بيرتسا.",
+      "exampleTransliterationEn": "Dobavte nemnogo pertsa.",
+      "exampleArTransliterationRu": "адыф кали́ль мин аль-фульфуль.",
+      "arabicVocalized": "فُلْفُل",
+      "exampleArVocalized": "أَضِفْ قَلِيلًا مِنَ الْفُلْفُلِ.",
+      "englishTransliterationAr": "بيبر",
+      "englishTransliterationRu": "пэппэр",
+      "arabicTransliterationEn": "fulful",
+      "exampleArTransliterationEn": "adif qalil min al-fulful",
+      "grammar": {
+        "ru": {
+          "word": "перец",
+          "type": "существительное",
+          "singular": "перец",
+          "plural": "перцы",
+          "gender": "masculine",
+          "transliteration": "perets"
+        },
+        "ar": {
+          "word": "فلفل",
+          "type": "اسم",
+          "singular": "فلفل",
+          "plural": "فلافل",
+          "gender": "مذكر"
+        },
+        "en": {
+          "word": "pepper",
+          "type": "noun",
+          "singular": "pepper",
+          "plural": "peppers",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Добавьте немного перца.",
+          "ar": "أضف قليلاً من الفلفل.",
+          "en": "Add a little pepper.",
+          "arVocalized": "أَضِفْ قَلِيلًا مِنَ الْفُلْفُلِ.",
+          "arTransliterationRu": "адыф кали́ль мин аль-фульфуль.",
+          "arTransliterationEn": "adif qalil min al-fulful"
+        },
+        {
+          "ru": "Этот суп острый от перца.",
+          "ar": "هذا الحساء حار بسبب الفلفل.",
+          "en": "This soup is spicy because of the pepper.",
+          "arVocalized": "هَذَا الْحَسَاءُ حَارٌّ بِسَبَبِ الْفُلْفُلِ.",
+          "arTransliterationRu": "хаза аль-хаса’ ха́рр бисаба́б аль-фульфуль.",
+          "arTransliterationEn": "haza al-hasaa harr bisabab al-fulful"
+        },
+        {
+          "ru": "Где перец?",
+          "ar": "أين الفلفل؟",
+          "en": "Where is the pepper?",
+          "arVocalized": "أَيْنَ الْفُلْفُلُ؟",
+          "arTransliterationRu": "а́йн аль-фульфуль؟",
+          "arTransliterationEn": "ayn al-fulful?"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "чёрный перец",
+          "ar": "فلفل أسود",
+          "en": "black pepper",
+          "arVocalized": "فُلْفُلٌ أَسْوَدُ",
+          "arTransliterationRu": "фульфуль а́свад",
+          "arTransliterationEn": "fulful aswad"
+        },
+        {
+          "ru": "острый перец",
+          "ar": "فلفل حار",
+          "en": "hot pepper",
+          "arVocalized": "فُلْفُلٌ حَارٌّ",
+          "arTransliterationRu": "фульфуль ха́рр",
+          "arTransliterationEn": "fulful harr"
+        },
+        {
+          "ru": "щепотка перца",
+          "ar": "رشة فلفل",
+          "en": "a pinch of pepper",
+          "arVocalized": "رَشَّةُ فُلْفُلٍ",
+          "arTransliterationRu": "ра́шшат фульфуль",
+          "arTransliterationEn": "rashat fulful"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_018",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "dining",
+      "russian": "салфетка",
+      "transliteration": "salfetka",
+      "transliterationStressed": "salfétka",
+      "arabic": "منديل",
+      "english": "napkin",
+      "level": "A1",
+      "frequency": 3,
+      "type": "noun",
+      "exampleRu": "Возьмите салфетку, пожалуйста.",
+      "exampleAr": "خذ منديلاً من فضلك.",
+      "exampleEn": "Take a napkin, please.",
+      "imagePath": "assets/images/restaurant/napkin.jpg",
+      "addedAt": "2026-08-16",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "миндиль",
+      "transliterationAr": "سالفيتكا",
+      "exampleTransliterationAr": "ڤوزميتيه سالفيتكو, بوجالوستا.",
+      "exampleTransliterationEn": "Vozmite salfetku, pozhaluysta.",
+      "exampleArTransliterationRu": "хуз миндиль мин фа́длик.",
+      "arabicVocalized": "مِنْدِيل",
+      "exampleArVocalized": "خُذْ مِنْدِيلًا مِنْ فَضْلِكَ.",
+      "englishTransliterationAr": "نابكن",
+      "englishTransliterationRu": "нэпкин",
+      "arabicTransliterationEn": "mindil",
+      "exampleArTransliterationEn": "khudh mindil min fadlik",
+      "grammar": {
+        "ru": {
+          "word": "салфетка",
+          "type": "существительное",
+          "singular": "салфетка",
+          "plural": "салфетки",
+          "gender": "feminine",
+          "transliteration": "salfetka"
+        },
+        "ar": {
+          "word": "منديل",
+          "type": "اسم",
+          "singular": "منديل",
+          "plural": "مناديل",
+          "gender": "مذكر"
+        },
+        "en": {
+          "word": "napkin",
+          "type": "noun",
+          "singular": "napkin",
+          "plural": "napkins",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Возьмите салфетку, пожалуйста.",
+          "ar": "خذ منديلاً من فضلك.",
+          "en": "Take a napkin, please.",
+          "arVocalized": "خُذْ مِنْدِيلًا مِنْ فَضْلِكَ.",
+          "arTransliterationRu": "хуз миндиль мин фа́длик.",
+          "arTransliterationEn": "khudh mindil min fadlik"
+        },
+        {
+          "ru": "Салфетка лежит рядом с тарелкой.",
+          "ar": "المنديل بجانب الطبق.",
+          "en": "The napkin is next to the plate.",
+          "arVocalized": "الْمِنْدِيلُ بِجَانِبِ الطَّبَقِ.",
+          "arTransliterationRu": "аль-миндиль бида́ниб ат-та́бак.",
+          "arTransliterationEn": "al-mindil bijanib at-tabaq"
+        },
+        {
+          "ru": "Чистая салфетка на столе.",
+          "ar": "منديل نظيف على الطاولة.",
+          "en": "A clean napkin is on the table.",
+          "arVocalized": "مِنْدِيلٌ نَظِيفٌ عَلَى الطَّاوِلَةِ.",
+          "arTransliterationRu": "миндиль нази́ф а́ля ат-та́виля.",
+          "arTransliterationEn": "mindil nazif ala at-tawilah"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "чистая салфетка",
+          "ar": "منديل نظيف",
+          "en": "a clean napkin",
+          "arVocalized": "مِنْدِيلٌ نَظِيفٌ",
+          "arTransliterationRu": "миндиль нази́ф",
+          "arTransliterationEn": "mindil nazif"
+        },
+        {
+          "ru": "бумажная салфетка",
+          "ar": "منديل ورقي",
+          "en": "a paper napkin",
+          "arVocalized": "مِنْدِيلٌ وَرَقِيٌّ",
+          "arTransliterationRu": "миндиль варакы́",
+          "arTransliterationEn": "mindil waraqi"
+        },
+        {
+          "ru": "сложить салфетку",
+          "ar": "طي المنديل",
+          "en": "to fold the napkin",
+          "arVocalized": "طَيُّ الْمِنْدِيلِ",
+          "arTransliterationRu": "тайй аль-миндиль",
+          "arTransliterationEn": "tayy al-mindil"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_019",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "dining",
+      "russian": "скатерть",
+      "transliteration": "skatert",
+      "transliterationStressed": "skátert",
+      "arabic": "مفرش",
+      "english": "tablecloth",
+      "level": "A2",
+      "frequency": 3,
+      "type": "noun",
+      "exampleRu": "Постелите чистую скатерть.",
+      "exampleAr": "افرش مفرشًا نظيفًا.",
+      "exampleEn": "Lay out a clean tablecloth.",
+      "imagePath": "assets/images/restaurant/tablecloth.jpg",
+      "addedAt": "2026-08-16",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "мифраш",
+      "transliterationAr": "سكاتيرت",
+      "exampleTransliterationAr": "بوستيليتيه تشيستويو سكاتيرت.",
+      "exampleTransliterationEn": "Postelite chistuyu skatert.",
+      "exampleArTransliterationRu": "ифриш мифраш нази́ф.",
+      "arabicVocalized": "مِفْرَش",
+      "exampleArVocalized": "افْرِشْ مِفْرَشًا نَظِيفًا.",
+      "englishTransliterationAr": "تيبل كلوث",
+      "englishTransliterationRu": "тэйбл клос",
+      "arabicTransliterationEn": "mifrash",
+      "exampleArTransliterationEn": "ifrish mifrash nazif",
+      "grammar": {
+        "ru": {
+          "word": "скатерть",
+          "type": "существительное",
+          "singular": "скатерть",
+          "plural": "скатерти",
+          "gender": "feminine",
+          "transliteration": "skatert"
+        },
+        "ar": {
+          "word": "مفرش",
+          "type": "اسم",
+          "singular": "مفرش",
+          "plural": "مفارش",
+          "gender": "مذكر"
+        },
+        "en": {
+          "word": "tablecloth",
+          "type": "noun",
+          "singular": "tablecloth",
+          "plural": "tablecloths",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Постелите чистую скатерть.",
+          "ar": "افرش مفرشًا نظيفًا.",
+          "en": "Lay out a clean tablecloth.",
+          "arVocalized": "افْرِشْ مِفْرَشًا نَظِيفًا.",
+          "arTransliterationRu": "ифриш мифраш нази́ф.",
+          "arTransliterationEn": "ifrish mifrash nazif"
+        },
+        {
+          "ru": "Скатерть белая.",
+          "ar": "المفرش أبيض.",
+          "en": "The tablecloth is white.",
+          "arVocalized": "الْمِفْرَشُ أَبْيَضُ.",
+          "arTransliterationRu": "аль-мифраш а́бияд.",
+          "arTransliterationEn": "al-mifrash abyad"
+        },
+        {
+          "ru": "На скатерти пятно.",
+          "ar": "على المفرش بقعة.",
+          "en": "There is a stain on the tablecloth.",
+          "arVocalized": "عَلَى الْمِفْرَشِ بُقْعَةٌ.",
+          "arTransliterationRu": "а́ля аль-мифраш бук‘а.",
+          "arTransliterationEn": "ala al-mifrash buqah"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "белая скатерть",
+          "ar": "مفرش أبيض",
+          "en": "a white tablecloth",
+          "arVocalized": "مِفْرَشٌ أَبْيَضُ",
+          "arTransliterationRu": "мифраш а́бияд",
+          "arTransliterationEn": "mifrash abyad"
+        },
+        {
+          "ru": "чистая скатерть",
+          "ar": "مفرش نظيف",
+          "en": "a clean tablecloth",
+          "arVocalized": "مِفْرَشٌ نَظِيفٌ",
+          "arTransliterationRu": "мифраш нази́ф",
+          "arTransliterationEn": "mifrash nazif"
+        },
+        {
+          "ru": "постелить скатерть",
+          "ar": "فرش المفرش",
+          "en": "to lay the tablecloth",
+          "arVocalized": "فَرْشُ الْمِفْرَشِ",
+          "arTransliterationRu": "фарш аль-мифраш",
+          "arTransliterationEn": "farsh al-mifrash"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_020",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "restaurant",
+      "russian": "заказ",
+      "transliteration": "zakaz",
+      "transliterationStressed": "zakáz",
+      "arabic": "طلب",
+      "english": "order",
+      "level": "A2",
+      "frequency": 4,
+      "type": "noun",
+      "exampleRu": "Официант принял заказ.",
+      "exampleAr": "استلم النادل الطلب.",
+      "exampleEn": "The waiter took the order.",
+      "imagePath": "assets/images/restaurant/order.jpg",
+      "addedAt": "2026-08-16",
+      "masteryDefault": 0,
+      "imageQuality": "needs-review-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "талаб",
+      "transliterationAr": "زاكاز",
+      "exampleTransliterationAr": "أوفيتسيانت برينيال زاكاز.",
+      "exampleTransliterationEn": "Ofitsiant prinyal zakaz.",
+      "exampleArTransliterationRu": "истальма ан-на́диль ат-та́лаб.",
+      "arabicVocalized": "طَلَب",
+      "exampleArVocalized": "اسْتَلَمَ النَّادِلُ الطَّلَبَ.",
+      "englishTransliterationAr": "أوردر",
+      "englishTransliterationRu": "ордэр",
+      "arabicTransliterationEn": "talab",
+      "exampleArTransliterationEn": "istalama an-naadil at-talab",
+      "grammar": {
+        "ru": {
+          "word": "заказ",
+          "type": "существительное",
+          "singular": "заказ",
+          "plural": "заказы",
+          "gender": "masculine",
+          "transliteration": "zakaz"
+        },
+        "ar": {
+          "word": "طلب",
+          "type": "اسم",
+          "singular": "طلب",
+          "plural": "طلبات",
+          "gender": "مذكر"
+        },
+        "en": {
+          "word": "order",
+          "type": "noun",
+          "singular": "order",
+          "plural": "orders",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Официант принял заказ.",
+          "ar": "استلم النادل الطلب.",
+          "en": "The waiter took the order.",
+          "arVocalized": "اسْتَلَمَ النَّادِلُ الطَّلَبَ.",
+          "arTransliterationRu": "истальма ан-на́диль ат-та́лаб.",
+          "arTransliterationEn": "istalama an-naadil at-talab"
+        },
+        {
+          "ru": "Мой заказ ещё не готов.",
+          "ar": "طلبي لم يجهز بعد.",
+          "en": "My order is not ready yet.",
+          "arVocalized": "طَلَبِي لَمْ يُجْهَزْ بَعْدُ.",
+          "arTransliterationRu": "талаби́ лям юджхаз ба‘д.",
+          "arTransliterationEn": "talabi lam yujhaz baad"
+        },
+        {
+          "ru": "Я хочу изменить заказ.",
+          "ar": "أريد تغيير الطلب.",
+          "en": "I want to change the order.",
+          "arVocalized": "أُرِيدُ تَغْيِيرَ الطَّلَبِ.",
+          "arTransliterationRu": "уриду тагйи́р ат-та́лаб.",
+          "arTransliterationEn": "urid taghyir at-talab"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "новый заказ",
+          "ar": "طلب جديد",
+          "en": "a new order",
+          "arVocalized": "طَلَبٌ جَدِيدٌ",
+          "arTransliterationRu": "талаб джади́д",
+          "arTransliterationEn": "talab jadid"
+        },
+        {
+          "ru": "принять заказ",
+          "ar": "استلام الطلب",
+          "en": "to take the order",
+          "arVocalized": "اسْتِلَامُ الطَّلَبِ",
+          "arTransliterationRu": "истиля́м ат-та́лаб",
+          "arTransliterationEn": "istilam at-talab"
+        },
+        {
+          "ru": "готовый заказ",
+          "ar": "طلب جاهز",
+          "en": "a ready order",
+          "arVocalized": "طَلَبٌ جَاهِزٌ",
+          "arTransliterationRu": "талаб джа́хиз",
+          "arTransliterationEn": "talab jahiz"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_021",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "restaurant",
+      "russian": "бронирование",
+      "transliteration": "bronirovanie",
+      "transliterationStressed": "bronírovaniye",
+      "arabic": "حجز",
+      "english": "reservation",
+      "level": "A2",
+      "frequency": 3,
+      "type": "noun",
+      "exampleRu": "У нас есть бронирование на восемь часов.",
+      "exampleAr": "لدينا حجز في الساعة الثامنة.",
+      "exampleEn": "We have a reservation for eight o'clock.",
+      "imagePath": "assets/images/restaurant/reservation.jpg",
+      "addedAt": "2026-08-16",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "хаджз",
+      "transliterationAr": "برونيروڤانييه",
+      "exampleTransliterationAr": "أو ناس يست برونيروڤانييه نا ڤوسيم تشاسوف.",
+      "exampleTransliterationEn": "U nas yest' bronirovaniye na vosem chasov.",
+      "exampleArTransliterationRu": "ляда́йна ха́джзун фи ас-са́‘а ас-са́мина.",
+      "arabicVocalized": "حَجْز",
+      "exampleArVocalized": "لَدَيْنَا حَجْزٌ فِي السَّاعَةِ الثَّامِنَةِ.",
+      "englishTransliterationAr": "ريزرفيشن",
+      "englishTransliterationRu": "резервейшн",
+      "arabicTransliterationEn": "hajz",
+      "exampleArTransliterationEn": "ladaynaa hajzun fi as-saa'a as-saamina.",
+      "grammar": {
+        "ru": {
+          "word": "бронирование",
+          "type": "существительное",
+          "singular": "бронирование",
+          "plural": "бронирования",
+          "gender": "neuter",
+          "transliteration": "bronirovanie"
+        },
+        "ar": {
+          "word": "حجز",
+          "type": "اسم",
+          "singular": "حجز",
+          "plural": "حجوزات",
+          "gender": "مذكر"
+        },
+        "en": {
+          "word": "reservation",
+          "type": "noun",
+          "singular": "reservation",
+          "plural": "reservations",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "У нас есть бронирование на восемь часов.",
+          "ar": "لدينا حجز في الساعة الثامنة.",
+          "en": "We have a reservation for eight o'clock.",
+          "arVocalized": "لَدَيْنَا حَجْزٌ فِي السَّاعَةِ الثَّامِنَةِ.",
+          "arTransliterationRu": "ляда́йна ха́джзун фи ас-са́‘а ас-са́мина.",
+          "arTransliterationEn": "ladaynaa hajzun fi as-saa'a as-saamina."
+        },
+        {
+          "ru": "Бронирование стола бесплатно.",
+          "ar": "حجز الطاولة مجاني.",
+          "en": "Table reservation is free.",
+          "arVocalized": "حَجْزُ الطَّاوِلَةِ مَجَّانِيٌّ.",
+          "arTransliterationRu": "ха́джзу ат-та́вила маджа́ни.",
+          "arTransliterationEn": "hajzu at-taawila majjaani."
+        },
+        {
+          "ru": "Пожалуйста, подтвердите бронирование по телефону.",
+          "ar": "من فضلك، أكّد الحجز عبر الهاتف.",
+          "en": "Please confirm the reservation by phone.",
+          "arVocalized": "مِنْ فَضْلِكَ أَكِّدِ الْحَجْزَ عَبْرَ الْهَاتِفِ.",
+          "arTransliterationRu": "мин фадлика акки́д аль-ха́джз ‘абра аль-ха́тиф.",
+          "arTransliterationEn": "min fadlika akkidi al-hajz abra al-haatif."
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "новое бронирование",
+          "ar": "حجز جديد",
+          "en": "a new reservation",
+          "arVocalized": "حَجْزٌ جَدِيدٌ",
+          "arTransliterationRu": "ха́джзун джади́д",
+          "arTransliterationEn": "hajzun jadid"
+        },
+        {
+          "ru": "отменить бронирование",
+          "ar": "إلغاء الحجز",
+          "en": "to cancel the reservation",
+          "arVocalized": "إِلْغَاءُ الْحَجْزِ",
+          "arTransliterationRu": "ильга́’у аль-ха́джз",
+          "arTransliterationEn": "ilghaa al-hajz"
+        },
+        {
+          "ru": "онлайн-бронирование",
+          "ar": "حجز عبر الإنترنت",
+          "en": "online reservation",
+          "arVocalized": "حَجْزٌ عَبْرَ الْإِنْتِرْنِت",
+          "arTransliterationRu": "ха́джзун ‘абра аль-интарнет",
+          "arTransliterationEn": "hajzun abra al-internet"
+        }
+      ]
     }
   ]
 }
