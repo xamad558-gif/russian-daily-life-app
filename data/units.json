@@ -17,6 +17,23 @@
       "coverImage": "assets/images/words/house.jpg",
       "icon": "🏠",
       "order": 1
+    },
+    {
+      "id": "restaurant",
+      "dataPath": "data/units/restaurant.json",
+      "title": {
+        "ar": "المطعم",
+        "en": "Restaurant",
+        "ru": "Ресторан"
+      },
+      "description": {
+        "ar": "كلمات أساسية للطلب وتناول الطعام في المطعم",
+        "en": "Essential words for ordering and dining at a restaurant",
+        "ru": "Основные слова для заказа и еды в ресторане"
+      },
+      "coverImage": "assets/images/restaurant/restaurant-interior.jpg",
+      "icon": "🍽️",
+      "order": 2
     }
   ]
 }

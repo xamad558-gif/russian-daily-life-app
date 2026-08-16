@@ -22,7 +22,7 @@ if (!allowedAudioModes.has(audioMode)) {
 const required = [
   'id', 'unitId', 'category', 'subCategory', 'russian', 'transliteration', 'transliterationAr',
   'englishTransliterationAr', 'englishTransliterationRu', 'arabicTransliterationEn',
-  'arabic', 'english', 'level', 'frequency', 'type',
+  'arabic', 'english', 'arabicTransliterationRu', 'level', 'frequency', 'type',
   'exampleRu', 'exampleTransliterationAr', 'exampleTransliterationEn', 'exampleArTransliterationRu',
   'exampleAr', 'exampleEn', 'imagePath', 'grammar'
 ];
@@ -91,6 +91,9 @@ for (const [index, word] of words.entries()) {
   }
   if (word.exampleTransliterationAr && !arabicScript.test(word.exampleTransliterationAr)) {
     errors.push(`${label}: exampleTransliterationAr must contain Arabic-script characters.`);
+  }
+  if (word.arabicTransliterationRu && !cyrillicScript.test(word.arabicTransliterationRu)) {
+    errors.push(`${label}: arabicTransliterationRu must contain Cyrillic characters.`);
   }
   if (word.exampleTransliterationEn && cyrillicScript.test(word.exampleTransliterationEn)) {
     errors.push(`${label}: exampleTransliterationEn must not contain Cyrillic characters.`);

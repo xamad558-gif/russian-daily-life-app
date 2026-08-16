@@ -23,7 +23,7 @@ const state = {
   density: settings.density,
   theme: settings.theme,
   activeUnit: settings.activeUnit,
-  unitRegistry: null
+  unitRegistry: null, activeUnitMeta: null
 };
 
 AppI18N.configure({ state });
@@ -91,6 +91,7 @@ const els = {
 const init = (...args) => AppController.init(...args);
 
 const languageValue = (...args) => AppI18N.languageValue(...args);
+const learningLanguageName = (...args) => AppI18N.learningLanguageName(...args);
 const orderedLanguages = (...args) => AppI18N.orderedLanguages(...args);
 const pronunciationForLanguage = (...args) => AppI18N.pronunciationForLanguage(...args);
 const wordPronunciation = (...args) => AppI18N.wordPronunciation(...args);
@@ -125,6 +126,7 @@ AppController.configure({
   languageValue,
   orderedLanguages,
   roomLabel,
+  renderUnitCopy: AppUI.renderUnitCopy,
   populateSubcategories,
   renderCategoryMenu,
   renderRoomStrip,
@@ -159,6 +161,8 @@ AppUI.configure({
   getTranslation: () => I18N[state.uiLang],
   interfaceLanguageLabels: INTERFACE_LANGUAGE_LABELS,
   learningLanguageLabels: LEARNING_LANGUAGE_LABELS,
+  learningLanguageName,
+  renderUnitCopy: AppUI.renderUnitCopy,
   detailText,
   roomLabel,
   renderCategoryMenu,

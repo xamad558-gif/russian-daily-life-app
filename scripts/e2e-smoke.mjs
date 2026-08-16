@@ -69,6 +69,19 @@ async function runSmokeTest() {
     await page.locator("#cardsGrid .word-card").first().waitFor({ state: "visible" });
     const totalWords = await page.locator("#cardsGrid .word-card").count();
     assert.ok(totalWords > 0, "The loaded unit should contain at least one word");
+    await page.goto(`${url}/index.html#unit/home`, { waitUntil: "domcontentloaded" });
+    await page.locator("#cardsGrid .word-card").first().waitFor({ state: "visible" });
+    assert.equal(await page.evaluate(() => location.hash), "#unit/home", "The active unit route should remain shareable after loading");
+    const restaurantUnit = JSON.parse(await readFile(path.resolve(repositoryRoot, "data/units/restaurant.json"), "utf8"));
+    const restaurantWordCount = restaurantUnit.words.length;
+    await page.goto(`${url}/index.html#unit/restaurant`, { waitUntil: "domcontentloaded" });
+    await page.waitForFunction(expected => document.querySelectorAll("#cardsGrid .word-card").length === expected && document.querySelector("#pageTitle")?.textContent === "المطعم", restaurantWordCount);
+    assert.equal(await page.locator("#cardsGrid .word-card").count(), restaurantWordCount, "The restaurant unit should load all of its starter words");
+    assert.equal(await page.locator("#pageTitle").textContent(), "المطعم", "The active unit title should follow the selected unit");
+    assert.equal(await page.evaluate(() => location.hash), "#unit/restaurant", "The restaurant unit route should be shareable");
+    await page.goto(`${url}/index.html#unit/home`, { waitUntil: "domcontentloaded" });
+    await page.waitForFunction(expected => document.querySelectorAll("#cardsGrid .word-card").length === expected, totalWords);
+    assert.equal(await page.locator("#cardsGrid .word-card").count(), totalWords, "Returning home should restore the original unit");
     const serviceWorkerReady = await page.evaluate(async () => {
       if (!("serviceWorker" in navigator)) return false;
       const registration = await navigator.serviceWorker.ready;
@@ -190,7 +203,7 @@ async function runSmokeTest() {
     await page.locator("#quizBox .quiz-option").first().click();
     assert.equal(await page.locator("#quizBox .quiz-option:disabled").count(), 4, "Answering should lock all quiz choices");
     const learningState = await page.evaluate(() => window.AppStorage.loadProgress().learningState);
-    assert.equal(Object.keys(learningState).length, totalWords, "Learning state should be initialized for every word");
+    assert.ok(Object.keys(learningState).length >= totalWords, "Learning state should be initialized for every loaded word");
     assert.ok(Object.values(learningState).some(item => item.lastReviewedAt), "Answering should schedule the reviewed word");
     await page.locator("#nextQuizBtn").click();
     assert.equal(await page.locator("#quizBox .quiz-option:disabled").count(), 0, "A new quiz question should unlock its choices");

@@ -10,17 +10,18 @@
   }
 
   async function init() {
-    const { state, storage, learning, units, languageCodes, els, getTranslation, populateSubcategories, applyTheme, applyUiLanguage, applyLearningLanguage, switchView, applyFilters, updateMetrics } = dependencies;
+    const { state, storage, learning, units, languageCodes, els, getTranslation, populateSubcategories, applyTheme, applyUiLanguage, applyLearningLanguage, switchView, applyFilters, updateMetrics, renderUnitCopy } = dependencies;
+    const unitHashMatch = location.hash.match(/^#unit\/([^/]+)$/);
     try {
       const registry = await units.loadRegistry();
       state.unitRegistry = registry;
-      const unitHashMatch = location.hash.match(/^#unit\/([^/]+)$/);
       const requestedUnitId = unitHashMatch ? unitHashMatch[1] : state.activeUnit;
       const resolved = await units.loadActiveUnit(registry, requestedUnitId);
       if (!Array.isArray(resolved.words)) throw new Error("Word data is not an array");
       state.words = resolved.words;
       state.rooms = resolved.rooms;
       state.activeUnit = resolved.unit.id;
+      state.activeUnitMeta = resolved.unit;
       storage.saveSettings({ activeUnit: state.activeUnit });
     } catch (error) {
       if (els.appError) {
@@ -46,6 +47,9 @@
     switchView(state.activeView);
     applyFilters();
     updateMetrics();
+    if (unitHashMatch) {
+      history.replaceState({ view: "vocabulary", unitId: state.activeUnit }, "", `#unit/${encodeURIComponent(state.activeUnit)}`);
+    }
     openHashWord();
   }
 
@@ -59,8 +63,19 @@
     return true;
   }
 
+  async function handleHashChange() {
+    const { state } = dependencies;
+    const unitHashMatch = location.hash.match(/^#unit\/([^/]+)$/);
+    if (unitHashMatch) {
+      const requestedUnitId = decodeURIComponent(unitHashMatch[1]);
+      if (requestedUnitId !== state.activeUnit) await selectUnit(requestedUnitId);
+      return;
+    }
+    openHashWord();
+  }
+
   async function selectUnit(unitId) {
-    const { state, storage, learning, units, populateSubcategories, renderCategoryMenu, renderRoomStrip, renderUnitMenu, resetFilters, switchView } = dependencies;
+    const { state, storage, learning, units, populateSubcategories, renderCategoryMenu, renderRoomStrip, renderUnitMenu, resetFilters, switchView, renderUnitCopy } = dependencies;
     if (!state.unitRegistry || unitId === state.activeUnit) return;
     try {
       const resolved = await units.loadActiveUnit(state.unitRegistry, unitId);
@@ -68,6 +83,7 @@
       state.words = resolved.words;
       state.rooms = resolved.rooms;
       state.activeUnit = resolved.unit.id;
+      state.activeUnitMeta = resolved.unit;
       storage.saveSettings({ activeUnit: state.activeUnit });
     } catch (error) {
       console.error("Unit switch failed", error);
@@ -83,8 +99,10 @@
     renderCategoryMenu();
     renderRoomStrip();
     renderUnitMenu();
+    renderUnitCopy();
     switchView("vocabulary");
     resetFilters();
+    history.replaceState({ view: "vocabulary", unitId: state.activeUnit }, "", `#unit/${encodeURIComponent(state.activeUnit)}`);
   }
 
   function bindEvents() {
@@ -118,7 +136,7 @@
         requestAnimationFrame(() => window.scrollTo(0, targetY));
       }
     });
-    window.addEventListener("hashchange", openHashWord);
+    window.addEventListener("hashchange", handleHashChange);
   }
 
   function renderReview() {

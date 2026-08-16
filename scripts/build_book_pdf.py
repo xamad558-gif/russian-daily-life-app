@@ -42,7 +42,7 @@ SHORT_SECTION_THRESHOLD = 5  # sections with this many words or fewer get a bonu
 FONT_REGULAR = "Tahoma"
 FONT_BOLD = "Tahoma-Bold"
 
-SECTION_ORDER = ["home", "living-room", "bedroom", "kitchen", "bathroom", "door-window"]
+SECTION_ORDER = []
 # (English, Arabic, Russian) - English is the universal/reference label shown
 # for full/ar/en editions; Russian replaces it as the native-language label
 # for the "ru" (Arabic for Russian speakers) edition. Arabic is always shown
@@ -78,6 +78,10 @@ LANGUAGE_PROFILES = {
         "output_name": "russian_daily_life_workbook.pdf",
         "edition_en": "Full Reference Edition",
         "edition_ar": "النسخة المرجعية الشاملة",
+        "cover_title_left": "Russian Daily Life",
+        "cover_title_right": "الحياة اليومية الروسية",
+        "cover_callout_title": "النسخة المرجعية الشاملة",
+        "cover_callout_body": "اعتمد على الموقع للصوت والاختبارات، واعتمد على الكتاب للكتابة والمراجعة والطباعة.",
         "target_lang": "ru",
         "native_langs": ("ar", "en"),
         "card_meanings": ("ar", "en"),
@@ -90,6 +94,10 @@ LANGUAGE_PROFILES = {
         "output_name": "russian_daily_life_workbook_ar.pdf",
         "edition_en": "Arabic Learner Edition",
         "edition_ar": "نسخة المتعلم الناطق بالعربية",
+        "cover_title_left": "Russian Daily Life",
+        "cover_title_right": "الحياة اليومية الروسية",
+        "cover_callout_title": "نسخة المتعلم الناطق بالعربية",
+        "cover_callout_body": "اعتمد على الموقع للصوت والاختبارات، واعتمد على الكتاب للكتابة والمراجعة والطباعة.",
         "target_lang": "ru",
         "native_langs": ("ar",),
         "card_meanings": ("ar",),
@@ -102,6 +110,10 @@ LANGUAGE_PROFILES = {
         "output_name": "russian_daily_life_workbook_en.pdf",
         "edition_en": "English Learner Edition",
         "edition_ar": "نسخة المتعلم الناطق بالإنجليزية",
+        "cover_title_left": "Russian Daily Life",
+        "cover_title_right": "Русская повседневная жизнь",
+        "cover_callout_title": "English learner edition",
+        "cover_callout_body": "Use the website for audio and quizzes, and use the book for writing, review, and printing.",
         "target_lang": "ru",
         "native_langs": ("en",),
         "card_meanings": ("en",),
@@ -123,6 +135,10 @@ LANGUAGE_PROFILES = {
         "edition_en": "Arabic for Russian Speakers",
         "edition_ar": "العربية للناطقين بالروسية",
         "edition_ru": "Арабский для русскоговорящих",
+        "cover_title_left": "Arabic Daily Life",
+        "cover_title_right": "الحياة اليومية العربية",
+        "cover_callout_title": "Арабский для русскоговорящих",
+        "cover_callout_body": "Используйте сайт для аудио и тестов, а книгу — для письма, повторения и печати.",
         "target_lang": "ar",
         "native_langs": ("ru",),
         "card_meanings": ("ru",),
@@ -303,9 +319,41 @@ def shape_arabic(text: str) -> str:
 
 
 def load_words(unit_id: str = "home") -> list[dict]:
-    data_path = ROOT / "data" / "units" / f"{unit_id}.json"
+    global SECTION_ORDER, SECTION_TITLES
+
+    registry_path = ROOT / "data" / "units.json"
+    with registry_path.open("r", encoding="utf-8") as handle:
+        registry = json.load(handle)
+    entry = next((unit for unit in registry.get("units", []) if unit.get("id") == unit_id), None)
+    if not entry:
+        raise ValueError(f'Unknown unit "{unit_id}" in {registry_path}.')
+
+    data_path = ROOT / entry["dataPath"]
     with data_path.open("r", encoding="utf-8") as handle:
-        return json.load(handle)["words"]
+        unit = json.load(handle)
+    if unit.get("unitId") and unit["unitId"] != unit_id:
+        raise ValueError(f'Unit file "{data_path}" declares unitId "{unit["unitId"]}", expected "{unit_id}".')
+    words = unit.get("words", [])
+    if not words:
+        raise ValueError(f'Unit "{unit_id}" has no words in {data_path}.')
+
+    rooms = sorted(unit.get("rooms", []), key=lambda room: room.get("order", 0))
+    word_sections = {word.get("subCategory") for word in words if word.get("subCategory")}
+    SECTION_ORDER = [room["id"] for room in rooms if room.get("id") in word_sections]
+    known_sections = set(SECTION_ORDER)
+    SECTION_ORDER.extend(sorted({word["subCategory"] for word in words if word.get("subCategory")} - known_sections))
+    SECTION_TITLES = {
+        room["id"]: (
+            room.get("title", {}).get("en", room["id"]),
+            room.get("title", {}).get("ar", room.get("title", {}).get("en", room["id"])),
+            room.get("title", {}).get("ru", room.get("title", {}).get("en", room["id"])),
+        )
+        for room in rooms
+        if room.get("id")
+    }
+    for section in SECTION_ORDER:
+        SECTION_TITLES.setdefault(section, (section, section, section))
+    return words
 
 
 def group_words(words: list[dict]) -> dict[str, list[dict]]:
@@ -602,10 +650,18 @@ def draw_cover(pdf: canvas.Canvas, total_words: int, profile: dict) -> None:
     pdf.rect(0, PAGE_HEIGHT - 76, PAGE_WIDTH, 76, fill=1, stroke=0)
 
     pdf.setFillColor(colors.white)
-    pdf.setFont(FONT_BOLD, 28)
-    pdf.drawString(MARGIN, PAGE_HEIGHT - 54, "Russian Daily Life")
-    pdf.setFont(FONT_BOLD, 20)
-    pdf.drawRightString(PAGE_WIDTH - MARGIN, PAGE_HEIGHT - 54, shape_arabic("الحياة اليومية الروسية"))
+    cover_title_left = profile["cover_title_left"]
+    cover_title_right = shape_arabic(profile["cover_title_right"])
+    left_title_size = 28
+    right_title_size = 20
+    left_title_width = pdfmetrics.stringWidth(cover_title_left, FONT_BOLD, left_title_size)
+    available_right_width = PAGE_WIDTH - MARGIN - (MARGIN + left_title_width) - 18
+    while right_title_size > 14 and pdfmetrics.stringWidth(cover_title_right, FONT_BOLD, right_title_size) > available_right_width:
+        right_title_size -= 1
+    pdf.setFont(FONT_BOLD, left_title_size)
+    pdf.drawString(MARGIN, PAGE_HEIGHT - 54, cover_title_left)
+    pdf.setFont(FONT_BOLD, right_title_size)
+    pdf.drawRightString(PAGE_WIDTH - MARGIN, PAGE_HEIGHT - 54, cover_title_right)
     pdf.setFont(FONT_REGULAR, 14)
     arabic_target_cover = is_arabic_target(profile)
     edition_label_cover = profile.get("edition_ru", profile["edition_en"]) if arabic_target_cover else profile["edition_en"]
@@ -657,11 +713,11 @@ def draw_cover(pdf: canvas.Canvas, total_words: int, profile: dict) -> None:
     pdf.roundRect(callout_x, callout_y, 240, 110, 12, fill=1, stroke=1)
     pdf.setFillColor(ACCENT)
     pdf.setFont(FONT_BOLD, 12)
-    pdf.drawRightString(PAGE_WIDTH - MARGIN - 12, callout_y + 88, shape_arabic(profile["edition_ar"]))
+    pdf.drawRightString(PAGE_WIDTH - MARGIN - 12, callout_y + 88, shape_arabic(profile["cover_callout_title"]))
     pdf.setFillColor(TEXT)
     draw_wrapped_text(
         pdf,
-        "اعتمد على الموقع للصوت والاختبارات، واعتمد على الكتاب للكتابة والمراجعة والطباعة.",
+        profile["cover_callout_body"],
         callout_x + 12,
         callout_y + 66,
         216,
@@ -669,7 +725,7 @@ def draw_cover(pdf: canvas.Canvas, total_words: int, profile: dict) -> None:
         10.2,
         13,
         color=TEXT,
-        align="right",
+        align="right" if has_arabic(profile["cover_callout_body"]) else "left",
     )
 
     draw_footer(pdf, 1, profile)

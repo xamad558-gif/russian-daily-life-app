@@ -1,0 +1,1267 @@
+{
+  "schemaVersion": 1,
+  "unitId": "restaurant",
+  "contentVersion": "restaurant-v1",
+  "rooms": [
+    {
+      "id": "restaurant",
+      "title": {
+        "ar": "المطعم",
+        "en": "Restaurant",
+        "ru": "Ресторан"
+      },
+      "image": "assets/images/restaurant/restaurant-interior.jpg",
+      "icon": "🍽️",
+      "tone": "terracotta",
+      "order": 1
+    },
+    {
+      "id": "dining",
+      "title": {
+        "ar": "قاعة الطعام",
+        "en": "Dining room",
+        "ru": "Зал"
+      },
+      "image": "assets/images/words/table.jpg",
+      "icon": "🪑",
+      "tone": "amber",
+      "order": 2
+    },
+    {
+      "id": "food",
+      "title": {
+        "ar": "الطعام والأدوات",
+        "en": "Food and tableware",
+        "ru": "Еда и посуда"
+      },
+      "image": "assets/images/words/plate.jpg",
+      "icon": "🍲",
+      "tone": "sage",
+      "order": 3
+    },
+    {
+      "id": "payment",
+      "title": {
+        "ar": "الطلب والدفع",
+        "en": "Ordering and paying",
+        "ru": "Заказ и оплата"
+      },
+      "image": "assets/images/restaurant/restaurant-bill.jpg",
+      "icon": "🧾",
+      "tone": "blue",
+      "order": 4
+    }
+  ],
+  "words": [
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_001",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "restaurant",
+      "russian": "ресторан",
+      "transliteration": "restoran",
+      "transliterationStressed": "restorán",
+      "arabic": "مطعم",
+      "english": "restaurant",
+      "level": "A1",
+      "frequency": 5,
+      "type": "noun",
+      "exampleRu": "Мы обедаем в ресторане.",
+      "exampleAr": "نحن نتناول الغداء في المطعم.",
+      "exampleEn": "We are having lunch at the restaurant.",
+      "imagePath": "assets/images/restaurant/restaurant-interior.jpg",
+      "addedAt": "2026-08-13",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "мат‘ам",
+      "transliterationAr": "ريستوران",
+      "exampleTransliterationAr": "مي أوبيداييم ف ريستوراني.",
+      "exampleTransliterationEn": "My obedayem v restorane.",
+      "exampleArTransliterationRu": "нахну натана́валь аль-гада́ фи аль-мат‘ам.",
+      "arabicVocalized": "مَطْعَم",
+      "exampleArVocalized": "نَحْنُ نَتَنَاوَلُ الْغَدَاءَ فِي الْمَطْعَمِ.",
+      "englishTransliterationAr": "رِستورانت",
+      "englishTransliterationRu": "ресторант",
+      "arabicTransliterationEn": "matam",
+      "exampleArTransliterationEn": "nahnu natanawal al-ghadaa fi al-matam",
+      "grammar": {
+        "ru": {
+          "word": "ресторан",
+          "type": "существительное",
+          "singular": "ресторан",
+          "plural": "рестораны",
+          "gender": "masculine",
+          "transliteration": "restoran"
+        },
+        "ar": {
+          "word": "مطعم",
+          "type": "اسم",
+          "singular": "مطعم",
+          "plural": "مطاعم",
+          "gender": "مذكر"
+        },
+        "en": {
+          "word": "restaurant",
+          "type": "noun",
+          "singular": "restaurant",
+          "plural": "restaurants",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Мы обедаем в ресторане.",
+          "ar": "نحن نتناول الغداء في المطعم.",
+          "en": "We are having lunch at the restaurant.",
+          "arVocalized": "نَحْنُ نَتَنَاوَلُ الْغَدَاءَ فِي الْمَطْعَمِ.",
+          "arTransliterationRu": "нахну натана́валь аль-гада́ фи аль-мат‘ам.",
+          "arTransliterationEn": "nahnu natanawal al-ghadaa fi al-matam"
+        },
+        {
+          "ru": "Этот ресторан открыт.",
+          "ar": "هذا المطعم مفتوح.",
+          "en": "This restaurant is open.",
+          "arVocalized": "هَذَا الْمَطْعَمُ مَفْتُوحٌ.",
+          "arTransliterationRu": "хаза аль-мат‘ам мафту́х.",
+          "arTransliterationEn": "haza al-matam maftuh"
+        },
+        {
+          "ru": "Где находится ресторан?",
+          "ar": "أين يوجد المطعم؟",
+          "en": "Where is the restaurant?",
+          "arVocalized": "أَيْنَ يُوجَدُ الْمَطْعَمُ؟",
+          "arTransliterationRu": "а́йн ю́джад аль-мат‘ам؟",
+          "arTransliterationEn": "ayn yujad al-matam؟"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "в ресторане",
+          "ar": "في المطعم",
+          "en": "at the restaurant",
+          "arVocalized": "فِي الْمَطْعَمِ",
+          "arTransliterationRu": "фи аль-мат‘ам",
+          "arTransliterationEn": "fi al-matam"
+        },
+        {
+          "ru": "новый ресторан",
+          "ar": "مطعم جديد",
+          "en": "a new restaurant",
+          "arVocalized": "مَطْعَمٌ جَدِيدٌ",
+          "arTransliterationRu": "мат‘ам джади́д",
+          "arTransliterationEn": "matam jadid"
+        },
+        {
+          "ru": "идти в ресторан",
+          "ar": "الذهاب إلى المطعم",
+          "en": "to go to a restaurant",
+          "arVocalized": "الذَّهَابُ إِلَى الْمَطْعَمِ",
+          "arTransliterationRu": "аз-заха́б иля аль-мат‘ам",
+          "arTransliterationEn": "adh-dhahab ila al-matam"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_002",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "restaurant",
+      "russian": "меню",
+      "transliteration": "menyu",
+      "transliterationStressed": "menyú",
+      "arabic": "قائمة",
+      "english": "menu",
+      "level": "A1",
+      "frequency": 5,
+      "type": "noun",
+      "exampleRu": "Дайте, пожалуйста, меню.",
+      "exampleAr": "أعطني القائمة من فضلك.",
+      "exampleEn": "Please give me the menu.",
+      "imagePath": "assets/images/restaurant/restaurant-menu.jpg",
+      "addedAt": "2026-08-13",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "ка́има",
+      "transliterationAr": "مينيو",
+      "exampleTransliterationAr": "دايتي، بَجالُستا، مينيو.",
+      "exampleTransliterationEn": "Dayte, pozhaluysta, menyu.",
+      "exampleArTransliterationRu": "дайتي، пажалу́йста، ка́има.",
+      "arabicVocalized": "قَائِمَة",
+      "exampleArVocalized": "أَعْطِنِي الْقَائِمَةَ مِنْ فَضْلِكَ.",
+      "englishTransliterationAr": "مينيو",
+      "englishTransliterationRu": "меню",
+      "arabicTransliterationEn": "qaimah",
+      "exampleArTransliterationEn": "atini al-qaima min fadlik",
+      "grammar": {
+        "ru": {
+          "word": "меню",
+          "type": "существительное",
+          "singular": "меню",
+          "plural": "меню",
+          "gender": "neuter",
+          "transliteration": "menyu"
+        },
+        "ar": {
+          "word": "قائمة",
+          "type": "اسم",
+          "singular": "قائمة",
+          "plural": "قوائم",
+          "gender": "مؤنث"
+        },
+        "en": {
+          "word": "menu",
+          "type": "noun",
+          "singular": "menu",
+          "plural": "menus",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Дайте, пожалуйста, меню.",
+          "ar": "أعطني القائمة من فضلك.",
+          "en": "Please give me the menu.",
+          "arVocalized": "أَعْطِنِي الْقَائِمَةَ مِنْ فَضْلِكَ.",
+          "arTransliterationRu": "дайти، пажалу́йста، ка́има.",
+          "arTransliterationEn": "dayte, pozhaluysta, qaima"
+        },
+        {
+          "ru": "Я читаю меню.",
+          "ar": "أنا أقرأ القائمة.",
+          "en": "I am reading the menu.",
+          "arVocalized": "أَنَا أَقْرَأُ الْقَائِمَةَ.",
+          "arTransliterationRu": "ана́ а́кра аль-ка́има.",
+          "arTransliterationEn": "ana aqra al-qaima"
+        },
+        {
+          "ru": "В меню есть суп.",
+          "ar": "في القائمة حساء.",
+          "en": "There is soup on the menu.",
+          "arVocalized": "فِي الْقَائِمَةِ حَسَاءٌ.",
+          "arTransliterationRu": "фи аль-ка́има хаса́’.",
+          "arTransliterationEn": "fi al-qaima hasaa"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "открыть меню",
+          "ar": "فتح القائمة",
+          "en": "to open the menu",
+          "arVocalized": "فَتْحُ الْقَائِمَةِ",
+          "arTransliterationRu": "фатх аль-ка́има",
+          "arTransliterationEn": "fath al-qaimah"
+        },
+        {
+          "ru": "меню, пожалуйста",
+          "ar": "القائمة من فضلك",
+          "en": "the menu, please",
+          "arVocalized": "الْقَائِمَةُ مِنْ فَضْلِكَ",
+          "arTransliterationRu": "аль-ка́има мин фа́длик",
+          "arTransliterationEn": "al-qaimah min fadlik"
+        },
+        {
+          "ru": "выбрать по меню",
+          "ar": "الاختيار من القائمة",
+          "en": "to choose from the menu",
+          "arVocalized": "الِاخْتِيَارُ مِنَ الْقَائِمَةِ",
+          "arTransliterationRu": "аль-ихтия́р мин аль-ка́има",
+          "arTransliterationEn": "al-ikhtiyar min al-qaimah"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_003",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "restaurant",
+      "russian": "официант",
+      "transliteration": "ofitsiant",
+      "transliterationStressed": "ofitsiánt",
+      "arabic": "نادل",
+      "english": "waiter",
+      "level": "A1",
+      "frequency": 4,
+      "type": "noun",
+      "exampleRu": "Официант принёс воду.",
+      "exampleAr": "أحضر النادل الماء.",
+      "exampleEn": "The waiter brought water.",
+      "imagePath": "assets/images/restaurant/waiter-restaurant.jpg",
+      "addedAt": "2026-08-13",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "на́диль",
+      "transliterationAr": "أوفيتسيانت",
+      "exampleTransliterationAr": "أوفيتسيانت برينيوس فودو.",
+      "exampleTransliterationEn": "Ofitsiant prinyos vodu.",
+      "exampleArTransliterationRu": "ахдара ан-на́диль аль-ма́’.",
+      "arabicVocalized": "نَادِل",
+      "exampleArVocalized": "أَحْضَرَ النَّادِلُ الْمَاءَ.",
+      "englishTransliterationAr": "ويتَر",
+      "englishTransliterationRu": "уэйтер",
+      "arabicTransliterationEn": "naadil",
+      "exampleArTransliterationEn": "ahdara an-nadil al-maa",
+      "grammar": {
+        "ru": {
+          "word": "официант",
+          "type": "существительное",
+          "singular": "официант",
+          "plural": "официанты",
+          "gender": "masculine",
+          "transliteration": "ofitsiant"
+        },
+        "ar": {
+          "word": "نادل",
+          "type": "اسم",
+          "singular": "نادل",
+          "plural": "نُدُل",
+          "gender": "مذكر"
+        },
+        "en": {
+          "word": "waiter",
+          "type": "noun",
+          "singular": "waiter",
+          "plural": "waiters",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Официант принёс воду.",
+          "ar": "أحضر النادل الماء.",
+          "en": "The waiter brought water.",
+          "arVocalized": "أَحْضَرَ النَّادِلُ الْمَاءَ.",
+          "arTransliterationRu": "ахдара ан-на́диль аль-ма́’.",
+          "arTransliterationEn": "ahdara an-nadil al-maa"
+        },
+        {
+          "ru": "Официант, пожалуйста!",
+          "ar": "يا نادل، من فضلك!",
+          "en": "Waiter, please!",
+          "arVocalized": "يَا نَادِلُ، مِنْ فَضْلِكَ!",
+          "arTransliterationRu": "я на́диль، мин фа́длик.",
+          "arTransliterationEn": "ya nadil, min fadlik"
+        },
+        {
+          "ru": "Официант принял заказ.",
+          "ar": "أخذ النادل الطلب.",
+          "en": "The waiter took the order.",
+          "arVocalized": "أَخَذَ النَّادِلُ الطَّلَبَ.",
+          "arTransliterationRu": "ахаза ан-на́диль ат-та́лаб.",
+          "arTransliterationEn": "akhadha an-nadil at-talab"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "позвать официанта",
+          "ar": "مناداة النادل",
+          "en": "to call the waiter",
+          "arVocalized": "مُنَادَاةُ النَّادِلِ",
+          "arTransliterationRu": "муна́да ан-на́диль",
+          "arTransliterationEn": "munada an-naadil"
+        },
+        {
+          "ru": "где официант?",
+          "ar": "أين النادل؟",
+          "en": "where is the waiter?",
+          "arVocalized": "أَيْنَ النَّادِلُ؟",
+          "arTransliterationRu": "а́йн ан-на́диль؟",
+          "arTransliterationEn": "ayn an-naadil?"
+        },
+        {
+          "ru": "спросить официанта",
+          "ar": "سؤال النادل",
+          "en": "to ask the waiter",
+          "arVocalized": "سُؤَالُ النَّادِلِ",
+          "arTransliterationRu": "суа́ль ан-на́диль",
+          "arTransliterationEn": "suaal an-naadil"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_004",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "dining",
+      "russian": "стол",
+      "transliteration": "stol",
+      "transliterationStressed": "stol",
+      "arabic": "طاولة",
+      "english": "table",
+      "level": "A1",
+      "frequency": 5,
+      "type": "noun",
+      "exampleRu": "Наш стол у окна.",
+      "exampleAr": "طاولتنا بجانب النافذة.",
+      "exampleEn": "Our table is by the window.",
+      "imagePath": "assets/images/words/table.jpg",
+      "addedAt": "2026-08-13",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "та́виля",
+      "transliterationAr": "ستول",
+      "exampleTransliterationAr": "ناش ستول أو أوكنا.",
+      "exampleTransliterationEn": "Nash stol u okna.",
+      "exampleArTransliterationRu": "та́авилатуна бида́ниб ан-на́физа.",
+      "arabicVocalized": "طَاوِلَة",
+      "exampleArVocalized": "طَاوِلَتُنَا بِجَانِبِ النَّافِذَةِ.",
+      "englishTransliterationAr": "تيبُل",
+      "englishTransliterationRu": "тэйбл",
+      "arabicTransliterationEn": "tawilah",
+      "exampleArTransliterationEn": "tawilatuna bijanib an-nafidha",
+      "grammar": {
+        "ru": {
+          "word": "стол",
+          "type": "существительное",
+          "singular": "стол",
+          "plural": "столы",
+          "gender": "masculine",
+          "transliteration": "stol"
+        },
+        "ar": {
+          "word": "طاولة",
+          "type": "اسم",
+          "singular": "طاولة",
+          "plural": "طاولات",
+          "gender": "مؤنث"
+        },
+        "en": {
+          "word": "table",
+          "type": "noun",
+          "singular": "table",
+          "plural": "tables",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Наш стол у окна.",
+          "ar": "طاولتنا بجانب النافذة.",
+          "en": "Our table is by the window.",
+          "arVocalized": "طَاوِلَتُنَا بِجَانِبِ النَّافِذَةِ.",
+          "arTransliterationRu": "та́авилатуна бида́ниб ан-на́физа.",
+          "arTransliterationEn": "tawilatuna bijanib an-nafidha"
+        },
+        {
+          "ru": "На столе лежит меню.",
+          "ar": "توجد القائمة على الطاولة.",
+          "en": "The menu is on the table.",
+          "arVocalized": "تُوجَدُ الْقَائِمَةُ عَلَى الطَّاوِلَةِ.",
+          "arTransliterationRu": "ту́джад аль-ка́има а́ля ат-та́авила.",
+          "arTransliterationEn": "tujad al-qaima ala at-tawila"
+        },
+        {
+          "ru": "Поставьте воду на стол.",
+          "ar": "ضع الماء على الطاولة.",
+          "en": "Put the water on the table.",
+          "arVocalized": "ضَعِ الْمَاءَ عَلَى الطَّاوِلَةِ.",
+          "arTransliterationRu": "да‘ аль-ма́’ а́ля ат-та́авила.",
+          "arTransliterationEn": "da al-maa ala at-tawila"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "за столом",
+          "ar": "على الطاولة",
+          "en": "at the table",
+          "arVocalized": "عَلَى الطَّاوِلَةِ",
+          "arTransliterationRu": "аля ат-та́виля",
+          "arTransliterationEn": "ala at-tawilah"
+        },
+        {
+          "ru": "сесть за стол",
+          "ar": "الجلوس إلى الطاولة",
+          "en": "to sit at the table",
+          "arVocalized": "الْجُلُوسُ إِلَى الطَّاوِلَةِ",
+          "arTransliterationRu": "аль-джулю́с иля ат-та́виля",
+          "arTransliterationEn": "al-julus ila at-tawilah"
+        },
+        {
+          "ru": "большой стол",
+          "ar": "طاولة كبيرة",
+          "en": "a large table",
+          "arVocalized": "طَاوِلَةٌ كَبِيرَةٌ",
+          "arTransliterationRu": "та́виля кяби́ра",
+          "arTransliterationEn": "tawilah kabirah"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_005",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "dining",
+      "russian": "стул",
+      "transliteration": "stul",
+      "transliterationStressed": "stul",
+      "arabic": "كرسي",
+      "english": "chair",
+      "level": "A1",
+      "frequency": 4,
+      "type": "noun",
+      "exampleRu": "Этот стул свободен.",
+      "exampleAr": "هذا الكرسي شاغر.",
+      "exampleEn": "This chair is free.",
+      "imagePath": "assets/images/words/chair.jpg",
+      "addedAt": "2026-08-13",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "ку́рси",
+      "transliterationAr": "ستول",
+      "exampleTransliterationAr": "إيتوت ستول سفابودين.",
+      "exampleTransliterationEn": "Etot stul svoboden.",
+      "exampleArTransliterationRu": "ха́за аль-курси́ ша́гир.",
+      "arabicVocalized": "كُرْسِيّ",
+      "exampleArVocalized": "هَذَا الْكُرْسِيُّ شَاغِرٌ.",
+      "englishTransliterationAr": "تشير",
+      "englishTransliterationRu": "чэ́р",
+      "arabicTransliterationEn": "kursi",
+      "exampleArTransliterationEn": "hatha al-kursi shagheer",
+      "grammar": {
+        "ru": {
+          "word": "стул",
+          "type": "существительное",
+          "singular": "стул",
+          "plural": "стулья",
+          "gender": "masculine",
+          "transliteration": "stul"
+        },
+        "ar": {
+          "word": "كرسي",
+          "type": "اسم",
+          "singular": "كرسي",
+          "plural": "كراسٍ",
+          "gender": "مذكر"
+        },
+        "en": {
+          "word": "chair",
+          "type": "noun",
+          "singular": "chair",
+          "plural": "chairs",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Этот стул свободен.",
+          "ar": "هذا الكرسي شاغر.",
+          "en": "This chair is free.",
+          "arVocalized": "هَذَا الْكُرْسِيُّ شَاغِرٌ.",
+          "arTransliterationRu": "ха́за аль-курси́ ша́гир.",
+          "arTransliterationEn": "haza al-kursi shagheer"
+        },
+        {
+          "ru": "Поставьте стул сюда.",
+          "ar": "ضع الكرسي هنا.",
+          "en": "Put the chair here.",
+          "arVocalized": "ضَعِ الْكُرْسِيَّ هُنَا.",
+          "arTransliterationRu": "да‘ аль-курси́ хуна́.",
+          "arTransliterationEn": "da al-kursi huna"
+        },
+        {
+          "ru": "Сколько стульев за столом?",
+          "ar": "كم كرسيًا حول الطاولة؟",
+          "en": "How many chairs are around the table?",
+          "arVocalized": "كَمْ كُرْسِيًّا حَوْلَ الطَّاوِلَةِ؟",
+          "arTransliterationRu": "кам курси́ян ха́уль ат-та́авила؟",
+          "arTransliterationEn": "kam kursiyyan hawl at-tawila؟"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "свободный стул",
+          "ar": "كرسي شاغر",
+          "en": "a free chair",
+          "arVocalized": "كُرْسِيٌّ شَاغِرٌ",
+          "arTransliterationRu": "ку́рси ша́гир",
+          "arTransliterationEn": "kursi shaghir"
+        },
+        {
+          "ru": "два стула",
+          "ar": "كرسيان",
+          "en": "two chairs",
+          "arVocalized": "كُرْسِيَّانِ",
+          "arTransliterationRu": "курсия́н",
+          "arTransliterationEn": "kursiyan"
+        },
+        {
+          "ru": "удобный стул",
+          "ar": "كرسي مريح",
+          "en": "a comfortable chair",
+          "arVocalized": "كُرْسِيٌّ مُرِيحٌ",
+          "arTransliterationRu": "ку́рси мури́х",
+          "arTransliterationEn": "kursi murih"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_006",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "food",
+      "russian": "тарелка",
+      "transliteration": "tarelka",
+      "transliterationStressed": "tarelka",
+      "arabic": "طبق",
+      "english": "plate",
+      "level": "A1",
+      "frequency": 4,
+      "type": "noun",
+      "exampleRu": "Тарелка стоит на столе.",
+      "exampleAr": "الطبق على الطاولة.",
+      "exampleEn": "The plate is on the table.",
+      "imagePath": "assets/images/words/plate.jpg",
+      "addedAt": "2026-08-13",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "та́бак",
+      "transliterationAr": "تاريلكا",
+      "exampleTransliterationAr": "تاريلكا ستويت نا ستولي.",
+      "exampleTransliterationEn": "Tarelka stoit na stole.",
+      "exampleArTransliterationRu": "ат-та́бак а́ля ат-та́авила.",
+      "arabicVocalized": "طَبَق",
+      "exampleArVocalized": "الطَّبَقُ عَلَى الطَّاوِلَةِ.",
+      "englishTransliterationAr": "بليت",
+      "englishTransliterationRu": "плэйт",
+      "arabicTransliterationEn": "tabaq",
+      "exampleArTransliterationEn": "at-tabaq ala at-tawila",
+      "grammar": {
+        "ru": {
+          "word": "тарелка",
+          "type": "существительное",
+          "singular": "тарелка",
+          "plural": "тарелки",
+          "gender": "feminine",
+          "transliteration": "tarelka"
+        },
+        "ar": {
+          "word": "طبق",
+          "type": "اسم",
+          "singular": "طبق",
+          "plural": "أطباق",
+          "gender": "مذكر"
+        },
+        "en": {
+          "word": "plate",
+          "type": "noun",
+          "singular": "plate",
+          "plural": "plates",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Тарелка стоит на столе.",
+          "ar": "الطبق على الطاولة.",
+          "en": "The plate is on the table.",
+          "arVocalized": "الطَّبَقُ عَلَى الطَّاوِلَةِ.",
+          "arTransliterationRu": "ат-та́бак а́ля ат-та́авила.",
+          "arTransliterationEn": "at-tabaq ala at-tawila"
+        },
+        {
+          "ru": "Принесите чистую тарелку.",
+          "ar": "أحضر طبقًا نظيفًا.",
+          "en": "Bring a clean plate.",
+          "arVocalized": "أَحْضِرْ طَبَقًا نَظِيفًا.",
+          "arTransliterationRu": "ахдир та́бакан назы́фан.",
+          "arTransliterationEn": "ahdir tabaqan nadhifan"
+        },
+        {
+          "ru": "На тарелке суп.",
+          "ar": "في الطبق حساء.",
+          "en": "There is soup on the plate.",
+          "arVocalized": "فِي الطَّبَقِ حَسَاءٌ.",
+          "arTransliterationRu": "фи ат-та́бак хаса́’.",
+          "arTransliterationEn": "fi at-tabaq hasaa"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "чистая тарелка",
+          "ar": "طبق نظيف",
+          "en": "a clean plate",
+          "arVocalized": "طَبَقٌ نَظِيفٌ",
+          "arTransliterationRu": "та́бак нази́ф",
+          "arTransliterationEn": "tabaq nazif"
+        },
+        {
+          "ru": "глубокая тарелка",
+          "ar": "طبق عميق",
+          "en": "a deep plate",
+          "arVocalized": "طَبَقٌ عَمِيقٌ",
+          "arTransliterationRu": "та́бак ‘ами́к",
+          "arTransliterationEn": "tabaq amiq"
+        },
+        {
+          "ru": "пустая тарелка",
+          "ar": "طبق فارغ",
+          "en": "an empty plate",
+          "arVocalized": "طَبَقٌ فَارِغٌ",
+          "arTransliterationRu": "та́бак фа́риг",
+          "arTransliterationEn": "tabaq farigh"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_007",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "food",
+      "russian": "вилка",
+      "transliteration": "vilka",
+      "transliterationStressed": "vílka",
+      "arabic": "شوكة",
+      "english": "fork",
+      "level": "A1",
+      "frequency": 4,
+      "type": "noun",
+      "exampleRu": "Мне нужна вилка.",
+      "exampleAr": "أحتاج إلى شوكة.",
+      "exampleEn": "I need a fork.",
+      "imagePath": "assets/images/words/fork_real.jpg",
+      "addedAt": "2026-08-13",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "ша́ука",
+      "transliterationAr": "فيلكا",
+      "exampleTransliterationAr": "مني نوجنا فيلکا.",
+      "exampleTransliterationEn": "Mne nuzhna vilka.",
+      "exampleArTransliterationRu": "ахта́дж и́ля ша́ука.",
+      "arabicVocalized": "شَوْكَة",
+      "exampleArVocalized": "أَحْتَاجُ إِلَى شَوْكَةٍ.",
+      "englishTransliterationAr": "فورك",
+      "englishTransliterationRu": "форк",
+      "arabicTransliterationEn": "shawka",
+      "exampleArTransliterationEn": "ahtaj ila shawka",
+      "grammar": {
+        "ru": {
+          "word": "вилка",
+          "type": "существительное",
+          "singular": "вилка",
+          "plural": "вилки",
+          "gender": "feminine",
+          "transliteration": "vilka"
+        },
+        "ar": {
+          "word": "شوكة",
+          "type": "اسم",
+          "singular": "شوكة",
+          "plural": "شُوَك",
+          "gender": "مؤنث"
+        },
+        "en": {
+          "word": "fork",
+          "type": "noun",
+          "singular": "fork",
+          "plural": "forks",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Мне нужна вилка.",
+          "ar": "أحتاج إلى شوكة.",
+          "en": "I need a fork.",
+          "arVocalized": "أَحْتَاجُ إِلَى شَوْكَةٍ.",
+          "arTransliterationRu": "ахта́дж и́ля ша́ука.",
+          "arTransliterationEn": "ahtaj ila shawka"
+        },
+        {
+          "ru": "Вилка лежит рядом с тарелкой.",
+          "ar": "الشوكة بجانب الطبق.",
+          "en": "The fork is next to the plate.",
+          "arVocalized": "الشَّوْكَةُ بِجَانِبِ الطَّبَقِ.",
+          "arTransliterationRu": "аш-ша́ука бида́ниб ат-та́бак.",
+          "arTransliterationEn": "ash-shawka bijanib at-tabaq"
+        },
+        {
+          "ru": "Возьмите вилку.",
+          "ar": "خذ الشوكة.",
+          "en": "Take the fork.",
+          "arVocalized": "خُذِ الشَّوْكَةَ.",
+          "arTransliterationRu": "хуз аш-ша́ука.",
+          "arTransliterationEn": "khudh ash-shawka"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "маленькая вилка",
+          "ar": "شوكة صغيرة",
+          "en": "a small fork",
+          "arVocalized": "شَوْكَةٌ صَغِيرَةٌ",
+          "arTransliterationRu": "ша́ука сагы́ра",
+          "arTransliterationEn": "shawka sagheerah"
+        },
+        {
+          "ru": "чистая вилка",
+          "ar": "شوكة نظيفة",
+          "en": "a clean fork",
+          "arVocalized": "شَوْكَةٌ نَظِيفَةٌ",
+          "arTransliterationRu": "ша́ука нази́фа",
+          "arTransliterationEn": "shawka nazifah"
+        },
+        {
+          "ru": "вилка и нож",
+          "ar": "شوكة وسكين",
+          "en": "a fork and a knife",
+          "arVocalized": "شَوْكَةٌ وَسِكِّينٌ",
+          "arTransliterationRu": "ша́ука ва сикки́н",
+          "arTransliterationEn": "shawka wa sikkin"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_008",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "food",
+      "russian": "ложка",
+      "transliteration": "lozhka",
+      "transliterationStressed": "lózhka",
+      "arabic": "ملعقة",
+      "english": "spoon",
+      "level": "A1",
+      "frequency": 4,
+      "type": "noun",
+      "exampleRu": "Дайте мне ложку, пожалуйста.",
+      "exampleAr": "أعطني ملعقة من فضلك.",
+      "exampleEn": "Please give me a spoon.",
+      "imagePath": "assets/images/words/spoon.jpg",
+      "addedAt": "2026-08-13",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "мил‘а́ка",
+      "transliterationAr": "لوجكا",
+      "exampleTransliterationAr": "دايتي مني لوجكو، بَجالُستا.",
+      "exampleTransliterationEn": "Dayte mne lozhku, pozhaluysta.",
+      "exampleArTransliterationRu": "а́‘тини мил‘а́ка мин фа́длик.",
+      "arabicVocalized": "مِلْعَقَة",
+      "exampleArVocalized": "أَعْطِنِي مِلْعَقَةً مِنْ فَضْلِكَ.",
+      "englishTransliterationAr": "سبون",
+      "englishTransliterationRu": "спун",
+      "arabicTransliterationEn": "milqa",
+      "exampleArTransliterationEn": "atini milqa min fadlik",
+      "grammar": {
+        "ru": {
+          "word": "ложка",
+          "type": "существительное",
+          "singular": "ложка",
+          "plural": "ложки",
+          "gender": "feminine",
+          "transliteration": "lozhka"
+        },
+        "ar": {
+          "word": "ملعقة",
+          "type": "اسم",
+          "singular": "ملعقة",
+          "plural": "ملاعق",
+          "gender": "مؤنث"
+        },
+        "en": {
+          "word": "spoon",
+          "type": "noun",
+          "singular": "spoon",
+          "plural": "spoons",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Дайте мне ложку, пожалуйста.",
+          "ar": "أعطني ملعقة من فضلك.",
+          "en": "Please give me a spoon.",
+          "arVocalized": "أَعْطِنِي مِلْعَقَةً مِنْ فَضْلِكَ.",
+          "arTransliterationRu": "а́‘тини мил‘а́ка мин фа́длик.",
+          "arTransliterationEn": "atini milqa min fadlik"
+        },
+        {
+          "ru": "Ложка лежит на столе.",
+          "ar": "الملعقة على الطاولة.",
+          "en": "The spoon is on the table.",
+          "arVocalized": "الْمِلْعَقَةُ عَلَى الطَّاوِلَةِ.",
+          "arTransliterationRu": "аль-мил‘а́ка а́ля ат-та́авила.",
+          "arTransliterationEn": "al-milqa ala at-tawila"
+        },
+        {
+          "ru": "Эта ложка чистая.",
+          "ar": "هذه الملعقة نظيفة.",
+          "en": "This spoon is clean.",
+          "arVocalized": "هَذِهِ الْمِلْعَقَةُ نَظِيفَةٌ.",
+          "arTransliterationRu": "ха́зихи аль-мил‘а́ка назы́фа.",
+          "arTransliterationEn": "hazihi al-milqa nadhifa"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "чайная ложка",
+          "ar": "ملعقة صغيرة",
+          "en": "a teaspoon",
+          "arVocalized": "مِلْعَقَةٌ صَغِيرَةٌ",
+          "arTransliterationRu": "мил‘а́ка сагы́ра",
+          "arTransliterationEn": "milqa sagheerah"
+        },
+        {
+          "ru": "столовая ложка",
+          "ar": "ملعقة كبيرة",
+          "en": "a tablespoon",
+          "arVocalized": "مِلْعَقَةٌ كَبِيرَةٌ",
+          "arTransliterationRu": "мил‘а́ка кяби́ра",
+          "arTransliterationEn": "milqa kabirah"
+        },
+        {
+          "ru": "чистая ложка",
+          "ar": "ملعقة نظيفة",
+          "en": "a clean spoon",
+          "arVocalized": "مِلْعَقَةٌ نَظِيفَةٌ",
+          "arTransliterationRu": "мил‘а́ка нази́фа",
+          "arTransliterationEn": "milqa nazifah"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_009",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "food",
+      "russian": "суп",
+      "transliteration": "sup",
+      "transliterationStressed": "sup",
+      "arabic": "حساء",
+      "english": "soup",
+      "level": "A1",
+      "frequency": 4,
+      "type": "noun",
+      "exampleRu": "Суп горячий.",
+      "exampleAr": "الحساء ساخن.",
+      "exampleEn": "The soup is hot.",
+      "imagePath": "assets/images/restaurant/restaurant-soup.jpg",
+      "addedAt": "2026-08-13",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "хаса́",
+      "transliterationAr": "سوب",
+      "exampleTransliterationAr": "سوب گورياشي.",
+      "exampleTransliterationEn": "Sup goryachiy.",
+      "exampleArTransliterationRu": "аль-хаса́’ са́хин.",
+      "arabicVocalized": "حَسَاء",
+      "exampleArVocalized": "الْحَسَاءُ سَاخِنٌ.",
+      "englishTransliterationAr": "سوب",
+      "englishTransliterationRu": "суп",
+      "arabicTransliterationEn": "hasaa",
+      "exampleArTransliterationEn": "al-hasaa sakin",
+      "grammar": {
+        "ru": {
+          "word": "суп",
+          "type": "существительное",
+          "singular": "суп",
+          "plural": "супы",
+          "gender": "masculine",
+          "transliteration": "sup"
+        },
+        "ar": {
+          "word": "حساء",
+          "type": "اسم",
+          "singular": "حساء",
+          "plural": "حساءات",
+          "gender": "مؤنث"
+        },
+        "en": {
+          "word": "soup",
+          "type": "noun",
+          "singular": "soup",
+          "plural": "soups",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Суп горячий.",
+          "ar": "الحساء ساخن.",
+          "en": "The soup is hot.",
+          "arVocalized": "الْحَسَاءُ سَاخِنٌ.",
+          "arTransliterationRu": "аль-хаса́’ са́хин.",
+          "arTransliterationEn": "al-hasaa sakhin"
+        },
+        {
+          "ru": "Я закажу суп.",
+          "ar": "سأطلب الحساء.",
+          "en": "I will order soup.",
+          "arVocalized": "سَأَطْلُبُ الْحَسَاءَ.",
+          "arTransliterationRu": "са́атлуб аль-хаса́’.",
+          "arTransliterationEn": "saatlub al-hasaa"
+        },
+        {
+          "ru": "Этот суп вкусный.",
+          "ar": "هذا الحساء لذيذ.",
+          "en": "This soup is delicious.",
+          "arVocalized": "هَذَا الْحَسَاءُ لَذِيذٌ.",
+          "arTransliterationRu": "ха́за аль-хаса́’ лази́з.",
+          "arTransliterationEn": "haza al-hasaa ladhidh"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "горячий суп",
+          "ar": "حساء ساخن",
+          "en": "hot soup",
+          "arVocalized": "حَسَاءٌ سَاخِنٌ",
+          "arTransliterationRu": "хаса́ са́хин",
+          "arTransliterationEn": "hasaa sakhin"
+        },
+        {
+          "ru": "овощной суп",
+          "ar": "حساء الخضار",
+          "en": "vegetable soup",
+          "arVocalized": "حَسَاءُ الْخُضَارِ",
+          "arTransliterationRu": "хаса́ аль-худа́р",
+          "arTransliterationEn": "hasaa al-khudar"
+        },
+        {
+          "ru": "тарелка супа",
+          "ar": "طبق حساء",
+          "en": "a bowl of soup",
+          "arVocalized": "طَبَقُ حَسَاءٍ",
+          "arTransliterationRu": "та́бак хаса́",
+          "arTransliterationEn": "tabaq hasaa"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_010",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "payment",
+      "russian": "счёт",
+      "transliteration": "schyot",
+      "transliterationStressed": "счёт",
+      "arabic": "فاتورة",
+      "english": "bill",
+      "level": "A1",
+      "frequency": 4,
+      "type": "noun",
+      "exampleRu": "Счёт, пожалуйста.",
+      "exampleAr": "الفاتورة من فضلك.",
+      "exampleEn": "The bill, please.",
+      "imagePath": "assets/images/restaurant/restaurant-bill.jpg",
+      "addedAt": "2026-08-13",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "фа́тура",
+      "transliterationAr": "شيوت",
+      "exampleTransliterationAr": "شيوت، بَجالُستا.",
+      "exampleTransliterationEn": "Schyot, pozhaluysta.",
+      "exampleArTransliterationRu": "الفا́تورة، пажалу́йستا.",
+      "arabicVocalized": "فَاتُورَة",
+      "exampleArVocalized": "الْفَاتُورَةُ مِنْ فَضْلِكَ.",
+      "englishTransliterationAr": "بيل",
+      "englishTransliterationRu": "бил",
+      "arabicTransliterationEn": "fatura",
+      "exampleArTransliterationEn": "al-fatura min fadlik",
+      "grammar": {
+        "ru": {
+          "word": "счёт",
+          "type": "существительное",
+          "singular": "счёт",
+          "plural": "счета́",
+          "gender": "masculine",
+          "transliteration": "schyot"
+        },
+        "ar": {
+          "word": "فاتورة",
+          "type": "اسم",
+          "singular": "فاتورة",
+          "plural": "فواتير",
+          "gender": "مؤنث"
+        },
+        "en": {
+          "word": "bill",
+          "type": "noun",
+          "singular": "bill",
+          "plural": "bills",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Счёт, пожалуйста.",
+          "ar": "الفاتورة من فضلك.",
+          "en": "The bill, please.",
+          "arVocalized": "الْفَاتُورَةُ مِنْ فَضْلِكَ.",
+          "arTransliterationRu": "الفا́تورة، пажалу́йستا.",
+          "arTransliterationEn": "al-fatura, pozhaluysta"
+        },
+        {
+          "ru": "Счёт уже готов.",
+          "ar": "الفاتورة جاهزة.",
+          "en": "The bill is ready.",
+          "arVocalized": "الْفَاتُورَةُ جَاهِزَةٌ.",
+          "arTransliterationRu": "аль-фату́ра джа́хиза.",
+          "arTransliterationEn": "al-fatura jahiza"
+        },
+        {
+          "ru": "Мы оплатим счёт.",
+          "ar": "سندفع الفاتورة.",
+          "en": "We will pay the bill.",
+          "arVocalized": "سَنَدْفَعُ الْفَاتُورَةَ.",
+          "arTransliterationRu": "санада́ф аль-фату́ра.",
+          "arTransliterationEn": "sanadfa al-fatura"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "принести счёт",
+          "ar": "إحضار الفاتورة",
+          "en": "to bring the bill",
+          "arVocalized": "إِحْضَارُ الْفَاتُورَةِ",
+          "arTransliterationRu": "ихда́р аль-фа́тура",
+          "arTransliterationEn": "ihdar al-fatura"
+        },
+        {
+          "ru": "оплатить счёт",
+          "ar": "دفع الفاتورة",
+          "en": "to pay the bill",
+          "arVocalized": "دَفْعُ الْفَاتُورَةِ",
+          "arTransliterationRu": "дафа аль-фа́тура",
+          "arTransliterationEn": "dafa al-fatura"
+        },
+        {
+          "ru": "счёт за обед",
+          "ar": "فاتورة الغداء",
+          "en": "the lunch bill",
+          "arVocalized": "فَاتُورَةُ الْغَدَاءِ",
+          "arTransliterationRu": "фа́тура аль-гада́",
+          "arTransliterationEn": "fatura al-ghadaa"
+        }
+      ]
+    },
+    {
+      "unitId": "restaurant",
+      "id": "restaurant_011",
+      "category": "restaurant",
+      "categoryAr": "المطعم",
+      "subCategory": "food",
+      "russian": "нож",
+      "transliteration": "nozh",
+      "transliterationStressed": "nozh",
+      "arabic": "سكين",
+      "english": "knife",
+      "level": "A1",
+      "frequency": 4,
+      "type": "noun",
+      "exampleRu": "Мне нужен нож.",
+      "exampleAr": "أحتاج إلى سكين.",
+      "exampleEn": "I need a knife.",
+      "imagePath": "assets/images/words/knife_real.jpg",
+      "addedAt": "2026-08-16",
+      "masteryDefault": 0,
+      "imageQuality": "accepted-v9.0",
+      "detailKind": "noun",
+      "arabicTransliterationRu": "сикки́н",
+      "transliterationAr": "نوژ",
+      "exampleTransliterationAr": "مني نوجن نوژ.",
+      "exampleTransliterationEn": "Mne nuzhen nozh.",
+      "exampleArTransliterationRu": "ахта́дж и́ля сикки́н.",
+      "arabicVocalized": "سِكِّين",
+      "exampleArVocalized": "أَحْتَاجُ إِلَى سِكِّينٍ.",
+      "englishTransliterationAr": "نايف",
+      "englishTransliterationRu": "найф",
+      "arabicTransliterationEn": "sikkin",
+      "exampleArTransliterationEn": "ahtaj ila sikkin",
+      "grammar": {
+        "ru": {
+          "word": "нож",
+          "type": "существительное",
+          "singular": "нож",
+          "plural": "ножи",
+          "gender": "masculine",
+          "transliteration": "nozh"
+        },
+        "ar": {
+          "word": "سكين",
+          "type": "اسم",
+          "singular": "سكين",
+          "plural": "سكاكين",
+          "gender": "مذكر"
+        },
+        "en": {
+          "word": "knife",
+          "type": "noun",
+          "singular": "knife",
+          "plural": "knives",
+          "gender": "no grammatical gender"
+        }
+      },
+      "examples": [
+        {
+          "ru": "Мне нужен нож.",
+          "ar": "أحتاج إلى سكين.",
+          "en": "I need a knife.",
+          "arVocalized": "أَحْتَاجُ إِلَى سِكِّينٍ.",
+          "arTransliterationRu": "ахта́дж и́ля сикки́н.",
+          "arTransliterationEn": "ahtaj ila sikkin"
+        },
+        {
+          "ru": "Нож лежит рядом с вилкой.",
+          "ar": "السكين بجانب الشوكة.",
+          "en": "The knife is next to the fork.",
+          "arVocalized": "السِّكِّينُ بِجَانِبِ الشَّوْكَةِ.",
+          "arTransliterationRu": "ас-сикки́н бида́ниб аш-ша́ука.",
+          "arTransliterationEn": "as-sikkin bijanib ash-shawka"
+        },
+        {
+          "ru": "Возьмите нож.",
+          "ar": "خذ السكين.",
+          "en": "Take the knife.",
+          "arVocalized": "خُذِ السِّكِّينَ.",
+          "arTransliterationRu": "хуз ас-сикки́н.",
+          "arTransliterationEn": "khudh as-sikkin"
+        }
+      ],
+      "phrases": [
+        {
+          "ru": "маленький нож",
+          "ar": "سكين صغير",
+          "en": "a small knife",
+          "arVocalized": "سِكِّينٌ صَغِيرٌ",
+          "arTransliterationRu": "сикки́н сагы́р",
+          "arTransliterationEn": "sikkin sagheer"
+        },
+        {
+          "ru": "чистый нож",
+          "ar": "سكين نظيف",
+          "en": "a clean knife",
+          "arVocalized": "سِكِّينٌ نَظِيفٌ",
+          "arTransliterationRu": "сикки́н нази́ф",
+          "arTransliterationEn": "sikkin nazif"
+        },
+        {
+          "ru": "нож и вилка",
+          "ar": "سكين وشوكة",
+          "en": "a knife and a fork",
+          "arVocalized": "سِكِّينٌ وَشَوْكَةٌ",
+          "arTransliterationRu": "сикки́н ва ша́ука",
+          "arTransliterationEn": "sikkin wa shawka"
+        }
+      ]
+    }
+  ]
+}

@@ -77,7 +77,7 @@ Phase mapping: **Phase 0–3** in [`UNIT_ARCHITECTURE.md`](UNIT_ARCHITECTURE.md)
 - [x] Phase 2: keep `subCategory` for rooms and reserve `unitId` for learning units.
 - [x] Phase 3: update filters, review, quiz, progress, audio checks, PDF generation, and service-worker rules.
 - [x] Phase 3: remove `data/words.json` only after every consumer uses the unit loader.
-- [ ] Phase 6: add one new unit at a time after the Home migration is stable.
+- [x] Phase 6: add the reviewed Restaurant starter unit with local photographs, multilingual content, unit routing, and automated validation.
 - Recommended first new units: restaurant, university, work, supermarket, transportation.
 - Require validation and responsive E2E checks before every unit release.
 

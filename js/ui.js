@@ -10,7 +10,7 @@
   }
 
   function applyUiLanguage(lang) {
-    const { state, els, storage, languageCodes, getTranslation, interfaceLanguageLabels, learningLanguageLabels, detailText, roomLabel, renderCategoryMenu, renderRoomStrip, renderUnitMenu, applyFilters, renderQuiz, renderFullWordDetail, updateMetrics, renderReview, renderProgress } = dependencies;
+    const { state, els, storage, languageCodes, getTranslation, interfaceLanguageLabels, learningLanguageLabels, detailText, roomLabel, renderCategoryMenu, renderRoomStrip, renderUnitMenu, applyFilters, renderQuiz, renderFullWordDetail, updateMetrics, renderReview, renderProgress, renderUnitCopy } = dependencies;
     const previousUiLang = state.uiLang;
     state.uiLang = lang;
     if (state.learningLanguage === lang) {
@@ -51,6 +51,7 @@
     els.sortFilter.options[3].text = translation.sortMastery;
     els.langButtons.forEach(button => button.classList.toggle("active", button.dataset.uiLang === lang));
     syncLanguageAvailability();
+    renderUnitCopy();
     renderCategoryMenu();
     renderRoomStrip();
     renderUnitMenu();
@@ -77,7 +78,7 @@
   }
 
   function applyLearningLanguage(lang) {
-    const { state, els, storage, languageCodes, renderCards, renderDetail, renderFullWordDetail, renderQuiz, updateMetrics, renderReview, renderProgress } = dependencies;
+    const { state, els, storage, languageCodes, renderCards, renderDetail, renderFullWordDetail, renderQuiz, updateMetrics, renderReview, renderProgress, renderUnitCopy } = dependencies;
     if (!languageCodes.includes(lang) || lang === state.uiLang) lang = languageCodes.find(code => code !== state.uiLang);
     state.learningLanguage = lang;
     storage.saveSettings({ learningLanguage: lang });
@@ -88,6 +89,7 @@
       button.setAttribute("aria-pressed", String(active));
     });
     syncLanguageAvailability();
+    renderUnitCopy();
     renderCards();
     renderDetail();
     renderFullWordDetail();
@@ -95,6 +97,21 @@
     updateMetrics();
     if (state.activeView === "review") renderReview();
     if (state.activeView === "progress") renderProgress();
+  }
+
+  function renderUnitCopy() {
+    const { state, els, getTranslation, learningLanguageName } = dependencies;
+    const unit = state.activeUnitMeta;
+    if (!unit) return;
+    const translation = getTranslation();
+    const unitTitle = unit.title?.[state.uiLang] || unit.title?.en || unit.id;
+    const language = learningLanguageName(state.learningLanguage);
+    if (els.pageTitle) els.pageTitle.textContent = unitTitle;
+    if (els.heroKicker) els.heroKicker.textContent = translation.unitKicker.replace("{unit}", unitTitle);
+    if (els.heroTitle) els.heroTitle.textContent = translation.unitHeroTitle.replace("{unit}", unitTitle).replace("{language}", language);
+    if (els.heroSubtitle) els.heroSubtitle.textContent = translation.unitHeroSubtitle;
+    if (els.reviewSubtitle) els.reviewSubtitle.textContent = translation.unitReviewSubtitle.replace("{unit}", unitTitle);
+    if (els.streakNote) els.streakNote.textContent = translation.streakNote;
   }
 
   function switchView(view) {
@@ -140,5 +157,5 @@
     renderCards();
   }
 
-  window.AppUI = Object.freeze({ configure, applyUiLanguage, syncLanguageAvailability, applyLearningLanguage, switchView, applyTheme, setSidebarOpen, setDensity });
+  window.AppUI = Object.freeze({ configure, applyUiLanguage, syncLanguageAvailability, applyLearningLanguage, renderUnitCopy, switchView, applyTheme, setSidebarOpen, setDensity });
 })();

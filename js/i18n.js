@@ -2,7 +2,7 @@
   const translations = {
     ar: {
       dir: "rtl", brandSubtitle: "تعلم الروسية بسهولة", vocabNavLabel: "الكلمات", reviewNavLabel: "المراجعة", quizNavLabel: "الاختبار", progressNavLabel: "التقدم", quizBadge: "جديد",
-      sectionsTitle: "الأقسام", unitsTitle: "الوحدات", streakTitle: "سلسلة التعلم", streakDays: "7 أيام", streakNote: "استمر في وحدة المنزل!", searchPlaceholder: "ابحث عن كلمة...", loadError: "تعذر تحميل بيانات الكلمات. أعد تحميل الصفحة وحاول مرة أخرى.",
+      sectionsTitle: "الأقسام", unitsTitle: "الوحدات", streakTitle: "سلسلة التعلم", streakDays: "7 أيام", streakNote: "استمر في هذه الوحدة!", unitKicker: "{unit} · تعلّم بصري", unitHeroTitle: "تعلّم {language} من {unit}", unitHeroSubtitle: "اختر قسمًا، ثم اربط الكلمة بالصورة والصوت والجملة.", unitReviewSubtitle: "تظهر هنا الكلمات التي حفظتها من وحدة {unit} للمراجعة.", searchPlaceholder: "ابحث عن كلمة...", loadError: "تعذر تحميل بيانات الكلمات. أعد تحميل الصفحة وحاول مرة أخرى.",
       pageTitle: "البيت", pageCounterWord: "كلمة", emptyState: "لا توجد نتائج مطابقة.", allSubCategories: "جميع الأقسام الفرعية", allLevels: "جميع المستويات",
       sortPopular: "الأكثر شيوعًا", sortAZ: "أبجديًا A-Z", sortZA: "أبجديًا Z-A", sortMastery: "الأقل إتقانًا",
       playVisible: "🔊 تشغيل الكلمات الظاهرة", resetFilters: "إعادة ضبط", reviewTitle: "كلمات المراجعة", reviewSubtitle: "تظهر هنا كلمات وحدة المنزل التي حفظتها للمراجعة.", reviewEmpty: "لا توجد كلمات محفوظة بعد.", homeHeroKicker: "وحدة البيت · تعلّم بصري", homeHeroTitle: "تعلّم الروسية من الأشياء حولك", homeHeroSubtitle: "اختر الغرفة التي تريدها، ثم اربط الكلمة بالصورة والصوت والجملة.", homeHeroCta: "ابدأ مراجعة اليوم", homeProgressLabel: "تقدم الوحدة", roomStripEyebrow: "استكشف حسب المكان", roomStripTitle: "غرفتك التالية", roomStripHint: "اختر صورة للبدء", roomWords: "كلمة", roomOpen: "افتح قسم",
@@ -16,7 +16,7 @@
     },
     en: {
       dir: "ltr", brandSubtitle: "Learn Russian easily", vocabNavLabel: "Words", reviewNavLabel: "Review", quizNavLabel: "Quiz", progressNavLabel: "Progress", quizBadge: "New",
-      sectionsTitle: "Sections", unitsTitle: "Units", streakTitle: "Learning streak", streakDays: "7 days", streakNote: "Keep going with Home Unit!", searchPlaceholder: "Search for a word...", loadError: "Word data could not be loaded. Reload the page and try again.",
+      sectionsTitle: "Sections", unitsTitle: "Units", streakTitle: "Learning streak", streakDays: "7 days", streakNote: "Keep going with this unit!", unitKicker: "{unit} unit · visual learning", unitHeroTitle: "Learn {language} through {unit}", unitHeroSubtitle: "Choose a section, then connect each word to its image, sound, and sentence.", unitReviewSubtitle: "Saved words from {unit} appear here for review.", searchPlaceholder: "Search for a word...", loadError: "Word data could not be loaded. Reload the page and try again.",
       pageTitle: "Home", pageCounterWord: "words", emptyState: "No matching results.", allSubCategories: "All subcategories", allLevels: "All levels",
       sortPopular: "Most common", sortAZ: "Alphabetical A-Z", sortZA: "Alphabetical Z-A", sortMastery: "Lowest mastery",
       playVisible: "🔊 Play visible words", resetFilters: "Reset", reviewTitle: "Review words", reviewSubtitle: "Core Home words you saved appear here for review.", reviewEmpty: "No saved words yet.", homeHeroKicker: "Home unit · visual learning", homeHeroTitle: "Learn Russian from the things around you", homeHeroSubtitle: "Choose a room, then connect each word to its image, sound, and sentence.", homeHeroCta: "Start today’s review", homeProgressLabel: "Unit progress", roomStripEyebrow: "Explore by place", roomStripTitle: "Choose your next room", roomStripHint: "Select an image to begin", roomWords: "words", roomOpen: "Open section",
@@ -30,7 +30,7 @@
     },
     ru: {
       dir: "ltr", brandSubtitle: "Учите русский легко", vocabNavLabel: "Слова", reviewNavLabel: "Повторение", quizNavLabel: "Тест", progressNavLabel: "Прогресс", quizBadge: "Новый",
-      sectionsTitle: "Разделы", unitsTitle: "Модули", streakTitle: "Серия обучения", streakDays: "7 дней", streakNote: "Продолжайте блок Дом!", searchPlaceholder: "Найдите слово...", loadError: "Не удалось загрузить данные слов. Перезагрузите страницу и попробуйте снова.",
+      sectionsTitle: "Разделы", unitsTitle: "Модули", streakTitle: "Серия обучения", streakDays: "7 дней", streakNote: "Продолжайте этот блок!", unitKicker: "Блок «{unit}» · визуальное обучение", unitHeroTitle: "Учите {language} через блок «{unit}»", unitHeroSubtitle: "Выберите раздел и свяжите слово с изображением, звуком и примером.", unitReviewSubtitle: "Здесь появляются сохранённые слова из блока «{unit}».", searchPlaceholder: "Найдите слово...", loadError: "Не удалось загрузить данные слов. Перезагрузите страницу и попробуйте снова.",
       pageTitle: "Дом", pageCounterWord: "слов", emptyState: "Нет подходящих результатов.", allSubCategories: "Все подразделы", allLevels: "Все уровни",
       sortPopular: "Наиболее частые", sortAZ: "По алфавиту A-Z", sortZA: "По алфавиту Z-A", sortMastery: "Слабое усвоение",
       playVisible: "🔊 Произнести слова", resetFilters: "Сбросить", reviewTitle: "Слова для повторения", reviewSubtitle: "Здесь появляются сохранённые слова из блока Дом.", reviewEmpty: "Сохранённых слов пока нет.", homeHeroKicker: "Блок «Дом» · визуальное обучение", homeHeroTitle: "Учите русский по предметам вокруг вас", homeHeroSubtitle: "Выберите комнату и свяжите слово с изображением, звуком и примером.", homeHeroCta: "Начать повторение", homeProgressLabel: "Прогресс блока", roomStripEyebrow: "По месту в доме", roomStripTitle: "Выберите следующую комнату", roomStripHint: "Нажмите на изображение", roomWords: "слов", roomOpen: "Открыть раздел",
@@ -137,5 +137,15 @@
     return findRoom(roomId)?.icon || "📘";
   }
 
-  window.AppI18N = Object.freeze({ translations, languageCodes, interfaceLanguageLabels, languageLabels, learningLanguageLabels, configure, languageValue, orderedLanguages, pronunciationForLanguage, wordPronunciation, examplePronunciation, examplePronunciationForExample, languageFlag, roomLabel, roomIcon });
+  const learningLanguageNames = {
+    ar: { ru: "الروسية", ar: "العربية", en: "الإنجليزية" },
+    en: { ru: "Russian", ar: "Arabic", en: "English" },
+    ru: { ru: "русский", ar: "арабский", en: "английский" }
+  };
+
+  function learningLanguageName(lang) {
+    return learningLanguageNames[state.uiLang]?.[lang] || lang;
+  }
+
+  window.AppI18N = Object.freeze({ translations, languageCodes, interfaceLanguageLabels, languageLabels, learningLanguageLabels, configure, languageValue, orderedLanguages, pronunciationForLanguage, wordPronunciation, examplePronunciation, examplePronunciationForExample, languageFlag, roomLabel, roomIcon, learningLanguageName });
 })();
